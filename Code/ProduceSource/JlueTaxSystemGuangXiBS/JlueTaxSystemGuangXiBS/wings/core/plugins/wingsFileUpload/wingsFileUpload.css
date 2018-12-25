@@ -1,0 +1,52 @@
+@CHARSET "UTF-8";
+
+.wingsfileupload {
+    position: relative;
+    display: inline-block;
+    background: #337ab7;
+    border: 1px solid #337ab7;
+    border-radius: 4px;
+    padding: 6px 12px 6px 12px;
+    color: #fff;
+    overflow: hidden;
+    text-decoration: none;
+    text-indent: 0;
+    /* line-height: 20px; */
+    *display: inline;
+    *zoom: 1;
+    top: 13px;
+}
+.wingsfileupload input {
+    position: absolute;
+    font-size: 20px;
+    right: 10px;
+    top: 0;
+    opacity: 0;
+    filter: alpha(opacity=0);
+    cursor: pointer;
+}
+.wingsfileupload:hover {
+    background: #204d74;
+    border-color: #204d74;
+    color: #fff;
+    text-decoration: none;
+}
+
+.wingsdownloadlink{
+	padding: 5px;
+	text-decoration:none;
+}
+.wingsdownloadlink:hover,.wingsdownloadlink:visited{
+	text-decoration:none;
+}
+
+.wingsdeletelink{
+	padding-right: 10px;
+    color: red;
+	text-decoration:none;
+}
+
+.wingsdeletelink:hover, .wingsdeletelink:focus .wingsdeletelink:visited{
+    color: #ff1c1c;
+	text-decoration:none;
+}

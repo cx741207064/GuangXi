@@ -1,0 +1,26 @@
+﻿[{
+	"id": "1",
+	"text": "税收法规",
+	"iconCls": "",
+	"state": "closed"
+}, {
+	"id": "2",
+	"text": "问题解答",
+	"iconCls": "",
+	"state": "closed"
+}, {
+	"id": "3",
+	"text": "办税流程",
+	"iconCls": "",
+	"state": "closed"
+}, {
+	"id": "5",
+	"text": "表证单书",
+	"iconCls": "",
+	"state": "closed"
+}, {
+	"id": "6",
+	"text": "相关法规",
+	"iconCls": "",
+	"state": "closed"
+}]

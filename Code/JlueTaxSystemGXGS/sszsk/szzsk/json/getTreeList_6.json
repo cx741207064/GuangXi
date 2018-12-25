@@ -1,0 +1,26 @@
+﻿[{
+	"id": "000000000605",
+	"text": "会计类",
+	"iconCls": "",
+	"state": "closed"
+}, {
+	"id": "000000000601",
+	"text": "行政法",
+	"iconCls": "",
+	"state": "closed"
+}, {
+	"id": "000000000604",
+	"text": "刑法",
+	"iconCls": "",
+	"state": "closed"
+}, {
+	"id": "000000000603",
+	"text": "经济法",
+	"iconCls": "",
+	"state": "closed"
+}, {
+	"id": "000000000602",
+	"text": "民法",
+	"iconCls": "",
+	"state": "closed"
+}]

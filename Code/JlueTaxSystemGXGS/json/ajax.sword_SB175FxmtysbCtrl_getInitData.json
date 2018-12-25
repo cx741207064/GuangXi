@@ -1,0 +1,1482 @@
+﻿{
+	"data": [{
+		"name": "cfsbjybz",
+		"value": "N",
+		"type": ""
+	}, {
+		"data": [{
+			"ZSXM_DM": "10101",
+			"ZSXMMC": "增值税",
+			"caption": "增值税",
+			"code": "10101"
+		}, {
+			"ZSXM_DM": "10104",
+			"ZSXMMC": "企业所得税",
+			"caption": "企业所得税",
+			"code": "10104"
+		}, {
+			"ZSXM_DM": "30217",
+			"ZSXMMC": "文化事业建设费",
+			"caption": "文化事业建设费",
+			"code": "30217"
+		}, {
+			"ZSXM_DM": "30221",
+			"ZSXMMC": "水利建设专项收入",
+			"caption": "水利建设专项收入",
+			"code": "30221"
+		}],
+		"sword": "SwordSelect",
+		"dataName": "DM_GY_ZSXM_Y"
+	}, {
+		"data": [{
+			"caption": "商业(17%)",
+			"code": "101014001",
+			"pcode": "10101"
+		}, {
+			"caption": "设计服务",
+			"code": "101016401",
+			"pcode": "10101"
+		}, {
+			"caption": "应纳税所得额",
+			"code": "101040001",
+			"pcode": "10104"
+		}, {
+			"caption": "广告业文化事业建设费",
+			"code": "302170200",
+			"pcode": "30217"
+		}, {
+			"caption": "地方水利建设基金",
+			"code": "302210400",
+			"pcode": "30221"
+		}],
+		"sword": "SwordSelect",
+		"dataName": "DM_GY_ZSPM_Y"
+	}, {
+		"data": [{
+			"zsxmDm": "30221",
+			"caption": "企业类纳税人水利建设基金",
+			"pcode": "302210400",
+			"code": "3022104001450001"
+		}],
+		"sword": "SwordSelect",
+		"dataName": "DM_GY_ZSZM"
+	}, {
+		"trs": [{
+			"status": null,
+			"tds": {
+				"zsxmDm": {
+					"value": "10101"
+				},
+				"yxqz": {
+					"value": ""
+				},
+				"sybzDm1": {
+					"value": ""
+				},
+				"bqynsfe": {
+					"value": "0.0"
+				},
+				"slbz": {
+					"value": ""
+				},
+				"zszmDm": {
+					"value": ""
+				},
+				"sflhdwse": {
+					"value": "0.17"
+				},
+				"bqybtsfe": {
+					"value": "0.00"
+				},
+				"rdpzuuid": {
+					"value": "F5EA59918578768676E36D1F323781EE"
+				},
+				"rdzsuuid": {
+					"value": "0"
+				},
+				"sfkssqq": {
+					"value": "2017-10-01"
+				},
+				"jcx": {
+					"value": "0.00"
+				},
+				"sbqxDm": {
+					"value": "04"
+				},
+				"jkqxDm": {
+					"value": "04"
+				},
+				"yhje": {
+					"value": ""
+				},
+				"zspmDm": {
+					"value": "101014001"
+				},
+				"ysx": {
+					"value": "0.0"
+				},
+				"nsqxDm": {
+					"value": "06"
+				},
+				"syzldz": {
+					"value": ""
+				},
+				"bqjmsfe": {
+					"value": "0.0"
+				},
+				"jsbz": {
+					"value": ""
+				},
+				"yssdl": {
+					"value": "1.0"
+				},
+				"yhsl": {
+					"value": "0.17"
+				},
+				"sfkssqz": {
+					"value": "2017-10-31"
+				},
+				"bqyjsfe": {
+					"value": "0.00"
+				},
+				"sskcs": {
+					"value": "0.00"
+				},
+				"sybh1": {
+					"value": ""
+				},
+				"sfsfzrd": {
+					"value": "Y"
+				},
+				"zfsbz": {
+					"value": "0"
+				},
+				"yxqq": {
+					"value": ""
+				},
+				"jsfyj": {
+					"value": "0.0"
+				}
+			}
+		}, {
+			"status": null,
+			"tds": {
+				"zsxmDm": {
+					"value": "10101"
+				},
+				"yxqz": {
+					"value": ""
+				},
+				"sybzDm1": {
+					"value": ""
+				},
+				"bqynsfe": {
+					"value": "0.0"
+				},
+				"slbz": {
+					"value": ""
+				},
+				"zszmDm": {
+					"value": ""
+				},
+				"sflhdwse": {
+					"value": "0.06"
+				},
+				"bqybtsfe": {
+					"value": "0.00"
+				},
+				"rdpzuuid": {
+					"value": "DDEE718D7DD0DA8F3B97594DBC6758B1"
+				},
+				"rdzsuuid": {
+					"value": "0"
+				},
+				"sfkssqq": {
+					"value": "2017-10-01"
+				},
+				"jcx": {
+					"value": "0.00"
+				},
+				"sbqxDm": {
+					"value": "04"
+				},
+				"jkqxDm": {
+					"value": "04"
+				},
+				"yhje": {
+					"value": ""
+				},
+				"zspmDm": {
+					"value": "101016401"
+				},
+				"ysx": {
+					"value": "0.0"
+				},
+				"nsqxDm": {
+					"value": "06"
+				},
+				"syzldz": {
+					"value": ""
+				},
+				"bqjmsfe": {
+					"value": "0.0"
+				},
+				"jsbz": {
+					"value": ""
+				},
+				"yssdl": {
+					"value": "1.0"
+				},
+				"yhsl": {
+					"value": "0.06"
+				},
+				"sfkssqz": {
+					"value": "2017-10-31"
+				},
+				"bqyjsfe": {
+					"value": "0.00"
+				},
+				"sskcs": {
+					"value": "0.00"
+				},
+				"sybh1": {
+					"value": ""
+				},
+				"sfsfzrd": {
+					"value": "Y"
+				},
+				"zfsbz": {
+					"value": "0"
+				},
+				"yxqq": {
+					"value": ""
+				},
+				"jsfyj": {
+					"value": "0.0"
+				}
+			}
+		}, {
+			"status": null,
+			"tds": {
+				"zsxmDm": {
+					"value": "10104"
+				},
+				"yxqz": {
+					"value": ""
+				},
+				"sybzDm1": {
+					"value": ""
+				},
+				"bqynsfe": {
+					"value": "0.0"
+				},
+				"slbz": {
+					"value": ""
+				},
+				"zszmDm": {
+					"value": ""
+				},
+				"sflhdwse": {
+					"value": "0.25"
+				},
+				"bqybtsfe": {
+					"value": "0.00"
+				},
+				"rdpzuuid": {
+					"value": "C3680ABCECD9D8EEF32AA9A547A5AB98"
+				},
+				"rdzsuuid": {
+					"value": "0"
+				},
+				"sfkssqq": {
+					"value": "2017-07-01"
+				},
+				"jcx": {
+					"value": "0.00"
+				},
+				"sbqxDm": {
+					"value": "04"
+				},
+				"jkqxDm": {
+					"value": "04"
+				},
+				"yhje": {
+					"value": ""
+				},
+				"zspmDm": {
+					"value": "101040001"
+				},
+				"ysx": {
+					"value": "0.0"
+				},
+				"nsqxDm": {
+					"value": "08"
+				},
+				"syzldz": {
+					"value": ""
+				},
+				"bqjmsfe": {
+					"value": "0.0"
+				},
+				"jsbz": {
+					"value": ""
+				},
+				"yssdl": {
+					"value": "1.0"
+				},
+				"yhsl": {
+					"value": "0.25"
+				},
+				"sfkssqz": {
+					"value": "2017-09-30"
+				},
+				"bqyjsfe": {
+					"value": "0.00"
+				},
+				"sskcs": {
+					"value": "0.00"
+				},
+				"sybh1": {
+					"value": ""
+				},
+				"sfsfzrd": {
+					"value": "Y"
+				},
+				"zfsbz": {
+					"value": "0"
+				},
+				"yxqq": {
+					"value": ""
+				},
+				"jsfyj": {
+					"value": "0.0"
+				}
+			}
+		}, {
+			"status": null,
+			"tds": {
+				"zsxmDm": {
+					"value": "30217"
+				},
+				"yxqz": {
+					"value": ""
+				},
+				"sybzDm1": {
+					"value": ""
+				},
+				"bqynsfe": {
+					"value": "0.0"
+				},
+				"slbz": {
+					"value": ""
+				},
+				"zszmDm": {
+					"value": ""
+				},
+				"sflhdwse": {
+					"value": "0.03"
+				},
+				"bqybtsfe": {
+					"value": "0.00"
+				},
+				"rdpzuuid": {
+					"value": "2FA6C86C2A96C71E43D80B5B4729AE6D"
+				},
+				"rdzsuuid": {
+					"value": "0"
+				},
+				"sfkssqq": {
+					"value": "2017-10-01"
+				},
+				"jcx": {
+					"value": "0.00"
+				},
+				"sbqxDm": {
+					"value": "04"
+				},
+				"jkqxDm": {
+					"value": "04"
+				},
+				"yhje": {
+					"value": ""
+				},
+				"zspmDm": {
+					"value": "302170200"
+				},
+				"ysx": {
+					"value": "0.0"
+				},
+				"nsqxDm": {
+					"value": "06"
+				},
+				"syzldz": {
+					"value": ""
+				},
+				"bqjmsfe": {
+					"value": "0.0"
+				},
+				"jsbz": {
+					"value": ""
+				},
+				"yssdl": {
+					"value": "1.0"
+				},
+				"yhsl": {
+					"value": "0.03"
+				},
+				"sfkssqz": {
+					"value": "2017-10-31"
+				},
+				"bqyjsfe": {
+					"value": "0.00"
+				},
+				"sskcs": {
+					"value": "0.00"
+				},
+				"sybh1": {
+					"value": ""
+				},
+				"sfsfzrd": {
+					"value": "Y"
+				},
+				"zfsbz": {
+					"value": "0"
+				},
+				"yxqq": {
+					"value": ""
+				},
+				"jsfyj": {
+					"value": "0.0"
+				}
+			}
+		}, {
+			"status": null,
+			"tds": {
+				"zsxmDm": {
+					"value": "30221"
+				},
+				"yxqz": {
+					"value": ""
+				},
+				"sybzDm1": {
+					"value": ""
+				},
+				"bqynsfe": {
+					"value": "0.0"
+				},
+				"slbz": {
+					"value": ""
+				},
+				"zszmDm": {
+					"value": "3022104001450001"
+				},
+				"sflhdwse": {
+					"value": "0.0010"
+				},
+				"bqybtsfe": {
+					"value": "0.00"
+				},
+				"rdpzuuid": {
+					"value": "E1240B65264C80E32ED40ACFF441476A"
+				},
+				"rdzsuuid": {
+					"value": "0"
+				},
+				"sfkssqq": {
+					"value": "2017-10-01"
+				},
+				"jcx": {
+					"value": "0.00"
+				},
+				"sbqxDm": {
+					"value": "04"
+				},
+				"jkqxDm": {
+					"value": "04"
+				},
+				"yhje": {
+					"value": ""
+				},
+				"zspmDm": {
+					"value": "302210400"
+				},
+				"ysx": {
+					"value": "0.0"
+				},
+				"nsqxDm": {
+					"value": "06"
+				},
+				"syzldz": {
+					"value": ""
+				},
+				"bqjmsfe": {
+					"value": "0.0"
+				},
+				"jsbz": {
+					"value": ""
+				},
+				"yssdl": {
+					"value": "1.0"
+				},
+				"yhsl": {
+					"value": "1.0"
+				},
+				"sfkssqz": {
+					"value": "2017-10-31"
+				},
+				"bqyjsfe": {
+					"value": "0.00"
+				},
+				"sskcs": {
+					"value": "0.00"
+				},
+				"sybh1": {
+					"value": ""
+				},
+				"sfsfzrd": {
+					"value": "Y"
+				},
+				"zfsbz": {
+					"value": "0"
+				},
+				"yxqq": {
+					"value": ""
+				},
+				"jsfyj": {
+					"value": "0.0"
+				}
+			}
+		}],
+		"name": "skxxList",
+		"sword": "SwordGrid"
+	}, {
+		"name": "gsMsg",
+		"value": "",
+		"type": ""
+	}, {
+		"name": "fjsxx",
+		"value": "10109:1,10302@103020301#103020302#103020303:1,10301@103021601#103021602#103021603#103022102#103019902:1,10301@103021701#103021702:0,30199@301990200:0,30221:0,30446:0,30217:0,30217:0,30221:0,30216:1,30203:1",
+		"type": ""
+	}, {
+		"name": "cfyqsbmsg",
+		"value": "该纳税人重复申报，如有需要请进行申报错误更正:征收项目:增值税     品目:商业(17%)在2017-10-01至2017-10-31已申报,征收项目:增值税     品目:设计服务在2017-10-01至2017-10-31已申报,征收项目:企业所得税     品目:应纳税所得额在2017-07-01至2017-09-30已申报,征收项目:文化事业建设费     品目:广告业文化事业建设费在2017-10-01至2017-10-31已申报,征收项目:水利建设专项收入     品目:地方水利建设基金在2017-10-01至2017-10-31已申报,<br/>该纳税人本属期逾期申报（逾期天数15）<br/>",
+		"type": ""
+	}, {
+		"name": "wbchkMes",
+		"value": "",
+		"type": ""
+	}, {
+		"trs": [{
+			"status": null,
+			"tds": {
+				"zsxmDm": {
+					"value": "10101"
+				},
+				"ssglyDm": {
+					"value": ""
+				},
+				"zszmDm": {
+					"value": ""
+				},
+				"ynse": {
+					"value": "0.0"
+				},
+				"jsyj": {
+					"value": "0.0"
+				},
+				"rdpzuuid": {
+					"value": "F5EA59918578768676E36D1F323781EE"
+				},
+				"jdxzDm": {
+					"value": ""
+				},
+				"djxh": {
+					"value": "10114501010114170071"
+				},
+				"skssswjgDm": {
+					"value": ""
+				},
+				"ysbse": {
+					"value": ""
+				},
+				"sbqx": {
+					"value": "2017-11-15"
+				},
+				"sbqxDm": {
+					"value": "04"
+				},
+				"xssr": {
+					"value": "0.0"
+				},
+				"yslwqzd": {
+					"value": "0.0"
+				},
+				"zspmDm": {
+					"value": "101014001"
+				},
+				"sl": {
+					"value": "0.17"
+				},
+				"hyDm": {
+					"value": "5164"
+				},
+				"zszmGrid": {
+					"value": "gov.gt3.vo.sbzs.sb.sb000.SBSbxxkzJhVO$ZszmGrid@17f4f17a"
+				},
+				"se": {
+					"value": "0.0"
+				},
+				"hdse": {
+					"value": "0.0"
+				},
+				"yssdl": {
+					"value": "1.0"
+				},
+				"yjze": {
+					"value": "0.0"
+				},
+				"hdynsjye": {
+					"value": "0.0"
+				},
+				"zhjzl": {
+					"value": "0.0"
+				},
+				"djzclxDm": {
+					"value": ""
+				},
+				"xshwqzd": {
+					"value": "0.0"
+				},
+				"sfsfzrd": {
+					"value": "Y"
+				},
+				"zfsbz": {
+					"value": "0"
+				},
+				"jmse": {
+					"value": "0.0"
+				},
+				"ssyhlxDm": {
+					"value": ""
+				},
+				"zspmGrid": {
+					"value": "gov.gt3.vo.sbzs.sb.sb000.SBSbxxkzJhVO$ZspmGrid@52198cdf"
+				},
+				"kce": {
+					"value": ""
+				},
+				"dwlsgxDm": {
+					"value": ""
+				},
+				"sybz": {
+					"value": ""
+				},
+				"yjse1": {
+					"value": "0.0"
+				},
+				"hdbl": {
+					"value": "0.0"
+				},
+				"hztykcjye": {
+					"value": "0.0"
+				},
+				"rdzsuuid": {
+					"value": "0"
+				},
+				"zsdlfsDm": {
+					"value": "0"
+				},
+				"kjdjxh": {
+					"value": ""
+				},
+				"jkqxDm": {
+					"value": "04"
+				},
+				"skssqz": {
+					"value": "2017-10-31"
+				},
+				"zsfsDm": {
+					"value": ""
+				},
+				"sybh": {
+					"value": ""
+				},
+				"skssqq": {
+					"value": "2017-10-01"
+				},
+				"nsqxDm": {
+					"value": "06"
+				},
+				"jkqx": {
+					"value": ""
+				},
+				"yhsl": {
+					"value": "0.17"
+				},
+				"swjgDm": {
+					"value": "14501070500"
+				},
+				"zgswskfjDm": {
+					"value": "14501070500"
+				},
+				"sskcs": {
+					"value": ""
+				},
+				"zsl": {
+					"value": "0.03"
+				},
+				"yjse": {
+					"value": "0.0"
+				}
+			}
+		}, {
+			"status": null,
+			"tds": {
+				"zsxmDm": {
+					"value": "10101"
+				},
+				"ssglyDm": {
+					"value": ""
+				},
+				"zszmDm": {
+					"value": ""
+				},
+				"ynse": {
+					"value": "0.0"
+				},
+				"jsyj": {
+					"value": "0.0"
+				},
+				"rdpzuuid": {
+					"value": "DDEE718D7DD0DA8F3B97594DBC6758B1"
+				},
+				"jdxzDm": {
+					"value": ""
+				},
+				"djxh": {
+					"value": "10114501010114170071"
+				},
+				"skssswjgDm": {
+					"value": ""
+				},
+				"ysbse": {
+					"value": ""
+				},
+				"sbqx": {
+					"value": "2017-11-15"
+				},
+				"sbqxDm": {
+					"value": "04"
+				},
+				"xssr": {
+					"value": "0.0"
+				},
+				"yslwqzd": {
+					"value": "0.0"
+				},
+				"zspmDm": {
+					"value": "101016401"
+				},
+				"sl": {
+					"value": "0.06"
+				},
+				"hyDm": {
+					"value": "7240"
+				},
+				"zszmGrid": {
+					"value": "gov.gt3.vo.sbzs.sb.sb000.SBSbxxkzJhVO$ZszmGrid@b6fae95"
+				},
+				"se": {
+					"value": "0.0"
+				},
+				"hdse": {
+					"value": "0.0"
+				},
+				"yssdl": {
+					"value": "1.0"
+				},
+				"yjze": {
+					"value": "0.0"
+				},
+				"hdynsjye": {
+					"value": "0.0"
+				},
+				"zhjzl": {
+					"value": "0.0"
+				},
+				"djzclxDm": {
+					"value": ""
+				},
+				"xshwqzd": {
+					"value": "0.0"
+				},
+				"sfsfzrd": {
+					"value": "Y"
+				},
+				"zfsbz": {
+					"value": "0"
+				},
+				"jmse": {
+					"value": "0.0"
+				},
+				"ssyhlxDm": {
+					"value": ""
+				},
+				"zspmGrid": {
+					"value": "gov.gt3.vo.sbzs.sb.sb000.SBSbxxkzJhVO$ZspmGrid@512ebe10"
+				},
+				"kce": {
+					"value": ""
+				},
+				"dwlsgxDm": {
+					"value": ""
+				},
+				"sybz": {
+					"value": ""
+				},
+				"yjse1": {
+					"value": "0.0"
+				},
+				"hdbl": {
+					"value": "0.0"
+				},
+				"hztykcjye": {
+					"value": "0.0"
+				},
+				"rdzsuuid": {
+					"value": "0"
+				},
+				"zsdlfsDm": {
+					"value": "0"
+				},
+				"kjdjxh": {
+					"value": ""
+				},
+				"jkqxDm": {
+					"value": "04"
+				},
+				"skssqz": {
+					"value": "2017-10-31"
+				},
+				"zsfsDm": {
+					"value": ""
+				},
+				"sybh": {
+					"value": ""
+				},
+				"skssqq": {
+					"value": "2017-10-01"
+				},
+				"nsqxDm": {
+					"value": "06"
+				},
+				"jkqx": {
+					"value": ""
+				},
+				"yhsl": {
+					"value": "0.06"
+				},
+				"swjgDm": {
+					"value": "14501070500"
+				},
+				"zgswskfjDm": {
+					"value": "14501070500"
+				},
+				"sskcs": {
+					"value": ""
+				},
+				"zsl": {
+					"value": "0.03"
+				},
+				"yjse": {
+					"value": "0.0"
+				}
+			}
+		}, {
+			"status": null,
+			"tds": {
+				"zsxmDm": {
+					"value": "10104"
+				},
+				"ssglyDm": {
+					"value": ""
+				},
+				"zszmDm": {
+					"value": ""
+				},
+				"ynse": {
+					"value": "0.0"
+				},
+				"jsyj": {
+					"value": "0.0"
+				},
+				"rdpzuuid": {
+					"value": "C3680ABCECD9D8EEF32AA9A547A5AB98"
+				},
+				"jdxzDm": {
+					"value": ""
+				},
+				"djxh": {
+					"value": "10114501010114170071"
+				},
+				"skssswjgDm": {
+					"value": ""
+				},
+				"ysbse": {
+					"value": ""
+				},
+				"sbqx": {
+					"value": "2017-10-25"
+				},
+				"sbqxDm": {
+					"value": "04"
+				},
+				"xssr": {
+					"value": "0.0"
+				},
+				"yslwqzd": {
+					"value": "0.0"
+				},
+				"zspmDm": {
+					"value": "101040001"
+				},
+				"sl": {
+					"value": "0.25"
+				},
+				"hyDm": {
+					"value": "5164"
+				},
+				"zszmGrid": {
+					"value": "gov.gt3.vo.sbzs.sb.sb000.SBSbxxkzJhVO$ZszmGrid@53c03613"
+				},
+				"se": {
+					"value": "0.0"
+				},
+				"hdse": {
+					"value": "0.0"
+				},
+				"yssdl": {
+					"value": "1.0"
+				},
+				"yjze": {
+					"value": "0.0"
+				},
+				"hdynsjye": {
+					"value": "0.0"
+				},
+				"zhjzl": {
+					"value": "0.0"
+				},
+				"djzclxDm": {
+					"value": ""
+				},
+				"xshwqzd": {
+					"value": "0.0"
+				},
+				"sfsfzrd": {
+					"value": "Y"
+				},
+				"zfsbz": {
+					"value": "0"
+				},
+				"jmse": {
+					"value": "0.0"
+				},
+				"ssyhlxDm": {
+					"value": ""
+				},
+				"zspmGrid": {
+					"value": "gov.gt3.vo.sbzs.sb.sb000.SBSbxxkzJhVO$ZspmGrid@701e4459"
+				},
+				"kce": {
+					"value": ""
+				},
+				"dwlsgxDm": {
+					"value": ""
+				},
+				"sybz": {
+					"value": ""
+				},
+				"yjse1": {
+					"value": "0.0"
+				},
+				"hdbl": {
+					"value": "0.0"
+				},
+				"hztykcjye": {
+					"value": "0.0"
+				},
+				"rdzsuuid": {
+					"value": "0"
+				},
+				"zsdlfsDm": {
+					"value": "0"
+				},
+				"kjdjxh": {
+					"value": ""
+				},
+				"jkqxDm": {
+					"value": "04"
+				},
+				"skssqz": {
+					"value": "2017-09-30"
+				},
+				"zsfsDm": {
+					"value": ""
+				},
+				"sybh": {
+					"value": ""
+				},
+				"skssqq": {
+					"value": "2017-07-01"
+				},
+				"nsqxDm": {
+					"value": "08"
+				},
+				"jkqx": {
+					"value": ""
+				},
+				"yhsl": {
+					"value": "0.25"
+				},
+				"swjgDm": {
+					"value": "14501070500"
+				},
+				"zgswskfjDm": {
+					"value": "14501070500"
+				},
+				"sskcs": {
+					"value": ""
+				},
+				"zsl": {
+					"value": "0.0"
+				},
+				"yjse": {
+					"value": "0.0"
+				}
+			}
+		}, {
+			"status": null,
+			"tds": {
+				"zsxmDm": {
+					"value": "30217"
+				},
+				"ssglyDm": {
+					"value": ""
+				},
+				"zszmDm": {
+					"value": ""
+				},
+				"ynse": {
+					"value": "0.0"
+				},
+				"jsyj": {
+					"value": "0.0"
+				},
+				"rdpzuuid": {
+					"value": "2FA6C86C2A96C71E43D80B5B4729AE6D"
+				},
+				"jdxzDm": {
+					"value": ""
+				},
+				"djxh": {
+					"value": "10114501010114170071"
+				},
+				"skssswjgDm": {
+					"value": ""
+				},
+				"ysbse": {
+					"value": ""
+				},
+				"sbqx": {
+					"value": "2017-11-15"
+				},
+				"sbqxDm": {
+					"value": "04"
+				},
+				"xssr": {
+					"value": "0.0"
+				},
+				"yslwqzd": {
+					"value": "0.0"
+				},
+				"zspmDm": {
+					"value": "302170200"
+				},
+				"sl": {
+					"value": "0.03"
+				},
+				"hyDm": {
+					"value": "7240"
+				},
+				"zszmGrid": {
+					"value": "gov.gt3.vo.sbzs.sb.sb000.SBSbxxkzJhVO$ZszmGrid@53196890"
+				},
+				"se": {
+					"value": "0.0"
+				},
+				"hdse": {
+					"value": "0.0"
+				},
+				"yssdl": {
+					"value": "1.0"
+				},
+				"yjze": {
+					"value": "0.0"
+				},
+				"hdynsjye": {
+					"value": "0.0"
+				},
+				"zhjzl": {
+					"value": "0.0"
+				},
+				"djzclxDm": {
+					"value": ""
+				},
+				"xshwqzd": {
+					"value": "0.0"
+				},
+				"sfsfzrd": {
+					"value": "Y"
+				},
+				"zfsbz": {
+					"value": "0"
+				},
+				"jmse": {
+					"value": "0.0"
+				},
+				"ssyhlxDm": {
+					"value": ""
+				},
+				"zspmGrid": {
+					"value": "gov.gt3.vo.sbzs.sb.sb000.SBSbxxkzJhVO$ZspmGrid@291ff08f"
+				},
+				"kce": {
+					"value": ""
+				},
+				"dwlsgxDm": {
+					"value": ""
+				},
+				"sybz": {
+					"value": ""
+				},
+				"yjse1": {
+					"value": "0.0"
+				},
+				"hdbl": {
+					"value": "0.0"
+				},
+				"hztykcjye": {
+					"value": "0.0"
+				},
+				"rdzsuuid": {
+					"value": "0"
+				},
+				"zsdlfsDm": {
+					"value": "0"
+				},
+				"kjdjxh": {
+					"value": ""
+				},
+				"jkqxDm": {
+					"value": "04"
+				},
+				"skssqz": {
+					"value": "2017-10-31"
+				},
+				"zsfsDm": {
+					"value": ""
+				},
+				"sybh": {
+					"value": ""
+				},
+				"skssqq": {
+					"value": "2017-10-01"
+				},
+				"nsqxDm": {
+					"value": "06"
+				},
+				"jkqx": {
+					"value": ""
+				},
+				"yhsl": {
+					"value": "0.03"
+				},
+				"swjgDm": {
+					"value": "14501070500"
+				},
+				"zgswskfjDm": {
+					"value": "14501070500"
+				},
+				"sskcs": {
+					"value": ""
+				},
+				"zsl": {
+					"value": "0.0"
+				},
+				"yjse": {
+					"value": "0.0"
+				}
+			}
+		}, {
+			"status": null,
+			"tds": {
+				"zsxmDm": {
+					"value": "30221"
+				},
+				"ssglyDm": {
+					"value": ""
+				},
+				"zszmDm": {
+					"value": "3022104001450001"
+				},
+				"ynse": {
+					"value": "0.0"
+				},
+				"jsyj": {
+					"value": "0.0"
+				},
+				"rdpzuuid": {
+					"value": "E1240B65264C80E32ED40ACFF441476A"
+				},
+				"jdxzDm": {
+					"value": ""
+				},
+				"djxh": {
+					"value": "10114501010114170071"
+				},
+				"skssswjgDm": {
+					"value": ""
+				},
+				"ysbse": {
+					"value": ""
+				},
+				"sbqx": {
+					"value": "2017-11-15"
+				},
+				"sbqxDm": {
+					"value": "04"
+				},
+				"xssr": {
+					"value": "0.0"
+				},
+				"yslwqzd": {
+					"value": "0.0"
+				},
+				"zspmDm": {
+					"value": "302210400"
+				},
+				"sl": {
+					"value": "0.0010"
+				},
+				"hyDm": {
+					"value": "7240"
+				},
+				"zszmGrid": {
+					"value": "gov.gt3.vo.sbzs.sb.sb000.SBSbxxkzJhVO$ZszmGrid@6fea5160"
+				},
+				"se": {
+					"value": "0.0"
+				},
+				"hdse": {
+					"value": "0.0"
+				},
+				"yssdl": {
+					"value": "1.0"
+				},
+				"yjze": {
+					"value": "0.0"
+				},
+				"hdynsjye": {
+					"value": "0.0"
+				},
+				"zhjzl": {
+					"value": "0.0"
+				},
+				"djzclxDm": {
+					"value": ""
+				},
+				"xshwqzd": {
+					"value": "0.0"
+				},
+				"sfsfzrd": {
+					"value": "Y"
+				},
+				"zfsbz": {
+					"value": "0"
+				},
+				"jmse": {
+					"value": "0.0"
+				},
+				"ssyhlxDm": {
+					"value": ""
+				},
+				"zspmGrid": {
+					"value": "gov.gt3.vo.sbzs.sb.sb000.SBSbxxkzJhVO$ZspmGrid@84af07"
+				},
+				"kce": {
+					"value": ""
+				},
+				"dwlsgxDm": {
+					"value": ""
+				},
+				"sybz": {
+					"value": ""
+				},
+				"yjse1": {
+					"value": "0.0"
+				},
+				"hdbl": {
+					"value": "0.0"
+				},
+				"hztykcjye": {
+					"value": "0.0"
+				},
+				"rdzsuuid": {
+					"value": "0"
+				},
+				"zsdlfsDm": {
+					"value": "0"
+				},
+				"kjdjxh": {
+					"value": ""
+				},
+				"jkqxDm": {
+					"value": "04"
+				},
+				"skssqz": {
+					"value": "2017-10-31"
+				},
+				"zsfsDm": {
+					"value": ""
+				},
+				"sybh": {
+					"value": ""
+				},
+				"skssqq": {
+					"value": "2017-10-01"
+				},
+				"nsqxDm": {
+					"value": "06"
+				},
+				"jkqx": {
+					"value": ""
+				},
+				"yhsl": {
+					"value": "1.0"
+				},
+				"swjgDm": {
+					"value": "14501070500"
+				},
+				"zgswskfjDm": {
+					"value": "14501070500"
+				},
+				"sskcs": {
+					"value": ""
+				},
+				"zsl": {
+					"value": "0.0"
+				},
+				"yjse": {
+					"value": "0.0"
+				}
+			}
+		}],
+		"name": "sbxxGridlist",
+		"sword": "SwordGrid"
+	}, {
+		"trs": [],
+		"name": "jmxxGridlist",
+		"sword": "SwordGrid"
+	}, {
+		"trs": [],
+		"name": "yjxxGridlist",
+		"sword": "SwordGrid"
+	}, {
+		"trs": [{
+			"status": null,
+			"tds": {
+				"zsxmDm": {
+					"value": "10101"
+				},
+				"qzdje": {
+					"value": "30000.0"
+				},
+				"ysbje": {
+					"value": "0.0"
+				},
+				"ssq": {
+					"value": "2017-10-01||2017-10-31"
+				},
+				"mesg": {
+					"value": "<br/>生产经营地:南宁市西乡塘区人民西路25号融昌邕江银座3号楼1单元1-2103号,纳税人:广西龙森胜贸易有限公司,申报金额:0.0,<br/>生产经营地:南宁市西乡塘区人民西路25号融昌邕江银座3号楼1单元1-2103号,纳税人:广西龙森胜贸易有限公司,申报金额:0.0,"
+				},
+				"sfxswdqzdjm": {
+					"value": "Y"
+				}
+			}
+		}, {
+			"status": null,
+			"tds": {
+				"zsxmDm": {
+					"value": "30217"
+				},
+				"qzdje": {
+					"value": "30000.0"
+				},
+				"ysbje": {
+					"value": "0.0"
+				},
+				"ssq": {
+					"value": "2017-10-01||2017-10-31"
+				},
+				"mesg": {
+					"value": "<br/>生产经营地:南宁市西乡塘区人民西路25号融昌邕江银座3号楼1单元1-2103号,纳税人:广西龙森胜贸易有限公司,申报金额:0.0,"
+				},
+				"sfxswdqzdjm": {
+					"value": "Y"
+				}
+			}
+		}, {
+			"status": null,
+			"tds": {
+				"zsxmDm": {
+					"value": "30221"
+				},
+				"qzdje": {
+					"value": "100000.0"
+				},
+				"ysbje": {
+					"value": "0.0"
+				},
+				"ssq": {
+					"value": "2017-10-01||2017-10-31"
+				},
+				"mesg": {
+					"value": "<br/>生产经营地:南宁市西乡塘区人民西路25号融昌邕江银座3号楼1单元1-2103号,纳税人:广西龙森胜贸易有限公司,申报金额:0.0,"
+				},
+				"sfxswdqzdjm": {
+					"value": "Y"
+				}
+			}
+		}],
+		"name": "qzdList",
+		"sword": "SwordGrid"
+	}, {
+		"name": "zshdBz",
+		"value": "N",
+		"type": ""
+	}, {
+		"name": "sfsyyhbftc",
+		"value": "N",
+		"type": ""
+	}, {
+		"name": "gwssswjg",
+		"value": "14501070500",
+		"type": ""
+	}, {
+		"name": "sessionID",
+		"value": "f55d77edde8d47c98dc40312e007ca66",
+		"type": ""
+	}]
+}

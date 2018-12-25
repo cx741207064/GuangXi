@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title></title>
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+    <script src="../../../commons/include_ui_jcpt.js?dm=50" type="text/javascript"></script>
+    <script src="../../../tools/jcptTools.js"></script>
+</head>
+
+
+<body>
+
+<script type="text/javascript">
+    function post(url, params) {
+        var temp = document.createElement("form");
+        temp.action = url;
+        temp.method = "get";
+        temp.style.display = "none";
+        var opt;
+        if (params) {
+            for (var x in params) {
+                opt = document.createElement("input");
+                opt.name = x;
+                opt.value = params[x];
+                temp.appendChild(opt);
+            }
+        }
+        document.body.appendChild(temp);
+        temp.submit();
+    }
+
+    var url=jcptTools.cnf.zrdssbUrl+"/sword?ctrl=DZBSXTKJ022YhmMmDlCtrl_guXLocalTaxWinOpen";
+    var mkxkmc = window.opener.document.getElementById('kf-hdipt-dssb-mkmc').value;
+    var mkurl = window.opener.document.getElementById('kf-hdipt-dssb-mkurl').value;
+    var p = {
+        ctrl: 'DZBSXTKJ022YhmMmDlCtrl_guXLocalTaxWinOpen',
+        functionName: mkxkmc,
+        functionUrl: mkurl,
+        functionType: '01'
+    };
+    post(url, p);
+</script>
+</body>
+</html>

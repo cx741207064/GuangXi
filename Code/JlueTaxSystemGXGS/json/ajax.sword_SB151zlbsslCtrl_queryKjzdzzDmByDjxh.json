@@ -1,0 +1,69 @@
+﻿{
+	"data": [{
+		"trs": [{
+			"status": null,
+			"tds": {
+				"bbbsqDm": {
+					"value": "3"
+				},
+				"cwkjbblxDm": {
+					"value": "02"
+				},
+				"cwbbzlDm": {
+					"value": "01"
+				}
+			}
+		}, {
+			"status": null,
+			"tds": {
+				"bbbsqDm": {
+					"value": "3"
+				},
+				"cwkjbblxDm": {
+					"value": "02"
+				},
+				"cwbbzlDm": {
+					"value": "02"
+				}
+			}
+		}],
+		"name": "nsrcwzdxxList",
+		"sword": "SwordGrid"
+	}, {
+		"name": "zcfzbCwkjbblx",
+		"value": "02",
+		"type": ""
+	}, {
+		"name": "QfjtBz",
+		"value": "N",
+		"type": ""
+	}, {
+		"name": "kjzdzzDm",
+		"value": "102",
+		"type": ""
+	}, {
+		"name": "yxqq",
+		"value": "2017-01-01",
+		"type": ""
+	}, {
+		"name": "yxqz",
+		"value": "9999-12-31",
+		"type": ""
+	}, {
+		"name": "ssqq",
+		"value": "2017-07-01",
+		"type": ""
+	}, {
+		"name": "ssqz",
+		"value": "2017-09-30",
+		"type": ""
+	}, {
+		"name": "gwssswjg",
+		"value": "14501070500",
+		"type": ""
+	}, {
+		"name": "sessionID",
+		"value": "7a73dde7c11b4be782b68440c14cec57",
+		"type": ""
+	}]
+}

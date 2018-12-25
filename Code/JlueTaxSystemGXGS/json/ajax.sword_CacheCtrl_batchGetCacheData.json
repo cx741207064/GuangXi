@@ -1,0 +1,15 @@
+﻿{
+	"data": [{
+		"name": "DM_SB_ZLBSDL^111",
+		"value": "[{\"ZLBSDL_DM\":\"ZL1001\",\"ZLBSDLMC\":\"财务报告报送与信息采集                            \"},{\"ZLBSDL_DM\":\"ZL1002\",\"ZLBSDLMC\":\"个人所得税相关资料                                \"},{\"ZLBSDL_DM\":\"ZL1003\",\"ZLBSDLMC\":\"特别纳税调整相关资料                              \"},{\"ZLBSDL_DM\":\"ZL1004\",\"ZLBSDLMC\":\"税收调查相关资料                                  \"},{\"ZLBSDL_DM\":\"ZL1005\",\"ZLBSDLMC\":\"重点税源监控企业相关资料                          \"},{\"ZLBSDL_DM\":\"ZL1006\",\"ZLBSDLMC\":\"非税控电子器具使用的软件程序说明资料              \"},{\"ZLBSDL_DM\":\"ZL1008\",\"ZLBSDLMC\":\"企业相关方案备案资料                              \"},{\"ZLBSDL_DM\":\"ZL1009\",\"ZLBSDLMC\":\"非居民相关资料采集                                \"},{\"ZLBSDL_DM\":\"ZL1010\",\"ZLBSDLMC\":\"增值税相关资料采集\"},{\"ZLBSDL_DM\":\"ZL1011\",\"ZLBSDLMC\":\"消费税相关资料采集\"},{\"ZLBSDL_DM\":\"ZL1012\",\"ZLBSDLMC\":\"大企业相关资料采集\"},{\"ZLBSDL_DM\":\"ZL1013\",\"ZLBSDLMC\":\"耕地占用税相关资料采集\"},{\"ZLBSDL_DM\":\"ZL1014\",\"ZLBSDLMC\":\"欠税清缴计划相关信息采集\"},{\"ZLBSDL_DM\":\"ZL1015\",\"ZLBSDLMC\":\"印花税相关资料信息采集\"}]",
+		"type": ""
+	}, {
+		"name": "gwssswjg",
+		"value": "14501070500",
+		"type": ""
+	}, {
+		"name": "sessionID",
+		"value": "ba748d0ca454445c8c1ccdd5377b99d4",
+		"type": ""
+	}]
+}

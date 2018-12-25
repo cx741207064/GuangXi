@@ -1,0 +1,389 @@
+﻿{
+	"data": [{
+		"trs": [{
+			"status": null,
+			"tds": {
+				"sfxcj": {
+					"value": "Y"
+				},
+				"xh": {
+					"value": "1"
+				},
+				"sfbszl": {
+					"value": "N"
+				},
+				"sfyhd": {
+					"value": "Y"
+				},
+				"cwbbzlDm": {
+					"value": "1"
+				},
+				"ljwz": {
+					"value": "/sb/sb41301/sb413_yykjzdcwbb_zcfzb.jsp"
+				},
+				"bszlmc": {
+					"value": "资产负债表（适用执行医院会计制度的单位）"
+				},
+				"bb": {
+					"value": "true"
+				},
+				"sftj": {
+					"value": "N"
+				},
+				"bszlDm": {
+					"value": "ZLA0610237"
+				},
+				"tjbs": {
+					"value": "true"
+				}
+			}
+		}, {
+			"status": null,
+			"tds": {
+				"sfxcj": {
+					"value": "Y"
+				},
+				"xh": {
+					"value": "2"
+				},
+				"sfbszl": {
+					"value": "N"
+				},
+				"sfyhd": {
+					"value": "Y"
+				},
+				"cwbbzlDm": {
+					"value": "99"
+				},
+				"ljwz": {
+					"value": "/sb/sb41301/sb413_yykjzdcwbb_zcfzb.jsp"
+				},
+				"bszlmc": {
+					"value": "收入费用总表（适用执行医院会计制度的单位）"
+				},
+				"bb": {
+					"value": "true"
+				},
+				"sftj": {
+					"value": "N"
+				},
+				"bszlDm": {
+					"value": "ZLA0610238"
+				},
+				"tjbs": {
+					"value": "true"
+				}
+			}
+		}, {
+			"status": null,
+			"tds": {
+				"sfxcj": {
+					"value": "Y"
+				},
+				"xh": {
+					"value": "3"
+				},
+				"sfbszl": {
+					"value": "N"
+				},
+				"sfyhd": {
+					"value": "Y"
+				},
+				"cwbbzlDm": {
+					"value": "99"
+				},
+				"ljwz": {
+					"value": "/sb/sb41301/sb413_yykjzdcwbb_zcfzb.jsp"
+				},
+				"bszlmc": {
+					"value": "医疗收入费用明细表（适用执行医院会计制度的单位）"
+				},
+				"bb": {
+					"value": "true"
+				},
+				"sftj": {
+					"value": "N"
+				},
+				"bszlDm": {
+					"value": "ZLA0610239"
+				},
+				"tjbs": {
+					"value": "true"
+				}
+			}
+		}, {
+			"status": null,
+			"tds": {
+				"sfxcj": {
+					"value": "Y"
+				},
+				"xh": {
+					"value": "4"
+				},
+				"sfbszl": {
+					"value": "N"
+				},
+				"sfyhd": {
+					"value": "Y"
+				},
+				"cwbbzlDm": {
+					"value": "3"
+				},
+				"ljwz": {
+					"value": "/sb/sb41301/sb413_yykjzdcwbb_zcfzb.jsp"
+				},
+				"bszlmc": {
+					"value": "现金流量表（适用执行医院会计制度的单位）"
+				},
+				"bb": {
+					"value": "true"
+				},
+				"sftj": {
+					"value": "N"
+				},
+				"bszlDm": {
+					"value": "ZLA0610240"
+				},
+				"tjbs": {
+					"value": "true"
+				}
+			}
+		}, {
+			"status": null,
+			"tds": {
+				"sfxcj": {
+					"value": "Y"
+				},
+				"xh": {
+					"value": "5"
+				},
+				"sfbszl": {
+					"value": "N"
+				},
+				"sfyhd": {
+					"value": "Y"
+				},
+				"cwbbzlDm": {
+					"value": "99"
+				},
+				"ljwz": {
+					"value": "/sb/sb41301/sb413_yykjzdcwbb_zcfzb.jsp"
+				},
+				"bszlmc": {
+					"value": "财政补助收支情况表（适用执行医院会计制度的单位）"
+				},
+				"bb": {
+					"value": "true"
+				},
+				"sftj": {
+					"value": "N"
+				},
+				"bszlDm": {
+					"value": "ZLA0610241"
+				},
+				"tjbs": {
+					"value": "true"
+				}
+			}
+		}, {
+			"status": null,
+			"tds": {
+				"sfxcj": {
+					"value": "N"
+				},
+				"xh": {
+					"value": "6"
+				},
+				"sfbszl": {
+					"value": "N"
+				},
+				"sfyhd": {
+					"value": "Y"
+				},
+				"cwbbzlDm": {
+					"value": "1"
+				},
+				"ljwz": {
+					"value": ".."
+				},
+				"bszlmc": {
+					"value": "财务报表附注"
+				},
+				"bb": {
+					"value": ""
+				},
+				"sftj": {
+					"value": "N"
+				},
+				"bszlDm": {
+					"value": "ZLA0610283"
+				},
+				"tjbs": {
+					"value": "true"
+				}
+			}
+		}, {
+			"status": null,
+			"tds": {
+				"sfxcj": {
+					"value": "N"
+				},
+				"xh": {
+					"value": "7"
+				},
+				"sfbszl": {
+					"value": "N"
+				},
+				"sfyhd": {
+					"value": "Y"
+				},
+				"cwbbzlDm": {
+					"value": "1"
+				},
+				"ljwz": {
+					"value": ".."
+				},
+				"bszlmc": {
+					"value": "原始财务会计报表"
+				},
+				"bb": {
+					"value": ""
+				},
+				"sftj": {
+					"value": "N"
+				},
+				"bszlDm": {
+					"value": "ZLA0610284"
+				},
+				"tjbs": {
+					"value": "true"
+				}
+			}
+		}, {
+			"status": null,
+			"tds": {
+				"sfxcj": {
+					"value": "N"
+				},
+				"xh": {
+					"value": "8"
+				},
+				"sfbszl": {
+					"value": "N"
+				},
+				"sfyhd": {
+					"value": "Y"
+				},
+				"cwbbzlDm": {
+					"value": "1"
+				},
+				"ljwz": {
+					"value": "/sb/gycwbb/sb000_ndcwkjbgshbg.jsp"
+				},
+				"bszlmc": {
+					"value": "年度财务会计报告审计报告"
+				},
+				"bb": {
+					"value": ""
+				},
+				"sftj": {
+					"value": "N"
+				},
+				"bszlDm": {
+					"value": "ZLA0610291"
+				},
+				"tjbs": {
+					"value": "true"
+				}
+			}
+		}, {
+			"status": null,
+			"tds": {
+				"sfxcj": {
+					"value": "N"
+				},
+				"xh": {
+					"value": "9"
+				},
+				"sfbszl": {
+					"value": "N"
+				},
+				"sfyhd": {
+					"value": "Y"
+				},
+				"cwbbzlDm": {
+					"value": "1"
+				},
+				"ljwz": {
+					"value": "/sb/gycwbb/sb000_yfzcfzzhzb.jsp"
+				},
+				"bszlmc": {
+					"value": "“研发支出”辅助账汇总表"
+				},
+				"bb": {
+					"value": ""
+				},
+				"sftj": {
+					"value": "N"
+				},
+				"bszlDm": {
+					"value": "ZLA0610292"
+				},
+				"tjbs": {
+					"value": "true"
+				}
+			}
+		}, {
+			"status": null,
+			"tds": {
+				"sfxcj": {
+					"value": "N"
+				},
+				"xh": {
+					"value": "10"
+				},
+				"sfbszl": {
+					"value": "N"
+				},
+				"sfyhd": {
+					"value": "Y"
+				},
+				"cwbbzlDm": {
+					"value": "1"
+				},
+				"ljwz": {
+					"value": "/sb/gycwbb/sb000_yykjzdfz.jsp"
+				},
+				"bszlmc": {
+					"value": "医院会计制度附注"
+				},
+				"bb": {
+					"value": ""
+				},
+				"sftj": {
+					"value": "N"
+				},
+				"bszlDm": {
+					"value": "ZLA0610312"
+				},
+				"tjbs": {
+					"value": "true"
+				}
+			}
+		}],
+		"name": "yhdzlGrid",
+		"sword": "SwordGrid"
+	}, {
+		"name": "zlsl",
+		"value": "10",
+		"type": ""
+	}, {
+		"name": "gwssswjg",
+		"value": "14501950500",
+		"type": ""
+	}, {
+		"name": "sessionID",
+		"value": "ea8e8139050e4eb99df40c37f06473f6",
+		"type": ""
+	}]
+}

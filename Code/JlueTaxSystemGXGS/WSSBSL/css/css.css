@@ -1,0 +1,138 @@
+﻿@CHARSET "gb2312";
+body {
+	margin-left: 0px;
+	margin-top: 0px;
+	margin-right: 0px;
+	margin-bottom: 0px;
+}
+html { overflow-x: auto; overflow-y: auto; border:0;}
+form {
+	margin: 0;
+	padding:0;
+}
+* {
+	font-size: 12px;
+	font-family: Verdana, Arial, "??";
+}
+.button {	font-family: "ËÎÌå";
+	font-size: 14px;
+	height: 37px;
+}
+
+.right-font08 {
+	font-family: "ËÎÌå";
+	font-size: 12px;
+	color: #555555;
+	text-decoration: none;
+}
+a.right-font08:hover {
+	font-family: "ËÎÌå";
+	font-size: 12px;
+	color: #FF0000;
+	text-decoration: underline;
+}
+.right-text09 {
+	font-family: Tahoma;
+	font-size: 11px;
+	font-weight: bold;
+	color: #F26521;
+	text-decoration: none;
+}
+.right-button02 {
+	font-family: "ËÎÌå";
+	font-size: 12px;
+	color: #174B73;
+	height: 20px;
+	width: 45px;
+	background-image: url(/ywjk/images/button04.gif);
+	border-top-width: 0px;
+	border-right-width: 0px;
+	border-bottom-width: 0px;
+	border-left-width: 0px;
+}
+.right-button03 {
+	font-family: "ËÎÌå";
+	font-size: 12px;
+	color: #174B73;
+	height: 20px;
+	width: 80px;
+	background-image: url(/ywjk/images/button05.gif);
+	border-top-width: 0px;
+	border-right-width: 0px;
+	border-bottom-width: 0px;
+	border-left-width: 0px;
+}
+.right-button06 {
+	font-family: "ËÎÌå";
+	font-size: 12px;
+	color: #174B73;
+	height: 20px;
+	width: 24px;
+	background-image: url(/ywjk/images/button08.gif);
+	border-top-width: 0px;
+	border-right-width: 0px;
+	border-bottom-width: 0px;
+	border-left-width: 0px;
+}
+.newfont03 {
+	font-family: "ËÎÌå";
+	font-size: 12px;
+	color: #000000;
+	text-decoration: none;
+}
+.newfont04 {
+	font-size: 12px;
+	color: #000000;
+	text-decoration: none;
+}
+a.newfont03:hover {
+	font-family: "ËÎÌå";
+	font-size: 12px;
+	color: #FF0000;
+	text-decoration: underline;
+}
+.newfont07 {
+	font-family: "ËÎÌå";
+	font-size: 13px;
+	font-weight: bold;
+	color: #174B73;
+	text-decoration: none;
+}
+.newfont08 {
+	font-family: "ËÎÌå";
+	font-size: 13px;
+	color: #FF3333;
+	text-decoration: none;
+}
+
+.textRight {
+	padding-right: 5px;
+	text-align: right;
+}
+
+
+/**-------------------------------------------------------------------------------------------*/
+html,body {
+	margin:0;
+	padding:0;
+	height:100%;
+	
+}
+
+img {
+	border: 0;
+}
+
+h1,h2,h3,ul,p {
+	margin:0;
+	padding:0;
+}
+
+h2 {
+	font-size: 13px;
+}
+
+ul {
+	list-style:none;
+}
+

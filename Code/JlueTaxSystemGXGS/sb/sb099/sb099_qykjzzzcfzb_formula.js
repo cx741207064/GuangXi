@@ -1,0 +1,17 @@
+﻿var gs_gjj = ["{zcfzbxxForm_h12l2}={zcfzbxxForm_h1l2}+{zcfzbxxForm_h2l2}+{zcfzbxxForm_h3l2}+{zcfzbxxForm_h4l2}+{zcfzbxxForm_h5l2}+{zcfzbxxForm_h6l2}+{zcfzbxxForm_h7l2}+{zcfzbxxForm_h8l2}+{zcfzbxxForm_h9l2}+{zcfzbxxForm_h10l2}+{zcfzbxxForm_h11l2}",
+"{zcfzbxxForm_h12l3}={zcfzbxxForm_h1l3}+{zcfzbxxForm_h2l3}+{zcfzbxxForm_h3l3}+{zcfzbxxForm_h4l3}+{zcfzbxxForm_h5l3}+{zcfzbxxForm_h6l3}+{zcfzbxxForm_h7l3}+{zcfzbxxForm_h8l3}+{zcfzbxxForm_h9l3}+{zcfzbxxForm_h10l3}+{zcfzbxxForm_h11l3}",
+"{zcfzbxxForm_h13l5}={zcfzbxxForm_h1l5}+{zcfzbxxForm_h2l5}+{zcfzbxxForm_h3l5}+{zcfzbxxForm_h4l5}+{zcfzbxxForm_h5l5}+{zcfzbxxForm_h6l5}+{zcfzbxxForm_h7l5}+{zcfzbxxForm_h8l5}+{zcfzbxxForm_h9l5}+{zcfzbxxForm_h10l5}+{zcfzbxxForm_h11l5}+{zcfzbxxForm_h12l5}",
+"{zcfzbxxForm_h13l6}={zcfzbxxForm_h1l6}+{zcfzbxxForm_h2l6}+{zcfzbxxForm_h3l6}+{zcfzbxxForm_h4l6}+{zcfzbxxForm_h5l6}+{zcfzbxxForm_h6l6}+{zcfzbxxForm_h7l6}+{zcfzbxxForm_h8l6}+{zcfzbxxForm_h9l6}+{zcfzbxxForm_h10l6}+{zcfzbxxForm_h11l6}+{zcfzbxxForm_h12l6}",
+"{zcfzbxxForm_h31l2}={zcfzbxxForm_h14l2}+{zcfzbxxForm_h15l2}+{zcfzbxxForm_h16l2}+{zcfzbxxForm_h17l2}+{zcfzbxxForm_h18l2}+{zcfzbxxForm_h19l2}+{zcfzbxxForm_h20l2}+{zcfzbxxForm_h21l2}+{zcfzbxxForm_h22l2}+{zcfzbxxForm_h23l2}+{zcfzbxxForm_h24l2}+{zcfzbxxForm_h25l2}+{zcfzbxxForm_h26l2}+{zcfzbxxForm_h27l2}+{zcfzbxxForm_h28l2}+{zcfzbxxForm_h29l2}+{zcfzbxxForm_h30l2}",
+"{zcfzbxxForm_h32l2}={zcfzbxxForm_h12l2}+{zcfzbxxForm_h31l2}",
+"{zcfzbxxForm_h32l3}={zcfzbxxForm_h12l3}+{zcfzbxxForm_h31l3}",
+"{zcfzbxxForm_h31l3}={zcfzbxxForm_h14l3}+{zcfzbxxForm_h15l3}+{zcfzbxxForm_h16l3}+{zcfzbxxForm_h17l3}+{zcfzbxxForm_h18l3}+{zcfzbxxForm_h19l3}+{zcfzbxxForm_h20l3}+{zcfzbxxForm_h21l3}+{zcfzbxxForm_h22l3}+{zcfzbxxForm_h23l3}+{zcfzbxxForm_h24l3}+{zcfzbxxForm_h25l3}+{zcfzbxxForm_h26l3}+{zcfzbxxForm_h27l3}+{zcfzbxxForm_h28l3}+{zcfzbxxForm_h29l3}+{zcfzbxxForm_h30l3}",
+"{zcfzbxxForm_h22l5}={zcfzbxxForm_h15l5}+{zcfzbxxForm_h16l5}+{zcfzbxxForm_h17l5}+{zcfzbxxForm_h18l5}+{zcfzbxxForm_h19l5}+{zcfzbxxForm_h33l5}+{zcfzbxxForm_h20l5}+{zcfzbxxForm_h21l5}",
+"{zcfzbxxForm_h23l5}={zcfzbxxForm_h13l5}+{zcfzbxxForm_h22l5}",
+"{zcfzbxxForm_h23l6}={zcfzbxxForm_h13l6}+{zcfzbxxForm_h22l6}",
+"{zcfzbxxForm_h22l6}={zcfzbxxForm_h15l6}+{zcfzbxxForm_h16l6}+{zcfzbxxForm_h17l6}+{zcfzbxxForm_h18l6}+{zcfzbxxForm_h19l6}+{zcfzbxxForm_h33l6}+{zcfzbxxForm_h20l6}+{zcfzbxxForm_h21l6}",
+"{zcfzbxxForm_h30l5}={zcfzbxxForm_h25l5}+{zcfzbxxForm_h26l5}-{zcfzbxxForm_h27l5}+{zcfzbxxForm_h34l5}+{zcfzbxxForm_h28l5}+{zcfzbxxForm_h29l5}",
+"{zcfzbxxForm_h32l5}={zcfzbxxForm_h23l5}+{zcfzbxxForm_h30l5}",
+"{zcfzbxxForm_h32l6}={zcfzbxxForm_h23l6}+{zcfzbxxForm_h30l6}",
+"{zcfzbxxForm_h30l6}={zcfzbxxForm_h25l6}+{zcfzbxxForm_h26l6}-{zcfzbxxForm_h27l6}+{zcfzbxxForm_h34l6}+{zcfzbxxForm_h28l6}+{zcfzbxxForm_h29l6}"];
+

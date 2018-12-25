@@ -1,0 +1,45 @@
+﻿{
+	"data": [{
+		"trs": [{
+			"status": null,
+			"tds": {
+				"cfdz": {
+					"value": ""
+				},
+				"xmlbz": {
+					"value": "1"
+				}
+			}
+		}, {
+			"status": null,
+			"tds": {
+				"skssqz": {
+					"value": "2016-12-31"
+				},
+				"xmlbz": {
+					"value": "3"
+				}
+			}
+		}, {
+			"status": null,
+			"tds": {
+				"skssqz": {
+					"value": "2016-01-31"
+				},
+				"xmlbz": {
+					"value": "2"
+				}
+			}
+		}],
+		"name": "bsxxlist",
+		"sword": "SwordGrid"
+	}, {
+		"name": "gwssswjg",
+		"value": "14501950500",
+		"type": ""
+	}, {
+		"name": "sessionID",
+		"value": "95cc99bd71444bb7a7011a7ce863814d",
+		"type": ""
+	}]
+}

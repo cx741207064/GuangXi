@@ -1,0 +1,2351 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{AF89B382-7BAA-42B0-812B-9554E29739B3}</ProjectGuid>
+    <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>JlueTaxSystemGXGS</RootNamespace>
+    <AssemblyName>JlueTaxSystemGXGS</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <UseIISExpress>true</UseIISExpress>
+    <IISExpressSSLPort />
+    <IISExpressAnonymousAuthentication />
+    <IISExpressWindowsAuthentication />
+    <IISExpressUseClassicPipelineMode />
+    <UseGlobalApplicationHostFile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="Moon.Orm">
+      <HintPath>..\JlueTaxSystemGXGS.Vendar\Moon.Orm.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json">
+      <HintPath>..\JlueTaxSystemGXGS.Vendar\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.EnterpriseServices" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="css\H-ui.css" />
+    <Content Include="css\ksindex.css" />
+    <Content Include="css\stylenew.css" />
+    <Content Include="form.sword_GY011GyDyCtrl_gyPrint.aspx" />
+    <Content Include="form.sword_GYDrCtrl_openDr.aspx" />
+    <Content Include="form.sword_SB071KjqysdssbCtrl_gethtbaxx.aspx" />
+    <Content Include="form.sword_SB151zlbsslCtrl_initBd.aspx" />
+    <Content Include="form.sword_SB151zlbsslCtrl_initBdZL1001001.aspx" />
+    <Content Include="form.sword_SB151zlbsslCtrl_initBdZL1001002.aspx" />
+    <Content Include="form.sword_SB151zlbsslCtrl_initBdZL1001003.aspx" />
+    <Content Include="form.sword_SB175FxmtysbCtrl_cwgzInitView.aspx" />
+    <Content Include="form.sword_SBGyCtrl_toNsrzcbb.aspx" />
+    <Content Include="gt3_public\cacheindex.js" />
+    <Content Include="gt3_public\formula_engine.js" />
+    <Content Include="gt3_public\jsDelegate.js" />
+    <Content Include="gt3_public\styles\grid_comm.css" />
+    <Content Include="gt3_public\SwordGrid_ex.js" />
+    <Content Include="gy\dr\gydr.js" />
+    <Content Include="gy\dy\script\LodopFuncs.js" />
+    <Content Include="gy\gy002\queryNsrxxByNsrsbhComm.js" />
+    <Content Include="gy\gy011\gyPrint.js" />
+    <Content Include="gy\gy013\attachOperate_flzlList.js" />
+    <Content Include="gy\lodopPrint\gyPrint.js" />
+    <Content Include="gy\lodopPrint\LodopFuncs.js" />
+    <Content Include="gy\tysl\tyslComm\tysl_flzl.js" />
+    <Content Include="gy\tysl\tyslComm\tysl_saveSxslxx.js" />
+    <Content Include="gy\ywpt\ywpt_zypz_gy.js" />
+    <Content Include="jspt\nsrd\qxxt\gy_qxxt.js" />
+    <Content Include="jspt\styles\style.js" />
+    <Content Include="js\common.js" />
+    <Content Include="js\database.js" />
+    <Content Include="js\dump_src.js" />
+    <Content Include="js\H-ui.js" />
+    <Content Include="js\jquery-1.11.3.min.js" />
+    <Content Include="js\jquery.cookie.js" />
+    <Content Include="js\json2.js" />
+    <Content Include="ods\cx301\cx301_dzcx.js" />
+    <Content Include="ods\images\columns.gif" />
+    <Content Include="ods\images\download.gif" />
+    <Content Include="ods\images\search.gif" />
+    <Content Include="ods\images\zip.gif" />
+    <Content Include="ods\scripts\dzcx\BbPanel.js" />
+    <Content Include="ods\scripts\dzcx\CxjgGrid.js" />
+    <Content Include="ods\scripts\dzcx\CxtjPanel.js" />
+    <Content Include="ods\scripts\dzcx\DzcxViewport.js" />
+    <Content Include="ods\scripts\dzcx\JglWindow.js" />
+    <Content Include="ods\scripts\encode\base64.js" />
+    <Content Include="ods\scripts\ext\ext-all.js" />
+    <Content Include="ods\scripts\ext\include-ext.js" />
+    <Content Include="ods\scripts\ext\locale\ext-lang-zh_CN.js" />
+    <Content Include="ods\scripts\ext\resources\css\ext-all-neptune.css" />
+    <Content Include="ods\scripts\ext\resources\ext-theme-neptune\ext-theme-neptune-all.css" />
+    <Content Include="ods\scripts\ext\resources\ext-theme-neptune\images\btn\btn-default-small-corners.gif" />
+    <Content Include="ods\scripts\ext\resources\ext-theme-neptune\images\btn\btn-default-small-fbg.gif" />
+    <Content Include="ods\scripts\ext\resources\ext-theme-neptune\images\btn\btn-default-small-sides.gif" />
+    <Content Include="ods\scripts\ext\resources\ext-theme-neptune\images\btn\btn-default-toolbar-small-corners.gif" />
+    <Content Include="ods\scripts\ext\resources\ext-theme-neptune\images\btn\btn-default-toolbar-small-disabled-corners.gif" />
+    <Content Include="ods\scripts\ext\resources\ext-theme-neptune\images\btn\btn-default-toolbar-small-disabled-fbg.gif" />
+    <Content Include="ods\scripts\ext\resources\ext-theme-neptune\images\btn\btn-default-toolbar-small-disabled-sides.gif" />
+    <Content Include="ods\scripts\ext\resources\ext-theme-neptune\images\btn\btn-default-toolbar-small-fbg.gif" />
+    <Content Include="ods\scripts\ext\resources\ext-theme-neptune\images\btn\btn-default-toolbar-small-focus-corners.gif" />
+    <Content Include="ods\scripts\ext\resources\ext-theme-neptune\images\btn\btn-default-toolbar-small-focus-fbg.gif" />
+    <Content Include="ods\scripts\ext\resources\ext-theme-neptune\images\btn\btn-default-toolbar-small-focus-sides.gif" />
+    <Content Include="ods\scripts\ext\resources\ext-theme-neptune\images\btn\btn-default-toolbar-small-over-corners.gif" />
+    <Content Include="ods\scripts\ext\resources\ext-theme-neptune\images\btn\btn-default-toolbar-small-over-fbg.gif" />
+    <Content Include="ods\scripts\ext\resources\ext-theme-neptune\images\btn\btn-default-toolbar-small-over-sides.gif" />
+    <Content Include="ods\scripts\ext\resources\ext-theme-neptune\images\btn\btn-default-toolbar-small-pressed-corners.gif" />
+    <Content Include="ods\scripts\ext\resources\ext-theme-neptune\images\btn\btn-default-toolbar-small-pressed-fbg.gif" />
+    <Content Include="ods\scripts\ext\resources\ext-theme-neptune\images\btn\btn-default-toolbar-small-pressed-sides.gif" />
+    <Content Include="ods\scripts\ext\resources\ext-theme-neptune\images\btn\btn-default-toolbar-small-sides.gif" />
+    <Content Include="ods\scripts\ext\resources\ext-theme-neptune\images\button\default-toolbar-small-arrow.png" />
+    <Content Include="ods\scripts\ext\resources\ext-theme-neptune\images\datepicker\arrow-left.png" />
+    <Content Include="ods\scripts\ext\resources\ext-theme-neptune\images\datepicker\arrow-right.png" />
+    <Content Include="ods\scripts\ext\resources\ext-theme-neptune\images\datepicker\month-arrow.png" />
+    <Content Include="ods\scripts\ext\resources\ext-theme-neptune\images\form\checkbox.png" />
+    <Content Include="ods\scripts\ext\resources\ext-theme-neptune\images\form\date-trigger.png" />
+    <Content Include="ods\scripts\ext\resources\ext-theme-neptune\images\form\exclamation.png" />
+    <Content Include="ods\scripts\ext\resources\ext-theme-neptune\images\form\spinner.png" />
+    <Content Include="ods\scripts\ext\resources\ext-theme-neptune\images\form\trigger.png" />
+    <Content Include="ods\scripts\ext\resources\ext-theme-neptune\images\grid\page-first.png" />
+    <Content Include="ods\scripts\ext\resources\ext-theme-neptune\images\grid\page-last.png" />
+    <Content Include="ods\scripts\ext\resources\ext-theme-neptune\images\grid\page-next.png" />
+    <Content Include="ods\scripts\ext\resources\ext-theme-neptune\images\grid\page-prev.png" />
+    <Content Include="ods\scripts\ext\resources\ext-theme-neptune\images\grid\refresh.png" />
+    <Content Include="ods\scripts\ext\resources\ext-theme-neptune\images\loadmask\loading.gif" />
+    <Content Include="ods\scripts\ext\resources\ext-theme-neptune\images\menu\scroll-top.png" />
+    <Content Include="ods\scripts\ext\resources\ext-theme-neptune\images\sizer\e-handle.png" />
+    <Content Include="ods\scripts\ext\resources\ext-theme-neptune\images\sizer\ne-handle.png" />
+    <Content Include="ods\scripts\ext\resources\ext-theme-neptune\images\sizer\nw-handle.png" />
+    <Content Include="ods\scripts\ext\resources\ext-theme-neptune\images\sizer\s-handle.png" />
+    <Content Include="ods\scripts\ext\resources\ext-theme-neptune\images\sizer\se-handle.png" />
+    <Content Include="ods\scripts\ext\resources\ext-theme-neptune\images\sizer\sw-handle.png" />
+    <Content Include="ods\scripts\ext\resources\ext-theme-neptune\images\tab-bar\default-scroll-left.png" />
+    <Content Include="ods\scripts\ext\resources\ext-theme-neptune\images\tab-bar\default-scroll-right.png" />
+    <Content Include="ods\scripts\ext\resources\ext-theme-neptune\images\tab\tab-default-top-active-corners.gif" />
+    <Content Include="ods\scripts\ext\resources\ext-theme-neptune\images\tab\tab-default-top-active-sides.gif" />
+    <Content Include="ods\scripts\ext\resources\ext-theme-neptune\images\tab\tab-default-top-corners.gif" />
+    <Content Include="ods\scripts\ext\resources\ext-theme-neptune\images\tab\tab-default-top-over-corners.gif" />
+    <Content Include="ods\scripts\ext\resources\ext-theme-neptune\images\tab\tab-default-top-over-sides.gif" />
+    <Content Include="ods\scripts\ext\resources\ext-theme-neptune\images\tab\tab-default-top-sides.gif" />
+    <Content Include="ods\scripts\ext\resources\ext-theme-neptune\images\tip\tip-default-corners.gif" />
+    <Content Include="ods\scripts\ext\resources\ext-theme-neptune\images\tip\tip-default-sides.gif" />
+    <Content Include="ods\scripts\ext\resources\ext-theme-neptune\images\tools\tool-sprites-dark.png" />
+    <Content Include="ods\scripts\ext\resources\ext-theme-neptune\images\tools\tool-sprites.png" />
+    <Content Include="ods\scripts\ext\resources\themes\images\default\grid\checked.gif" />
+    <Content Include="ods\scripts\ext\resources\themes\images\default\grid\unchecked.gif" />
+    <Content Include="ods\scripts\ext\resources\themes\images\default\tree\s.gif" />
+    <Content Include="ods\scripts\ext\ux\CheckCombo.js" />
+    <Content Include="ods\scripts\ext\ux\Comboboxtree.js" />
+    <Content Include="ods\scripts\ext\ux\css\CheckCombo.css" />
+    <Content Include="ods\scripts\ext\ux\HeaderToolTip.js" />
+    <Content Include="ods\scripts\ext\ux\PagingMemoryProxy.js" />
+    <Content Include="QuestionMain.aspx" />
+    <Content Include="sb\gycwbb\sb000_chdpl.js" />
+    <Content Include="sb\gycwbb\sb000_cqdtfydpl.js" />
+    <Content Include="sb\gycwbb\sb000_cqgptzdpl.js" />
+    <Content Include="sb\gycwbb\sb000_cqtzdpl.js" />
+    <Content Include="sb\gycwbb\sb000_cqzqtzdpl.js" />
+    <Content Include="sb\gycwbb\sb000_dqtzdpl.js" />
+    <Content Include="sb\gycwbb\sb000_fyazxzfldbcsm.js" />
+    <Content Include="sb\gycwbb\sb000_gdzcdpl.js" />
+    <Content Include="sb\gycwbb\sb000_ndcwkjbgshbg.js" />
+    <Content Include="sb\gycwbb\sb000_qtsygxmjsdshzrsyqk.js" />
+    <Content Include="sb\gycwbb\sb000_qtzhsygxmdtjqk.js" />
+    <Content Include="sb\gycwbb\sb000_qykjzdfz.js" />
+    <Content Include="sb\gycwbb\sb000_qykjzzfz.js" />
+    <Content Include="sb\gycwbb\sb000_wxzcdpl.js" />
+    <Content Include="sb\gycwbb\sb000_yfzcfzzhzb.js" />
+    <Content Include="sb\gycwbb\sb000_yszkdpl.js" />
+    <Content Include="sb\gy\sbdr_gy.js" />
+    <Content Include="sb\gy\sb_constants.js" />
+    <Content Include="sb\gy\sb_gy.js" />
+    <Content Include="sb\sb000\sb000_fjssb.js" />
+    <Content Include="sb\sb000\sb000_fjssb_formula.js" />
+    <Content Include="sb\sb000\sb000_Head.js" />
+    <Content Include="sb\sb000\sb_nspgzcbbtzs.js" />
+    <Content Include="sb\sb000\sb_tempsave.js" />
+    <Content Include="sb\sb001\sb001_xfssb.js" />
+    <Content Include="sb\sb001\sb001_xfssb_formula.js" />
+    <Content Include="sb\sb001\sb001_xfssb_frame.js" />
+    <Content Include="sb\sb057\sb057_sbcwgz.js" />
+    <Content Include="sb\sb071\sb071_htxx.js" />
+    <Content Include="sb\sb071\sb071_kjqysdssb2015.js" />
+    <Content Include="sb\sb071\sb071_zb_frame.js" />
+    <Content Include="sb\sb097\sb097_tydkdjsb.js" />
+    <Content Include="sb\sb097\sb097_tydkdjsb_frame.js" />
+    <Content Include="sb\sb099\sb099_qykjzzlrb.js" />
+    <Content Include="sb\sb099\sb099_qykjzzlrb_formula.js" />
+    <Content Include="sb\sb099\sb099_qykjzzsyzqybdb.js" />
+    <Content Include="sb\sb099\sb099_qykjzzsyzqybdb_formula.js" />
+    <Content Include="sb\sb099\sb099_qykjzzxjllb.js" />
+    <Content Include="sb\sb099\sb099_qykjzzxjllb_formula.js" />
+    <Content Include="sb\sb099\sb099_qykjzzzcfzb.js" />
+    <Content Include="sb\sb099\sb099_qykjzzzcfzb_formula.js" />
+    <Content Include="sb\sb100\sb100_qykjzdcwbbbsyxxcj00.js" />
+    <Content Include="sb\sb100\sb100_qykjzdcwbbbsyxxcj_frame.js" />
+    <Content Include="sb\sb100\sb100_qykjzdcwbbbsyxxcj_lrb.js" />
+    <Content Include="sb\sb100\sb100_qykjzdcwbbbsyxxcj_qyb.js" />
+    <Content Include="sb\sb100\sb100_qykjzdcwbbbsyxxcj_xjllb.js" />
+    <Content Include="sb\sb104\sb104_chdpl.js" />
+    <Content Include="sb\sb104\sb104_dqtzdpl.js" />
+    <Content Include="sb\sb104\sb104_gdzcdpl.js" />
+    <Content Include="sb\sb104\sb104_lrb.js" />
+    <Content Include="sb\sb104\sb104_lrbnbb.js" />
+    <Content Include="sb\sb104\sb104_lrfpb.js" />
+    <Content Include="sb\sb104\sb104_qykjzzfz.js" />
+    <Content Include="sb\sb104\sb104_xjllb.js" />
+    <Content Include="sb\sb104\sb104_xjllbnbb.js" />
+    <Content Include="sb\sb104\sb104_yfzgxcmxb.js" />
+    <Content Include="sb\sb104\sb104_yjsfmxb.js" />
+    <Content Include="sb\sb104\sb104_yszkazljgpl.js" />
+    <Content Include="sb\sb104\sb104_zcfzb.js" />
+    <Content Include="sb\sb151\sb151_zlbssldjb.js" />
+    <Content Include="sb\sb175\sb175_fxmtysb.js" />
+    <Content Include="sb\sb175\sb175_xzsy.js" />
+    <Content Include="sb\sb207\sb207_zzsyjnsb.js" />
+    <Content Include="sszsk\resource\css\defualt.css" />
+    <Content Include="sszsk\resource\css\jqGridUI\images\ui-bg_diagonals-thick_90_eeeeee_40x40.png" />
+    <Content Include="sszsk\resource\css\jqGridUI\images\ui-bg_glass_100_e4f1fb_1x400.png" />
+    <Content Include="sszsk\resource\css\jqGridUI\images\ui-bg_glass_50_3baae3_1x400.png" />
+    <Content Include="sszsk\resource\css\jqGridUI\images\ui-bg_glass_80_d7ebf9_1x400.png" />
+    <Content Include="sszsk\resource\css\jqGridUI\images\ui-bg_highlight-hard_100_f2f5f7_1x100.png" />
+    <Content Include="sszsk\resource\css\jqGridUI\images\ui-bg_highlight-soft_100_deedf7_1x100.png" />
+    <Content Include="sszsk\resource\css\jqGridUI\images\ui-icons_2694e8_256x240.png" />
+    <Content Include="sszsk\resource\css\jqGridUI\images\ui-icons_3d80b3_256x240.png" />
+    <Content Include="sszsk\resource\css\jqGridUI\images\ui-icons_72a7cf_256x240.png" />
+    <Content Include="sszsk\resource\css\jqGridUI\jquery-ui-1.8.17.custom.css" />
+    <Content Include="sszsk\resource\css\jqGridUI\jquery.ui.accordion.css" />
+    <Content Include="sszsk\resource\css\jqGridUI\jquery.ui.all.css" />
+    <Content Include="sszsk\resource\css\jqGridUI\jquery.ui.autocomplete.css" />
+    <Content Include="sszsk\resource\css\jqGridUI\jquery.ui.base.css" />
+    <Content Include="sszsk\resource\css\jqGridUI\jquery.ui.button.css" />
+    <Content Include="sszsk\resource\css\jqGridUI\jquery.ui.core.css" />
+    <Content Include="sszsk\resource\css\jqGridUI\jquery.ui.datepicker.css" />
+    <Content Include="sszsk\resource\css\jqGridUI\jquery.ui.dialog.css" />
+    <Content Include="sszsk\resource\css\jqGridUI\jquery.ui.progressbar.css" />
+    <Content Include="sszsk\resource\css\jqGridUI\jquery.ui.resizable.css" />
+    <Content Include="sszsk\resource\css\jqGridUI\jquery.ui.selectable.css" />
+    <Content Include="sszsk\resource\css\jqGridUI\jquery.ui.slider.css" />
+    <Content Include="sszsk\resource\css\jqGridUI\jquery.ui.tabs.css" />
+    <Content Include="sszsk\resource\css\jqGridUI\jquery.ui.theme.css" />
+    <Content Include="sszsk\resource\css\jqgrid\ui.jqgrid.css" />
+    <Content Include="sszsk\resource\css\jquery.autocomplete.css" />
+    <Content Include="sszsk\resource\css\treeUI\demo.css" />
+    <Content Include="sszsk\resource\css\treeUI\easyui.css" />
+    <Content Include="sszsk\resource\css\treeUI\icon.css" />
+    <Content Include="sszsk\resource\image\images\advanced.png" />
+    <Content Include="sszsk\resource\image\images\allflag.png" />
+    <Content Include="sszsk\resource\image\images\bzds.png" />
+    <Content Include="sszsk\resource\image\images\cjwt.png" />
+    <Content Include="sszsk\resource\image\images\head_bg.png" />
+    <Content Include="sszsk\resource\image\images\icons12.png" />
+    <Content Include="sszsk\resource\image\images\Min_logo.png" />
+    <Content Include="sszsk\resource\image\images\search_bg.png" />
+    <Content Include="sszsk\resource\image\images\search_bt.png" />
+    <Content Include="sszsk\resource\image\images\search_left.png" />
+    <Content Include="sszsk\resource\image\images\search_right.png" />
+    <Content Include="sszsk\resource\image\images\search_text.png" />
+    <Content Include="sszsk\resource\image\images\sswj.png" />
+    <Content Include="sszsk\resource\js\autocomplete\autocomplete.js" />
+    <Content Include="sszsk\resource\js\autocomplete\jquery.autocomplete.js" />
+    <Content Include="sszsk\resource\js\jqGrid-width.js" />
+    <Content Include="sszsk\resource\js\jqgrid\i18n\grid.locale-cn.js" />
+    <Content Include="sszsk\resource\js\jqgrid\jquery.jqGrid.min.js" />
+    <Content Include="sszsk\resource\js\jquery-1.8.0.js" />
+    <Content Include="sszsk\resource\js\jquery-utlis.js" />
+    <Content Include="sszsk\resource\js\jsTree\jquery.easyui.min.js" />
+    <Content Include="sszsk\resource\js\jsTree\tree.js" />
+    <Content Include="sszsk\resource\js\search\search.js" />
+    <Content Include="sszsk\szzsk\sousuo.aspx" />
+    <Content Include="swordweb\core\jsimport\Sword.js" />
+    <Content Include="swordweb\html\error\styles\errorinfo.css" />
+    <Content Include="swordweb\html\error\styles\images\arrow_down.gif" />
+    <Content Include="swordweb\html\error\styles\images\c_info.gif" />
+    <Content Include="swordweb\html\error\styles\images\error.png" />
+    <Content Include="swordweb\html\error\styles\images\message.png" />
+    <Content Include="swordweb\styles\gt3new\SwordCss\images\blue\blue-arrow.gif" />
+    <Content Include="swordweb\styles\gt3new\SwordCss\images\btn.png" />
+    <Content Include="swordweb\styles\gt3new\SwordCss\images\btn_bg2.gif" />
+    <Content Include="swordweb\styles\gt3new\SwordCss\images\cd2_cell_mouseover.gif" />
+    <Content Include="swordweb\styles\gt3new\SwordCss\images\cd2_cell_selected.gif" />
+    <Content Include="swordweb\styles\gt3new\SwordCss\images\closeicon.gif" />
+    <Content Include="swordweb\styles\gt3new\SwordCss\images\cssbtn_bg.jpg" />
+    <Content Include="swordweb\styles\gt3new\SwordCss\images\dateBtn1.png" />
+    <Content Include="swordweb\styles\gt3new\SwordCss\images\date_bg.png" />
+    <Content Include="swordweb\styles\gt3new\SwordCss\images\date_bg2.png" />
+    <Content Include="swordweb\styles\gt3new\SwordCss\images\edit.png" />
+    <Content Include="swordweb\styles\gt3new\SwordCss\images\export.png" />
+    <Content Include="swordweb\styles\gt3new\SwordCss\images\export_click.png" />
+    <Content Include="swordweb\styles\gt3new\SwordCss\images\find_click.png" />
+    <Content Include="swordweb\styles\gt3new\SwordCss\images\form_s_s.gif" />
+    <Content Include="swordweb\styles\gt3new\SwordCss\images\headbg.gif" />
+    <Content Include="swordweb\styles\gt3new\SwordCss\images\horizontal-line.gif" />
+    <Content Include="swordweb\styles\gt3new\SwordCss\images\icon_collapse.png" />
+    <Content Include="swordweb\styles\gt3new\SwordCss\images\icon_expand.png" />
+    <Content Include="swordweb\styles\gt3new\SwordCss\images\icon_normal.png" />
+    <Content Include="swordweb\styles\gt3new\SwordCss\images\ico_close.png" />
+    <Content Include="swordweb\styles\gt3new\SwordCss\images\import_click.png" />
+    <Content Include="swordweb\styles\gt3new\SwordCss\images\import_disable.png" />
+    <Content Include="swordweb\styles\gt3new\SwordCss\images\leaficon.gif" />
+    <Content Include="swordweb\styles\gt3new\SwordCss\images\leftrigthBtn.png" />
+    <Content Include="swordweb\styles\gt3new\SwordCss\images\line.gif" />
+    <Content Include="swordweb\styles\gt3new\SwordCss\images\loadingbar.gif" />
+    <Content Include="swordweb\styles\gt3new\SwordCss\images\next.gif" />
+    <Content Include="swordweb\styles\gt3new\SwordCss\images\nextPage.png" />
+    <Content Include="swordweb\styles\gt3new\SwordCss\images\nextPage_click.png" />
+    <Content Include="swordweb\styles\gt3new\SwordCss\images\pageloading.gif" />
+    <Content Include="swordweb\styles\gt3new\SwordCss\images\page_bg.gif" />
+    <Content Include="swordweb\styles\gt3new\SwordCss\images\pre.gif" />
+    <Content Include="swordweb\styles\gt3new\SwordCss\images\pre2.gif" />
+    <Content Include="swordweb\styles\gt3new\SwordCss\images\print.png" />
+    <Content Include="swordweb\styles\gt3new\SwordCss\images\print_click.png" />
+    <Content Include="swordweb\styles\gt3new\SwordCss\images\print_disable.png" />
+    <Content Include="swordweb\styles\gt3new\SwordCss\images\redo_disable.png" />
+    <Content Include="swordweb\styles\gt3new\SwordCss\images\refresh.png" />
+    <Content Include="swordweb\styles\gt3new\SwordCss\images\refresh_click.png" />
+    <Content Include="swordweb\styles\gt3new\SwordCss\images\refresh_disable.png" />
+    <Content Include="swordweb\styles\gt3new\SwordCss\images\review_click.png" />
+    <Content Include="swordweb\styles\gt3new\SwordCss\images\save.png" />
+    <Content Include="swordweb\styles\gt3new\SwordCss\images\save_click.png" />
+    <Content Include="swordweb\styles\gt3new\SwordCss\images\save_disable.png" />
+    <Content Include="swordweb\styles\gt3new\SwordCss\images\table2.png" />
+    <Content Include="swordweb\styles\gt3new\SwordCss\images\tishi.png" />
+    <Content Include="swordweb\styles\gt3new\SwordCss\images\title_bg_center.gif" />
+    <Content Include="swordweb\styles\gt3new\SwordCss\images\title_bg_left.gif" />
+    <Content Include="swordweb\styles\gt3new\SwordCss\images\title_bg_right.gif" />
+    <Content Include="swordweb\styles\gt3new\SwordCss\images\toolbarbg_bg.gif" />
+    <Content Include="swordweb\styles\gt3new\SwordCss\images\toolbarbg_click.jpg" />
+    <Content Include="swordweb\styles\gt3new\SwordCss\images\toolbarbg_mov.jpg" />
+    <Content Include="swordweb\styles\gt3new\SwordCss\images\toolbarbg_out.jpg" />
+    <Content Include="swordweb\styles\gt3new\SwordCss\images\tree-gadjet-plus.gif" />
+    <Content Include="swordweb\styles\gt3new\SwordCss\images\trigger.gif" />
+    <Content Include="swordweb\styles\gt3new\SwordCss\images\warning.png" />
+    <Content Include="swordweb\styles\gt3new\SwordCss\sword_min.css" />
+    <Content Include="sword_CX301DzcxCtrl_initView.aspx" />
+    <Content Include="sword_CX301DzcxCtrl_initView_00010061211.aspx" />
+    <Content Include="sword_CX301DzcxCtrl_initView_CX301DzcxCtrl_initView.aspx" />
+    <Content Include="sword_SB001XfssbCtrl_initView_SB001XfssbCtrl_initView.aspx" />
+    <Content Include="sword_SB057SbcwgzCtrl_initView_SB057SbcwgzCtrl_initView.aspx" />
+    <Content Include="sword_SB071Kjqysdssb2015Ctrl_initView_SB071Kjqysdssb2015Ctrl_initView.aspx" />
+    <Content Include="sword_SB097TydkdjsbCtrl_initView_SB097TydkdjsbCtrl_initView.aspx" />
+    <Content Include="sword_SB099QykjzzcwbbbsyxxcjCtrl_toSbfb.aspx" />
+    <Content Include="sword_SB099QykjzzcwbbbsyxxcjCtrl_toSbfb1.aspx" />
+    <Content Include="sword_SB099QykjzzcwbbbsyxxcjCtrl_toSbfb2.aspx" />
+    <Content Include="sword_SB100QykjzdcwbbbsyxxcjCtrl_toSbfb.aspx" />
+    <Content Include="sword_SB100QykjzdcwbbbsyxxcjCtrl_toSbfb_qyb.aspx" />
+    <Content Include="sword_SB100QykjzdcwbbbsyxxcjCtrl_toSbfb_xjllb.aspx" />
+    <Content Include="sword_SB104xqykjzzcwbsCtrl_toSbfb_01.aspx" />
+    <Content Include="sword_SB104xqykjzzcwbsCtrl_toSbfb_02.aspx" />
+    <Content Include="sword_SB104xqykjzzcwbsCtrl_toSbfb_03.aspx" />
+    <Content Include="sword_SB104xqykjzzcwbsCtrl_toSbfb_04.aspx" />
+    <Content Include="sword_SB104xqykjzzcwbsCtrl_toSbfb_05.aspx" />
+    <Content Include="sword_SB104xqykjzzcwbsCtrl_toSbfb_06.aspx" />
+    <Content Include="sword_SB104xqykjzzcwbsCtrl_toSbfb_07.aspx" />
+    <Content Include="sword_SB104xqykjzzcwbsCtrl_toSbfb_08.aspx" />
+    <Content Include="sword_SB104xqykjzzcwbsCtrl_toSbfb_09.aspx" />
+    <Content Include="sword_SB104xqykjzzcwbsCtrl_toSbfb_10.aspx" />
+    <Content Include="sword_SB151zlbsslCtrl_initView.aspx" />
+    <Content Include="sword_SB207zzsyjnssbCtrl_initView_SB207zzsyjnssbCtrl_initView.aspx" />
+    <Content Include="sword_SB207zzsyjnssbCtrl_toSbfb.aspx" />
+    <Content Include="sword_SBGyCtrl_toCwbbSbfb04.aspx" />
+    <Content Include="sword_SBGyCtrl_toCwbbSbfb05.aspx" />
+    <Content Include="sword_SBGyCtrl_toCwbbSbfb06.aspx" />
+    <Content Include="sword_SBGyCtrl_toCwbbSbfb07.aspx" />
+    <Content Include="sword_SBGyCtrl_toCwbbSbfb08.aspx" />
+    <Content Include="sword_SBGyCtrl_toCwbbSbfb09.aspx" />
+    <Content Include="sword_SBGyCtrl_toCwbbSbfb_ZL1001001_04.aspx" />
+    <Content Include="sword_SBGyCtrl_toCwbbSbfb_ZL1001001_05.aspx" />
+    <Content Include="sword_SBGyCtrl_toCwbbSbfb_ZL1001001_06.aspx" />
+    <Content Include="sword_SBGyCtrl_toCwbbSbfb_ZL1001001_07.aspx" />
+    <Content Include="sword_SBGyCtrl_toCwbbSbfb_ZL1001001_08.aspx" />
+    <Content Include="sword_SBGyCtrl_toCwbbSbfb_ZL1001001_09.aspx" />
+    <Content Include="sword_SBGyCtrl_toCwbbSbfb_ZL1001002_04.aspx" />
+    <Content Include="sword_SBGyCtrl_toCwbbSbfb_ZL1001002_05.aspx" />
+    <Content Include="sword_SBGyCtrl_toCwbbSbfb_ZL1001002_06.aspx" />
+    <Content Include="sword_SBGyCtrl_toCwbbSbfb_ZL1001002_07.aspx" />
+    <Content Include="sword_SBGyCtrl_toCwbbSbfb_ZL1001002_08.aspx" />
+    <Content Include="sword_SBGyCtrl_toCwbbSbfb_ZL1001002_09.aspx" />
+    <Content Include="sword_SBGyCtrl_toCwbbSbfb_ZL1001002_10.aspx" />
+    <Content Include="sword_SBGyCtrl_toCwbbSbfb_ZL1001002_11.aspx" />
+    <Content Include="sword_SBGyCtrl_toCwbbSbfb_ZL1001002_12.aspx" />
+    <Content Include="sword_SBGyCtrl_toCwbbSbfb_ZL1001002_13.aspx" />
+    <Content Include="sword_SBGyCtrl_toCwbbSbfb_ZL1001002_14.aspx" />
+    <Content Include="sword_SBGyCtrl_toCwbbSbfb_ZL1001002_15.aspx" />
+    <Content Include="sword_SBGyCtrl_toCwbbSbfb_ZL1001003_11.aspx" />
+    <Content Include="sword_SBGyCtrl_toCwbbSbfb_ZL1001003_12.aspx" />
+    <Content Include="sword_SBGyCtrl_toCwbbSbfb_ZL1001003_13.aspx" />
+    <Content Include="sword_SBGyCtrl_toCwbbSbfb_ZL1001003_14.aspx" />
+    <Content Include="sword_SwordPage_redirect.aspx" />
+    <Content Include="sword_WbdltzCtrl_forwardBizCtrl.aspx" />
+    <Content Include="sword_WbdltzCtrl_forwardBizCtrl_00010061211.aspx" />
+    <Content Include="sword_WbdltzCtrl_forwardBizCtrl_SB001XfssbCtrl_initView.aspx" />
+    <Content Include="sword_WbdltzCtrl_forwardBizCtrl_SB057SbcwgzCtrl_initView.aspx" />
+    <Content Include="sword_WbdltzCtrl_forwardBizCtrl_SB071Kjqysdssb2015Ctrl_initView.aspx" />
+    <Content Include="sword_WbdltzCtrl_forwardBizCtrl_SB097TydkdjsbCtrl_initView.aspx" />
+    <Content Include="sword_WbdltzCtrl_forwardBizCtrl_SB207zzsyjnssbCtrl_initView.aspx" />
+    <Content Include="VideoManage\css\QuestionMain.css" />
+    <Content Include="VideoManage\css\VideoIndex.css" />
+    <Content Include="VideoManage\image\bc.png" />
+    <Content Include="VideoManage\image\book.png" />
+    <Content Include="VideoManage\image\circle.png" />
+    <Content Include="VideoManage\image\mrd.png" />
+    <Content Include="VideoManage\image\xzz.png" />
+    <Content Include="VideoManage\js\mask.js" />
+    <Content Include="VideoManage\VideoGDTax.aspx" />
+    <Content Include="VideoManage\VideoManage.aspx" />
+    <Content Include="VideoManage\videostyle\image\arrow.png" />
+    <Content Include="VideoManage\videostyle\image\left.png" />
+    <Content Include="VideoManage\videostyle\image\play.png" />
+    <Content Include="VideoManage\videostyle\image\right.png" />
+    <Content Include="VideoManage\videostyle\jquery-1.8.0.min.js" />
+    <Content Include="VideoManage\videostyle\memcachecheck.js" />
+    <Content Include="VideoManage\videostyle\player.swf" />
+    <Content Include="VideoManage\videostyle\polyvplayer.min.js" />
+    <Content Include="VideoManage\videostyle\video.css" />
+    <Content Include="VideoManage\videostyle\video.js" />
+    <Content Include="Video\css\boxsizing.htc" />
+    <Content Include="Video\css\video.css" />
+    <Content Include="Video\images\dot.png" />
+    <Content Include="Video\images\left.png" />
+    <Content Include="Video\images\play.png" />
+    <Content Include="Video\images\return.png" />
+    <Content Include="Video\images\right.png" />
+    <Content Include="Video\js\jquery-1.12.4.min.js" />
+    <Content Include="Video\js\video.js" />
+    <Content Include="Video\Video.aspx" />
+    <Content Include="Web.config">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="wsbs\pages\layout\layout3\cacheAdapter.js" />
+    <Content Include="WSSBSL\css\css.css" />
+    <Content Include="WSSBSL\css\report.css" />
+    <Content Include="WSSBSL\easyUI\jquery-1.8.0.min.js" />
+    <Content Include="WSSBSL\easyUI\jquery.easyui.min.js" />
+    <Content Include="WSSBSL\easyUI\locale\easyui-lang-zh_CN.js" />
+    <Content Include="WSSBSL\easyUI\themes\default\easyui.css" />
+    <Content Include="WSSBSL\easyUI\themes\default\images\accordion_arrows.png" />
+    <Content Include="WSSBSL\easyUI\themes\default\images\blank.gif" />
+    <Content Include="WSSBSL\easyUI\themes\default\images\layout_arrows.png" />
+    <Content Include="WSSBSL\easyUI\themes\default\images\linkbutton_bg.png" />
+    <Content Include="WSSBSL\easyUI\themes\default\images\menu_arrows.png" />
+    <Content Include="WSSBSL\easyUI\themes\default\images\messager_icons.png" />
+    <Content Include="WSSBSL\easyUI\themes\default\images\panel_tools.png" />
+    <Content Include="WSSBSL\easyUI\themes\default\images\tabs_icons.png" />
+    <Content Include="WSSBSL\easyUI\themes\default\images\validatebox_arrows.png" />
+    <Content Include="WSSBSL\easyUI\themes\default\images\validatebox_warning.png" />
+    <Content Include="WSSBSL\easyUI\themes\icon.css" />
+    <Content Include="WSSBSL\easyUI\themes\icons\cancel.png" />
+    <Content Include="WSSBSL\easyUI\themes\icons\edit_add.png" />
+    <Content Include="WSSBSL\easyUI\themes\icons\edit_remove.png" />
+    <Content Include="WSSBSL\easyUI\themes\icons\exit.png" />
+    <Content Include="WSSBSL\easyUI\themes\icons\filesave.png" />
+    <Content Include="WSSBSL\easyUI\themes\icons\help.png" />
+    <Content Include="WSSBSL\easyUI\themes\icons\home.png" />
+    <Content Include="WSSBSL\easyUI\themes\icons\print.png" />
+    <Content Include="WSSBSL\easyUI\themes\icons\redo.png" />
+    <Content Include="WSSBSL\easyUI\themes\icons\reload.png" />
+    <Content Include="WSSBSL\easyUI\themes\icons\search.png" />
+    <Content Include="WSSBSL\easyUI\themes\icons\service.png" />
+    <Content Include="WSSBSL\easyUI\themes\icons\table.png" />
+    <Content Include="WSSBSL\easyUI\themes\icons\tip.png" />
+    <Content Include="WSSBSL\Fcalendar.js" />
+    <Content Include="WSSBSL\Ffilter.js" />
+    <Content Include="WSSBSL\Finput.js" />
+    <Content Include="WSSBSL\FlineInput.js" />
+    <Content Include="WSSBSL\Frqdialog.js" />
+    <Content Include="WSSBSL\Fselect.js" />
+    <Content Include="WSSBSL\gt3_public\cacheindex.js" />
+    <Content Include="WSSBSL\gt3_public\kxtdy.js" />
+    <Content Include="WSSBSL\gt3_public\mootools-1.2.1-all.js" />
+    <Content Include="WSSBSL\gt3_public\sbbzz.js" />
+    <Content Include="WSSBSL\images\jxzy.png" />
+    <Content Include="WSSBSL\images\login\login-bt.png" />
+    <Content Include="WSSBSL\images\login\reser-bt.png" />
+    <Content Include="WSSBSL\images\logo.png" />
+    <Content Include="WSSBSL\images\managebj.jpg" />
+    <Content Include="WSSBSL\images\point.png" />
+    <Content Include="WSSBSL\images\topbj.gif" />
+    <Content Include="WSSBSL\images\zz.gif" />
+    <Content Include="WSSBSL\js\common\check.js" />
+    <Content Include="WSSBSL\js\common\common.js" />
+    <Content Include="WSSBSL\js\common\highcharts.js" />
+    <Content Include="WSSBSL\js\My97DatePicker\skin\default\img.gif" />
+    <Content Include="WSSBSL\js\page\ndsdsA\common\check.js" />
+    <Content Include="WSSBSL\js\page\ndsdsA\common\common.js" />
+    <Content Include="WSSBSL\js\page\ndsdsA\common\highcharts.js" />
+    <Content Include="WSSBSL\js\easyUI\dialog.js" />
+    <Content Include="WSSBSL\js\easyUI\pop.js" />
+    <Content Include="WSSBSL\js\easyUI\tabs.js" />
+    <Content Include="WSSBSL\js\easyUI\window.js" />
+    <Content Include="WSSBSL\js\My97DatePicker\calendar.js" />
+    <Content Include="WSSBSL\js\My97DatePicker\lang\zh-cn.js" />
+    <Content Include="WSSBSL\js\My97DatePicker\skin\default\datepicker.css" />
+    <Content Include="WSSBSL\js\My97DatePicker\skin\WdatePicker.css" />
+    <Content Include="WSSBSL\js\My97DatePicker\WdatePicker.js" />
+    <Content Include="WSSBSL\js\page\common\tsxx.js" />
+    <Content Include="WSSBSL\js\page\common\xgmm.js" />
+    <Content Include="WSSBSL\js\page\cwkjzdba\cwkjzdbaList.js" />
+    <Content Include="WSSBSL\js\page\cwkjzdba\cxCwkjzdbaList.js" />
+    <Content Include="WSSBSL\js\page\index\index.js" />
+    <Content Include="WSSBSL\js\page\index\indexMain.js" />
+    <Content Include="WSSBSL\js\page\index\nsrBaseInfo.js" />
+    <Content Include="WSSBSL\js\page\index\nsrdjszxxcx.js" />
+    <Content Include="WSSBSL\js\page\index\sssxjdcx.js" />
+    <Content Include="WSSBSL\js\page\index\xtgxrz.js" />
+    <Content Include="WSSBSL\js\page\jdsds2012\cxJdsds2012ABbList.js" />
+    <Content Include="WSSBSL\js\page\jdsds2012\jdsds2012ABbList.js" />
+    <Content Include="WSSBSL\js\page\jhhg\jh_hgjkjks.js" />
+    <Content Include="WSSBSL\js\page\jhhg\jh_hgjkjks_jgtzs.js" />
+    <Content Include="WSSBSL\js\page\jhhg\jh_hgjkjks_jhjgcx.js" />
+    <Content Include="WSSBSL\js\page\jhhg\jh_hgjkjks_mxsjsc.js" />
+    <Content Include="WSSBSL\js\page\jhhg\jh_hgjkjks_sbjzqcx.js" />
+    <Content Include="WSSBSL\js\page\jhhg\jh_hgjkjks_zlfpcx.js" />
+    <Content Include="WSSBSL\js\page\ndsdsA\cxNdsdsABbList.js" />
+    <Content Include="WSSBSL\js\page\ndsdsA\ndsdsABbList.js" />
+    <Content Include="WSSBSL\js\page\qyndglyw2016\qyndglyw2016BbList.js" />
+    <Content Include="WSSBSL\js\page\report\clearAndKeepCalc.js" />
+    <Content Include="WSSBSL\js\page\report\reportCheck.js" />
+    <Content Include="WSSBSL\js\page\report\reportCheckOnClick.js" />
+    <Content Include="WSSBSL\js\page\report\reportDataCheck.js" />
+    <Content Include="WSSBSL\js\page\report\reportPopSelect.js" />
+    <Content Include="WSSBSL\js\page\report\reportTdPop.js" />
+    <Content Include="WSSBSL\js\page\report\showReport.js" />
+    <Content Include="WSSBSL\js\page\scxz\yffyjjkc_sc.js" />
+    <Content Include="WSSBSL\js\page\scxz\yffyjjkc_xz.js" />
+    <Content Include="WSSBSL\js\page\skjn\dqwjsk.js" />
+    <Content Include="WSSBSL\js\page\skjn\jkjlcx.js" />
+    <Content Include="WSSBSL\js\page\skjn\kksdcx.js" />
+    <Content Include="WSSBSL\js\page\skjn\sdkkjl.js" />
+    <Content Include="WSSBSL\js\page\sljsjj\bcsbSljsjjBbList.js" />
+    <Content Include="WSSBSL\js\page\sljsjj\cxSljsjjBbList.js" />
+    <Content Include="WSSBSL\js\page\sljsjj\sljsjjBbList.js" />
+    <Content Include="WSSBSL\js\page\whsyjsf\cxWhsyjsfBbList.js" />
+    <Content Include="WSSBSL\js\page\wtkkxy\wtkkxys.js" />
+    <Content Include="WSSBSL\js\page\zzs2013Ybnsr\cxZzs2013YbnsrBbList.js" />
+    <Content Include="WSSBSL\js\page\zzs2013Ybnsr\zzs2013YbnsrBbList.js" />
+    <Content Include="WSSBSL\js\page\zzsxgm\cxZzs2013XgmBbList.js" />
+    <Content Include="WSSBSL\lodop\LodopFuncs.js" />
+    <Content Include="WSSBSL\lodop\myPrint.js" />
+    <Content Include="WSSBSL\reportJsp\showCxReport_bqdkjxsejgmxb.aspx" />
+    <Content Include="WSSBSL\reportJsp\showCxReport_cwkjzdba.aspx" />
+    <Content Include="WSSBSL\reportJsp\showCxReport_gdzcjx.aspx" />
+    <Content Include="WSSBSL\reportJsp\showCxReport_jdsds2015A.aspx" />
+    <Content Include="WSSBSL\reportJsp\showCxReport_jdsds2015Fb03.aspx" />
+    <Content Include="WSSBSL\reportJsp\showCxReport_sb_ndsds_2014_fb1.aspx" />
+    <Content Include="WSSBSL\reportJsp\showCxReport_sb_ndsds_2014_fb12.aspx" />
+    <Content Include="WSSBSL\reportJsp\showCxReport_sb_ndsds_2014_fb22.aspx" />
+    <Content Include="WSSBSL\reportJsp\showCxReport_sb_ndsds_2014_fb3.aspx" />
+    <Content Include="WSSBSL\reportJsp\showCxReport_sb_ndsds_2014_fb30.aspx" />
+    <Content Include="WSSBSL\reportJsp\showCxReport_sb_ndsds_2014_fb6.aspx" />
+    <Content Include="WSSBSL\reportJsp\showCxReport_sb_ndsds_2014_fb7.aspx" />
+    <Content Include="WSSBSL\reportJsp\showCxReport_sb_ndsds_2014_fm.aspx" />
+    <Content Include="WSSBSL\reportJsp\showCxReport_sb_ndsds_2014_jcxx.aspx" />
+    <Content Include="WSSBSL\reportJsp\showCxReport_sb_ndsds_2014_tbbd.aspx" />
+    <Content Include="WSSBSL\reportJsp\showCxReport_sb_ndsds_2014_zb.aspx" />
+    <Content Include="WSSBSL\reportJsp\showCxReport_sljsjj.aspx" />
+    <Content Include="WSSBSL\reportJsp\showCxReport_whsyjsfsbb.aspx" />
+    <Content Include="WSSBSL\reportJsp\showCxReport_ybnsrFb1.aspx" />
+    <Content Include="WSSBSL\reportJsp\showCxReport_ybnsrFb2.aspx" />
+    <Content Include="WSSBSL\reportJsp\showCxReport_ybnsrFb3.aspx" />
+    <Content Include="WSSBSL\reportJsp\showCxReport_ybnsrFb4.aspx" />
+    <Content Include="WSSBSL\reportJsp\showCxReport_ybnsrFb5.aspx" />
+    <Content Include="WSSBSL\reportJsp\showCxReport_ybnsrZb.aspx" />
+    <Content Include="WSSBSL\reportJsp\showCxReport_ysfwkcxmqd.aspx" />
+    <Content Include="WSSBSL\reportJsp\showCxReport_zzsJmssbMxb.aspx" />
+    <Content Include="WSSBSL\reportJsp\showReport_bfcpxstjb.aspx" />
+    <Content Include="WSSBSL\reportJsp\showReport_bqdkjxsejgmxb.aspx" />
+    <Content Include="WSSBSL\reportJsp\showReport_bqdkjxsejgmxb_bc.aspx" />
+    <Content Include="WSSBSL\reportJsp\showReport_cwkjzdba.aspx" />
+    <Content Include="WSSBSL\reportJsp\showReport_gdzcjx.aspx" />
+    <Content Include="WSSBSL\reportJsp\showReport_gdzcjx_bc.aspx" />
+    <Content Include="WSSBSL\reportJsp\showReport_hznsqyzzsfpb.aspx" />
+    <Content Include="WSSBSL\reportJsp\showReport_sffxcsmxb.aspx" />
+    <Content Include="WSSBSL\reportJsp\showReport_sffxcsmxb_bc.aspx" />
+    <Content Include="WSSBSL\reportJsp\showReport_sljsjj.aspx" />
+    <Content Include="WSSBSL\reportJsp\showReport_ybnsrFb1.aspx" />
+    <Content Include="WSSBSL\reportJsp\showReport_ybnsrFb1_bc.aspx" />
+    <Content Include="WSSBSL\reportJsp\showReport_ybnsrFb2.aspx" />
+    <Content Include="WSSBSL\reportJsp\showReport_ybnsrFb2_bc.aspx" />
+    <Content Include="WSSBSL\reportJsp\showReport_ybnsrFb3.aspx" />
+    <Content Include="WSSBSL\reportJsp\showReport_ybnsrFb3_bc.aspx" />
+    <Content Include="WSSBSL\reportJsp\showReport_ybnsrFb4.aspx" />
+    <Content Include="WSSBSL\reportJsp\showReport_ybnsrFb4_bc.aspx" />
+    <Content Include="WSSBSL\reportJsp\showReport_ybnsrFb5.aspx" />
+    <Content Include="WSSBSL\reportJsp\showReport_ybnsrFb5_bc.aspx" />
+    <Content Include="WSSBSL\reportJsp\showReport_ybnsrZb.aspx" />
+    <Content Include="WSSBSL\reportJsp\showReport_ybnsrZb_bc.aspx" />
+    <Content Include="WSSBSL\reportJsp\showReport_zzsJmssbMxb.aspx" />
+    <Content Include="WSSBSL\reportJsp\showReport_zzsJmssbMxb_bc.aspx" />
+    <Content Include="WSSBSL\reportJsp\success.aspx" />
+    <Content Include="WSSBSL\reportJsp\YBNSR_ZZS_JMSSB_YD_TEMP_JS.html" />
+    <Content Include="WSSBSL\reportJsp\YBNSR_ZZS_JMSSB_YD_TEMP_MS.html" />
+    <Content Include="WSSBSL\reportServlet.aspx" />
+    <Content Include="WSSBSL\reportServlet25.aspx" />
+    <Content Include="WSSBSL\reportServlet4.aspx" />
+    <Content Include="WSSBSL\show_common_tsxx.aspx" />
+    <Content Include="WSSBSL\show_common_xgmm.aspx" />
+    <Content Include="WSSBSL\show_cwkjzdba_cwkjzdbaList.aspx" />
+    <Content Include="WSSBSL\show_cwkjzdba_cxCwkjzdbaList.aspx" />
+    <Content Include="WSSBSL\show_index_index.aspx" />
+    <Content Include="WSSBSL\show_index_indexMain.aspx" />
+    <Content Include="WSSBSL\show_index_nsrBaseInfo.aspx" />
+    <Content Include="WSSBSL\show_index_nsrdjszxxcx.aspx" />
+    <Content Include="WSSBSL\show_index_sssxjdcx.aspx" />
+    <Content Include="WSSBSL\show_index_xtgxrz.aspx" />
+    <Content Include="WSSBSL\show_jdsds2012_cxJdsds2012ABbList.aspx" />
+    <Content Include="WSSBSL\show_jdsds2012_jdsds2012ABbList.aspx" />
+    <Content Include="WSSBSL\show_jhhg_jh_hgjkjks.aspx" />
+    <Content Include="WSSBSL\show_jhhg_jh_hgjkjks_jgtzs.aspx" />
+    <Content Include="WSSBSL\show_jhhg_jh_hgjkjks_jhjgcx.aspx" />
+    <Content Include="WSSBSL\show_jhhg_jh_hgjkjks_mxsjsc.aspx" />
+    <Content Include="WSSBSL\show_jhhg_jh_hgjkjks_sbjzqcx.aspx" />
+    <Content Include="WSSBSL\show_jhhg_jh_hgjkjks_zlfpcx.aspx" />
+    <Content Include="WSSBSL\show_ndsdsA_cxNdsdsABbList.aspx" />
+    <Content Include="WSSBSL\show_ndsdsA_ndsdsABbList.aspx" />
+    <Content Include="WSSBSL\show_qyndglyw2016_qyndglyw2016BbList.aspx" />
+    <Content Include="WSSBSL\show_qyndglyw2016_tbtsxx.aspx" />
+    <Content Include="WSSBSL\show_scxz_yffyjjkc.aspx" />
+    <Content Include="WSSBSL\show_scxz_yffyjjkc_sc.aspx" />
+    <Content Include="WSSBSL\show_scxz_yffyjjkc_xz.aspx" />
+    <Content Include="WSSBSL\show_skjn_dqwjsk.aspx" />
+    <Content Include="WSSBSL\show_skjn_jkjlcx.aspx" />
+    <Content Include="WSSBSL\show_skjn_kksdcx.aspx" />
+    <Content Include="WSSBSL\show_skjn_sdkkjl.aspx" />
+    <Content Include="WSSBSL\show_sljsjj_bcsbSljsjjBbList.aspx" />
+    <Content Include="WSSBSL\show_sljsjj_cxSljsjjBbList.aspx" />
+    <Content Include="WSSBSL\show_sljsjj_sljsjjBbList.aspx" />
+    <Content Include="WSSBSL\show_whsyjsf_cxWhsyjsfBbList.aspx" />
+    <Content Include="WSSBSL\show_wtkkxy_wtkkxys.aspx" />
+    <Content Include="WSSBSL\show_zzs2013Ybnsr_cxZzs2013YbnsrBbList.aspx" />
+    <Content Include="WSSBSL\show_zzs2013Ybnsr_zzs2013YbnsrBbList.aspx" />
+    <Content Include="WSSBSL\show_zzsxgm_cxZzs2013XgmBbList.aspx" />
+    <Content Include="WSSBSL\ueditor\ueditor.parse.min.js" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="ajax.sword.ashx.cs">
+      <DependentUpon>ajax.sword.ashx</DependentUpon>
+    </Compile>
+    <Compile Include="ajax.sword_CX301DzcxMainCtrl_getDzcxTheme.ashx.cs">
+      <DependentUpon>ajax.sword_CX301DzcxMainCtrl_getDzcxTheme.ashx</DependentUpon>
+    </Compile>
+    <Compile Include="ajax.sword_StyleCtrl_loadStyle.ashx.cs">
+      <DependentUpon>ajax.sword_StyleCtrl_loadStyle.ashx</DependentUpon>
+    </Compile>
+    <Compile Include="ChuShiHua.ashx.cs">
+      <DependentUpon>ChuShiHua.ashx</DependentUpon>
+    </Compile>
+    <Compile Include="Code\Check.cs">
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Code\CommonMethod.cs" />
+    <Compile Include="Code\CurrentUser.cs" />
+    <Compile Include="Code\GTXGXReportDataConfig.cs" />
+    <Compile Include="Code\GTXGXReportQiChu.cs" />
+    <Compile Include="Code\GTXGXUserYSBQC.cs" />
+    <Compile Include="Code\GTXGXUserYSBQCReport.cs" />
+    <Compile Include="Code\GTXGXUserYSBQCReportData.cs" />
+    <Compile Include="Code\GTXMethod.cs" />
+    <Compile Include="Code\GTXNameValue.cs" />
+    <Compile Include="Code\GTXResult.cs" />
+    <Compile Include="Code\ItemValue.cs" />
+    <Compile Include="Code\Model.cs" />
+    <Compile Include="Code\XmlUtil.cs" />
+    <Compile Include="download.sword.ashx.cs">
+      <DependentUpon>download.sword.ashx</DependentUpon>
+    </Compile>
+    <Compile Include="form.sword.ashx.cs">
+      <DependentUpon>form.sword.ashx</DependentUpon>
+    </Compile>
+    <Compile Include="form.sword_GY011GyDyCtrl_gyPrint.aspx.cs">
+      <DependentUpon>form.sword_GY011GyDyCtrl_gyPrint.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="form.sword_GY011GyDyCtrl_gyPrint.aspx.designer.cs">
+      <DependentUpon>form.sword_GY011GyDyCtrl_gyPrint.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="form.sword_GYDrCtrl_openDr.aspx.cs">
+      <DependentUpon>form.sword_GYDrCtrl_openDr.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="form.sword_SB071KjqysdssbCtrl_gethtbaxx.aspx.cs">
+      <DependentUpon>form.sword_SB071KjqysdssbCtrl_gethtbaxx.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="form.sword_SB071KjqysdssbCtrl_gethtbaxx.aspx.designer.cs">
+      <DependentUpon>form.sword_SB071KjqysdssbCtrl_gethtbaxx.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="form.sword_SB151zlbsslCtrl_initBd.aspx.cs">
+      <DependentUpon>form.sword_SB151zlbsslCtrl_initBd.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="form.sword_SB151zlbsslCtrl_initBd.aspx.designer.cs">
+      <DependentUpon>form.sword_SB151zlbsslCtrl_initBd.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="form.sword_SB151zlbsslCtrl_initBdZL1001001.aspx.cs">
+      <DependentUpon>form.sword_SB151zlbsslCtrl_initBdZL1001001.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="form.sword_SB151zlbsslCtrl_initBdZL1001001.aspx.designer.cs">
+      <DependentUpon>form.sword_SB151zlbsslCtrl_initBdZL1001001.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="form.sword_SB151zlbsslCtrl_initBdZL1001002.aspx.cs">
+      <DependentUpon>form.sword_SB151zlbsslCtrl_initBdZL1001002.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="form.sword_SB151zlbsslCtrl_initBdZL1001002.aspx.designer.cs">
+      <DependentUpon>form.sword_SB151zlbsslCtrl_initBdZL1001002.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="form.sword_SB151zlbsslCtrl_initBdZL1001003.aspx.cs">
+      <DependentUpon>form.sword_SB151zlbsslCtrl_initBdZL1001003.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="form.sword_SB151zlbsslCtrl_initBdZL1001003.aspx.designer.cs">
+      <DependentUpon>form.sword_SB151zlbsslCtrl_initBdZL1001003.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="form.sword_SB175FxmtysbCtrl_cwgzInitView.aspx.cs">
+      <DependentUpon>form.sword_SB175FxmtysbCtrl_cwgzInitView.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="form.sword_SB175FxmtysbCtrl_cwgzInitView.aspx.designer.cs">
+      <DependentUpon>form.sword_SB175FxmtysbCtrl_cwgzInitView.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="form.sword_SBGyCtrl_toNsrzcbb.aspx.cs">
+      <DependentUpon>form.sword_SBGyCtrl_toNsrzcbb.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="form.sword_SBGyCtrl_toNsrzcbb.aspx.designer.cs">
+      <DependentUpon>form.sword_SBGyCtrl_toNsrzcbb.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="getreportdata.ashx.cs">
+      <DependentUpon>getreportdata.ashx</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="publicmethod.cs" />
+    <Compile Include="QuestionMain.aspx.cs">
+      <DependentUpon>QuestionMain.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="QuestionMain.aspx.designer.cs">
+      <DependentUpon>QuestionMain.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="sszsk\szzsk\getSearch.ashx.cs">
+      <DependentUpon>getSearch.ashx</DependentUpon>
+    </Compile>
+    <Compile Include="sszsk\szzsk\getTreeList.ashx.cs">
+      <DependentUpon>getTreeList.ashx</DependentUpon>
+    </Compile>
+    <Compile Include="sszsk\szzsk\getTreeSearch.ashx.cs">
+      <DependentUpon>getTreeSearch.ashx</DependentUpon>
+    </Compile>
+    <Compile Include="sszsk\szzsk\sousuo.aspx.cs">
+      <DependentUpon>sousuo.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="sszsk\szzsk\sousuo.aspx.designer.cs">
+      <DependentUpon>sousuo.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="sword.ashx.cs">
+      <DependentUpon>sword.ashx</DependentUpon>
+    </Compile>
+    <Compile Include="sword_CX301DzcxCtrl_initView.aspx.cs">
+      <DependentUpon>sword_CX301DzcxCtrl_initView.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="sword_CX301DzcxCtrl_initView.aspx.designer.cs">
+      <DependentUpon>sword_CX301DzcxCtrl_initView.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="sword_CX301DzcxCtrl_initView_00010061211.aspx.cs">
+      <DependentUpon>sword_CX301DzcxCtrl_initView_00010061211.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="sword_CX301DzcxCtrl_initView_00010061211.aspx.designer.cs">
+      <DependentUpon>sword_CX301DzcxCtrl_initView_00010061211.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="sword_CX301DzcxCtrl_initView_CX301DzcxCtrl_initView.aspx.cs">
+      <DependentUpon>sword_CX301DzcxCtrl_initView_CX301DzcxCtrl_initView.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="sword_CX301DzcxCtrl_initView_CX301DzcxCtrl_initView.aspx.designer.cs">
+      <DependentUpon>sword_CX301DzcxCtrl_initView_CX301DzcxCtrl_initView.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="sword_SB001XfssbCtrl_initView_SB001XfssbCtrl_initView.aspx.cs">
+      <DependentUpon>sword_SB001XfssbCtrl_initView_SB001XfssbCtrl_initView.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="sword_SB001XfssbCtrl_initView_SB001XfssbCtrl_initView.aspx.designer.cs">
+      <DependentUpon>sword_SB001XfssbCtrl_initView_SB001XfssbCtrl_initView.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="sword_SB057SbcwgzCtrl_initView_SB057SbcwgzCtrl_initView.aspx.cs">
+      <DependentUpon>sword_SB057SbcwgzCtrl_initView_SB057SbcwgzCtrl_initView.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="sword_SB057SbcwgzCtrl_initView_SB057SbcwgzCtrl_initView.aspx.designer.cs">
+      <DependentUpon>sword_SB057SbcwgzCtrl_initView_SB057SbcwgzCtrl_initView.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="sword_SB071Kjqysdssb2015Ctrl_initView_SB071Kjqysdssb2015Ctrl_initView.aspx.cs">
+      <DependentUpon>sword_SB071Kjqysdssb2015Ctrl_initView_SB071Kjqysdssb2015Ctrl_initView.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="sword_SB071Kjqysdssb2015Ctrl_initView_SB071Kjqysdssb2015Ctrl_initView.aspx.designer.cs">
+      <DependentUpon>sword_SB071Kjqysdssb2015Ctrl_initView_SB071Kjqysdssb2015Ctrl_initView.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="sword_SB097TydkdjsbCtrl_initView_SB097TydkdjsbCtrl_initView.aspx.cs">
+      <DependentUpon>sword_SB097TydkdjsbCtrl_initView_SB097TydkdjsbCtrl_initView.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="sword_SB097TydkdjsbCtrl_initView_SB097TydkdjsbCtrl_initView.aspx.designer.cs">
+      <DependentUpon>sword_SB097TydkdjsbCtrl_initView_SB097TydkdjsbCtrl_initView.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="sword_SB099QykjzzcwbbbsyxxcjCtrl_toSbfb.aspx.cs">
+      <DependentUpon>sword_SB099QykjzzcwbbbsyxxcjCtrl_toSbfb.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="sword_SB099QykjzzcwbbbsyxxcjCtrl_toSbfb.aspx.designer.cs">
+      <DependentUpon>sword_SB099QykjzzcwbbbsyxxcjCtrl_toSbfb.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="sword_SB099QykjzzcwbbbsyxxcjCtrl_toSbfb1.aspx.cs">
+      <DependentUpon>sword_SB099QykjzzcwbbbsyxxcjCtrl_toSbfb1.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="sword_SB099QykjzzcwbbbsyxxcjCtrl_toSbfb1.aspx.designer.cs">
+      <DependentUpon>sword_SB099QykjzzcwbbbsyxxcjCtrl_toSbfb1.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="sword_SB099QykjzzcwbbbsyxxcjCtrl_toSbfb2.aspx.cs">
+      <DependentUpon>sword_SB099QykjzzcwbbbsyxxcjCtrl_toSbfb2.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="sword_SB099QykjzzcwbbbsyxxcjCtrl_toSbfb2.aspx.designer.cs">
+      <DependentUpon>sword_SB099QykjzzcwbbbsyxxcjCtrl_toSbfb2.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="sword_SB100QykjzdcwbbbsyxxcjCtrl_toSbfb.aspx.cs">
+      <DependentUpon>sword_SB100QykjzdcwbbbsyxxcjCtrl_toSbfb.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="sword_SB100QykjzdcwbbbsyxxcjCtrl_toSbfb.aspx.designer.cs">
+      <DependentUpon>sword_SB100QykjzdcwbbbsyxxcjCtrl_toSbfb.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="sword_SB100QykjzdcwbbbsyxxcjCtrl_toSbfb_qyb.aspx.cs">
+      <DependentUpon>sword_SB100QykjzdcwbbbsyxxcjCtrl_toSbfb_qyb.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="sword_SB100QykjzdcwbbbsyxxcjCtrl_toSbfb_qyb.aspx.designer.cs">
+      <DependentUpon>sword_SB100QykjzdcwbbbsyxxcjCtrl_toSbfb_qyb.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="sword_SB100QykjzdcwbbbsyxxcjCtrl_toSbfb_xjllb.aspx.cs">
+      <DependentUpon>sword_SB100QykjzdcwbbbsyxxcjCtrl_toSbfb_xjllb.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="sword_SB100QykjzdcwbbbsyxxcjCtrl_toSbfb_xjllb.aspx.designer.cs">
+      <DependentUpon>sword_SB100QykjzdcwbbbsyxxcjCtrl_toSbfb_xjllb.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="sword_SB104xqykjzzcwbsCtrl_toSbfb_01.aspx.cs">
+      <DependentUpon>sword_SB104xqykjzzcwbsCtrl_toSbfb_01.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="sword_SB104xqykjzzcwbsCtrl_toSbfb_01.aspx.designer.cs">
+      <DependentUpon>sword_SB104xqykjzzcwbsCtrl_toSbfb_01.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="sword_SB104xqykjzzcwbsCtrl_toSbfb_02.aspx.cs">
+      <DependentUpon>sword_SB104xqykjzzcwbsCtrl_toSbfb_02.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="sword_SB104xqykjzzcwbsCtrl_toSbfb_02.aspx.designer.cs">
+      <DependentUpon>sword_SB104xqykjzzcwbsCtrl_toSbfb_02.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="sword_SB104xqykjzzcwbsCtrl_toSbfb_03.aspx.cs">
+      <DependentUpon>sword_SB104xqykjzzcwbsCtrl_toSbfb_03.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="sword_SB104xqykjzzcwbsCtrl_toSbfb_03.aspx.designer.cs">
+      <DependentUpon>sword_SB104xqykjzzcwbsCtrl_toSbfb_03.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="sword_SB104xqykjzzcwbsCtrl_toSbfb_04.aspx.cs">
+      <DependentUpon>sword_SB104xqykjzzcwbsCtrl_toSbfb_04.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="sword_SB104xqykjzzcwbsCtrl_toSbfb_04.aspx.designer.cs">
+      <DependentUpon>sword_SB104xqykjzzcwbsCtrl_toSbfb_04.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="sword_SB104xqykjzzcwbsCtrl_toSbfb_05.aspx.cs">
+      <DependentUpon>sword_SB104xqykjzzcwbsCtrl_toSbfb_05.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="sword_SB104xqykjzzcwbsCtrl_toSbfb_05.aspx.designer.cs">
+      <DependentUpon>sword_SB104xqykjzzcwbsCtrl_toSbfb_05.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="sword_SB104xqykjzzcwbsCtrl_toSbfb_06.aspx.cs">
+      <DependentUpon>sword_SB104xqykjzzcwbsCtrl_toSbfb_06.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="sword_SB104xqykjzzcwbsCtrl_toSbfb_06.aspx.designer.cs">
+      <DependentUpon>sword_SB104xqykjzzcwbsCtrl_toSbfb_06.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="sword_SB104xqykjzzcwbsCtrl_toSbfb_07.aspx.cs">
+      <DependentUpon>sword_SB104xqykjzzcwbsCtrl_toSbfb_07.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="sword_SB104xqykjzzcwbsCtrl_toSbfb_07.aspx.designer.cs">
+      <DependentUpon>sword_SB104xqykjzzcwbsCtrl_toSbfb_07.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="sword_SB104xqykjzzcwbsCtrl_toSbfb_08.aspx.cs">
+      <DependentUpon>sword_SB104xqykjzzcwbsCtrl_toSbfb_08.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="sword_SB104xqykjzzcwbsCtrl_toSbfb_08.aspx.designer.cs">
+      <DependentUpon>sword_SB104xqykjzzcwbsCtrl_toSbfb_08.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="sword_SB104xqykjzzcwbsCtrl_toSbfb_09.aspx.cs">
+      <DependentUpon>sword_SB104xqykjzzcwbsCtrl_toSbfb_09.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="sword_SB104xqykjzzcwbsCtrl_toSbfb_09.aspx.designer.cs">
+      <DependentUpon>sword_SB104xqykjzzcwbsCtrl_toSbfb_09.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="sword_SB104xqykjzzcwbsCtrl_toSbfb_10.aspx.cs">
+      <DependentUpon>sword_SB104xqykjzzcwbsCtrl_toSbfb_10.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="sword_SB104xqykjzzcwbsCtrl_toSbfb_10.aspx.designer.cs">
+      <DependentUpon>sword_SB104xqykjzzcwbsCtrl_toSbfb_10.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="sword_SB151zlbsslCtrl_initView.aspx.cs">
+      <DependentUpon>sword_SB151zlbsslCtrl_initView.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="sword_SB151zlbsslCtrl_initView.aspx.designer.cs">
+      <DependentUpon>sword_SB151zlbsslCtrl_initView.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="sword_SB207zzsyjnssbCtrl_initView_SB207zzsyjnssbCtrl_initView.aspx.cs">
+      <DependentUpon>sword_SB207zzsyjnssbCtrl_initView_SB207zzsyjnssbCtrl_initView.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="sword_SB207zzsyjnssbCtrl_initView_SB207zzsyjnssbCtrl_initView.aspx.designer.cs">
+      <DependentUpon>sword_SB207zzsyjnssbCtrl_initView_SB207zzsyjnssbCtrl_initView.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="sword_SB207zzsyjnssbCtrl_toSbfb.aspx.cs">
+      <DependentUpon>sword_SB207zzsyjnssbCtrl_toSbfb.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="sword_SB207zzsyjnssbCtrl_toSbfb.aspx.designer.cs">
+      <DependentUpon>sword_SB207zzsyjnssbCtrl_toSbfb.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="sword_SBGyCtrl_toCwbbSbfb04.aspx.cs">
+      <DependentUpon>sword_SBGyCtrl_toCwbbSbfb04.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="sword_SBGyCtrl_toCwbbSbfb04.aspx.designer.cs">
+      <DependentUpon>sword_SBGyCtrl_toCwbbSbfb04.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="sword_SBGyCtrl_toCwbbSbfb05.aspx.cs">
+      <DependentUpon>sword_SBGyCtrl_toCwbbSbfb05.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="sword_SBGyCtrl_toCwbbSbfb05.aspx.designer.cs">
+      <DependentUpon>sword_SBGyCtrl_toCwbbSbfb05.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="sword_SBGyCtrl_toCwbbSbfb06.aspx.cs">
+      <DependentUpon>sword_SBGyCtrl_toCwbbSbfb06.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="sword_SBGyCtrl_toCwbbSbfb06.aspx.designer.cs">
+      <DependentUpon>sword_SBGyCtrl_toCwbbSbfb06.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="sword_SBGyCtrl_toCwbbSbfb07.aspx.cs">
+      <DependentUpon>sword_SBGyCtrl_toCwbbSbfb07.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="sword_SBGyCtrl_toCwbbSbfb07.aspx.designer.cs">
+      <DependentUpon>sword_SBGyCtrl_toCwbbSbfb07.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="sword_SBGyCtrl_toCwbbSbfb08.aspx.cs">
+      <DependentUpon>sword_SBGyCtrl_toCwbbSbfb08.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="sword_SBGyCtrl_toCwbbSbfb08.aspx.designer.cs">
+      <DependentUpon>sword_SBGyCtrl_toCwbbSbfb08.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="sword_SBGyCtrl_toCwbbSbfb09.aspx.cs">
+      <DependentUpon>sword_SBGyCtrl_toCwbbSbfb09.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="sword_SBGyCtrl_toCwbbSbfb09.aspx.designer.cs">
+      <DependentUpon>sword_SBGyCtrl_toCwbbSbfb09.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="sword_SBGyCtrl_toCwbbSbfb_ZL1001001_04.aspx.cs">
+      <DependentUpon>sword_SBGyCtrl_toCwbbSbfb_ZL1001001_04.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="sword_SBGyCtrl_toCwbbSbfb_ZL1001001_04.aspx.designer.cs">
+      <DependentUpon>sword_SBGyCtrl_toCwbbSbfb_ZL1001001_04.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="sword_SBGyCtrl_toCwbbSbfb_ZL1001001_05.aspx.cs">
+      <DependentUpon>sword_SBGyCtrl_toCwbbSbfb_ZL1001001_05.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="sword_SBGyCtrl_toCwbbSbfb_ZL1001001_05.aspx.designer.cs">
+      <DependentUpon>sword_SBGyCtrl_toCwbbSbfb_ZL1001001_05.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="sword_SBGyCtrl_toCwbbSbfb_ZL1001001_06.aspx.cs">
+      <DependentUpon>sword_SBGyCtrl_toCwbbSbfb_ZL1001001_06.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="sword_SBGyCtrl_toCwbbSbfb_ZL1001001_06.aspx.designer.cs">
+      <DependentUpon>sword_SBGyCtrl_toCwbbSbfb_ZL1001001_06.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="sword_SBGyCtrl_toCwbbSbfb_ZL1001001_07.aspx.cs">
+      <DependentUpon>sword_SBGyCtrl_toCwbbSbfb_ZL1001001_07.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="sword_SBGyCtrl_toCwbbSbfb_ZL1001001_07.aspx.designer.cs">
+      <DependentUpon>sword_SBGyCtrl_toCwbbSbfb_ZL1001001_07.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="sword_SBGyCtrl_toCwbbSbfb_ZL1001001_08.aspx.cs">
+      <DependentUpon>sword_SBGyCtrl_toCwbbSbfb_ZL1001001_08.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="sword_SBGyCtrl_toCwbbSbfb_ZL1001001_08.aspx.designer.cs">
+      <DependentUpon>sword_SBGyCtrl_toCwbbSbfb_ZL1001001_08.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="sword_SBGyCtrl_toCwbbSbfb_ZL1001001_09.aspx.cs">
+      <DependentUpon>sword_SBGyCtrl_toCwbbSbfb_ZL1001001_09.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="sword_SBGyCtrl_toCwbbSbfb_ZL1001001_09.aspx.designer.cs">
+      <DependentUpon>sword_SBGyCtrl_toCwbbSbfb_ZL1001001_09.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="sword_SBGyCtrl_toCwbbSbfb_ZL1001002_04.aspx.cs">
+      <DependentUpon>sword_SBGyCtrl_toCwbbSbfb_ZL1001002_04.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="sword_SBGyCtrl_toCwbbSbfb_ZL1001002_04.aspx.designer.cs">
+      <DependentUpon>sword_SBGyCtrl_toCwbbSbfb_ZL1001002_04.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="sword_SBGyCtrl_toCwbbSbfb_ZL1001002_05.aspx.cs">
+      <DependentUpon>sword_SBGyCtrl_toCwbbSbfb_ZL1001002_05.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="sword_SBGyCtrl_toCwbbSbfb_ZL1001002_05.aspx.designer.cs">
+      <DependentUpon>sword_SBGyCtrl_toCwbbSbfb_ZL1001002_05.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="sword_SBGyCtrl_toCwbbSbfb_ZL1001002_06.aspx.cs">
+      <DependentUpon>sword_SBGyCtrl_toCwbbSbfb_ZL1001002_06.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="sword_SBGyCtrl_toCwbbSbfb_ZL1001002_06.aspx.designer.cs">
+      <DependentUpon>sword_SBGyCtrl_toCwbbSbfb_ZL1001002_06.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="sword_SBGyCtrl_toCwbbSbfb_ZL1001002_07.aspx.cs">
+      <DependentUpon>sword_SBGyCtrl_toCwbbSbfb_ZL1001002_07.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="sword_SBGyCtrl_toCwbbSbfb_ZL1001002_07.aspx.designer.cs">
+      <DependentUpon>sword_SBGyCtrl_toCwbbSbfb_ZL1001002_07.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="sword_SBGyCtrl_toCwbbSbfb_ZL1001002_08.aspx.cs">
+      <DependentUpon>sword_SBGyCtrl_toCwbbSbfb_ZL1001002_08.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="sword_SBGyCtrl_toCwbbSbfb_ZL1001002_08.aspx.designer.cs">
+      <DependentUpon>sword_SBGyCtrl_toCwbbSbfb_ZL1001002_08.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="sword_SBGyCtrl_toCwbbSbfb_ZL1001002_09.aspx.cs">
+      <DependentUpon>sword_SBGyCtrl_toCwbbSbfb_ZL1001002_09.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="sword_SBGyCtrl_toCwbbSbfb_ZL1001002_09.aspx.designer.cs">
+      <DependentUpon>sword_SBGyCtrl_toCwbbSbfb_ZL1001002_09.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="sword_SBGyCtrl_toCwbbSbfb_ZL1001002_10.aspx.cs">
+      <DependentUpon>sword_SBGyCtrl_toCwbbSbfb_ZL1001002_10.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="sword_SBGyCtrl_toCwbbSbfb_ZL1001002_10.aspx.designer.cs">
+      <DependentUpon>sword_SBGyCtrl_toCwbbSbfb_ZL1001002_10.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="sword_SBGyCtrl_toCwbbSbfb_ZL1001002_11.aspx.cs">
+      <DependentUpon>sword_SBGyCtrl_toCwbbSbfb_ZL1001002_11.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="sword_SBGyCtrl_toCwbbSbfb_ZL1001002_11.aspx.designer.cs">
+      <DependentUpon>sword_SBGyCtrl_toCwbbSbfb_ZL1001002_11.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="sword_SBGyCtrl_toCwbbSbfb_ZL1001002_12.aspx.cs">
+      <DependentUpon>sword_SBGyCtrl_toCwbbSbfb_ZL1001002_12.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="sword_SBGyCtrl_toCwbbSbfb_ZL1001002_12.aspx.designer.cs">
+      <DependentUpon>sword_SBGyCtrl_toCwbbSbfb_ZL1001002_12.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="sword_SBGyCtrl_toCwbbSbfb_ZL1001002_13.aspx.cs">
+      <DependentUpon>sword_SBGyCtrl_toCwbbSbfb_ZL1001002_13.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="sword_SBGyCtrl_toCwbbSbfb_ZL1001002_13.aspx.designer.cs">
+      <DependentUpon>sword_SBGyCtrl_toCwbbSbfb_ZL1001002_13.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="sword_SBGyCtrl_toCwbbSbfb_ZL1001002_14.aspx.cs">
+      <DependentUpon>sword_SBGyCtrl_toCwbbSbfb_ZL1001002_14.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="sword_SBGyCtrl_toCwbbSbfb_ZL1001002_14.aspx.designer.cs">
+      <DependentUpon>sword_SBGyCtrl_toCwbbSbfb_ZL1001002_14.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="sword_SBGyCtrl_toCwbbSbfb_ZL1001002_15.aspx.cs">
+      <DependentUpon>sword_SBGyCtrl_toCwbbSbfb_ZL1001002_15.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="sword_SBGyCtrl_toCwbbSbfb_ZL1001002_15.aspx.designer.cs">
+      <DependentUpon>sword_SBGyCtrl_toCwbbSbfb_ZL1001002_15.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="sword_SBGyCtrl_toCwbbSbfb_ZL1001003_11.aspx.cs">
+      <DependentUpon>sword_SBGyCtrl_toCwbbSbfb_ZL1001003_11.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="sword_SBGyCtrl_toCwbbSbfb_ZL1001003_11.aspx.designer.cs">
+      <DependentUpon>sword_SBGyCtrl_toCwbbSbfb_ZL1001003_11.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="sword_SBGyCtrl_toCwbbSbfb_ZL1001003_12.aspx.cs">
+      <DependentUpon>sword_SBGyCtrl_toCwbbSbfb_ZL1001003_12.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="sword_SBGyCtrl_toCwbbSbfb_ZL1001003_12.aspx.designer.cs">
+      <DependentUpon>sword_SBGyCtrl_toCwbbSbfb_ZL1001003_12.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="sword_SBGyCtrl_toCwbbSbfb_ZL1001003_13.aspx.cs">
+      <DependentUpon>sword_SBGyCtrl_toCwbbSbfb_ZL1001003_13.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="sword_SBGyCtrl_toCwbbSbfb_ZL1001003_13.aspx.designer.cs">
+      <DependentUpon>sword_SBGyCtrl_toCwbbSbfb_ZL1001003_13.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="sword_SBGyCtrl_toCwbbSbfb_ZL1001003_14.aspx.cs">
+      <DependentUpon>sword_SBGyCtrl_toCwbbSbfb_ZL1001003_14.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="sword_SBGyCtrl_toCwbbSbfb_ZL1001003_14.aspx.designer.cs">
+      <DependentUpon>sword_SBGyCtrl_toCwbbSbfb_ZL1001003_14.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="sword_SwordPage_redirect.aspx.cs">
+      <DependentUpon>sword_SwordPage_redirect.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="sword_SwordPage_redirect.aspx.designer.cs">
+      <DependentUpon>sword_SwordPage_redirect.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="sword_WbdltzCtrl_forwardBizCtrl.aspx.cs">
+      <DependentUpon>sword_WbdltzCtrl_forwardBizCtrl.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="sword_WbdltzCtrl_forwardBizCtrl.aspx.designer.cs">
+      <DependentUpon>sword_WbdltzCtrl_forwardBizCtrl.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="sword_WbdltzCtrl_forwardBizCtrl_00010061211.aspx.cs">
+      <DependentUpon>sword_WbdltzCtrl_forwardBizCtrl_00010061211.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="sword_WbdltzCtrl_forwardBizCtrl_00010061211.aspx.designer.cs">
+      <DependentUpon>sword_WbdltzCtrl_forwardBizCtrl_00010061211.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="sword_WbdltzCtrl_forwardBizCtrl_SB001XfssbCtrl_initView.aspx.cs">
+      <DependentUpon>sword_WbdltzCtrl_forwardBizCtrl_SB001XfssbCtrl_initView.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="sword_WbdltzCtrl_forwardBizCtrl_SB001XfssbCtrl_initView.aspx.designer.cs">
+      <DependentUpon>sword_WbdltzCtrl_forwardBizCtrl_SB001XfssbCtrl_initView.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="sword_WbdltzCtrl_forwardBizCtrl_SB057SbcwgzCtrl_initView.aspx.cs">
+      <DependentUpon>sword_WbdltzCtrl_forwardBizCtrl_SB057SbcwgzCtrl_initView.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="sword_WbdltzCtrl_forwardBizCtrl_SB057SbcwgzCtrl_initView.aspx.designer.cs">
+      <DependentUpon>sword_WbdltzCtrl_forwardBizCtrl_SB057SbcwgzCtrl_initView.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="sword_WbdltzCtrl_forwardBizCtrl_SB071Kjqysdssb2015Ctrl_initView.aspx.cs">
+      <DependentUpon>sword_WbdltzCtrl_forwardBizCtrl_SB071Kjqysdssb2015Ctrl_initView.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="sword_WbdltzCtrl_forwardBizCtrl_SB071Kjqysdssb2015Ctrl_initView.aspx.designer.cs">
+      <DependentUpon>sword_WbdltzCtrl_forwardBizCtrl_SB071Kjqysdssb2015Ctrl_initView.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="sword_WbdltzCtrl_forwardBizCtrl_SB097TydkdjsbCtrl_initView.aspx.cs">
+      <DependentUpon>sword_WbdltzCtrl_forwardBizCtrl_SB097TydkdjsbCtrl_initView.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="sword_WbdltzCtrl_forwardBizCtrl_SB097TydkdjsbCtrl_initView.aspx.designer.cs">
+      <DependentUpon>sword_WbdltzCtrl_forwardBizCtrl_SB097TydkdjsbCtrl_initView.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="sword_WbdltzCtrl_forwardBizCtrl_SB207zzsyjnssbCtrl_initView.aspx.cs">
+      <DependentUpon>sword_WbdltzCtrl_forwardBizCtrl_SB207zzsyjnssbCtrl_initView.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="sword_WbdltzCtrl_forwardBizCtrl_SB207zzsyjnssbCtrl_initView.aspx.designer.cs">
+      <DependentUpon>sword_WbdltzCtrl_forwardBizCtrl_SB207zzsyjnssbCtrl_initView.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="VideoManage\GetVideo.ashx.cs">
+      <DependentUpon>GetVideo.ashx</DependentUpon>
+    </Compile>
+    <Compile Include="VideoManage\VideoGDTax.aspx.cs">
+      <DependentUpon>VideoGDTax.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="VideoManage\VideoGDTax.aspx.designer.cs">
+      <DependentUpon>VideoGDTax.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="VideoManage\VideoManage.aspx.cs">
+      <DependentUpon>VideoManage.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="VideoManage\VideoManage.aspx.designer.cs">
+      <DependentUpon>VideoManage.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Video\Video.aspx.cs">
+      <DependentUpon>Video.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Video\Video.aspx.designer.cs">
+      <DependentUpon>Video.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="WSSBSL\ajax.sword_CacheCtrl_getAllVersion.ashx.cs">
+      <DependentUpon>ajax.sword_CacheCtrl_getAllVersion.ashx</DependentUpon>
+    </Compile>
+    <Compile Include="WSSBSL\do_cwkjzdba_Cwkjzdba_loadCwkjzdbaInit.ashx.cs">
+      <DependentUpon>do_cwkjzdba_Cwkjzdba_loadCwkjzdbaInit.ashx</DependentUpon>
+    </Compile>
+    <Compile Include="WSSBSL\do_cwkjzdba_Cwkjzdba_loadCwkjzdbaList.ashx.cs">
+      <DependentUpon>do_cwkjzdba_Cwkjzdba_loadCwkjzdbaList.ashx</DependentUpon>
+    </Compile>
+    <Compile Include="WSSBSL\do_cwkjzdba_Cwkjzdba_updateTbxx.ashx.cs">
+      <DependentUpon>do_cwkjzdba_Cwkjzdba_updateTbxx.ashx</DependentUpon>
+    </Compile>
+    <Compile Include="WSSBSL\do_index_Index_loadBbcxList.ashx.cs">
+      <DependentUpon>do_index_Index_loadBbcxList.ashx</DependentUpon>
+    </Compile>
+    <Compile Include="WSSBSL\do_index_Index_loadBbtbList.ashx.cs">
+      <DependentUpon>do_index_Index_loadBbtbList.ashx</DependentUpon>
+    </Compile>
+    <Compile Include="WSSBSL\do_index_Index_loadDqysbList.ashx.cs">
+      <DependentUpon>do_index_Index_loadDqysbList.ashx</DependentUpon>
+    </Compile>
+    <Compile Include="WSSBSL\do_index_Index_loadIndexNsrxx.ashx.cs">
+      <DependentUpon>do_index_Index_loadIndexNsrxx.ashx</DependentUpon>
+    </Compile>
+    <Compile Include="WSSBSL\do_index_Index_loadXtgxrzList.ashx.cs">
+      <DependentUpon>do_index_Index_loadXtgxrzList.ashx</DependentUpon>
+    </Compile>
+    <Compile Include="WSSBSL\do_index_Index_loginZgjc.ashx.cs">
+      <DependentUpon>do_index_Index_loginZgjc.ashx</DependentUpon>
+    </Compile>
+    <Compile Include="WSSBSL\do_index_NsrBaseInfo_loadNsrxxInfo.ashx.cs">
+      <DependentUpon>do_index_NsrBaseInfo_loadNsrxxInfo.ashx</DependentUpon>
+    </Compile>
+    <Compile Include="WSSBSL\do_index_NsrDjSzxxCx_loadNsrszxxInfo.ashx.cs">
+      <DependentUpon>do_index_NsrDjSzxxCx_loadNsrszxxInfo.ashx</DependentUpon>
+    </Compile>
+    <Compile Include="WSSBSL\do_index_Sssxjdcx_loadSssxjdInfo.ashx.cs">
+      <DependentUpon>do_index_Sssxjdcx_loadSssxjdInfo.ashx</DependentUpon>
+    </Compile>
+    <Compile Include="WSSBSL\do_jdsds2012_Jdsds2012_loadJdsds2012AInit.ashx.cs">
+      <DependentUpon>do_jdsds2012_Jdsds2012_loadJdsds2012AInit.ashx</DependentUpon>
+    </Compile>
+    <Compile Include="WSSBSL\do_jdsds2012_Jdsds2012_loadJdsdsAList.ashx.cs">
+      <DependentUpon>do_jdsds2012_Jdsds2012_loadJdsdsAList.ashx</DependentUpon>
+    </Compile>
+    <Compile Include="WSSBSL\do_jhhg_Jhhg_doJhhgJhjgmxBsyfCx.ashx.cs">
+      <DependentUpon>do_jhhg_Jhhg_doJhhgJhjgmxBsyfCx.ashx</DependentUpon>
+    </Compile>
+    <Compile Include="WSSBSL\do_jhhg_Jhhg_doJhhgJhSjjsjgCx.ashx.cs">
+      <DependentUpon>do_jhhg_Jhhg_doJhhgJhSjjsjgCx.ashx</DependentUpon>
+    </Compile>
+    <Compile Include="WSSBSL\do_jhhg_Jhhg_doJhhgNssbjzqCx.ashx.cs">
+      <DependentUpon>do_jhhg_Jhhg_doJhhgNssbjzqCx.ashx</DependentUpon>
+    </Compile>
+    <Compile Include="WSSBSL\do_jhhg_Jhhg_doJhhgZlfpCx.ashx.cs">
+      <DependentUpon>do_jhhg_Jhhg_doJhhgZlfpCx.ashx</DependentUpon>
+    </Compile>
+    <Compile Include="WSSBSL\do_ndsdsa_NdsdsA_loadNdsdsAlInit.ashx.cs">
+      <DependentUpon>do_ndsdsa_NdsdsA_loadNdsdsAlInit.ashx</DependentUpon>
+    </Compile>
+    <Compile Include="WSSBSL\do_ndsdsa_NdsdsA_loadNdsdsAList.ashx.cs">
+      <DependentUpon>do_ndsdsa_NdsdsA_loadNdsdsAList.ashx</DependentUpon>
+    </Compile>
+    <Compile Include="WSSBSL\do_qyndglyw2016_Qyndglyw2016_loadQyndglywInit.ashx.cs">
+      <DependentUpon>do_qyndglyw2016_Qyndglyw2016_loadQyndglywInit.ashx</DependentUpon>
+    </Compile>
+    <Compile Include="WSSBSL\do_report_Report_loadLockRule.ashx.cs">
+      <DependentUpon>do_report_Report_loadLockRule.ashx</DependentUpon>
+    </Compile>
+    <Compile Include="WSSBSL\do_report_Report_loadLockRule_sljs.ashx.cs">
+      <DependentUpon>do_report_Report_loadLockRule_sljs.ashx</DependentUpon>
+    </Compile>
+    <Compile Include="WSSBSL\do_report_Report_loadLockRule_zzs.ashx.cs">
+      <DependentUpon>do_report_Report_loadLockRule_zzs.ashx</DependentUpon>
+    </Compile>
+    <Compile Include="WSSBSL\do_report_Report_queryTbbz.ashx.cs">
+      <DependentUpon>do_report_Report_queryTbbz.ashx</DependentUpon>
+    </Compile>
+    <Compile Include="WSSBSL\do_report_Report_queryTbbz_sljs.ashx.cs">
+      <DependentUpon>do_report_Report_queryTbbz_sljs.ashx</DependentUpon>
+    </Compile>
+    <Compile Include="WSSBSL\do_report_Report_queryTbbz_zzs.ashx.cs">
+      <DependentUpon>do_report_Report_queryTbbz_zzs.ashx</DependentUpon>
+    </Compile>
+    <Compile Include="WSSBSL\do_skjn_Skjn_loadDqwjskList.ashx.cs">
+      <DependentUpon>do_skjn_Skjn_loadDqwjskList.ashx</DependentUpon>
+    </Compile>
+    <Compile Include="WSSBSL\do_skjn_Skjn_loadSdkkjlList.ashx.cs">
+      <DependentUpon>do_skjn_Skjn_loadSdkkjlList.ashx</DependentUpon>
+    </Compile>
+    <Compile Include="WSSBSL\do_skjn_Skjn_loadWqjkjlList.ashx.cs">
+      <DependentUpon>do_skjn_Skjn_loadWqjkjlList.ashx</DependentUpon>
+    </Compile>
+    <Compile Include="WSSBSL\do_skjn_Skjn_showKksdcxList.ashx.cs">
+      <DependentUpon>do_skjn_Skjn_showKksdcxList.ashx</DependentUpon>
+    </Compile>
+    <Compile Include="WSSBSL\do_sljsjj_Sljsjj_delete.ashx.cs">
+      <DependentUpon>do_sljsjj_Sljsjj_delete.ashx</DependentUpon>
+    </Compile>
+    <Compile Include="WSSBSL\do_sljsjj_Sljsjj_getGth.ashx.cs">
+      <DependentUpon>do_sljsjj_Sljsjj_getGth.ashx</DependentUpon>
+    </Compile>
+    <Compile Include="WSSBSL\do_sljsjj_Sljsjj_loadSljsjjBcsbInit.ashx.cs">
+      <DependentUpon>do_sljsjj_Sljsjj_loadSljsjjBcsbInit.ashx</DependentUpon>
+    </Compile>
+    <Compile Include="WSSBSL\do_sljsjj_Sljsjj_loadSljsjjInit.ashx.cs">
+      <DependentUpon>do_sljsjj_Sljsjj_loadSljsjjInit.ashx</DependentUpon>
+    </Compile>
+    <Compile Include="WSSBSL\do_sljsjj_Sljsjj_loadSljsjjList.ashx.cs">
+      <DependentUpon>do_sljsjj_Sljsjj_loadSljsjjList.ashx</DependentUpon>
+    </Compile>
+    <Compile Include="WSSBSL\do_sljsjj_Sljsjj_submitSljsjj.ashx.cs">
+      <DependentUpon>do_sljsjj_Sljsjj_submitSljsjj.ashx</DependentUpon>
+    </Compile>
+    <Compile Include="WSSBSL\do_sljsjj_Sljsjj_updateTbxx.ashx.cs">
+      <DependentUpon>do_sljsjj_Sljsjj_updateTbxx.ashx</DependentUpon>
+    </Compile>
+    <Compile Include="WSSBSL\do_whsyjsf_Whsyjsf_loadWhsyjsfList.ashx.cs">
+      <DependentUpon>do_whsyjsf_Whsyjsf_loadWhsyjsfList.ashx</DependentUpon>
+    </Compile>
+    <Compile Include="WSSBSL\do_wtkkxy_Wtkkxy_checkWtkkxysPrint.ashx.cs">
+      <DependentUpon>do_wtkkxy_Wtkkxy_checkWtkkxysPrint.ashx</DependentUpon>
+    </Compile>
+    <Compile Include="WSSBSL\do_zzs2013_Zzs2013_checkZzs2013Txzg.ashx.cs">
+      <DependentUpon>do_zzs2013_Zzs2013_checkZzs2013Txzg.ashx</DependentUpon>
+    </Compile>
+    <Compile Include="WSSBSL\do_zzs2013_Zzs2013_checkZzs2013Txzg1.ashx.cs">
+      <DependentUpon>do_zzs2013_Zzs2013_checkZzs2013Txzg1.ashx</DependentUpon>
+    </Compile>
+    <Compile Include="WSSBSL\do_zzs2013_Zzs2013_checkZzs2013Txzg2.ashx.cs">
+      <DependentUpon>do_zzs2013_Zzs2013_checkZzs2013Txzg2.ashx</DependentUpon>
+    </Compile>
+    <Compile Include="WSSBSL\do_zzs2013_Zzs2013_delete.ashx.cs">
+      <DependentUpon>do_zzs2013_Zzs2013_delete.ashx</DependentUpon>
+    </Compile>
+    <Compile Include="WSSBSL\do_zzs2013_Zzs2013_loadXgmnsrList.ashx.cs">
+      <DependentUpon>do_zzs2013_Zzs2013_loadXgmnsrList.ashx</DependentUpon>
+    </Compile>
+    <Compile Include="WSSBSL\do_zzs2013_Zzs2013_loadYbnsrInit.ashx.cs">
+      <DependentUpon>do_zzs2013_Zzs2013_loadYbnsrInit.ashx</DependentUpon>
+    </Compile>
+    <Compile Include="WSSBSL\do_zzs2013_Zzs2013_loadYbnsrList.ashx.cs">
+      <DependentUpon>do_zzs2013_Zzs2013_loadYbnsrList.ashx</DependentUpon>
+    </Compile>
+    <Compile Include="WSSBSL\do_zzs2013_Zzs2013_submitZzs2013Ybnsr.ashx.cs">
+      <DependentUpon>do_zzs2013_Zzs2013_submitZzs2013Ybnsr.ashx</DependentUpon>
+    </Compile>
+    <Compile Include="WSSBSL\do_zzs2013_Zzs2013_updateTbxx.ashx.cs">
+      <DependentUpon>do_zzs2013_Zzs2013_updateTbxx.ashx</DependentUpon>
+    </Compile>
+    <Compile Include="WSSBSL\do_zzs2013_Zzs2013_updateTbxx1.ashx.cs">
+      <DependentUpon>do_zzs2013_Zzs2013_updateTbxx1.ashx</DependentUpon>
+    </Compile>
+    <Compile Include="WSSBSL\reportJsp\showCxReport_bqdkjxsejgmxb.aspx.cs">
+      <DependentUpon>showCxReport_bqdkjxsejgmxb.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="WSSBSL\reportJsp\showCxReport_bqdkjxsejgmxb.aspx.designer.cs">
+      <DependentUpon>showCxReport_bqdkjxsejgmxb.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="WSSBSL\reportJsp\showCxReport_cwkjzdba.aspx.cs">
+      <DependentUpon>showCxReport_cwkjzdba.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="WSSBSL\reportJsp\showCxReport_cwkjzdba.aspx.designer.cs">
+      <DependentUpon>showCxReport_cwkjzdba.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="WSSBSL\reportJsp\showCxReport_gdzcjx.aspx.cs">
+      <DependentUpon>showCxReport_gdzcjx.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="WSSBSL\reportJsp\showCxReport_gdzcjx.aspx.designer.cs">
+      <DependentUpon>showCxReport_gdzcjx.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="WSSBSL\reportJsp\showCxReport_jdsds2015A.aspx.cs">
+      <DependentUpon>showCxReport_jdsds2015A.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="WSSBSL\reportJsp\showCxReport_jdsds2015A.aspx.designer.cs">
+      <DependentUpon>showCxReport_jdsds2015A.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="WSSBSL\reportJsp\showCxReport_jdsds2015Fb03.aspx.cs">
+      <DependentUpon>showCxReport_jdsds2015Fb03.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="WSSBSL\reportJsp\showCxReport_jdsds2015Fb03.aspx.designer.cs">
+      <DependentUpon>showCxReport_jdsds2015Fb03.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="WSSBSL\reportJsp\showCxReport_sb_ndsds_2014_fb1.aspx.cs">
+      <DependentUpon>showCxReport_sb_ndsds_2014_fb1.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="WSSBSL\reportJsp\showCxReport_sb_ndsds_2014_fb1.aspx.designer.cs">
+      <DependentUpon>showCxReport_sb_ndsds_2014_fb1.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="WSSBSL\reportJsp\showCxReport_sb_ndsds_2014_fb12.aspx.cs">
+      <DependentUpon>showCxReport_sb_ndsds_2014_fb12.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="WSSBSL\reportJsp\showCxReport_sb_ndsds_2014_fb12.aspx.designer.cs">
+      <DependentUpon>showCxReport_sb_ndsds_2014_fb12.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="WSSBSL\reportJsp\showCxReport_sb_ndsds_2014_fb22.aspx.cs">
+      <DependentUpon>showCxReport_sb_ndsds_2014_fb22.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="WSSBSL\reportJsp\showCxReport_sb_ndsds_2014_fb22.aspx.designer.cs">
+      <DependentUpon>showCxReport_sb_ndsds_2014_fb22.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="WSSBSL\reportJsp\showCxReport_sb_ndsds_2014_fb3.aspx.cs">
+      <DependentUpon>showCxReport_sb_ndsds_2014_fb3.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="WSSBSL\reportJsp\showCxReport_sb_ndsds_2014_fb3.aspx.designer.cs">
+      <DependentUpon>showCxReport_sb_ndsds_2014_fb3.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="WSSBSL\reportJsp\showCxReport_sb_ndsds_2014_fb30.aspx.cs">
+      <DependentUpon>showCxReport_sb_ndsds_2014_fb30.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="WSSBSL\reportJsp\showCxReport_sb_ndsds_2014_fb30.aspx.designer.cs">
+      <DependentUpon>showCxReport_sb_ndsds_2014_fb30.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="WSSBSL\reportJsp\showCxReport_sb_ndsds_2014_fb6.aspx.cs">
+      <DependentUpon>showCxReport_sb_ndsds_2014_fb6.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="WSSBSL\reportJsp\showCxReport_sb_ndsds_2014_fb6.aspx.designer.cs">
+      <DependentUpon>showCxReport_sb_ndsds_2014_fb6.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="WSSBSL\reportJsp\showCxReport_sb_ndsds_2014_fb7.aspx.cs">
+      <DependentUpon>showCxReport_sb_ndsds_2014_fb7.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="WSSBSL\reportJsp\showCxReport_sb_ndsds_2014_fb7.aspx.designer.cs">
+      <DependentUpon>showCxReport_sb_ndsds_2014_fb7.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="WSSBSL\reportJsp\showCxReport_sb_ndsds_2014_fm.aspx.cs">
+      <DependentUpon>showCxReport_sb_ndsds_2014_fm.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="WSSBSL\reportJsp\showCxReport_sb_ndsds_2014_fm.aspx.designer.cs">
+      <DependentUpon>showCxReport_sb_ndsds_2014_fm.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="WSSBSL\reportJsp\showCxReport_sb_ndsds_2014_jcxx.aspx.cs">
+      <DependentUpon>showCxReport_sb_ndsds_2014_jcxx.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="WSSBSL\reportJsp\showCxReport_sb_ndsds_2014_jcxx.aspx.designer.cs">
+      <DependentUpon>showCxReport_sb_ndsds_2014_jcxx.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="WSSBSL\reportJsp\showCxReport_sb_ndsds_2014_tbbd.aspx.cs">
+      <DependentUpon>showCxReport_sb_ndsds_2014_tbbd.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="WSSBSL\reportJsp\showCxReport_sb_ndsds_2014_tbbd.aspx.designer.cs">
+      <DependentUpon>showCxReport_sb_ndsds_2014_tbbd.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="WSSBSL\reportJsp\showCxReport_sb_ndsds_2014_zb.aspx.cs">
+      <DependentUpon>showCxReport_sb_ndsds_2014_zb.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="WSSBSL\reportJsp\showCxReport_sb_ndsds_2014_zb.aspx.designer.cs">
+      <DependentUpon>showCxReport_sb_ndsds_2014_zb.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="WSSBSL\reportJsp\showCxReport_sljsjj.aspx.cs">
+      <DependentUpon>showCxReport_sljsjj.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="WSSBSL\reportJsp\showCxReport_sljsjj.aspx.designer.cs">
+      <DependentUpon>showCxReport_sljsjj.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="WSSBSL\reportJsp\showCxReport_whsyjsfsbb.aspx.cs">
+      <DependentUpon>showCxReport_whsyjsfsbb.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="WSSBSL\reportJsp\showCxReport_whsyjsfsbb.aspx.designer.cs">
+      <DependentUpon>showCxReport_whsyjsfsbb.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="WSSBSL\reportJsp\showCxReport_ybnsrFb1.aspx.cs">
+      <DependentUpon>showCxReport_ybnsrFb1.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="WSSBSL\reportJsp\showCxReport_ybnsrFb1.aspx.designer.cs">
+      <DependentUpon>showCxReport_ybnsrFb1.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="WSSBSL\reportJsp\showCxReport_ybnsrFb2.aspx.cs">
+      <DependentUpon>showCxReport_ybnsrFb2.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="WSSBSL\reportJsp\showCxReport_ybnsrFb2.aspx.designer.cs">
+      <DependentUpon>showCxReport_ybnsrFb2.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="WSSBSL\reportJsp\showCxReport_ybnsrFb3.aspx.cs">
+      <DependentUpon>showCxReport_ybnsrFb3.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="WSSBSL\reportJsp\showCxReport_ybnsrFb3.aspx.designer.cs">
+      <DependentUpon>showCxReport_ybnsrFb3.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="WSSBSL\reportJsp\showCxReport_ybnsrFb4.aspx.cs">
+      <DependentUpon>showCxReport_ybnsrFb4.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="WSSBSL\reportJsp\showCxReport_ybnsrFb4.aspx.designer.cs">
+      <DependentUpon>showCxReport_ybnsrFb4.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="WSSBSL\reportJsp\showCxReport_ybnsrFb5.aspx.cs">
+      <DependentUpon>showCxReport_ybnsrFb5.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="WSSBSL\reportJsp\showCxReport_ybnsrFb5.aspx.designer.cs">
+      <DependentUpon>showCxReport_ybnsrFb5.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="WSSBSL\reportJsp\showCxReport_ybnsrZb.aspx.cs">
+      <DependentUpon>showCxReport_ybnsrZb.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="WSSBSL\reportJsp\showCxReport_ybnsrZb.aspx.designer.cs">
+      <DependentUpon>showCxReport_ybnsrZb.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="WSSBSL\reportJsp\showCxReport_ysfwkcxmqd.aspx.cs">
+      <DependentUpon>showCxReport_ysfwkcxmqd.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="WSSBSL\reportJsp\showCxReport_ysfwkcxmqd.aspx.designer.cs">
+      <DependentUpon>showCxReport_ysfwkcxmqd.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="WSSBSL\reportJsp\showCxReport_zzsJmssbMxb.aspx.cs">
+      <DependentUpon>showCxReport_zzsJmssbMxb.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="WSSBSL\reportJsp\showCxReport_zzsJmssbMxb.aspx.designer.cs">
+      <DependentUpon>showCxReport_zzsJmssbMxb.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="WSSBSL\reportJsp\showReport_bfcpxstjb.aspx.cs">
+      <DependentUpon>showReport_bfcpxstjb.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="WSSBSL\reportJsp\showReport_bfcpxstjb.aspx.designer.cs">
+      <DependentUpon>showReport_bfcpxstjb.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="WSSBSL\reportJsp\showReport_bqdkjxsejgmxb.aspx.cs">
+      <DependentUpon>showReport_bqdkjxsejgmxb.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="WSSBSL\reportJsp\showReport_bqdkjxsejgmxb.aspx.designer.cs">
+      <DependentUpon>showReport_bqdkjxsejgmxb.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="WSSBSL\reportJsp\showReport_bqdkjxsejgmxb_bc.aspx.cs">
+      <DependentUpon>showReport_bqdkjxsejgmxb_bc.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="WSSBSL\reportJsp\showReport_bqdkjxsejgmxb_bc.aspx.designer.cs">
+      <DependentUpon>showReport_bqdkjxsejgmxb_bc.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="WSSBSL\reportJsp\showReport_cwkjzdba.aspx.cs">
+      <DependentUpon>showReport_cwkjzdba.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="WSSBSL\reportJsp\showReport_cwkjzdba.aspx.designer.cs">
+      <DependentUpon>showReport_cwkjzdba.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="WSSBSL\reportJsp\showReport_gdzcjx.aspx.cs">
+      <DependentUpon>showReport_gdzcjx.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="WSSBSL\reportJsp\showReport_gdzcjx.aspx.designer.cs">
+      <DependentUpon>showReport_gdzcjx.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="WSSBSL\reportJsp\showReport_gdzcjx_bc.aspx.cs">
+      <DependentUpon>showReport_gdzcjx_bc.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="WSSBSL\reportJsp\showReport_gdzcjx_bc.aspx.designer.cs">
+      <DependentUpon>showReport_gdzcjx_bc.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="WSSBSL\reportJsp\showReport_hznsqyzzsfpb.aspx.cs">
+      <DependentUpon>showReport_hznsqyzzsfpb.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="WSSBSL\reportJsp\showReport_hznsqyzzsfpb.aspx.designer.cs">
+      <DependentUpon>showReport_hznsqyzzsfpb.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="WSSBSL\reportJsp\showReport_sffxcsmxb.aspx.cs">
+      <DependentUpon>showReport_sffxcsmxb.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="WSSBSL\reportJsp\showReport_sffxcsmxb.aspx.designer.cs">
+      <DependentUpon>showReport_sffxcsmxb.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="WSSBSL\reportJsp\showReport_sffxcsmxb_bc.aspx.cs">
+      <DependentUpon>showReport_sffxcsmxb_bc.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="WSSBSL\reportJsp\showReport_sffxcsmxb_bc.aspx.designer.cs">
+      <DependentUpon>showReport_sffxcsmxb_bc.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="WSSBSL\reportJsp\showReport_sljsjj.aspx.cs">
+      <DependentUpon>showReport_sljsjj.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="WSSBSL\reportJsp\showReport_sljsjj.aspx.designer.cs">
+      <DependentUpon>showReport_sljsjj.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="WSSBSL\reportJsp\showReport_ybnsrFb1.aspx.cs">
+      <DependentUpon>showReport_ybnsrFb1.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="WSSBSL\reportJsp\showReport_ybnsrFb1.aspx.designer.cs">
+      <DependentUpon>showReport_ybnsrFb1.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="WSSBSL\reportJsp\showReport_ybnsrFb1_bc.aspx.cs">
+      <DependentUpon>showReport_ybnsrFb1_bc.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="WSSBSL\reportJsp\showReport_ybnsrFb1_bc.aspx.designer.cs">
+      <DependentUpon>showReport_ybnsrFb1_bc.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="WSSBSL\reportJsp\showReport_ybnsrFb2.aspx.cs">
+      <DependentUpon>showReport_ybnsrFb2.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="WSSBSL\reportJsp\showReport_ybnsrFb2.aspx.designer.cs">
+      <DependentUpon>showReport_ybnsrFb2.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="WSSBSL\reportJsp\showReport_ybnsrFb2_bc.aspx.cs">
+      <DependentUpon>showReport_ybnsrFb2_bc.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="WSSBSL\reportJsp\showReport_ybnsrFb2_bc.aspx.designer.cs">
+      <DependentUpon>showReport_ybnsrFb2_bc.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="WSSBSL\reportJsp\showReport_ybnsrFb3.aspx.cs">
+      <DependentUpon>showReport_ybnsrFb3.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="WSSBSL\reportJsp\showReport_ybnsrFb3.aspx.designer.cs">
+      <DependentUpon>showReport_ybnsrFb3.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="WSSBSL\reportJsp\showReport_ybnsrFb3_bc.aspx.cs">
+      <DependentUpon>showReport_ybnsrFb3_bc.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="WSSBSL\reportJsp\showReport_ybnsrFb3_bc.aspx.designer.cs">
+      <DependentUpon>showReport_ybnsrFb3_bc.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="WSSBSL\reportJsp\showReport_ybnsrFb4.aspx.cs">
+      <DependentUpon>showReport_ybnsrFb4.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="WSSBSL\reportJsp\showReport_ybnsrFb4.aspx.designer.cs">
+      <DependentUpon>showReport_ybnsrFb4.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="WSSBSL\reportJsp\showReport_ybnsrFb4_bc.aspx.cs">
+      <DependentUpon>showReport_ybnsrFb4_bc.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="WSSBSL\reportJsp\showReport_ybnsrFb4_bc.aspx.designer.cs">
+      <DependentUpon>showReport_ybnsrFb4_bc.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="WSSBSL\reportJsp\showReport_ybnsrFb5.aspx.cs">
+      <DependentUpon>showReport_ybnsrFb5.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="WSSBSL\reportJsp\showReport_ybnsrFb5.aspx.designer.cs">
+      <DependentUpon>showReport_ybnsrFb5.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="WSSBSL\reportJsp\showReport_ybnsrFb5_bc.aspx.cs">
+      <DependentUpon>showReport_ybnsrFb5_bc.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="WSSBSL\reportJsp\showReport_ybnsrFb5_bc.aspx.designer.cs">
+      <DependentUpon>showReport_ybnsrFb5_bc.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="WSSBSL\reportJsp\showReport_ybnsrZb.aspx.cs">
+      <DependentUpon>showReport_ybnsrZb.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="WSSBSL\reportJsp\showReport_ybnsrZb.aspx.designer.cs">
+      <DependentUpon>showReport_ybnsrZb.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="WSSBSL\reportJsp\showReport_ybnsrZb_bc.aspx.cs">
+      <DependentUpon>showReport_ybnsrZb_bc.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="WSSBSL\reportJsp\showReport_ybnsrZb_bc.aspx.designer.cs">
+      <DependentUpon>showReport_ybnsrZb_bc.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="WSSBSL\reportJsp\showReport_zzsJmssbMxb.aspx.cs">
+      <DependentUpon>showReport_zzsJmssbMxb.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="WSSBSL\reportJsp\showReport_zzsJmssbMxb.aspx.designer.cs">
+      <DependentUpon>showReport_zzsJmssbMxb.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="WSSBSL\reportJsp\showReport_zzsJmssbMxb_bc.aspx.cs">
+      <DependentUpon>showReport_zzsJmssbMxb_bc.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="WSSBSL\reportJsp\showReport_zzsJmssbMxb_bc.aspx.designer.cs">
+      <DependentUpon>showReport_zzsJmssbMxb_bc.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="WSSBSL\reportJsp\success.aspx.cs">
+      <DependentUpon>success.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="WSSBSL\reportJsp\success.aspx.designer.cs">
+      <DependentUpon>success.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="WSSBSL\reportServlet.ashx.cs">
+      <DependentUpon>reportServlet.ashx</DependentUpon>
+    </Compile>
+    <Compile Include="WSSBSL\reportServlet.aspx.cs">
+      <DependentUpon>reportServlet.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="WSSBSL\reportServlet.aspx.designer.cs">
+      <DependentUpon>reportServlet.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="WSSBSL\reportServlet25.aspx.cs">
+      <DependentUpon>reportServlet25.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="WSSBSL\reportServlet25.aspx.designer.cs">
+      <DependentUpon>reportServlet25.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="WSSBSL\reportServlet4.aspx.cs">
+      <DependentUpon>reportServlet4.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="WSSBSL\reportServlet4.aspx.designer.cs">
+      <DependentUpon>reportServlet4.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="WSSBSL\show_common_tsxx.aspx.cs">
+      <DependentUpon>show_common_tsxx.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="WSSBSL\show_common_tsxx.aspx.designer.cs">
+      <DependentUpon>show_common_tsxx.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="WSSBSL\show_common_xgmm.aspx.cs">
+      <DependentUpon>show_common_xgmm.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="WSSBSL\show_common_xgmm.aspx.designer.cs">
+      <DependentUpon>show_common_xgmm.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="WSSBSL\show_cwkjzdba_cwkjzdbaList.aspx.cs">
+      <DependentUpon>show_cwkjzdba_cwkjzdbaList.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="WSSBSL\show_cwkjzdba_cwkjzdbaList.aspx.designer.cs">
+      <DependentUpon>show_cwkjzdba_cwkjzdbaList.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="WSSBSL\show_cwkjzdba_cxCwkjzdbaList.aspx.cs">
+      <DependentUpon>show_cwkjzdba_cxCwkjzdbaList.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="WSSBSL\show_cwkjzdba_cxCwkjzdbaList.aspx.designer.cs">
+      <DependentUpon>show_cwkjzdba_cxCwkjzdbaList.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="WSSBSL\show_index_index.aspx.cs">
+      <DependentUpon>show_index_index.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="WSSBSL\show_index_index.aspx.designer.cs">
+      <DependentUpon>show_index_index.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="WSSBSL\show_index_indexMain.aspx.cs">
+      <DependentUpon>show_index_indexMain.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="WSSBSL\show_index_indexMain.aspx.designer.cs">
+      <DependentUpon>show_index_indexMain.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="WSSBSL\show_index_nsrBaseInfo.aspx.cs">
+      <DependentUpon>show_index_nsrBaseInfo.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="WSSBSL\show_index_nsrBaseInfo.aspx.designer.cs">
+      <DependentUpon>show_index_nsrBaseInfo.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="WSSBSL\show_index_nsrdjszxxcx.aspx.cs">
+      <DependentUpon>show_index_nsrdjszxxcx.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="WSSBSL\show_index_nsrdjszxxcx.aspx.designer.cs">
+      <DependentUpon>show_index_nsrdjszxxcx.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="WSSBSL\show_index_sssxjdcx.aspx.cs">
+      <DependentUpon>show_index_sssxjdcx.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="WSSBSL\show_index_sssxjdcx.aspx.designer.cs">
+      <DependentUpon>show_index_sssxjdcx.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="WSSBSL\show_index_xtgxrz.aspx.cs">
+      <DependentUpon>show_index_xtgxrz.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="WSSBSL\show_index_xtgxrz.aspx.designer.cs">
+      <DependentUpon>show_index_xtgxrz.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="WSSBSL\show_jdsds2012_cxJdsds2012ABbList.aspx.cs">
+      <DependentUpon>show_jdsds2012_cxJdsds2012ABbList.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="WSSBSL\show_jdsds2012_cxJdsds2012ABbList.aspx.designer.cs">
+      <DependentUpon>show_jdsds2012_cxJdsds2012ABbList.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="WSSBSL\show_jdsds2012_jdsds2012ABbList.aspx.cs">
+      <DependentUpon>show_jdsds2012_jdsds2012ABbList.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="WSSBSL\show_jdsds2012_jdsds2012ABbList.aspx.designer.cs">
+      <DependentUpon>show_jdsds2012_jdsds2012ABbList.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="WSSBSL\show_jhhg_jh_hgjkjks.aspx.cs">
+      <DependentUpon>show_jhhg_jh_hgjkjks.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="WSSBSL\show_jhhg_jh_hgjkjks.aspx.designer.cs">
+      <DependentUpon>show_jhhg_jh_hgjkjks.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="WSSBSL\show_jhhg_jh_hgjkjks_jgtzs.aspx.cs">
+      <DependentUpon>show_jhhg_jh_hgjkjks_jgtzs.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="WSSBSL\show_jhhg_jh_hgjkjks_jgtzs.aspx.designer.cs">
+      <DependentUpon>show_jhhg_jh_hgjkjks_jgtzs.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="WSSBSL\show_jhhg_jh_hgjkjks_jhjgcx.aspx.cs">
+      <DependentUpon>show_jhhg_jh_hgjkjks_jhjgcx.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="WSSBSL\show_jhhg_jh_hgjkjks_jhjgcx.aspx.designer.cs">
+      <DependentUpon>show_jhhg_jh_hgjkjks_jhjgcx.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="WSSBSL\show_jhhg_jh_hgjkjks_mxsjsc.aspx.cs">
+      <DependentUpon>show_jhhg_jh_hgjkjks_mxsjsc.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="WSSBSL\show_jhhg_jh_hgjkjks_mxsjsc.aspx.designer.cs">
+      <DependentUpon>show_jhhg_jh_hgjkjks_mxsjsc.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="WSSBSL\show_jhhg_jh_hgjkjks_sbjzqcx.aspx.cs">
+      <DependentUpon>show_jhhg_jh_hgjkjks_sbjzqcx.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="WSSBSL\show_jhhg_jh_hgjkjks_sbjzqcx.aspx.designer.cs">
+      <DependentUpon>show_jhhg_jh_hgjkjks_sbjzqcx.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="WSSBSL\show_jhhg_jh_hgjkjks_zlfpcx.aspx.cs">
+      <DependentUpon>show_jhhg_jh_hgjkjks_zlfpcx.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="WSSBSL\show_jhhg_jh_hgjkjks_zlfpcx.aspx.designer.cs">
+      <DependentUpon>show_jhhg_jh_hgjkjks_zlfpcx.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="WSSBSL\show_ndsdsA_cxNdsdsABbList.aspx.cs">
+      <DependentUpon>show_ndsdsA_cxNdsdsABbList.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="WSSBSL\show_ndsdsA_cxNdsdsABbList.aspx.designer.cs">
+      <DependentUpon>show_ndsdsA_cxNdsdsABbList.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="WSSBSL\show_ndsdsA_ndsdsABbList.aspx.cs">
+      <DependentUpon>show_ndsdsA_ndsdsABbList.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="WSSBSL\show_ndsdsA_ndsdsABbList.aspx.designer.cs">
+      <DependentUpon>show_ndsdsA_ndsdsABbList.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="WSSBSL\show_qyndglyw2016_qyndglyw2016BbList.aspx.cs">
+      <DependentUpon>show_qyndglyw2016_qyndglyw2016BbList.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="WSSBSL\show_qyndglyw2016_qyndglyw2016BbList.aspx.designer.cs">
+      <DependentUpon>show_qyndglyw2016_qyndglyw2016BbList.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="WSSBSL\show_qyndglyw2016_tbtsxx.aspx.cs">
+      <DependentUpon>show_qyndglyw2016_tbtsxx.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="WSSBSL\show_qyndglyw2016_tbtsxx.aspx.designer.cs">
+      <DependentUpon>show_qyndglyw2016_tbtsxx.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="WSSBSL\show_scxz_yffyjjkc.aspx.cs">
+      <DependentUpon>show_scxz_yffyjjkc.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="WSSBSL\show_scxz_yffyjjkc.aspx.designer.cs">
+      <DependentUpon>show_scxz_yffyjjkc.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="WSSBSL\show_scxz_yffyjjkc_sc.aspx.cs">
+      <DependentUpon>show_scxz_yffyjjkc_sc.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="WSSBSL\show_scxz_yffyjjkc_sc.aspx.designer.cs">
+      <DependentUpon>show_scxz_yffyjjkc_sc.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="WSSBSL\show_scxz_yffyjjkc_xz.aspx.cs">
+      <DependentUpon>show_scxz_yffyjjkc_xz.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="WSSBSL\show_scxz_yffyjjkc_xz.aspx.designer.cs">
+      <DependentUpon>show_scxz_yffyjjkc_xz.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="WSSBSL\show_skjn_dqwjsk.aspx.cs">
+      <DependentUpon>show_skjn_dqwjsk.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="WSSBSL\show_skjn_dqwjsk.aspx.designer.cs">
+      <DependentUpon>show_skjn_dqwjsk.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="WSSBSL\show_skjn_jkjlcx.aspx.cs">
+      <DependentUpon>show_skjn_jkjlcx.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="WSSBSL\show_skjn_jkjlcx.aspx.designer.cs">
+      <DependentUpon>show_skjn_jkjlcx.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="WSSBSL\show_skjn_kksdcx.aspx.cs">
+      <DependentUpon>show_skjn_kksdcx.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="WSSBSL\show_skjn_kksdcx.aspx.designer.cs">
+      <DependentUpon>show_skjn_kksdcx.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="WSSBSL\show_skjn_sdkkjl.aspx.cs">
+      <DependentUpon>show_skjn_sdkkjl.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="WSSBSL\show_skjn_sdkkjl.aspx.designer.cs">
+      <DependentUpon>show_skjn_sdkkjl.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="WSSBSL\show_sljsjj_bcsbSljsjjBbList.aspx.cs">
+      <DependentUpon>show_sljsjj_bcsbSljsjjBbList.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="WSSBSL\show_sljsjj_bcsbSljsjjBbList.aspx.designer.cs">
+      <DependentUpon>show_sljsjj_bcsbSljsjjBbList.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="WSSBSL\show_sljsjj_cxSljsjjBbList.aspx.cs">
+      <DependentUpon>show_sljsjj_cxSljsjjBbList.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="WSSBSL\show_sljsjj_cxSljsjjBbList.aspx.designer.cs">
+      <DependentUpon>show_sljsjj_cxSljsjjBbList.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="WSSBSL\show_sljsjj_sljsjjBbList.aspx.cs">
+      <DependentUpon>show_sljsjj_sljsjjBbList.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="WSSBSL\show_sljsjj_sljsjjBbList.aspx.designer.cs">
+      <DependentUpon>show_sljsjj_sljsjjBbList.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="WSSBSL\show_whsyjsf_cxWhsyjsfBbList.aspx.cs">
+      <DependentUpon>show_whsyjsf_cxWhsyjsfBbList.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="WSSBSL\show_whsyjsf_cxWhsyjsfBbList.aspx.designer.cs">
+      <DependentUpon>show_whsyjsf_cxWhsyjsfBbList.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="WSSBSL\show_wtkkxy_wtkkxys.aspx.cs">
+      <DependentUpon>show_wtkkxy_wtkkxys.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="WSSBSL\show_wtkkxy_wtkkxys.aspx.designer.cs">
+      <DependentUpon>show_wtkkxy_wtkkxys.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="WSSBSL\show_zzs2013Ybnsr_cxZzs2013YbnsrBbList.aspx.cs">
+      <DependentUpon>show_zzs2013Ybnsr_cxZzs2013YbnsrBbList.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="WSSBSL\show_zzs2013Ybnsr_cxZzs2013YbnsrBbList.aspx.designer.cs">
+      <DependentUpon>show_zzs2013Ybnsr_cxZzs2013YbnsrBbList.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="WSSBSL\show_zzs2013Ybnsr_zzs2013YbnsrBbList.aspx.cs">
+      <DependentUpon>show_zzs2013Ybnsr_zzs2013YbnsrBbList.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="WSSBSL\show_zzs2013Ybnsr_zzs2013YbnsrBbList.aspx.designer.cs">
+      <DependentUpon>show_zzs2013Ybnsr_zzs2013YbnsrBbList.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="WSSBSL\show_zzsxgm_cxZzs2013XgmBbList.aspx.cs">
+      <DependentUpon>show_zzsxgm_cxZzs2013XgmBbList.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="WSSBSL\show_zzsxgm_cxZzs2013XgmBbList.aspx.designer.cs">
+      <DependentUpon>show_zzsxgm_cxZzs2013XgmBbList.aspx</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="json\ajax.sword_StyleCtrl_loadStyle.json" />
+    <Content Include="json\ajax.sword_CacheCtrl_batchGetCacheData.json" />
+    <Content Include="json\ajax.sword_GY002CommonCtrl_queryNsrxxByNsrsbh.json" />
+    <Content Include="json\ajax.sword_SB151zlbsslCtrl_queryKjzdzzDmByDjxh.json" />
+    <Content Include="json\ajax.sword_SB151zlbsslCtrl_checkNsrcwkjzdxx.json" />
+    <Content Include="json\ajax.sword_SB151zlbsslCtrl_getZlbsbdlb.json" />
+    <Content Include="ajax.sword_StyleCtrl_loadStyle.ashx" />
+    <Content Include="ajax.sword.ashx" />
+    <Content Include="json\ajax.sword_SBGyCtrl_jsskssqz.json" />
+    <Content Include="json\ajax.sword_CX301DzcxMainCtrl_getDzcxTheme.json" />
+    <Content Include="ajax.sword_CX301DzcxMainCtrl_getDzcxTheme.ashx" />
+    <Content Include="download.sword.ashx" />
+    <Content Include="json\download.sword_CX301DzcxCtrl_getCxtjzdyInitList.json" />
+    <Content Include="sszsk\szzsk\json\getTreeList_0.json" />
+    <Content Include="sszsk\szzsk\getTreeList.ashx" />
+    <Content Include="sszsk\szzsk\json\getSearch.json" />
+    <Content Include="sszsk\szzsk\getSearch.ashx" />
+    <Content Include="sszsk\szzsk\json\getTreeList_1.json" />
+    <Content Include="sszsk\szzsk\json\getTreeList_2.json" />
+    <Content Include="sszsk\szzsk\json\getTreeList_3.json" />
+    <Content Include="sszsk\szzsk\json\getTreeList_5.json" />
+    <Content Include="sszsk\szzsk\json\getTreeList_6.json" />
+    <Content Include="sszsk\szzsk\getTreeSearch.ashx" />
+    <Content Include="sszsk\szzsk\json\getTreeSearch_000000000101.json" />
+    <Content Include="sszsk\szzsk\json\getTreeSearch_000000000102.json" />
+    <Content Include="sszsk\szzsk\json\getTreeSearch_000000000127.json" />
+    <Content Include="sszsk\szzsk\json\getTreeSearch_000000000124.json" />
+    <Content Include="sszsk\szzsk\json\getTreeSearch_000000000103.json" />
+    <Content Include="sszsk\szzsk\json\getTreeSearch_000000000104.json" />
+    <Content Include="sszsk\szzsk\json\getTreeSearch_000000000106.json" />
+    <Content Include="sszsk\szzsk\json\getTreeSearch_000000000115.json" />
+    <Content Include="sszsk\szzsk\json\getTreeSearch_000000000119.json" />
+    <Content Include="sszsk\szzsk\json\getTreeSearch_000000000120.json" />
+    <Content Include="sszsk\szzsk\json\getTreeSearch_000000000122.json" />
+    <Content Include="sszsk\szzsk\json\getTreeSearch_000000000123.json" />
+    <Content Include="sszsk\szzsk\json\getTreeSearch_145000000101.json" />
+    <Content Include="sszsk\szzsk\json\getTreeSearch_000000000125.json" />
+    <Content Include="sszsk\szzsk\json\getTreeSearch_000000000201.json" />
+    <Content Include="sszsk\szzsk\json\getTreeSearch_000000000202.json" />
+    <Content Include="sszsk\szzsk\json\getTreeSearch_000000000224.json" />
+    <Content Include="sszsk\szzsk\json\getTreeSearch_000000000227.json" />
+    <Content Include="sszsk\szzsk\json\getTreeSearch_000000000203.json" />
+    <Content Include="sszsk\szzsk\json\getTreeSearch_000000000204.json" />
+    <Content Include="sszsk\szzsk\json\getTreeSearch_000000000206.json" />
+    <Content Include="sszsk\szzsk\json\getTreeSearch_000000000215.json" />
+    <Content Include="sszsk\szzsk\json\getTreeSearch_000000000219.json" />
+    <Content Include="sszsk\szzsk\json\getTreeSearch_000000000220.json" />
+    <Content Include="sszsk\szzsk\json\getTreeSearch_000000000222.json" />
+    <Content Include="sszsk\szzsk\json\getTreeSearch_000000000223.json" />
+    <Content Include="sszsk\szzsk\json\getTreeSearch_145000000201.json" />
+    <Content Include="sszsk\szzsk\json\getTreeSearch_000000000225.json" />
+    <Content Include="sszsk\szzsk\json\getTreeSearch_145000000302.json" />
+    <Content Include="sszsk\szzsk\json\getTreeSearch_000000000301.json" />
+    <Content Include="sszsk\szzsk\json\getTreeSearch_000000000302.json" />
+    <Content Include="sszsk\szzsk\json\getTreeSearch_000000000303.json" />
+    <Content Include="sszsk\szzsk\json\getTreeSearch_145000000301.json" />
+    <Content Include="sszsk\szzsk\json\getTreeSearch_000000000305.json" />
+    <Content Include="sszsk\szzsk\json\getTreeSearch_000000000306.json" />
+    <Content Include="sszsk\szzsk\json\getTreeSearch_000000000307.json" />
+    <Content Include="sszsk\szzsk\json\getTreeSearch_000000000304.json" />
+    <Content Include="sszsk\szzsk\json\getTreeSearch_000000000506.json" />
+    <Content Include="sszsk\szzsk\json\getTreeSearch_000000000507.json" />
+    <Content Include="sszsk\szzsk\json\getTreeSearch_000000000501.json" />
+    <Content Include="sszsk\szzsk\json\getTreeSearch_000000000502.json" />
+    <Content Include="sszsk\szzsk\json\getTreeSearch_000000000503.json" />
+    <Content Include="sszsk\szzsk\json\getTreeSearch_000000000504.json" />
+    <Content Include="sszsk\szzsk\json\getTreeSearch_000000000505.json" />
+    <Content Include="sszsk\szzsk\json\getTreeSearch_000000000508.json" />
+    <Content Include="sszsk\szzsk\json\getTreeSearch_000000000605.json" />
+    <Content Include="sszsk\szzsk\json\getTreeSearch_000000000601.json" />
+    <Content Include="sszsk\szzsk\json\getTreeSearch_000000000604.json" />
+    <Content Include="sszsk\szzsk\json\getTreeSearch_000000000603.json" />
+    <Content Include="sszsk\szzsk\json\getTreeSearch_000000000602.json" />
+    <Content Include="json\download.sword_CX301DzcxCtrl_getCombData0E79B7A44003014E1C09DA7C5E298EB5.json" />
+    <Content Include="json\download.sword_CX301DzcxCtrl_getCombDataC4111F21339A395CC48AD4B81CF2CF50.json" />
+    <Content Include="json\download.sword_CX301DzcxCtrl_getCombData0001006121110.json" />
+    <Content Include="json\download.sword_CX301DzcxCtrl_getCombData0001006121180.json" />
+    <Content Include="json\download.sword_CX301DzcxCtrl_getCombData0001006121160.json" />
+    <Content Include="json\download.sword_CX301DzcxCtrl_getCombData0001006121190.json" />
+    <Content Include="json\download.sword_CX301DzcxCtrl_getCombData00010061211130.json" />
+    <Content Include="json\download.sword_CX301DzcxCtrl_getCombData0001006121170.json" />
+    <Content Include="json\download.sword_CX301DzcxCtrl_getCxdy00010061268.json" />
+    <Content Include="json\download.sword_CX301DzcxCtrl_getCxdy00010061211.json" />
+    <Content Include="json\download.sword_CX301DzcxCtrl_getDataTime00010061268.json" />
+    <Content Include="json\download.sword_CX301DzcxCtrl_getDataTime00010061211.json" />
+    <Content Include="json\download.sword_CX301DzcxCtrl_getResultColumns00010061268.json" />
+    <Content Include="json\download.sword_CX301DzcxCtrl_getResultColumns00010061211.json" />
+    <Content Include="json\download.sword_CX301DzcxCtrl_executeQuery00010061268.json" />
+    <Content Include="json\download.sword_CX301DzcxCtrl_executeQuery00010061211.json" />
+    <Content Include="json\download.sword_CX301DzcxCtrl_getCombDataE23697841BD2B9FD9B41FFCE15B77DB8.json" />
+    <Content Include="json\download.sword_CX301DzcxCtrl_getCombData00010061211100.json" />
+    <Content Include="json\ajax.sword_SB001XfssbCtrl_changeSbssqq.json" />
+    <Content Include="json\ajax.sword_TyslCtrl_initFlzl.json" />
+    <Content Include="json\ajax.sword_SB057SbcwgzCtrl_querySbbzl.json" />
+    <Content Include="json\ajax.sword_SB057SbcwgzCtrl_getSkssqzByYzpzzlDm.json" />
+    <Content Include="json\ajax.sword_SB057SbcwgzCtrl_judGzxx.json" />
+    <Content Include="json\ajax.sword_SB175FxmtysbCtrl_cwgzInitView.json" />
+    <Content Include="json\ajax.sword_CacheCtrl_batchGetCacheDataForTree.json" />
+    <Content Include="json\ajax.sword_SBGyCtrl_getPktsxx.json" />
+    <Content Include="json\ajax.sword_SB175FxmtysbCtrl_getInitData.json" />
+    <Content Include="json\ajax.sword_SB175FxmtysbCtrl_getHdxx.json" />
+    <Content Include="json\ajax.sword_SB175FxmtysbCtrl_getSl.json" />
+    <Content Include="json\ajax.sword_SB175FxmtysbCtrl_queryQzdxx.json" />
+    <Content Include="form.sword.ashx" />
+    <Content Include="json\ajax.sword_SB071Kjqysdssb2015Ctrl_changeSbssqq.json" />
+    <Content Include="json\ajax.sword_SBGyCtrl_isEnableZcbb.json" />
+    <Content Include="json\ajax.sword_SBGyCtrl_isEnableSkssq.json" />
+    <Content Include="json\ajax.sword_SB097TydkdjsbCtrl_getInitData.json" />
+    <Content Include="json\ajax.sword_SB207zzsyjnssbCtrl_getInitData.json" />
+    <Content Include="json\ajax.sword_GY011GyDyCtrl_getXtcs.json" />
+    <Content Include="json\ajax.sword_SB057SbcwgzCtrl_queryKgzSb.json" />
+    <Content Include="json\ajax.sword_SB071Kjqysdssb2015Ctrl_checKjywrKjzg.json" />
+    <Content Include="json\ajax.sword_SB151zlbsslCtrl_save.json" />
+    <Content Include="json\ajax.sword_SB151zlbsslCtrl_jysfcfcj.json" />
+    <Content Include="json\ajax.sword_SB151zlbsslCtrl_querySqss.json" />
+    <Content Include="json\ajax.sword_SB057SbcwgzCtrl_queryKgzSb1.json" />
+    <Content Include="json\ajax.sword_SB099QykjzzcwbbbsyxxcjCtrl_queryBssq.json" />
+    <Content Include="json\ajax.sword_SB151zlbsslCtrl_checkSfcfbs.json" />
+    <Content Include="sword.ashx" />
+    <Content Include="json\ajax.sword_SB151zlbsslCtrl_getZlbsbdlbZL1001002.json" />
+    <Content Include="json\ajax.sword_SB151zlbsslCtrl_getZlbsbdlbZL1001001.json" />
+    <Content Include="json\ajax.sword_SB151zlbsslCtrl_getZlbsbdlbZL1001003.json" />
+    <Content Include="json\ajax.sword_SB151zlbsslCtrl_saveZL1001002.json" />
+    <Content Include="json\ajax.sword_SB151zlbsslCtrl_saveZL1001001.json" />
+    <Content Include="json\ajax.sword_SB151zlbsslCtrl_saveZL1001003.json" />
+    <Content Include="json\ajax.sword_SB100QykjzdcwbbbsyxxcjCtrl_queryBssq.json" />
+    <Content Include="json\ajax.sword_SB151zlbsslCtrl_queryBssq.json" />
+    <Content Include="json\ajax.sword_SB104xqykjzzcwbsCtrl_queryXmlByzlbsuuid.json" />
+    <Content Include="json\ajax.sword_SB151zlbsslCtrl_getZlbsbdlbZL1001010.json" />
+    <Content Include="json\ajax.sword_SB151zlbsslCtrl_getZlbsbdlbZL1001012.json" />
+    <Content Include="json\ajax.sword_SB151zlbsslCtrl_getZlbsbdlbZL1001015.json" />
+    <Content Include="json\ajax.sword_SB151zlbsslCtrl_getZlbsbdlbZL1001016.json" />
+    <Content Include="json\ajax.sword_SB151zlbsslCtrl_getZlbsbdlbZL1001017.json" />
+    <Content Include="json\ajax.sword_SB151zlbsslCtrl_getZlbsbdlbZL1001018.json" />
+    <Content Include="json\ajax.sword_SB151zlbsslCtrl_getZlbsbdlbZL1001019.json" />
+    <Content Include="json\ajax.sword_SB151zlbsslCtrl_getZlbsbdlbZL1001020.json" />
+    <Content Include="json\ajax.sword_SB151zlbsslCtrl_getZlbsbdlbZL1001021.json" />
+    <Content Include="json\ajax.sword_SB151zlbsslCtrl_getZlbsbdlbZL1001022.json" />
+    <Content Include="json\ajax.sword_SB151zlbsslCtrl_getZlbsbdlbZL1001023.json" />
+    <Content Include="json\ajax.sword_SB151zlbsslCtrl_getZlbsbdlbZL1001024.json" />
+    <Content Include="json\ajax.sword_SB151zlbsslCtrl_getZlbsbdlbZL1001025.json" />
+    <Content Include="json\ajax.sword_SB151zlbsslCtrl_getZlbsbdlbZL1001026.json" />
+    <Content Include="json\ajax.sword_SB151zlbsslCtrl_getZlbsbdlbZL1001027.json" />
+    <Content Include="json\ajax.sword_SB151zlbsslCtrl_getZlbsbdlbZL1001028.json" />
+    <Content Include="json\ajax.sword_SB151zlbsslCtrl_getZlbsbdlbZL1001029.json" />
+    <Content Include="json\ajax.sword_SB151zlbsslCtrl_getZlbsbdlbZL1001030.json" />
+    <Content Include="json\ajax.sword_SB151zlbsslCtrl_getZlbsbdlbZL1001031.json" />
+    <Content Include="json\ajax.sword_SB151zlbsslCtrl_getZlbsbdlbZL1001032.json" />
+    <Content Include="json\ajax.sword_SB151zlbsslCtrl_getZlbsbdlbZL1001033.json" />
+    <Content Include="json\ajax.sword_SB151zlbsslCtrl_getZlbsbdlbZL1001034.json" />
+    <Content Include="json\ajax.sword_SB151zlbsslCtrl_getZlbsbdlbZL1001036.json" />
+    <Content Include="json\ajax.sword_SB151zlbsslCtrl_getZlbsbdlbZL1001037.json" />
+    <Content Include="json\ajax.sword_SB151zlbsslCtrl_getZlbsbdlbZL1001038.json" />
+    <Content Include="json\ajax.sword_SB151zlbsslCtrl_getZlbsbdlbZL1001039.json" />
+    <Content Include="json\ajax.sword_SB151zlbsslCtrl_getZlbsbdlbZL1001040.json" />
+    <Content Include="json\ajax.sword_SB151zlbsslCtrl_getZlbsbdlbZL1001041.json" />
+    <Content Include="json\ajax.sword_SB151zlbsslCtrl_getZlbsbdlbZL1001042.json" />
+    <Content Include="json\ajax.sword_SB151zlbsslCtrl_getZlbsbdlbZL1001043.json" />
+    <Content Include="json\ajax.sword_SB151zlbsslCtrl_getZlbsbdlbZL1001044.json" />
+    <Content Include="json\ajax.sword_SB151zlbsslCtrl_getZlbsbdlbZL1001045.json" />
+    <Content Include="json\ajax.sword_SB151zlbsslCtrl_getZlbsbdlbZL1001046.json" />
+    <Content Include="json\ajax.sword_SB151zlbsslCtrl_getZlbsbdlbZL1001047.json" />
+    <Content Include="json\ajax.sword_SB151zlbsslCtrl_getZlbsbdlbZL1001048.json" />
+    <Content Include="json\ajax.sword_SB151zlbsslCtrl_getZlbsbdlbZL1001049.json" />
+    <Content Include="getreportdata.ashx" />
+    <Content Include="ChuShiHua.ashx" />
+    <None Include="Properties\PublishProfiles\GXGS.pubxml" />
+    <None Include="Properties\PublishProfiles\JTAXGX.pubxml" />
+    <Content Include="VideoManage\GetVideo.ashx" />
+    <None Include="Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+    <None Include="Web.Release.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+    <Content Include="WSSBSL\JSON\do_index_Index_loginZgjc.json" />
+    <Content Include="WSSBSL\JSON\ajax.sword_CacheCtrl_getAllVersion.json" />
+    <Content Include="WSSBSL\JSON\do_index_Index_loadDqysbList.json" />
+    <Content Include="WSSBSL\JSON\do_index_Index_loadIndexNsrxx.json" />
+    <Content Include="WSSBSL\JSON\do_index_Index_loadBbtbList.json" />
+    <Content Include="WSSBSL\ajax.sword_CacheCtrl_getAllVersion.ashx" />
+    <Content Include="WSSBSL\do_index_Index_loginZgjc.ashx" />
+    <Content Include="WSSBSL\do_index_Index_loadIndexNsrxx.ashx" />
+    <Content Include="WSSBSL\do_index_Index_loadBbtbList.ashx" />
+    <Content Include="WSSBSL\do_index_Index_loadBbcxList.ashx" />
+    <Content Include="WSSBSL\JSON\do_index_Index_loadBbcxList.json" />
+    <Content Include="WSSBSL\do_index_Index_loadDqysbList.ashx" />
+    <Content Include="WSSBSL\JSON\do_zzs2013_Zzs2013_loadYbnsrList.json" />
+    <Content Include="WSSBSL\do_zzs2013_Zzs2013_loadYbnsrList.ashx" />
+    <Content Include="WSSBSL\do_sljsjj_Sljsjj_loadSljsjjList.ashx" />
+    <Content Include="WSSBSL\JSON\do_sljsjj_Sljsjj_loadSljsjjList.json" />
+    <Content Include="WSSBSL\do_jdsds2012_Jdsds2012_loadJdsdsAList.ashx" />
+    <Content Include="WSSBSL\JSON\do_jdsds2012_Jdsds2012_loadJdsdsAList.json" />
+    <Content Include="WSSBSL\JSON\do_whsyjsf_Whsyjsf_loadWhsyjsfList.json" />
+    <Content Include="WSSBSL\do_whsyjsf_Whsyjsf_loadWhsyjsfList.ashx" />
+    <Content Include="WSSBSL\JSON\do_ndsdsa_NdsdsA_loadNdsdsAList.json" />
+    <Content Include="WSSBSL\do_ndsdsa_NdsdsA_loadNdsdsAList.ashx" />
+    <Content Include="WSSBSL\JSON\do_qyndglyw2016_Qyndglyw2016_loadQyndglywInit.json" />
+    <Content Include="WSSBSL\do_qyndglyw2016_Qyndglyw2016_loadQyndglywInit.ashx" />
+    <Content Include="WSSBSL\JSON\do_cwkjzdba_Cwkjzdba_loadCwkjzdbaInit.json" />
+    <Content Include="WSSBSL\do_cwkjzdba_Cwkjzdba_loadCwkjzdbaInit.ashx" />
+    <Content Include="WSSBSL\do_skjn_Skjn_loadDqwjskList.ashx" />
+    <Content Include="WSSBSL\JSON\do_skjn_Skjn_loadDqwjskList.json" />
+    <Content Include="WSSBSL\JSON\do_skjn_Skjn_loadWqjkjlList.json" />
+    <Content Include="WSSBSL\do_skjn_Skjn_loadWqjkjlList.ashx" />
+    <Content Include="WSSBSL\JSON\do_skjn_Skjn_loadSdkkjlList.json" />
+    <Content Include="WSSBSL\do_skjn_Skjn_loadSdkkjlList.ashx" />
+    <Content Include="WSSBSL\JSON\do_skjn_Skjn_showKksdcxList.json" />
+    <Content Include="WSSBSL\do_skjn_Skjn_showKksdcxList.ashx" />
+    <Content Include="WSSBSL\JSON\do_jhhg_Jhhg_doJhhgNssbjzqCx.json" />
+    <Content Include="WSSBSL\do_jhhg_Jhhg_doJhhgNssbjzqCx.ashx" />
+    <Content Include="WSSBSL\JSON\do_jhhg_Jhhg_doJhhgJhSjjsjgCx.json" />
+    <Content Include="WSSBSL\do_jhhg_Jhhg_doJhhgJhSjjsjgCx.ashx" />
+    <Content Include="WSSBSL\JSON\do_jhhg_Jhhg_doJhhgJhjgmxBsyfCx.json" />
+    <Content Include="WSSBSL\do_jhhg_Jhhg_doJhhgJhjgmxBsyfCx.ashx" />
+    <Content Include="WSSBSL\JSON\do_jhhg_Jhhg_doJhhgZlfpCx.json" />
+    <Content Include="WSSBSL\do_jhhg_Jhhg_doJhhgZlfpCx.ashx" />
+    <Content Include="WSSBSL\JSON\do_wtkkxy_Wtkkxy_checkWtkkxysPrint.json" />
+    <Content Include="WSSBSL\do_wtkkxy_Wtkkxy_checkWtkkxysPrint.ashx" />
+    <Content Include="WSSBSL\JSON\do_zzs2013_Zzs2013_loadXgmnsrList.json" />
+    <Content Include="WSSBSL\do_zzs2013_Zzs2013_loadXgmnsrList.ashx" />
+    <Content Include="WSSBSL\JSON\do_cwkjzdba_Cwkjzdba_loadCwkjzdbaList.json" />
+    <Content Include="WSSBSL\do_cwkjzdba_Cwkjzdba_loadCwkjzdbaList.ashx" />
+    <Content Include="WSSBSL\JSON\do_index_NsrBaseInfo_loadNsrxxInfo.json" />
+    <Content Include="WSSBSL\do_index_NsrBaseInfo_loadNsrxxInfo.ashx" />
+    <Content Include="WSSBSL\JSON\do_index_Index_loadXtgxrzList.json" />
+    <Content Include="WSSBSL\do_index_Index_loadXtgxrzList.ashx" />
+    <Content Include="WSSBSL\JSON\do_index_NsrDjSzxxCx_loadNsrszxxInfo.json" />
+    <Content Include="WSSBSL\do_index_NsrDjSzxxCx_loadNsrszxxInfo.ashx" />
+    <Content Include="WSSBSL\do_index_Sssxjdcx_loadSssxjdInfo.ashx" />
+    <Content Include="WSSBSL\JSON\do_index_Sssxjdcx_loadSssxjdInfo.json" />
+    <Content Include="WSSBSL\JSON\do_sljsjj_Sljsjj_getGth.json" />
+    <Content Include="WSSBSL\do_sljsjj_Sljsjj_getGth.ashx" />
+    <Content Include="WSSBSL\do_sljsjj_Sljsjj_loadSljsjjBcsbInit.ashx" />
+    <Content Include="WSSBSL\JSON\do_sljsjj_Sljsjj_loadSljsjjBcsbInit_d794e42a4f5f0599014f5fbfdfc70017.json" />
+    <Content Include="WSSBSL\JSON\do_sljsjj_Sljsjj_loadSljsjjBcsbInit.json" />
+    <Content Include="WSSBSL\JSON\do_report_Report_queryTbbz.json" />
+    <Content Include="WSSBSL\JSON\do_report_Report_loadLockRule.json" />
+    <Content Include="WSSBSL\do_report_Report_queryTbbz.ashx" />
+    <Content Include="WSSBSL\do_report_Report_loadLockRule.ashx" />
+    <Content Include="WSSBSL\do_zzs2013_Zzs2013_loadYbnsrInit.ashx" />
+    <Content Include="WSSBSL\JSON\do_zzs2013_Zzs2013_loadYbnsrInit.json" />
+    <Content Include="WSSBSL\do_report_Report_queryTbbz_zzs.ashx" />
+    <Content Include="WSSBSL\JSON\do_report_Report_queryTbbz_zzs.json" />
+    <Content Include="WSSBSL\do_report_Report_loadLockRule_zzs.ashx" />
+    <Content Include="WSSBSL\JSON\do_report_Report_loadLockRule_zzs.json" />
+    <Content Include="WSSBSL\do_zzs2013_Zzs2013_checkZzs2013Txzg.ashx" />
+    <Content Include="WSSBSL\JSON\do_zzs2013_Zzs2013_checkZzs2013Txzg.json" />
+    <Content Include="WSSBSL\do_jdsds2012_Jdsds2012_loadJdsds2012AInit.ashx" />
+    <Content Include="WSSBSL\JSON\do_jdsds2012_Jdsds2012_loadJdsds2012AInit.json" />
+    <Content Include="WSSBSL\do_ndsdsa_NdsdsA_loadNdsdsAlInit.ashx" />
+    <Content Include="WSSBSL\JSON\do_ndsdsa_NdsdsA_loadNdsdsAlInit.json" />
+    <Content Include="WSSBSL\do_sljsjj_Sljsjj_loadSljsjjInit.ashx" />
+    <Content Include="WSSBSL\JSON\do_sljsjj_Sljsjj_loadSljsjjInit.json" />
+    <Content Include="WSSBSL\do_report_Report_queryTbbz_sljs.ashx" />
+    <Content Include="WSSBSL\JSON\do_report_Report_queryTbbz_sljs.json" />
+    <Content Include="WSSBSL\do_report_Report_loadLockRule_sljs.ashx" />
+    <Content Include="WSSBSL\JSON\do_report_Report_loadLockRule_sljs.json" />
+    <Content Include="WSSBSL\do_zzs2013_Zzs2013_updateTbxx.ashx" />
+    <Content Include="WSSBSL\JSON\do_zzs2013_Zzs2013_updateTbxx.json" />
+    <Content Include="WSSBSL\reportServlet.ashx" />
+    <Content Include="WSSBSL\JSON\reportServlet0.json" />
+    <Content Include="WSSBSL\do_zzs2013_Zzs2013_delete.ashx" />
+    <Content Include="WSSBSL\JSON\do_zzs2013_Zzs2013_delete.json" />
+    <Content Include="WSSBSL\do_zzs2013_Zzs2013_updateTbxx1.ashx" />
+    <Content Include="WSSBSL\JSON\do_zzs2013_Zzs2013_updateTbxx1.json" />
+    <Content Include="WSSBSL\NetworkData.json" />
+    <Content Include="WSSBSL\JSON\do_cwkjzdba_Cwkjzdba_updateTbxx.json" />
+    <Content Include="WSSBSL\do_cwkjzdba_Cwkjzdba_updateTbxx.ashx" />
+    <Content Include="WSSBSL\JSON\do_zzs2013_Zzs2013_checkZzs2013Txzg1.json" />
+    <Content Include="WSSBSL\do_zzs2013_Zzs2013_checkZzs2013Txzg1.ashx" />
+    <Content Include="WSSBSL\do_zzs2013_Zzs2013_checkZzs2013Txzg2.ashx" />
+    <Content Include="WSSBSL\JSON\do_zzs2013_Zzs2013_checkZzs2013Txzg2.json" />
+    <Content Include="WSSBSL\do_zzs2013_Zzs2013_submitZzs2013Ybnsr.ashx" />
+    <Content Include="WSSBSL\do_sljsjj_Sljsjj_updateTbxx.ashx" />
+    <Content Include="WSSBSL\do_sljsjj_Sljsjj_submitSljsjj.ashx" />
+    <Content Include="WSSBSL\do_sljsjj_Sljsjj_delete.ashx" />
+  </ItemGroup>
+  <ItemGroup />
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>True</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>0</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>http://localhost:5439/</IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

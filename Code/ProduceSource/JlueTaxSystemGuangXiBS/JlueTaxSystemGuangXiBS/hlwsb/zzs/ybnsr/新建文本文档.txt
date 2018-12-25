@@ -1,0 +1,44 @@
+protected string getsvinfo(string YSXM_DM)
+        {
+            string result = ;
+            if (YSXM_DM == 010100  YSXM_DM == 010201  YSXM_DM == 010202  YSXM_DM == 010300
+                 YSXM_DM == 010400  YSXM_DM == 010500  YSXM_DM == 020000  YSXM_DM == 030100
+                 YSXM_DM == 040100  YSXM_DM == 040200  YSXM_DM == 040300  YSXM_DM == 040400
+                 YSXM_DM == 040500  YSXM_DM == 040400  YSXM_DM == 040400)
+            {
+                result = {code0,msg操作成功,data{BODY[{ZZSCEZSBJY,YYSCEZSBJY,ZZSSLHZZSL11%、3%,YYSSLHZZSL3%}]}};
+            }
+            else if (YSXM_DM == 030200  YSXM_DM == 010201  YSXM_DM == 010201  YSXM_DM == 010201
+                 YSXM_DM == 010201  YSXM_DM == 010201  YSXM_DM == 010201  YSXM_DM == 010201)
+            {
+                result = {code0,msg操作成功,data{BODY[{ZZSCEZSBJY,YYSCEZSBJY,ZZSSLHZZSL6%、3%,YYSSLHZZSL3%}]}};
+            }
+            else if (YSXM_DM == 050100  YSXM_DM == 050200  YSXM_DM == 050300  YSXM_DM == 050400
+                 YSXM_DM == 050500  YSXM_DM == 060101  YSXM_DM == 060102  YSXM_DM == 060103
+                 YSXM_DM == 060104  YSXM_DM == 060201  YSXM_DM == 060202  YSXM_DM == 060203
+                 YSXM_DM == 060204  YSXM_DM == 060205  YSXM_DM == 060301  YSXM_DM == 060302
+                 YSXM_DM == 060303  YSXM_DM == 060304  YSXM_DM == 060401  YSXM_DM == 060402
+                 YSXM_DM == 060403  YSXM_DM == 060404  YSXM_DM == 060405  YSXM_DM == 060406
+                 YSXM_DM == 060407  YSXM_DM == 060601  YSXM_DM == 060602  YSXM_DM == 060603
+                 YSXM_DM == 060701  YSXM_DM == 060702  YSXM_DM == 060703  YSXM_DM == 060801
+                 YSXM_DM == 069900  YSXM_DM == 070101  YSXM_DM == 070102  YSXM_DM == 070201
+                 YSXM_DM == 070202  YSXM_DM == 070301  YSXM_DM == 070302  YSXM_DM == 070401
+                 YSXM_DM == 070402  YSXM_DM == 070500  YSXM_DM == 079900  YSXM_DM == 080100
+                 YSXM_DM == 080200  YSXM_DM == 080400  YSXM_DM == 089900  YSXM_DM == 080100)
+            {
+                result = {code0,msg操作成功,data{BODY[{ZZSCEZSBJY,YYSCEZSBJY,ZZSSLHZZSL6%、3%,YYSSLHZZSL5%、3%}]}};
+            }
+            else if (YSXM_DM == 060802  YSXM_DM == 060803  YSXM_DM == 060804)
+            {
+                result = {code0,msg操作成功,data{BODY[{ZZSCEZSBJY,YYSCEZSBJY,ZZSSLHZZSL6%、5%、3%,YYSSLHZZSL5%、3%}]}};
+            }
+            else if (YSXM_DM == 060501  YSXM_DM == 060502  YSXM_DM == 080300  YSXM_DM == 090100  YSXM_DM == 090200)
+            {
+                result = {code0,msg操作成功,data{BODY[{ZZSCEZSBJY,YYSCEZSBJY,ZZSSLHZZSL11%、5%、3%,YYSSLHZZSL5%、3%}]}};
+            }
+            else if (YSXM_DM == 060503  YSXM_DM == 060504)
+            {
+                result = {code0,msg操作成功,data{BODY[{ZZSCEZSBJY,YYSCEZSBJY,ZZSSLHZZSL17%、3%,YYSSLHZZSL5%、3%}]}};
+            }
+            return result;
+        }

@@ -1,0 +1,25 @@
+﻿["Y", [{
+	"bbzlmc": "财务会计制度备案",
+	"bz": "申报成功",
+	"dataFromBz": "0",
+	"fjs": "",
+	"pzxh": "",
+	"sblx": "正常申报",
+	"sbrq": {
+		"date": 8,
+		"day": 1,
+		"hours": 17,
+		"minutes": 57,
+		"month": 4,
+		"nanos": 0,
+		"seconds": 40,
+		"time": 1494237460000,
+		"timezoneOffset": -480,
+		"year": 117
+	},
+	"sbuuid": "",
+	"sbzt": "申报成功",
+	"ssqq": "2017-01-01",
+	"ssqz": "9999-12-31",
+	"tbqk": "1"
+}]]

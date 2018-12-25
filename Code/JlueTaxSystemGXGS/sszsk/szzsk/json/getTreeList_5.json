@@ -1,0 +1,41 @@
+﻿[{
+	"id": "000000000506",
+	"text": "申报征收",
+	"iconCls": "",
+	"state": "closed"
+}, {
+	"id": "000000000507",
+	"text": "法制",
+	"iconCls": "",
+	"state": "closed"
+}, {
+	"id": "000000000501",
+	"text": "税务登记",
+	"iconCls": "",
+	"state": "closed"
+}, {
+	"id": "000000000502",
+	"text": "发票管理",
+	"iconCls": "",
+	"state": "closed"
+}, {
+	"id": "000000000503",
+	"text": "税收优惠管理",
+	"iconCls": "",
+	"state": "closed"
+}, {
+	"id": "000000000504",
+	"text": "认定管理",
+	"iconCls": "",
+	"state": "closed"
+}, {
+	"id": "000000000505",
+	"text": "证明管理",
+	"iconCls": "",
+	"state": "closed"
+}, {
+	"id": "000000000508",
+	"text": "内部文书",
+	"iconCls": "",
+	"state": ""
+}]

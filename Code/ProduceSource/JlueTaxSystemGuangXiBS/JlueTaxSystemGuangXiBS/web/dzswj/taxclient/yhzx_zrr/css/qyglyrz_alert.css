@@ -1,0 +1,127 @@
+/*弹出框*/
+.wep_yhzx_alert{
+	font-family: "microsoft yahei";
+	font-size: 0;
+	display: none;
+}
+
+.wep_yhzx_alert li {
+    line-height: 42px;
+    text-align: left;
+    margin-left: 30px;
+}
+
+
+.wep_yhzx_alert .wep_save_box{
+    text-align: right;
+    margin-left: 0;
+
+}
+.wep_yhzx_alert .wep_add_text{
+	width: 182px;
+	font-size: 14px;
+	color: #666666;
+	display: inline-block;
+	vertical-align: middle;
+}
+.wep_yhzx_alert input[type="text"],.wep_yhzx_alert select{
+	font-size: 12px;
+	color: #666;
+	width: 335px;
+	height: 30px;
+    line-height: 30px;
+    border-radius: 3px;
+    border: solid 1px #e6e6e6;
+    padding-left: 5px;
+    margin: 0 22px;
+    vertical-align: middle;
+}
+.wep_yhzx_alert input[type="text"]:hover,.wep_yhzx_alert select:hover{
+	border-color: #76c3fd ;
+}
+.wep_yhzx_alert input[disabled]:hover{
+	border-color: #e6e6e6;
+}
+.wep_yhzx_alert .wep_save_box{
+	margin-top: 20px;
+}
+.wep_yhzx_alert .wep_save_btn{
+	background-color: #1e9fff;
+	margin-right:22px;
+}
+/*企业管理员认证*/
+.wep_qyglyrz_addBox li .wep_qyglyrz_msgText{
+	width: 220px;
+	margin:0 0 0 22px;
+}
+.wep_qyglyrz_addBox .wep_qyglyrz_sendMsg{
+	width: 98px;
+	font-size: 14px;
+	background-color: #f1f7fc;
+	height: 30px;
+	line-height: 30px;
+	color: #1e9fff;
+	border: 1px solid #afd7f4;
+	margin-left: 8px;
+	border-radius: 3px;
+	padding-left: 0;
+	margin: 0 22px 0 17px;
+	vertical-align: middle;
+}
+/*电子资料弹出框样式*/
+.wep_dzzl_addBox .wep_add_text{
+	width: 60px;
+}
+.wep_dzzl_addBox li{
+	/* padding-right: 50px; */
+}
+.wep_dzzl_addBox li .wep_lawj_text{
+	width: 220px;
+	margin:0 0 0 22px;
+}
+.wep_dzzl_addBox .wep_lawj_btn{
+	width: 98px;
+	font-size: 14px;
+	background-color: #e6e6e6;
+	height: 30px;
+	line-height: 30px;
+	color: #666;
+	border: 1px solid #e6e6e6;
+	margin-left: 8px;
+	border-radius: 3px;
+	padding-left: 0;
+	margin: 0 22px 0 17px;
+	vertical-align: middle;
+}
+.wep_dzzl_addBox p{
+	font-size: 12px;
+	color: #AAAAAA;
+	text-align: left;
+	padding-left:80px ;
+}
+.wep_dzzl_addBox .wep_imgcheck{
+	height: 156px;
+	border: 1px dashed #e2e2e3;
+	margin: 0 22px 0 20px;
+}
+/*办税授权身份*/
+.wxl_bssf_tk li{
+    font-size:12px;
+    display:inline-block;
+}
+.wxl_bssf_tk li i{
+    margin-right:5px;
+}
+.wxl_bssf_tk li i.icon-squarecheckfill{
+    color:#1e9fff;
+}
+.wxl_bssf_tk .wxl_btn{
+    background:#1e9fff;
+    font-size:12px;
+    margin-right: 5px;
+	padding: 5px 15px;
+}
+.wxl_bssf_tk .wxl_alert_btn_box{
+    float: right;
+    padding:0px 20px;
+}

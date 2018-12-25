@@ -1,0 +1,102 @@
+﻿{
+  "data": [
+    {
+      "name": "slbz",
+      "value": "1",
+      "type": ""
+    },
+    {
+      "trs": [
+        {
+          "status": null,
+          "tds": {
+            "skssqq": {
+              "value": "2017-11-01 00:00:00"
+            },
+            "ssglyDm": {
+              "value": "14501070052"
+            },
+            "sbsxDm1": {
+              "value": "11"
+            },
+            "pzxh": {
+              "value": "10014517000034798372"
+            },
+            "zspzmxxh": {
+              "value": "0"
+            },
+            "zfbz1": {
+              "value": "N"
+            },
+            "sjgsdq": {
+              "value": "14501070500"
+            },
+            "gzlxDm1": {
+              "value": "1"
+            },
+            "lrrDm": {
+              "value": "14501980001"
+            },
+            "djxh": {
+              "value": "10114501010114170071"
+            },
+            "nssbrq": {
+              "value": "2017-12-01 00:00:00"
+            },
+            "zgswskfjDm": {
+              "value": "14501070500"
+            },
+            "csz": {
+              "value": "N"
+            },
+            "yzpzzlDm": {
+              "value": "BDA0610100"
+            },
+            "ybtse": {
+              "value": "0.0"
+            },
+            "sbqx": {
+              "value": "2017-12-15 00:00:00"
+            },
+            "qzd": {
+              "value": "0.0"
+            },
+            "skssqz": {
+              "value": "2017-11-30 00:00:00"
+            },
+            "sbuuid": {
+              "value": "AA03C4A8378ADBCA7E9AACEF58808C14"
+            },
+            "sbfsDm": {
+              "value": "32"
+            },
+            "lrrq": {
+              "value": "2017-12-01 15:27:34"
+            },
+            "xgrq": {
+              "value": "2017-12-01 15:27:34"
+            }
+          }
+        }
+      ],
+      "name": "sbsjxxGrid",
+      "sword": "SwordGrid"
+    },
+    {
+      "name": "reCode",
+      "value": "1",
+      "type": ""
+    },
+    {
+      "name": "gwssswjg",
+      "value": "14501070500",
+      "type": ""
+    },
+    {
+      "name": "sessionID",
+      "value": "891c4a072b55459c90e84fadf61a65bc",
+      "type": ""
+    }
+  ]
+
+}

@@ -1,0 +1,206 @@
+.wxn_collAdd{
+    /*width: 700px;*/
+    /* height: 350px; */
+    display: block;
+}
+.layui-btn{
+    height: 30px;
+    line-height: 30px;
+}
+.layui-input, .layui-select{
+    line-height: 30px;
+    height: 30px;
+}
+
+.layui-form-select dl{
+    top:30px;
+}
+
+.layui-layer-demo .layui-layer-content{
+    padding: 20px;
+    height:378px !important;
+    overflow: hidden !important;
+}
+
+.layui-form-select .layui-input{
+    padding-right: 0;
+}
+
+.layui-input-block{
+    margin-left: 0;
+    margin-top: 40px;
+}
+
+.wxn_search_icon{
+    position: absolute;
+    right: 5px;
+    top: 8px;
+    cursor: pointer;
+}
+
+.layui-form-item .layui-form-checkbox{
+    margin-right: 44px;
+    margin-bottom: 10px;
+}
+
+.layui-layer-setwin .layui-layer-close1:hover{
+    color: #000000;
+}
+
+.layui-form-item{
+    /*overflow-y: auto;
+    height: 290px;*/
+}
+
+.layui-form{
+    /*height: 290px;*/
+
+}
+
+.wxn_collAdd .layui-form .layui-inline{
+	margin-right: 5px;
+}
+.wxn_collAdd .layui-form .layui-input{
+	width:238px;
+}
+/*.wxn_collAdd p.title{
+	line-height: 40px;
+	font-size: 14px;
+	font-weight: bold;
+	font-family: "微软雅黑";
+	clear: both;
+}
+.wxn_collAdd{
+	width: 100%;
+}
+.wxn_collAdd ul li{
+	display: inline-block;
+	width:24.7%;
+	line-height: 28px;
+	vertical-align: top;
+}
+.wxn_collAdd ul li label{
+	display: block;
+	width:14px;
+	height: 14px;
+	background: url(../img/check.png);
+	vertical-align: middle;
+	float: left;
+	margin-top: 8px;
+    margin-right: 5px;
+}
+.wxn_collAdd ul li span{
+	display: block;
+	float: left;
+	width:90%
+}
+.wxn_collAdd ul li label.active{
+	background: url(../img/check_active.png);
+}*/
+.iconfont{
+	font-size: 16px!important;
+}
+.wxl_collSwdj{
+	height: 200px!important;
+	overflow: auto!important;
+}
+.wxl_collSwdj1{
+	height: 270px;
+	overflow: auto!important;
+}
+.wxl_collSwdj>li,.wxl_collSwdj1>li{
+	width: 100%;
+}
+.wxl_collSwdj>ul>li>label,.wxl_collSwdj1>ul>li>label{
+	display: none;
+	
+}
+.wxl_collSwdj>ul>li>span,.wxl_collSwdj1>ul>li>span{
+	height: 40px;
+	line-height: 40px;
+	display: block;
+	width: 100%;
+	font-weight: bold;
+	font-family: "微软雅黑";
+	font-size: 14px;
+	color: #333;
+}
+.wxl_collSwdj>ul>li>span{
+	height: 10px;
+}
+.wxl_collSwdj .submenu li span.span_sub{
+	overflow: hidden;
+	display: block;
+	height: 51px;
+	line-height: 51px;
+	border: 1px solid #eef3f6;
+	background-color: #f9fafd;
+}
+.wxl_collSwdj .submenu li span.span_sub:hover {
+	background-color: #eef1f9;
+}
+.wxl_collSwdj .submenu li a{
+	float: left;
+}
+.wxl_collSwdj .submenu li span.span_sub a{
+	width: 175px;
+	overflow: hidden;
+	white-space: nowrap;
+	text-overflow: ellipsis;
+	margin-left: 10px;
+}
+.wxl_collSwdj .submenu li span.close_icon{
+	display: block;
+	width: 8px;
+	height: 8px;
+	background: url(../img/icon_close2.png);
+	float: right;
+	margin-top: 22px;
+	cursor:  pointer;
+	margin-right: 10px;
+}
+.wxn_collAdd,.wxn_collAdd1{
+	width: 100%;
+}
+.wxn_collAdd ul>li ul>li,.wxn_collAdd1 ul>li ul>li{
+	display: inline-block;
+	width:24.7%;
+	line-height: 28px;
+	vertical-align: top;
+}
+.wxn_collAdd ul li ul label,.wxn_collAdd1 ul li ul label{
+	display: block;
+	width:14px;
+	height: 14px;
+	background: url(../img/check.png);
+	vertical-align: middle;
+	float: left;
+	margin-top: 8px;
+    margin-right: 5px;
+}
+.wxn_collAdd ul li ul label{
+	width: 0;
+	height: 0;
+}
+.wxn_collAdd ul>li>ul li span,.wxn_collAdd1 ul>li>ul li span{
+	/*display: block;
+	float: left;*/
+	/*width:90%;*/
+	font-size: 12px;
+}
+.wxn_collAdd ul li label.active,.wxn_collAdd1 ul li label.active{
+	background: url(../img/check_active.png);
+}
+.wxl_tip_box li{
+	padding: 3px 10px;
+}
+.submenu{
+	overflow: hidden;
+}
+.submenu li{
+	float: left;
+	margin-bottom: 10px;
+}
+.wxl_collSwdj2{
+	overflow: auto;
+}

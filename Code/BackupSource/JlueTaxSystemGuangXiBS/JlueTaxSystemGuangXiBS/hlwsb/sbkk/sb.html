@@ -1,0 +1,86 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+        "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <title>网上申报</title>
+    <link rel="stylesheet" href="../../hlwsb/commons/css/BeAlert.css">
+    <script type="text/javascript" src="../../commons/js/include_ui.js?dm=1090"></script>
+    <script type="text/javascript" src="../../hlwsb/commons/js/include_ui_hlwsb.js?dm=40"></script>
+    <script type="text/javascript" src="../../hlwsb/commons/js/BeAlert.js"></script>
+    <script type="text/javascript" src="sb.js"></script>
+    <style type="text/css">
+        .tipDiv{
+            height:350px;
+            margin-top:10px;
+            margin-left:10px;
+            text-indent:0em;
+            font-size:14px;
+            color:red;
+            font-weight:bold;
+            overflow-y:auto;
+            padding-bottom:10px;
+        }
+    </style>
+</head>
+<body>
+<!-- 分割开始-->
+
+       <div class="panelBar">
+            <ul class="toolBar">
+                <li class=""><a class="able"><span><input type="button" id="SBBUTTON" onclick="sb.onToolbarClick(1);"
+                                                          accesskey="e" onmouseout="this.style.color='#000'"
+                                                          onmousemove="this.style.color='#f00'"
+                                                          value="申报数据提交"></span></a></li>
+                <li class="line">line</li>
+                <li class=""><a class="edit"><span><input type="button" id="XGSJBUTTON" onclick="sb.onToolbarClick(2);"
+                                                          accesskey="e" onmouseout="this.style.color='#000'"
+                                                          onmousemove="this.style.color='#f00'"
+                                                          value="修改数据"></span></a></li>
+                <!--<li class="line">line</li>-->
+				<!--<li class=""><a class="source"><span><input type="button" onclick="sb.onToolbarClick(3);"-->
+                                                          <!--accesskey="e" onmouseout="this.style.color='#000'"-->
+                                                          <!--onmousemove="this.style.color='#f00'"-->
+                                                          <!--value="不同税表间审核"></span></a></li>-->
+               <li class="line">line</li>
+				<li class=""><a class="cancel"><span><input type="button"  onclick="sb.onToolbarClick(4);"
+                                                          accesskey="e" onmouseout="this.style.color='#000'"
+                                                          onmousemove="this.style.color='#f00'"
+                                                          value="作废申报记录"></span></a></li>
+                <li class="line">line</li>
+                <li class=""><a class="edit"><span><input type="button"  onclick="sb.onToolbarClick(5);"
+                                                            accesskey="e" onmouseout="this.style.color='#000'"
+                                                            onmousemove="this.style.color='#f00'"
+                                                            value="同步申报记录"></span></a></li>
+				<li class=""><a class="source"  style="display:none" id="fksman"><span><input type="button"  id="FKSMBUTTON" onclick="sb.onToolbarClick(6);"
+                                                          accesskey="e" onmouseout="this.style.color='#000'"
+                                                          onmousemove="this.style.color='#f00'"
+                                                          value="政策风险预警扫描"></span></a></li>
+                                                          
+                <li class=""><a class="source"  id="sbztcx"><span><input type="button"  id="SBZTCX" onclick="sb.onToolbarClick(7);"
+                                                          accesskey="e" onmouseout="this.style.color='#000'"
+                                                          onmousemove="this.style.color='#f00'"
+                                                          value="申报状态查询"></span></a></li>
+            </ul>
+            <div class="bzwd" onclick="hlwsbTools.helpWD();">    	
+    		</div>
+        </div>
+        <div class="divider"></div>
+        <!--工具栏结束-->
+
+
+        <table id="tbList" class="tbClass">
+        </table>
+        <!--分割区域右侧内容结束-->
+        <!--<p style="margin-top:1px;line-height:20px;">温馨提醒：征期最后一天16:00后不允许删除申报记录</p>-->
+        <p style="margin-top:0px;line-height:20px;color:red;display:block" id="fjswxtx">如对本列表显示出的申报结果有疑问，请点击【申报状态查询】，查看当期税（费）种申报情况详细信息！</p>
+        <p style="margin-top:0px;line-height:20px;color:red;display:none"  id="nsrztsw">您当前的纳税人状态为“清算”状态！暂无法通过互联网办理增值税纳税申报，请联系主管税务机关予以处理！其它税种及财务报表可以正常申报。</p>
+	    <p style="margin-top:0px;line-height:20px;color:red;display:none" id="zzstx">您认定的增值税为季度申报，本月不需要申报。请在下季度初进行申报。</p>
+		<p style="margin-top:0px;line-height:20px;color:red;display:none" id="fjswxtx">附加税已申报!若增值税小规模的应纳税额合计为零，网上申报成功后，税局系统会自动触发附加税零申报。</p>
+        <p style="margin-top:0px;line-height:20px;color:red;display:block" id="qysdsnb">系统提醒：纳税人已申报未缴纳税款，交税不得晚于规定的纳税期限。</p>
+        <p style="margin-top:5px;line-height:20px;">提示信息：</p> 
+        <div class="tipDiv" id="tip" style="line-height:22px;">
+        </div>
+<!-- 分割结束-->
+</body>
+</html>

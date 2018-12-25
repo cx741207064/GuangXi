@@ -1,0 +1,25 @@
+﻿["Y", [{
+	"bbzlmc": "水利建设基金",
+	"bz": "",
+	"dataFromBz": "0",
+	"fjs": "",
+	"pzxh": "10014517000033404934",
+	"sblx": "正常申报",
+	"sbrq": {
+		"date": 2,
+		"day": 4,
+		"hours": 0,
+		"minutes": 0,
+		"month": 10,
+		"nanos": 0,
+		"seconds": 0,
+		"time": 1509552000000,
+		"timezoneOffset": -480,
+		"year": 117
+	},
+	"sbuuid": "B8289B1EEB56C45E63566659F556B415",
+	"sbzt": "申报成功",
+	"ssqq": "2017-10-01",
+	"ssqz": "2017-10-31",
+	"tbqk": "1"
+}]]

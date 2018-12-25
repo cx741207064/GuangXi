@@ -1,0 +1,204 @@
+﻿{
+	"data": [{
+		"trs": [{
+			"status": null,
+			"tds": {
+				"sfxcj": {
+					"value": "Y"
+				},
+				"xh": {
+					"value": "1"
+				},
+				"sfbszl": {
+					"value": "N"
+				},
+				"sfyhd": {
+					"value": "Y"
+				},
+				"cwbbzlDm": {
+					"value": "4"
+				},
+				"ljwz": {
+					"value": "/sb/sb103/sb103_sydwkjzdzcfzb.jsp"
+				},
+				"bszlmc": {
+					"value": "人口和计划生育事业单位会计制度财务报表报送与信息采集"
+				},
+				"bb": {
+					"value": "true"
+				},
+				"sftj": {
+					"value": "N"
+				},
+				"bszlDm": {
+					"value": "ZLA0610163"
+				},
+				"tjbs": {
+					"value": ""
+				}
+			}
+		}, {
+			"status": null,
+			"tds": {
+				"sfxcj": {
+					"value": "N"
+				},
+				"xh": {
+					"value": "2"
+				},
+				"sfbszl": {
+					"value": "N"
+				},
+				"sfyhd": {
+					"value": "Y"
+				},
+				"cwbbzlDm": {
+					"value": "1"
+				},
+				"ljwz": {
+					"value": ".."
+				},
+				"bszlmc": {
+					"value": "财务报表附注"
+				},
+				"bb": {
+					"value": ""
+				},
+				"sftj": {
+					"value": "N"
+				},
+				"bszlDm": {
+					"value": "ZLA0610283"
+				},
+				"tjbs": {
+					"value": "true"
+				}
+			}
+		}, {
+			"status": null,
+			"tds": {
+				"sfxcj": {
+					"value": "N"
+				},
+				"xh": {
+					"value": "3"
+				},
+				"sfbszl": {
+					"value": "N"
+				},
+				"sfyhd": {
+					"value": "Y"
+				},
+				"cwbbzlDm": {
+					"value": "1"
+				},
+				"ljwz": {
+					"value": ".."
+				},
+				"bszlmc": {
+					"value": "原始财务会计报表"
+				},
+				"bb": {
+					"value": ""
+				},
+				"sftj": {
+					"value": "N"
+				},
+				"bszlDm": {
+					"value": "ZLA0610284"
+				},
+				"tjbs": {
+					"value": "true"
+				}
+			}
+		}, {
+			"status": null,
+			"tds": {
+				"sfxcj": {
+					"value": "N"
+				},
+				"xh": {
+					"value": "4"
+				},
+				"sfbszl": {
+					"value": "N"
+				},
+				"sfyhd": {
+					"value": "Y"
+				},
+				"cwbbzlDm": {
+					"value": "1"
+				},
+				"ljwz": {
+					"value": "/sb/gycwbb/sb000_ndcwkjbgshbg.jsp"
+				},
+				"bszlmc": {
+					"value": "年度财务会计报告审计报告"
+				},
+				"bb": {
+					"value": ""
+				},
+				"sftj": {
+					"value": "N"
+				},
+				"bszlDm": {
+					"value": "ZLA0610291"
+				},
+				"tjbs": {
+					"value": "true"
+				}
+			}
+		}, {
+			"status": null,
+			"tds": {
+				"sfxcj": {
+					"value": "N"
+				},
+				"xh": {
+					"value": "5"
+				},
+				"sfbszl": {
+					"value": "N"
+				},
+				"sfyhd": {
+					"value": "Y"
+				},
+				"cwbbzlDm": {
+					"value": "1"
+				},
+				"ljwz": {
+					"value": "/sb/gycwbb/sb000_yfzcfzzhzb.jsp"
+				},
+				"bszlmc": {
+					"value": "“研发支出”辅助账汇总表"
+				},
+				"bb": {
+					"value": ""
+				},
+				"sftj": {
+					"value": "N"
+				},
+				"bszlDm": {
+					"value": "ZLA0610292"
+				},
+				"tjbs": {
+					"value": "true"
+				}
+			}
+		}],
+		"name": "yhdzlGrid",
+		"sword": "SwordGrid"
+	}, {
+		"name": "zlsl",
+		"value": "5",
+		"type": ""
+	}, {
+		"name": "gwssswjg",
+		"value": "14501950500",
+		"type": ""
+	}, {
+		"name": "sessionID",
+		"value": "82b6d6e550a042eebbdb6f2ab4254e10",
+		"type": ""
+	}]
+}

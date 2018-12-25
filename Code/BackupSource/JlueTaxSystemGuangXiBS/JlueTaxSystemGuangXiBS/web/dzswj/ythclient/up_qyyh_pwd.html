@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=11"/>
+    <title>企业修改密码</title>
+    <link type="text/css" rel="stylesheet" href="../common/reset.css"/>
+    <link type="text/css" rel="stylesheet" href="css/register.css"/>
+	<link rel="stylesheet" href="../common/dzswj_font/iconfont.css" />
+    <script src="../commons/include_ui_jcpt.js?dm=5051"></script>
+    <script src="../tools/jcptTools.js"></script>
+    <script src="../tools/aesTools.js"></script>
+
+    <script src="js/regValidator.js"></script>
+    <script src="js/up_qyyh_pwd.js"></script>
+    <style>
+    html,body{
+        background: #fff;
+        overflow-x: hidden;
+    }
+    .wrap{
+        min-width: auto;
+    }
+    .content{
+        border: 0px;
+    }
+    </style>
+</head>
+<body>
+<div class="wrap">
+    <!-- <div class="box">
+        <div class="header">
+            <img src="imgs/logo_img.png" alt=""/>
+            <span>国家税务总局广西壮族自治区税务局</span>
+        </div>
+    </div> -->
+    <div class="content">
+        <form action="">
+            <div class="basicMsg">
+                <!-- <h2>企业基本信息</h2> -->
+                <ul>
+                    <li>
+                        <span>账号:</span>
+                        <span class="jysh jyxh_1" id="ID_QY_ZH"></span>
+                    </li>
+                    <li>
+                        <span>帐号名称:</span>
+                        <span class="jysh jyxh_1" id="ID_QY_ZHMC"></span>
+                    </li>
+                    <li>
+                        <span>企业名称:</span>
+                        <span class="jysh jyxh_1" id="ID_QY_QYMC"></span>
+                    </li>
+
+                </ul>
+                <!-- <h2>企业修改密码</h2> -->
+                <ul>
+                    <li>
+                        <span>当前密码:</span>
+                        <input type="password" name="QY_OLDPWD" maxlength="16" minlength="8" value=""/>
+                        <i class="icon iconfont icon-roundcheckfill"></i>
+                        <i class="icon iconfont icon-round_close_fill_light"></i>
+                        <div class="msg"></div>
+                        <div class="msg msg_exist"></div>
+                    </li>
+                    <li>
+                        <span>新的密码:</span>
+                        <input type="password" name="QY_PWD" maxlength="16" minlength="8" value=""/>
+                        <i class="icon iconfont icon-roundcheckfill"></i>
+                        <i class="icon iconfont icon-round_close_fill_light"></i>
+                        <div class="msg"></div>
+                        <div class="msg msg_exist"></div>
+                    </li>
+                    <li>
+                        <span>确认密码:</span>
+                        <input type="password" name="QY_REPWD" maxlength="16" minlength="8" value=""/>
+                        <i class="icon iconfont icon-roundcheckfill"></i>
+                        <i class="icon iconfont icon-round_close_fill_light"></i>
+                        <div class="msg"></div>
+                        <div class="msg msg_exist"></div>
+                    </li>
+
+                    <li>
+                        <span></span>
+                        <button type="button" name="submit" onclick="up_qyyh_pwd.onUpPwd();">确认修改</button>
+                    </li>
+                </ul>
+            </div>
+        </form>
+    </div>
+</div>
+
+</body>
+</html>

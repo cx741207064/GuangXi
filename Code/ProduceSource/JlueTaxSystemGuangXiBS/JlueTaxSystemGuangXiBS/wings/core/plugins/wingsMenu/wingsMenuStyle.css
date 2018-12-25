@@ -1,0 +1,104 @@
+
+/* MENU */
+
+.nav_wings_menu {
+ background: #fff;
+ float: left;
+ margin: 0;
+ padding: 0;
+ border: 1px solid #0098cb;
+ border-bottom: none;
+}
+
+.nav_wings_menu li a, .nav_wings_menu li {
+ 	/*float: left;*/
+}
+
+.nav_wings_menu li {
+ list-style: none;
+ position: relative;
+ border-bottom: solid 1px #0098cb;
+ width:120px;
+}
+
+.nav_wings_menu li a {
+ text-decoration: none;
+ color:  #555;
+ background: #fafdff;
+ height:28px;
+ display:block;
+ text-align: center;
+ line-height: 28px;
+}
+
+.nav_wings_menu li a:hover {
+ background: #0098cb;
+ color: #fff;
+}
+
+
+/* Submenu */
+
+/*lei：所有子菜单隐藏*/
+.nav_wings_menu li ul {
+ display: none;
+ position: absolute;
+ left: 0;
+ top: 100%;
+ padding: 0;
+ margin: 0;
+ border: 1px solid #0098cb;
+ border-bottom: none;
+}
+
+/*lei：有子菜单的显示*/
+.nav_wings_menu li:hover > ul {
+ left: 100%;
+ top: -1px;
+ display: block;
+}
+
+.nav_wings_menu li ul li, .nav_wings_menu li ul li a {
+ float: none;
+ width: 100px;
+ background-color: #fff;
+ font-size: 12px;
+}
+
+.nav_wings_menu li ul li {
+ _display: inline; /* for IE6 */
+}
+
+.nav_wings_menu li ul li a {
+ display: block;
+}
+
+/* SUBSUB Menu */
+
+.nav_wings_menu li ul li ul {
+ display: none;
+}
+
+/*lei：设置子菜单右侧显示*/
+.nav_wings_menu li ul li:hover ul {
+ /*left: 100%;
+ top: 0; */
+}
+
+
+/*0802 new add ljw*/
+#zcd_begin input{
+ background-color: #0098cb;
+ outline: none;
+ border: none;
+ color: #fff;
+ margin: 5px;
+ padding: 3px 10px;
+}
+#zcd_begin input:hover{
+ background-color: #0188b5;
+}
+
+.nav1-tabs>li>a, .nav1-tabs>li>a:focus{
+ z-index: 0!important;
+}

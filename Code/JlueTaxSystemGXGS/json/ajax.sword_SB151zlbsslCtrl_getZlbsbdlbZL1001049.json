@@ -1,0 +1,130 @@
+﻿{
+	"data": [{
+		"trs": [{
+			"status": null,
+			"tds": {
+				"sfxcj": {
+					"value": "Y"
+				},
+				"xh": {
+					"value": "1"
+				},
+				"sfbszl": {
+					"value": "N"
+				},
+				"sfyhd": {
+					"value": "Y"
+				},
+				"cwbbzlDm": {
+					"value": ""
+				},
+				"ljwz": {
+					"value": "/sb/sb272/sb272_tzgskjhsbf_zcfzb.jsp"
+				},
+				"bszlmc": {
+					"value": "资产负债表（适用执行投资公司会计核算办法的公司）"
+				},
+				"bb": {
+					"value": "true"
+				},
+				"sftj": {
+					"value": "N"
+				},
+				"bszlDm": {
+					"value": "ZLA0610337"
+				},
+				"tjbs": {
+					"value": ""
+				}
+			}
+		}, {
+			"status": null,
+			"tds": {
+				"sfxcj": {
+					"value": "N"
+				},
+				"xh": {
+					"value": "2"
+				},
+				"sfbszl": {
+					"value": "N"
+				},
+				"sfyhd": {
+					"value": "Y"
+				},
+				"cwbbzlDm": {
+					"value": ""
+				},
+				"ljwz": {
+					"value": "/sb/sb272/sb272_tzgskjhsbf_lrb.jsp"
+				},
+				"bszlmc": {
+					"value": "利润表（适用执行投资公司会计核算办法的公司）"
+				},
+				"bb": {
+					"value": "true"
+				},
+				"sftj": {
+					"value": "N"
+				},
+				"bszlDm": {
+					"value": "ZLA0610338"
+				},
+				"tjbs": {
+					"value": ""
+				}
+			}
+		}, {
+			"status": null,
+			"tds": {
+				"sfxcj": {
+					"value": "N"
+				},
+				"xh": {
+					"value": "3"
+				},
+				"sfbszl": {
+					"value": "N"
+				},
+				"sfyhd": {
+					"value": "Y"
+				},
+				"cwbbzlDm": {
+					"value": ""
+				},
+				"ljwz": {
+					"value": "/sb/sb272/sb272_tzgskjhsbf_xjllb.jsp"
+				},
+				"bszlmc": {
+					"value": "现金流量表（适用执行投资公司会计核算办法的公司）"
+				},
+				"bb": {
+					"value": "true"
+				},
+				"sftj": {
+					"value": "N"
+				},
+				"bszlDm": {
+					"value": "ZLA0610339"
+				},
+				"tjbs": {
+					"value": ""
+				}
+			}
+		}],
+		"name": "yhdzlGrid",
+		"sword": "SwordGrid"
+	}, {
+		"name": "zlsl",
+		"value": "3",
+		"type": ""
+	}, {
+		"name": "gwssswjg",
+		"value": "14501950500",
+		"type": ""
+	}, {
+		"name": "sessionID",
+		"value": "2358efd1dec14e8cb30a000d320d7947",
+		"type": ""
+	}]
+}

@@ -1,0 +1,71 @@
+﻿[{
+	"id": "000000000101",
+	"text": "税收基础知识",
+	"iconCls": "",
+	"state": "closed"
+}, {
+	"id": "000000000102",
+	"text": "征收管理",
+	"iconCls": "",
+	"state": "closed"
+}, {
+	"id": "000000000127",
+	"text": "税务代理",
+	"iconCls": "",
+	"state": "closed"
+}, {
+	"id": "000000000124",
+	"text": "纳税服务",
+	"iconCls": "",
+	"state": "closed"
+}, {
+	"id": "000000000103",
+	"text": "增值税",
+	"iconCls": "",
+	"state": "closed"
+}, {
+	"id": "000000000104",
+	"text": "消费税",
+	"iconCls": "",
+	"state": "closed"
+}, {
+	"id": "000000000106",
+	"text": "企业所得税",
+	"iconCls": "",
+	"state": "closed"
+}, {
+	"id": "000000000115",
+	"text": "车辆购置税",
+	"iconCls": "",
+	"state": "closed"
+}, {
+	"id": "000000000119",
+	"text": "进出口税收",
+	"iconCls": "",
+	"state": "closed"
+}, {
+	"id": "000000000120",
+	"text": "涉外税收",
+	"iconCls": "",
+	"state": "closed"
+}, {
+	"id": "000000000122",
+	"text": "其他地方规费",
+	"iconCls": "",
+	"state": "closed"
+}, {
+	"id": "000000000123",
+	"text": "财务会计",
+	"iconCls": "",
+	"state": "closed"
+}, {
+	"id": "145000000101",
+	"text": "税收软件",
+	"iconCls": "",
+	"state": "closed"
+}, {
+	"id": "000000000125",
+	"text": "文件清理",
+	"iconCls": "",
+	"state": ""
+}]

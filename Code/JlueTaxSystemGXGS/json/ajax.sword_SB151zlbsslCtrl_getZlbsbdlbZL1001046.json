@@ -1,0 +1,167 @@
+﻿{
+	"data": [{
+		"trs": [{
+			"status": null,
+			"tds": {
+				"sfxcj": {
+					"value": "Y"
+				},
+				"xh": {
+					"value": "1"
+				},
+				"sfbszl": {
+					"value": "N"
+				},
+				"sfyhd": {
+					"value": "Y"
+				},
+				"cwbbzlDm": {
+					"value": "1"
+				},
+				"ljwz": {
+					"value": "/sb/sb277/sb277_xzdwkjzdcwbb_zcfzb.jsp"
+				},
+				"bszlmc": {
+					"value": "资产负债表（适用执行行政单位会计制度的单位）"
+				},
+				"bb": {
+					"value": "true"
+				},
+				"sftj": {
+					"value": "N"
+				},
+				"bszlDm": {
+					"value": "ZLA0610316"
+				},
+				"tjbs": {
+					"value": ""
+				}
+			}
+		}, {
+			"status": null,
+			"tds": {
+				"sfxcj": {
+					"value": "N"
+				},
+				"xh": {
+					"value": "2"
+				},
+				"sfbszl": {
+					"value": "N"
+				},
+				"sfyhd": {
+					"value": "Y"
+				},
+				"cwbbzlDm": {
+					"value": "1"
+				},
+				"ljwz": {
+					"value": "/sb/sb277/sb277_xzdwkjzdcwbb_srzcbyb.jsp"
+				},
+				"bszlmc": {
+					"value": "收入支出表_月报（适用执行行政单位会计制度的单位）"
+				},
+				"bb": {
+					"value": "true"
+				},
+				"sftj": {
+					"value": "N"
+				},
+				"bszlDm": {
+					"value": "ZLA0610317"
+				},
+				"tjbs": {
+					"value": ""
+				}
+			}
+		}, {
+			"status": null,
+			"tds": {
+				"sfxcj": {
+					"value": "N"
+				},
+				"xh": {
+					"value": "3"
+				},
+				"sfbszl": {
+					"value": "N"
+				},
+				"sfyhd": {
+					"value": "Y"
+				},
+				"cwbbzlDm": {
+					"value": "1"
+				},
+				"ljwz": {
+					"value": "/sb/sb277/sb277_xzdwkjzdcwbb_srzcbnb.jsp"
+				},
+				"bszlmc": {
+					"value": "收入支出表_年报（适用执行行政单位会计制度的单位）"
+				},
+				"bb": {
+					"value": "true"
+				},
+				"sftj": {
+					"value": "N"
+				},
+				"bszlDm": {
+					"value": "ZLA0610318"
+				},
+				"tjbs": {
+					"value": ""
+				}
+			}
+		}, {
+			"status": null,
+			"tds": {
+				"sfxcj": {
+					"value": "N"
+				},
+				"xh": {
+					"value": "4"
+				},
+				"sfbszl": {
+					"value": "N"
+				},
+				"sfyhd": {
+					"value": "Y"
+				},
+				"cwbbzlDm": {
+					"value": "1"
+				},
+				"ljwz": {
+					"value": "/sb/sb277/sb277_xzdwkjzdcwbb_czbksrzcb.jsp"
+				},
+				"bszlmc": {
+					"value": "财政拨款收入支出表（适用执行行政单位会计制度的单位）"
+				},
+				"bb": {
+					"value": "true"
+				},
+				"sftj": {
+					"value": "N"
+				},
+				"bszlDm": {
+					"value": "ZLA0610319"
+				},
+				"tjbs": {
+					"value": ""
+				}
+			}
+		}],
+		"name": "yhdzlGrid",
+		"sword": "SwordGrid"
+	}, {
+		"name": "zlsl",
+		"value": "4",
+		"type": ""
+	}, {
+		"name": "gwssswjg",
+		"value": "14501950500",
+		"type": ""
+	}, {
+		"name": "sessionID",
+		"value": "9e1190beb4c54f7c91eb23a295b7f5f7",
+		"type": ""
+	}]
+}

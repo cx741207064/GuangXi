@@ -1,0 +1,611 @@
+﻿{
+	"data": [{
+		"trs": [{
+			"status": null,
+			"tds": {
+				"sfxcj": {
+					"value": "Y"
+				},
+				"xh": {
+					"value": "1"
+				},
+				"sfbszl": {
+					"value": "N"
+				},
+				"sfyhd": {
+					"value": "Y"
+				},
+				"cwbbzlDm": {
+					"value": "01"
+				},
+				"ljwz": {
+					"value": "/sb/sb423/sb423_qykjzzddqy_zcfzb.jsp"
+				},
+				"bszlmc": {
+					"value": "资产负债表（适用执行企业会计制度的典当企业）"
+				},
+				"bb": {
+					"value": "true"
+				},
+				"sftj": {
+					"value": "N"
+				},
+				"bszlDm": {
+					"value": "ZLA0610267"
+				},
+				"tjbs": {
+					"value": "true"
+				}
+			}
+		}, {
+			"status": null,
+			"tds": {
+				"sfxcj": {
+					"value": "Y"
+				},
+				"xh": {
+					"value": "2"
+				},
+				"sfbszl": {
+					"value": "N"
+				},
+				"sfyhd": {
+					"value": "Y"
+				},
+				"cwbbzlDm": {
+					"value": "05"
+				},
+				"ljwz": {
+					"value": "/sb/sb423/sb423_qykjzzddqy_zcfzb.jsp"
+				},
+				"bszlmc": {
+					"value": "利润分配表（适用执行企业会计制度的典当企业）"
+				},
+				"bb": {
+					"value": "true"
+				},
+				"sftj": {
+					"value": "N"
+				},
+				"bszlDm": {
+					"value": "ZLA0610268"
+				},
+				"tjbs": {
+					"value": "true"
+				}
+			}
+		}, {
+			"status": null,
+			"tds": {
+				"sfxcj": {
+					"value": "Y"
+				},
+				"xh": {
+					"value": "3"
+				},
+				"sfbszl": {
+					"value": "N"
+				},
+				"sfyhd": {
+					"value": "Y"
+				},
+				"cwbbzlDm": {
+					"value": "03"
+				},
+				"ljwz": {
+					"value": "/sb/sb423/sb423_qykjzzddqy_zcfzb.jsp"
+				},
+				"bszlmc": {
+					"value": "现金流量表（适用执行企业会计制度的典当企业）"
+				},
+				"bb": {
+					"value": "true"
+				},
+				"sftj": {
+					"value": "N"
+				},
+				"bszlDm": {
+					"value": "ZLA0610269"
+				},
+				"tjbs": {
+					"value": "true"
+				}
+			}
+		}, {
+			"status": null,
+			"tds": {
+				"sfxcj": {
+					"value": "Y"
+				},
+				"xh": {
+					"value": "4"
+				},
+				"sfbszl": {
+					"value": "N"
+				},
+				"sfyhd": {
+					"value": "Y"
+				},
+				"cwbbzlDm": {
+					"value": "04"
+				},
+				"ljwz": {
+					"value": "/sb/sb423/sb423_qykjzzddqy_zcfzb.jsp"
+				},
+				"bszlmc": {
+					"value": "所有者权益变动表（适用执行企业会计制度的典当企业）"
+				},
+				"bb": {
+					"value": "true"
+				},
+				"sftj": {
+					"value": "N"
+				},
+				"bszlDm": {
+					"value": "ZLA0610270"
+				},
+				"tjbs": {
+					"value": "true"
+				}
+			}
+		}, {
+			"status": null,
+			"tds": {
+				"sfxcj": {
+					"value": "N"
+				},
+				"xh": {
+					"value": "5"
+				},
+				"sfbszl": {
+					"value": "N"
+				},
+				"sfyhd": {
+					"value": "Y"
+				},
+				"cwbbzlDm": {
+					"value": "1"
+				},
+				"ljwz": {
+					"value": ".."
+				},
+				"bszlmc": {
+					"value": "财务报表附注"
+				},
+				"bb": {
+					"value": ""
+				},
+				"sftj": {
+					"value": "N"
+				},
+				"bszlDm": {
+					"value": "ZLA0610283"
+				},
+				"tjbs": {
+					"value": "true"
+				}
+			}
+		}, {
+			"status": null,
+			"tds": {
+				"sfxcj": {
+					"value": "N"
+				},
+				"xh": {
+					"value": "6"
+				},
+				"sfbszl": {
+					"value": "N"
+				},
+				"sfyhd": {
+					"value": "Y"
+				},
+				"cwbbzlDm": {
+					"value": "1"
+				},
+				"ljwz": {
+					"value": ".."
+				},
+				"bszlmc": {
+					"value": "原始财务会计报表"
+				},
+				"bb": {
+					"value": ""
+				},
+				"sftj": {
+					"value": "N"
+				},
+				"bszlDm": {
+					"value": "ZLA0610284"
+				},
+				"tjbs": {
+					"value": "true"
+				}
+			}
+		}, {
+			"status": null,
+			"tds": {
+				"sfxcj": {
+					"value": "N"
+				},
+				"xh": {
+					"value": "7"
+				},
+				"sfbszl": {
+					"value": "N"
+				},
+				"sfyhd": {
+					"value": "Y"
+				},
+				"cwbbzlDm": {
+					"value": "01"
+				},
+				"ljwz": {
+					"value": "/sb/sb423/sb423_qykjzzddqy_zcfzb.jsp"
+				},
+				"bszlmc": {
+					"value": "贷款和垫款按担保物类别分布情况"
+				},
+				"bb": {
+					"value": "true"
+				},
+				"sftj": {
+					"value": "N"
+				},
+				"bszlDm": {
+					"value": "ZLA0610285"
+				},
+				"tjbs": {
+					"value": ""
+				}
+			}
+		}, {
+			"status": null,
+			"tds": {
+				"sfxcj": {
+					"value": "N"
+				},
+				"xh": {
+					"value": "8"
+				},
+				"sfbszl": {
+					"value": "N"
+				},
+				"sfyhd": {
+					"value": "Y"
+				},
+				"cwbbzlDm": {
+					"value": "01"
+				},
+				"ljwz": {
+					"value": "/sb/sb423/sb423_qykjzzddqy_zcfzb.jsp"
+				},
+				"bszlmc": {
+					"value": "逾期贷款"
+				},
+				"bb": {
+					"value": "true"
+				},
+				"sftj": {
+					"value": "N"
+				},
+				"bszlDm": {
+					"value": "ZLA0610286"
+				},
+				"tjbs": {
+					"value": ""
+				}
+			}
+		}, {
+			"status": null,
+			"tds": {
+				"sfxcj": {
+					"value": "N"
+				},
+				"xh": {
+					"value": "9"
+				},
+				"sfbszl": {
+					"value": "N"
+				},
+				"sfyhd": {
+					"value": "Y"
+				},
+				"cwbbzlDm": {
+					"value": "01"
+				},
+				"ljwz": {
+					"value": "/sb/sb423/sb423_qykjzzddqy_zcfzb.jsp"
+				},
+				"bszlmc": {
+					"value": "绝当金额（指绝当涉及的贷款以及应收未收的利息和综合费用）"
+				},
+				"bb": {
+					"value": "true"
+				},
+				"sftj": {
+					"value": "N"
+				},
+				"bszlDm": {
+					"value": "ZLA0610287"
+				},
+				"tjbs": {
+					"value": ""
+				}
+			}
+		}, {
+			"status": null,
+			"tds": {
+				"sfxcj": {
+					"value": "N"
+				},
+				"xh": {
+					"value": "10"
+				},
+				"sfbszl": {
+					"value": "N"
+				},
+				"sfyhd": {
+					"value": "Y"
+				},
+				"cwbbzlDm": {
+					"value": "01"
+				},
+				"ljwz": {
+					"value": "/sb/sb423/sb423_qykjzzddqy_zcfzb.jsp"
+				},
+				"bszlmc": {
+					"value": "利息收入（按担保物类别）"
+				},
+				"bb": {
+					"value": "true"
+				},
+				"sftj": {
+					"value": "N"
+				},
+				"bszlDm": {
+					"value": "ZLA0610288"
+				},
+				"tjbs": {
+					"value": ""
+				}
+			}
+		}, {
+			"status": null,
+			"tds": {
+				"sfxcj": {
+					"value": "N"
+				},
+				"xh": {
+					"value": "11"
+				},
+				"sfbszl": {
+					"value": "N"
+				},
+				"sfyhd": {
+					"value": "Y"
+				},
+				"cwbbzlDm": {
+					"value": "1"
+				},
+				"ljwz": {
+					"value": "/sb/gycwbb/sb000_ndcwkjbgshbg.jsp"
+				},
+				"bszlmc": {
+					"value": "年度财务会计报告审计报告"
+				},
+				"bb": {
+					"value": ""
+				},
+				"sftj": {
+					"value": "N"
+				},
+				"bszlDm": {
+					"value": "ZLA0610291"
+				},
+				"tjbs": {
+					"value": "true"
+				}
+			}
+		}, {
+			"status": null,
+			"tds": {
+				"sfxcj": {
+					"value": "N"
+				},
+				"xh": {
+					"value": "12"
+				},
+				"sfbszl": {
+					"value": "N"
+				},
+				"sfyhd": {
+					"value": "Y"
+				},
+				"cwbbzlDm": {
+					"value": "1"
+				},
+				"ljwz": {
+					"value": "/sb/gycwbb/sb000_yfzcfzzhzb.jsp"
+				},
+				"bszlmc": {
+					"value": "“研发支出”辅助账汇总表"
+				},
+				"bb": {
+					"value": ""
+				},
+				"sftj": {
+					"value": "N"
+				},
+				"bszlDm": {
+					"value": "ZLA0610292"
+				},
+				"tjbs": {
+					"value": "true"
+				}
+			}
+		}, {
+			"status": null,
+			"tds": {
+				"sfxcj": {
+					"value": "N"
+				},
+				"xh": {
+					"value": "13"
+				},
+				"sfbszl": {
+					"value": "N"
+				},
+				"sfyhd": {
+					"value": "Y"
+				},
+				"cwbbzlDm": {
+					"value": "1"
+				},
+				"ljwz": {
+					"value": "/sb/gycwbb/sb000_qykjzzfz.jsp"
+				},
+				"bszlmc": {
+					"value": "企业会计准则附注"
+				},
+				"bb": {
+					"value": ""
+				},
+				"sftj": {
+					"value": "N"
+				},
+				"bszlDm": {
+					"value": "ZLA0610293"
+				},
+				"tjbs": {
+					"value": "true"
+				}
+			}
+		}, {
+			"status": null,
+			"tds": {
+				"sfxcj": {
+					"value": "N"
+				},
+				"xh": {
+					"value": "14"
+				},
+				"sfbszl": {
+					"value": "N"
+				},
+				"sfyhd": {
+					"value": "Y"
+				},
+				"cwbbzlDm": {
+					"value": "1"
+				},
+				"ljwz": {
+					"value": "/sb/gycwbb/sb000_fyazxzfldbcsm.jsp"
+				},
+				"bszlmc": {
+					"value": "费用按照性质分类的补充资料"
+				},
+				"bb": {
+					"value": ""
+				},
+				"sftj": {
+					"value": "N"
+				},
+				"bszlDm": {
+					"value": "ZLA0610294"
+				},
+				"tjbs": {
+					"value": "true"
+				}
+			}
+		}, {
+			"status": null,
+			"tds": {
+				"sfxcj": {
+					"value": "N"
+				},
+				"xh": {
+					"value": "15"
+				},
+				"sfbszl": {
+					"value": "N"
+				},
+				"sfyhd": {
+					"value": "Y"
+				},
+				"cwbbzlDm": {
+					"value": "1"
+				},
+				"ljwz": {
+					"value": "/sb/gycwbb/sb000_qtzhsygxmdtjqk.jsp"
+				},
+				"bszlmc": {
+					"value": "其他综合收益各项目的调节情况"
+				},
+				"bb": {
+					"value": ""
+				},
+				"sftj": {
+					"value": "N"
+				},
+				"bszlDm": {
+					"value": "ZLA0610295"
+				},
+				"tjbs": {
+					"value": "true"
+				}
+			}
+		}, {
+			"status": null,
+			"tds": {
+				"sfxcj": {
+					"value": "N"
+				},
+				"xh": {
+					"value": "16"
+				},
+				"sfbszl": {
+					"value": "N"
+				},
+				"sfyhd": {
+					"value": "Y"
+				},
+				"cwbbzlDm": {
+					"value": "1"
+				},
+				"ljwz": {
+					"value": "/sb/gycwbb/sb000_qtsygxmjsdshzrsyqk.jsp"
+				},
+				"bszlmc": {
+					"value": "其他综合收益各项目及其所得税影响和转入损益情况"
+				},
+				"bb": {
+					"value": ""
+				},
+				"sftj": {
+					"value": "N"
+				},
+				"bszlDm": {
+					"value": "ZLA0610296"
+				},
+				"tjbs": {
+					"value": "true"
+				}
+			}
+		}],
+		"name": "yhdzlGrid",
+		"sword": "SwordGrid"
+	}, {
+		"name": "zlsl",
+		"value": "16",
+		"type": ""
+	}, {
+		"name": "gwssswjg",
+		"value": "14501950500",
+		"type": ""
+	}, {
+		"name": "sessionID",
+		"value": "4671ea360bb3491abee7d56cd7996984",
+		"type": ""
+	}]
+}

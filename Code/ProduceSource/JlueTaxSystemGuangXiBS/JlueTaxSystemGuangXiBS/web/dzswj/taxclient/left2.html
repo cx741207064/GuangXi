@@ -1,0 +1,358 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=10"/>
+	<title></title>
+	<link rel="stylesheet" href="../common/reset.css" />
+	<link rel="stylesheet" href="../plugs/layui/css/layui.css" />
+	<link rel="stylesheet" href="css/left2.css" />
+	<link rel="stylesheet" href="../common/dzswj_font/iconfont.css" />
+	<link rel="stylesheet" href="yhzx_zrr/css/qyglyrz_alert.css" />
+	<link rel="stylesheet" href="../plugs/ztree/zTreeStyle.css" type="text/css">
+	<link rel="stylesheet" href="./css/layer_open.css">
+    <!-- <link rel="stylesheet" href="hdzx/css/htjs_hdzx.css"> -->
+    <script src="../tools/jcptTools.js"></script>
+    <script src="../commons/include_ui_jcpt.js?dm=50" type="text/javascript"></script>
+	<script src="../plugs/layui/layui.js" type="text/javascript" charset="utf-8"></script>
+    <script src="../tools/layerTools.js"></script>
+    <script src="js/cygn.js"></script>
+    <script src="../taxclient/js/dzswj_common.js" type="text/javascript" charset="utf-8"></script>
+	<script src="js/left2.js" type="text/javascript" charset="utf-8"></script>
+	<script src="yhzx_zrr/js/bssf_sq_sq.js" type="text/javascript" charset="utf-8"></script>
+</head>
+
+<body style="font-family: '微软雅黑';background: #f6f7fb;">
+	<div class="wxn_container">
+		<div class="wxn_content">
+			<div class="wxn_c_footer">
+				<div class="wxn_sidebar f_left">
+					<ul class="wxn_list" id="gzfw_zrr_tree_ul">
+						<!--<li class="wep_wdxx" >
+							<a data-url="tzgg.html">
+								<p><i class="iconfont icon-communityfill"></i>通知公告<i class="iconfont icon-arr-right-red lasti"></i></p>
+							</a>
+							<ul class="wxn_list_list">
+								<li><a data-url="zcfgtz.html">政策法规通知</a></li>
+								&lt;!&ndash;<li>重大税收违法案件公告</li>
+								<li>信用等级A类纳税人</li>&ndash;&gt;
+								<li><a data-url="qsgg.html">欠税公告</a></li>
+							</ul>
+						</li>
+						<li class="wep_qybh" >
+							<a data-url="zxfd.html">
+								<p><i class="iconfont icon-zixun"></i>咨询辅导<i class="lasti iconfont icon-arr-right-red" style="font-size: 10px;float:right;"></i></p>
+							</a>
+							<ul class="wxn_list_list" >
+								<li><a href="http://www.ha-n-tax.gov.cn/003/bsfw_302/cjfw_30208/index.html?NVG=2&amp;LM_ID=30208" target="_blank">纳税人学堂</a></li>
+								<li><a data-url="zcjd.html">纳税政策及解读</a></li>
+								<li><a  data-url="bszn.html">办税指南</a></li>
+								<li><a  data-url="">操作规程</a></li>
+								<li><a  data-url="zlxz.html">下载服务</a></li>
+								<li><a  data-url="rdwt.html">热点问题</a></li>
+								<li><a href="http://www.ha-n-tax.gov.cn/003/ssxc_304/sszt_30402/zxssyhzczy_3040213/index.html?NVG=1&amp;LM_ID=3040213" target="_blank">重点专题</a></li>
+								<li><a  >办税地图</a></li>
+								<li><a href="http://www.ha-n-tax.gov.cn/003/trans.html?url=/websites/comm/sbjkqxsz_zq/zqrl.html&amp;NVG=2&amp;LM_ID=30211" target="_blank">版税日历</a></li>
+							</ul>
+						</li>
+						<li class="wep_yybs" >
+							<a data-url="ggcx1.html">
+								<p><i class="iconfont icon-ziyuan1"></i>公众查询<i class="lasti iconfont icon-arr-right-red" style="font-size: 10px;float:right;"></i></p>
+							</a>
+							<ul class="wxn_list_list" >
+								<li ><a data-url="query/fplx.html">发票流向及开具信息查询</a></li>
+								<li><a data-url="query/ptfpcj.html">普通发票抽奖录入</a></li>
+								<li><a data-url="query/nsrztcx.html">纳税人状态查询</a></li>
+								<li><a data-url="query/ybnsrcx.html">一般纳税人资格查询</a></li>
+								<li><a data-url="query/cktslcx.html">出口退税率查询</a></li>
+								<li><a data-url="query/nsxyjbcx.html">纳税信用级别查询</a></li>
+								<li><a data-url="query/zzszyfptx.html">增值税专用发票认证提醒</a></li>
+								<li><a data-url="query/wszmcx.html">完税证明查询</a></li>
+								<li><a data-url="query/fplx.html">税跨报信息查询</a></li>
+								<li><a data-url="query/sfxycx.html">三方协议查询</a></li>
+								<li><a data-url="query/spzwcx.html">税票真伪查询(原地税)</a></li>
+								<li><a data-url="query/fpzwcx.html">发票真伪查询(原地税)</a></li>
+								<li><a data-url="query/shcdjhcx.html">社保传递计划查询</a></li>
+								<li><a href="http://zxhd.ha-n-tax.gov.cn/websites/comm/zdsswfxxgb/xxk_index.html?SWJG_DM=14100140000&amp;NVG=1&amp;LM_ID=30116" target="_blank">重大税收违法案例查询</a></li>
+							</ul>
+						</li>-->
+
+					</ul>
+				</div>
+				<div class="wxn_main_contain f_left">
+					<iframe id="left2_iframe" name="left2_iframe" src="" frameborder="0" width="100%" height="100%"></iframe>
+					<span id="hid_text" style="display: none"></span>
+				</div>
+			</div>
+		</div>
+	</div>
+
+
+
+
+
+	<!--<div class="footer" style="display: none;">
+		<div class="foot_box"> <a class="foot_icon01"><img src="img/foot_icon01.png"></a>
+			<div class="foot_p">
+				<p>版权所有：国家税务总局广西壮族自治区税务局</p>
+				<p>服务电话：0370666666</p>
+			</div>
+		</div>
+	</div>-->
+	
+	
+	
+	
+	
+	
+	
+	<!--预约须知-->
+		<div class="wdl_yyxz_tk" id="wdl_yyxz_tk" style="display: none;">
+			<p class="text_alc title wxl_f_16">预约须知</p>
+			<div class="tsxz_con">
+				<p>受理范围：纳税人对于税务机关和税务人员在税法宣传、纳税咨询、办税服务以及纳税人权益保护工作方面未按照规定要求提供相关服务而进行的投诉。
+				</p>
+				<p>投诉要素：投诉人在投诉事项中需注明投诉人姓名、联系方式、被投诉单位名称或者被投诉个人的姓名（或工号、岗位等）及其所属工作单位及投诉请求、主要事实和理由等信息。</p>
+				<p>“服务投诉”栏目留言请注意以下几点：</p>
+				<p>1、本栏目非论坛性质，请按照“受理范围”、“投诉要素”的要求发表留言，请勿发表本栏目“受理范围”以外的留言；</p>
+				<p>2、您应对留言内容的真实性、客观性负责，留言中不要含有猥亵、色情、造谣诽谤、人身攻击和反政府言论。否则，您将承担由此而引发的一切法律责任</p>
+				<p>3、本栏目拥有发布、编辑、删除网上留言的权利，凡不符合本须知规定的留言将予以删除；</p>
+				<p>4、如在本栏目留言，即表明已阅读并接受了上述各项条款。</p>
+			</div>
+			<p class="text_alc wdl_yyxz_icon" onclick="left2.changeIcon(this);"><i class="iconfont icon-square" ></i>我已阅读并同意以上条款</p>
+			<p class="text_alc"><span class="wxl_btn wxl_bg_blue wxl_clr_f wdl_btn_recept">接受</span></p>
+		</div>
+		<!-- 预约查看 -->
+		<div class="wdl_yyck" id="wdl_yyck" style="display: none;">
+			<form class="wdl_layui_box layui-form ">
+				<ul>
+					<li class="">
+						 <div class="layui-form-item">
+							<label class="layui-form-label">办理网点：</label>
+						    <div class="layui-input-inline wdl_layui_input1">
+						      <select name="interest" lay-filter="" disabled>
+						        <option value="">请选择城市</option>
+						        <option value="1"  selected="">郑州市</option>
+						      </select>
+						    </div>
+						    <div class="layui-input-inline wdl_layui_input1">
+						      <select name="interest" lay-filter="" disabled>
+						      	<option value="">请选择市区</option>
+						        <option value="1"  selected="">金水区</option>
+						      </select>
+						    </div>
+						    <div class="layui-input-inline wdl_layui_input2">
+						      <select name="interest" lay-filter="" disabled>
+						      	<option value="">请选择网点</option>
+						        <option value="1"  selected="">金水东路东风南路</option>
+						      </select>
+						    </div>
+						</div>
+					</li>
+					<li class="">
+						<div class="layui-form-item">
+							<label class="layui-form-label">网点地址：</label>
+							<div class="layui-input-inline wdl_layui_input3">
+						        <input type="text" name="" class="layui-input" value="卫华大厦三20楼" placeholder="" readonly>
+						    </div>
+						</div>
+					</li>
+					<li class="">
+						<div class="layui-form-item">
+							<label class="layui-form-label">联系电话：</label>
+							<div class="layui-input-inline wdl_layui_input3">
+						        <input type="text" name="" class="layui-input" value="0371-88888888" placeholder="联系电话" readonly>
+						    </div>
+						</div>
+					</li>
+					<li class="">
+						<div class="layui-form-item">
+							<label class="layui-form-label">等待人数：</label>
+							<div class="layui-input-inline wdl_layui_input1">
+						        <input type="text" name="" class="layui-input" value="12" placeholder="等待人数" readonly>
+						    </div>
+						</div>
+					</li>
+					<li class="wdl_li1">
+						<div class="layui-form-item">
+							<label class="layui-form-label">办理业务：</label>
+							<span class="wdl_btn f_left active">综合服务三</span>
+						</div>
+					</li>
+					<li class="wdl_li2">
+						<div class="layui-form-item">
+							<label class="layui-form-label">办理时间：</label>
+							<div class="wdl_date_div">
+								<h1>9月28日 上午</h1>
+							</div>
+						</div>
+					</li>
+				</ul>
+				<div class="wdl_yyck_btn"><span class="wdl_btn wdl_btn1">关闭</span></div>
+			</form>
+		</div>
+
+
+    <!--企业管理员认证增加弹出框-->
+    <div class="wep_qyglyrz_addBox wep_yhzx_alert">
+        <ul>
+            <li>
+                <span class="wep_add_text">纳税人识别号</span>
+                <input type="text" name="NSRSBH" title="纳税人识别号"/>
+            </li>
+            <li>
+                <span class="wep_add_text">纳税人名称</span>
+                <input type="text" name="NSRMC" disabled title="纳税人名称"/>
+            </li>
+            <li>
+                <span class="wep_add_text">法定代表人姓名</span>
+                <input type="text" name="FCXM" title="法定代表人姓名"/>
+            </li>
+            <li>
+                <span class="wep_add_text">法定代表人证件类型</span>
+                <select name="FCZJLX" title="法定代表人证件类型">
+                    <option value="201">居民身份证</option>
+                </select>
+            </li>
+            <li>
+                <span class="wep_add_text">法定代表人证件号码</span>
+                <input type="text" name="FCZJHM" title="法定代表人证件号码"/>
+            </li>
+            <li>
+                <span class="wep_add_text">手机号码</span>
+                <input class="kf-span-qyglyrz-sjhm" readonly style="border: 0;" type="text"/>
+            </li>
+            <li>
+                <span class="wep_add_text">发送短信验证码</span>
+                <input class="wep_qyglyrz_msgText" name="DXYZM" type="text"/>
+                <input class="wep_qyglyrz_sendMsg kf-btn-qyglyrz-fsyzm" type="button" value="点击发送"/>
+            </li>
+            <li>
+                <span class="wep_add_text">交易序号</span>
+                <input class="kf-span-qyglyrz-jyxh" readonly style="border: 0;" value="**" type="text"/>
+            </li>
+            <li class="wep_save_box">
+                <span class="wep_save_btn wxl_btn kf-btn-qyglyrz-save">保存</span>
+            </li>
+        </ul>
+    </div>
+
+    <!--办税身份申请弹出框-->
+<div class="wep_bbsfapply_addBox wep_yhzx_alert">
+    <ul>
+        <li style="text-align:center">
+            <span class="wep_add_text">纳税人识别号</span>
+            <input type="text" id="BssfNsrsbh"/>
+        </li>
+       <li style="text-align:center">
+            <span class="wep_add_text">纳税人名称</span>
+            <input type="text" id="BssfNsrmc" placeholder="纳税人名称请输入纳税人识别号查询" readOnly/>
+        </li>
+        <li style="text-align:center">
+            <span class="wep_add_text">申请身份</span>
+            <select name="SQSF" id="kf-bssf-shenqing-sqsf" title="申请身份">
+                <option value="11">办税人</option>
+                <!-- <option value="12">管理员</option> -->
+            </select>
+        </li>
+        <li class="wep_save_box">
+            <span class="wep_save_btn wxl_btn" id="BssfSqSubmit">提交</span>
+        </li>
+    </ul>
+</div>
+<!--办税身份授权弹框-->
+<div class="wxl_bssf_tk wep_yhzx_alert" id="kf-bssf-shouquan-tk">
+    <ul>
+        <li style="font-size: 14px;font-weight: bold;">所有权限：</li>
+		<li>
+			<i id="allAuth" class="iconfont icon-squarecheckfill" data-cp="1808211007590002"></i><span>所有权限</span>
+		</li>
+	</ul>
+	<ul>
+	    <li style="font-size: 14px;font-weight: bold;">分类权限：</li>
+		<li>
+			<i class="iconfont icon-square" data-cp="1808211007590102"></i><span>涉税事项</span>
+		</li>
+		<li>
+			<i class="iconfont icon-square" data-cp="1808211007590103"></i><span>银税互动</span>
+		</li>
+		<li>
+			<i class="iconfont icon-square" data-cp="1808211007590104"></i><span>实名办税</span>
+		</li>
+		<li>
+			<i class="iconfont icon-square" data-cp="1808211007590105"></i><span>社保费缴纳</span>
+		</li>
+		<li>
+			<i class="iconfont icon-square" data-cp="1808211007590101"></i><span>申报纳税</span>
+		</li>
+	</ul>
+	<ul>
+	    <li style="font-size: 14px;font-weight: bold;">自定义权限：</li>
+	    <li>
+			<i id="zdy_menu" class="iconfont icon-square" data-cp="1811111148470001"></i><span>权限菜单</span>
+		</li>
+	    <li>
+	    <input type="hidden" name="MKXKMC" id="MKXKMC" lay-verify="SWJG" autocomplete="off" placeholder="请选择税务机关" class="layui-input" readonly="readonly">
+        <input type="hidden" name="MKXKID" id="MKXKID" value="">
+        <div id="menuContent" class="menuContent" style=" position: absolute; width: 400px; height: 250px; z-index:9999;margin-left: -22px; display:none">
+          <div style="overflow-y: auto; overflow-x: auto;height:250px;">
+              <ul id="menuTree" class="ztree">
+              </ul>
+          </div>
+        </div>
+        </li>
+	</ul>
+	<div class="clearfix"></div>
+	<p class="wxl_alert_btn_box" style="position: relative; top:190px">
+        <span class="wxl_btn wxl_btn_qd" id="kf-bssf-shouquan-tk-queding">确定</span>
+        <span class="wxl_btn wxl_btn_qx" id="kf-bssf-shouquan-tk-quxiao">取消</span>
+    </p>
+</div>
+
+
+
+    <!--常用功能添加页面-->
+	<div class="wxn_collAdd1" style="display: none;" id="wxn_collAdd_dzyw">
+			<div class="layui-form" action="">
+				<div class="layui-inline">
+					<select name="city" lay-verify="" lay-filter="typeFilter" id="menuType">>
+						<option value="">请选择业务分类</option>
+						<!--<option value="010">税源信息采集</option>
+						<option value="021">申报缴纳</option>
+						<option value="0571">涉税事项办理</option>-->
+					</select>
+				</div>
+		
+				<div class="layui-inline" style="margin: 0 5px;">
+					<input type="text" name="title" placeholder="请输入功能名称" autocomplete="off" class="layui-input wxl_coll_input"
+						   id="seachTitle">
+					<img class="wxn_search_icon" src="img/search_icon.png" width="17" height="14" alt="">
+					<div class="wxl_tip_box"
+						 style="width:100%;position: absolute;background: #fff;box-shadow: 0px 3px 7px 0px #737383">
+						<ul>
+						</ul>
+					</div>
+				</div>
+		
+				<div class="layui-inline">
+					<button class="layui-btn" style="background:#1e9fff;" lay-submit lay-filter="formSearch" id="laySearch">搜索
+					</button>
+				</div>
+				<div class="layui-form-item">
+					<div class="wxl_collSwdj1" id="CYGNLIST">
+		
+					</div>
+				</div>
+				<div class="layui-form-item" style="height:30px;">
+					<div class="layui-inline" style="position:absolute;bottom:0px;left:50%;margin-left:-72px;">
+						<button class="layui-btn" style="background:#1e9fff;" lay-submit lay-filter="formDemo" id="confirmSubmit">确认
+						</button>
+						<button type="reset" class="layui-btn layui-btn-primary" onclick="left2.closeColl()">关闭</button>
+					</div>
+				</div>
+		
+			</div>
+		</div>
+</body>
+
+</html>

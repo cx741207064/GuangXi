@@ -1,0 +1,288 @@
+body{
+	font-size: 0;
+    font-family: "微软雅黑";
+    color: #666666;
+}
+.wxn_container{
+    width: 100%;
+    height: 100%;
+    background: #F0F3F6;
+    margin-top: 10px;
+}
+.wxn_content{
+    /* width: 1200px; */
+    /*height: 100%;*/
+    /* margin: 0 auto; */
+}
+.wxn_sidebar{
+    float: left;
+    width: 208px;
+    height: 100%;
+    border-left: 1px solid #e8e8e8;
+    border-right: 1px solid #e8e8e8;
+    background: #f6fafd;
+}
+.wxn_list p{
+	font-size: 12px;
+    margin-left: 0;
+    padding-left: 8px;
+}
+.wxn_list p i{
+	margin-right: 4px;
+	vertical-align: middle;
+}
+.wxn_list p:hover{
+    color: #0087f1;
+}
+.wxn_list li {
+	height: 38px;
+    width: 204px;
+    line-height: 38px;
+    cursor: pointer;
+    border-top: 1px solid #f6fafd;
+    border-bottom: 1px solid #f6fafd;
+}
+.wxn_list li.active{
+	border-top:1px solid #e8e8e8;
+	border-bottom:1px solid #e8e8e8;
+    border-right:1px solid #f6fafd;
+    width:207px;
+    background:#fff;
+    color:#0087f1;
+}
+.wxn_list .wep_bsjd.active{
+	border-top:1px solid #f6fafd;
+}
+
+.wxn_main_contain{
+    width: 990px;
+    height: 100%;
+}
+
+.wep_cxzx{
+	/*height: 100%;*/
+	padding:7px 20px 0 20px;
+	background: #fff;
+}
+.wep_cxzx_btn{
+	font-size: 12px;
+	padding: 5px 28px;
+	color: #fff;
+	border-radius: 3px;
+	display: inline-block;
+	vertical-align: middle;
+    cursor: pointer;
+    float: right;
+}
+.mgt16{
+    margin-top: 7px !important;
+}
+.ofh{
+    overflow: hidden !important;
+}
+.mr0{
+    margin-right: 0 !important;
+}
+
+.wep_cxzx_btn1{
+	border: 1px solid #ff5722;
+	background-color: #ff5722;
+}
+.wep_cxzx_btn2{
+	border: 1px solid #1e9fff;
+    background-color: #1e9fff;
+}
+
+.wxl_table_box table tr .font1{
+	color: #4ab666 !important;
+}
+.wxl_table_box table tr .font2{
+	color: #ff5722 !important;
+}
+.wxl_table_box table tr .font3{
+	color: #1e9fff !important;
+}
+
+.wep_table_tab{
+	border-bottom: 1px solid #ededed;
+    padding-bottom: 0px;
+    /*margin-bottom: 10px;*/
+}
+.wep_table_tab p span{
+	font-size: 14px;
+	color:#666;
+	line-height: 30px;
+	padding:0px 15px;
+	position: relative;
+	padding-bottom: 7px
+}
+.wep_table_tab p span.active:before{
+	content: "";
+    width: 100%;
+    height: 2px;
+    position: absolute;
+    bottom: 0px;
+    left: 0px;
+    background: #0098f4;
+}
+.wep_cxzx_operation{
+	margin-bottom: 7px;
+}
+.wep_cxzx_operation span,.wep_cxzx_operation .layui-form-item,.wep_search_input{
+	font-size: 12px;
+	display: inline-block;
+}
+.layui-form-item {
+    margin-bottom: 0;
+    height: 30px;
+}
+.wep_search_box{
+	display: inline-block;
+	margin-top: 7px;
+}
+.wep_search_box span{
+	width: 85px;
+	text-align: right;
+	vertical-align: middle;
+}
+.wep_search_box>div{
+	vertical-align: middle;
+}
+.layui-input-block{
+	width: 200px;
+	margin-left: 0;
+}
+
+.layui-input, .layui-textarea, .layui-select{
+	border-radius: 3px;
+	border: 1px solid #e5e5e5;
+	line-height: 30px;
+	height: 30px;
+	color: #333;
+	font-size: 12px;
+}
+.layui-input::-webkit-input-placeholder { /* WebKit, Blink, Edge */
+    color:#ccc !important;
+}
+.layui-input:-moz-placeholder { /* Mozilla Firefox 4 to 18 */
+    color:#ccc !important;
+}
+.layui-input::-moz-placeholder { /* Mozilla Firefox 19+ */
+    color:#ccc !important;
+}
+.layui-input:-ms-input-placeholder { /* Internet Explorer 10-11 */
+    color:#ccc !important;
+}
+.layui-input:hover, .layui-textarea:hover {
+    border-color: #76c3fd !important;
+}
+.layui-form-select dl{
+	top: 34px;
+}
+.wep_search_input{
+	position: relative;
+}
+.wep_search_input .layui-input{
+	width: 160px;
+}
+.wep_date {
+    position: absolute;
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+   /* background: url(../img/date_icon.png) no-repeat;*/
+    right: 10px;
+    top: 4px;
+}
+.wep_date i{
+	font-size: 20px;
+	color:#1e9fff;
+}
+.wep_search_date2{
+	margin:0 10px;
+}
+/*涉税中介机构信息查询*/
+.wep_sszj_djxx li{
+	display: inline-block;
+    margin-bottom: 10px;
+    width: 50%;
+}
+.wep_sszj_djxx li span{
+	font-size: 12px;
+	display: inline-block;
+	width: 40%;
+	text-align: right;
+	vertical-align: middle;
+}
+.wep_sszj_djxx li input{
+	width: 56%;
+    font-size: 12px;
+    height: 30px;
+    line-height: 30px;
+    border-radius: 3px;
+    border: solid 1px #e6e6e6;
+    color: #666666;
+    background-color: #EBEBE4;
+    padding-left: 5px;
+    margin-left: 1%;
+    vertical-align: middle;
+}
+.wep_sszj_djxx .wep_gjxx_jyfw{
+	width: 100%;
+}
+.wep_sszj_djxx .wep_gjxx_jyfw span{
+	width: 20%;
+}
+.wep_sszj_djxx .wep_gjxx_jyfw .wep_jyfw{
+	width: 78%;
+	margin-left: 0.5%;
+	font-size: 12px;
+	line-height: 30px;
+    border-radius: 3px;
+    border: solid 1px #e6e6e6;
+    color: #666666;
+    background-color: #EBEBE4;
+    padding-left: 5px;
+    display: inline-block;
+    vertical-align: middle;
+}
+/*查询中心弹出框*/
+.wep_cxzx_alert{
+	display: none;
+	padding: 20px;
+}
+.wep_fpxx_alert>div{
+	display: none;
+}
+.wep_cxzx_alert .table_fixedstyle .greyBg{
+	text-align: center;
+}
+/*违法违章信息查询*/
+.wep_cxzx_wfwz .wep_search_box span{
+	width: 140px;
+}
+.wxn_content{
+    border-top: 1px solid #e8e8e8;
+    border-right: 1px solid #e8e8e8;
+}
+.wxn_otherline{
+	margin-bottom: 16px;
+	/*text-align: center;*/
+}
+.layui-input, .layui-textarea {
+    display: block;
+    width: 180px;
+    padding-left: 10px;
+}
+.layui-form-select .layui-edge {
+    position: absolute;
+    right: 25px;
+    top: 50%;
+    margin-top: -3px;
+    cursor: pointer;
+    border-width: 6px;
+    border-top-color: #c2c2c2;
+    border-top-style: solid;
+    transition: all .3s;
+    -webkit-transition: all .3s;
+}

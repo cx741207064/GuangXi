@@ -1,0 +1,389 @@
+﻿{
+	"data": [{
+		"trs": [{
+			"status": null,
+			"tds": {
+				"sfxcj": {
+					"value": "Y"
+				},
+				"xh": {
+					"value": "1"
+				},
+				"sfbszl": {
+					"value": "N"
+				},
+				"sfyhd": {
+					"value": "Y"
+				},
+				"cwbbzlDm": {
+					"value": ""
+				},
+				"ljwz": {
+					"value": "/sb/sb271/sb271_ghkjzdcwbszlbsyxxcj_zcfzb.jsp"
+				},
+				"bszlmc": {
+					"value": "资产负债表 （适用执行工会会计制度的企业）"
+				},
+				"bb": {
+					"value": "true"
+				},
+				"sftj": {
+					"value": "N"
+				},
+				"bszlDm": {
+					"value": "ZLA0610327"
+				},
+				"tjbs": {
+					"value": ""
+				}
+			}
+		}, {
+			"status": null,
+			"tds": {
+				"sfxcj": {
+					"value": "N"
+				},
+				"xh": {
+					"value": "2"
+				},
+				"sfbszl": {
+					"value": "N"
+				},
+				"sfyhd": {
+					"value": "Y"
+				},
+				"cwbbzlDm": {
+					"value": ""
+				},
+				"ljwz": {
+					"value": "/sb/sb271/sb271_ghkjzdcwbszlbsyxxcj_srzcb.jsp"
+				},
+				"bszlmc": {
+					"value": "收入支出表 （适用执行工会会计制度的企业）"
+				},
+				"bb": {
+					"value": ""
+				},
+				"sftj": {
+					"value": "N"
+				},
+				"bszlDm": {
+					"value": "ZLA0610328"
+				},
+				"tjbs": {
+					"value": "true"
+				}
+			}
+		}, {
+			"status": null,
+			"tds": {
+				"sfxcj": {
+					"value": "N"
+				},
+				"xh": {
+					"value": "3"
+				},
+				"sfbszl": {
+					"value": "N"
+				},
+				"sfyhd": {
+					"value": "Y"
+				},
+				"cwbbzlDm": {
+					"value": ""
+				},
+				"ljwz": {
+					"value": "/sb/sb271/sb271_ghkjzdcwbszlbsyxxcj_wlkxmxb.jsp"
+				},
+				"bszlmc": {
+					"value": "往来款项明细表 （适用执行工会会计制度的企业）"
+				},
+				"bb": {
+					"value": ""
+				},
+				"sftj": {
+					"value": "N"
+				},
+				"bszlDm": {
+					"value": "ZLA0610329"
+				},
+				"tjbs": {
+					"value": "true"
+				}
+			}
+		}, {
+			"status": null,
+			"tds": {
+				"sfxcj": {
+					"value": "N"
+				},
+				"xh": {
+					"value": "4"
+				},
+				"sfbszl": {
+					"value": "N"
+				},
+				"sfyhd": {
+					"value": "Y"
+				},
+				"cwbbzlDm": {
+					"value": ""
+				},
+				"ljwz": {
+					"value": "/sb/sb271/sb271_ghkjzdcwbszlbsyxxcj_jfsjqkb.jsp"
+				},
+				"bszlmc": {
+					"value": "经费收缴情况表（适用执行工会会计制度的企业）"
+				},
+				"bb": {
+					"value": ""
+				},
+				"sftj": {
+					"value": "N"
+				},
+				"bszlDm": {
+					"value": "ZLA0610330"
+				},
+				"tjbs": {
+					"value": "true"
+				}
+			}
+		}, {
+			"status": null,
+			"tds": {
+				"sfxcj": {
+					"value": "N"
+				},
+				"xh": {
+					"value": "5"
+				},
+				"sfbszl": {
+					"value": "N"
+				},
+				"sfyhd": {
+					"value": "Y"
+				},
+				"cwbbzlDm": {
+					"value": ""
+				},
+				"ljwz": {
+					"value": "1234"
+				},
+				"bszlmc": {
+					"value": "利润分配表"
+				},
+				"bb": {
+					"value": "true"
+				},
+				"sftj": {
+					"value": "N"
+				},
+				"bszlDm": {
+					"value": "ZLA0610331"
+				},
+				"tjbs": {
+					"value": ""
+				}
+			}
+		}, {
+			"status": null,
+			"tds": {
+				"sfxcj": {
+					"value": "N"
+				},
+				"xh": {
+					"value": "6"
+				},
+				"sfbszl": {
+					"value": "N"
+				},
+				"sfyhd": {
+					"value": "Y"
+				},
+				"cwbbzlDm": {
+					"value": ""
+				},
+				"ljwz": {
+					"value": "1234"
+				},
+				"bszlmc": {
+					"value": "现金流量表"
+				},
+				"bb": {
+					"value": ""
+				},
+				"sftj": {
+					"value": "N"
+				},
+				"bszlDm": {
+					"value": "ZLA0610332"
+				},
+				"tjbs": {
+					"value": "true"
+				}
+			}
+		}, {
+			"status": null,
+			"tds": {
+				"sfxcj": {
+					"value": "N"
+				},
+				"xh": {
+					"value": "7"
+				},
+				"sfbszl": {
+					"value": "N"
+				},
+				"sfyhd": {
+					"value": "Y"
+				},
+				"cwbbzlDm": {
+					"value": ""
+				},
+				"ljwz": {
+					"value": "1234"
+				},
+				"bszlmc": {
+					"value": "资产减值准备明细表"
+				},
+				"bb": {
+					"value": ""
+				},
+				"sftj": {
+					"value": "N"
+				},
+				"bszlDm": {
+					"value": "ZLA0610333"
+				},
+				"tjbs": {
+					"value": "true"
+				}
+			}
+		}, {
+			"status": null,
+			"tds": {
+				"sfxcj": {
+					"value": "N"
+				},
+				"xh": {
+					"value": "8"
+				},
+				"sfbszl": {
+					"value": "N"
+				},
+				"sfyhd": {
+					"value": "Y"
+				},
+				"cwbbzlDm": {
+					"value": ""
+				},
+				"ljwz": {
+					"value": "1234"
+				},
+				"bszlmc": {
+					"value": "应交增值税明细表（适用于增值税一般纳税人）"
+				},
+				"bb": {
+					"value": ""
+				},
+				"sftj": {
+					"value": "N"
+				},
+				"bszlDm": {
+					"value": "ZLA0610334"
+				},
+				"tjbs": {
+					"value": "true"
+				}
+			}
+		}, {
+			"status": null,
+			"tds": {
+				"sfxcj": {
+					"value": "N"
+				},
+				"xh": {
+					"value": "9"
+				},
+				"sfbszl": {
+					"value": "N"
+				},
+				"sfyhd": {
+					"value": "Y"
+				},
+				"cwbbzlDm": {
+					"value": ""
+				},
+				"ljwz": {
+					"value": "1234"
+				},
+				"bszlmc": {
+					"value": "分部报表（业务分部）"
+				},
+				"bb": {
+					"value": ""
+				},
+				"sftj": {
+					"value": "N"
+				},
+				"bszlDm": {
+					"value": "ZLA0610335"
+				},
+				"tjbs": {
+					"value": "true"
+				}
+			}
+		}, {
+			"status": null,
+			"tds": {
+				"sfxcj": {
+					"value": "N"
+				},
+				"xh": {
+					"value": "10"
+				},
+				"sfbszl": {
+					"value": "N"
+				},
+				"sfyhd": {
+					"value": "Y"
+				},
+				"cwbbzlDm": {
+					"value": ""
+				},
+				"ljwz": {
+					"value": "1234"
+				},
+				"bszlmc": {
+					"value": "分部报表（地区分部）"
+				},
+				"bb": {
+					"value": ""
+				},
+				"sftj": {
+					"value": "N"
+				},
+				"bszlDm": {
+					"value": "ZLA0610336"
+				},
+				"tjbs": {
+					"value": "true"
+				}
+			}
+		}],
+		"name": "yhdzlGrid",
+		"sword": "SwordGrid"
+	}, {
+		"name": "zlsl",
+		"value": "10",
+		"type": ""
+	}, {
+		"name": "gwssswjg",
+		"value": "14501950500",
+		"type": ""
+	}, {
+		"name": "sessionID",
+		"value": "e6cc3ecb961e4f6bb292772bc6cf20fb",
+		"type": ""
+	}]
+}

@@ -1,0 +1,1247 @@
+﻿
+{
+	"page": "/sb/sb175/sb175_fxmtysb.jsp",
+	"data": [{
+		"data": [],
+		"sword": "SwordSelect",
+		"dataName": "jmxzList"
+	}, {
+		"data": [{
+			"caption": "南宁市西乡塘区国家税务局税源管理二股",
+			"code": "14501070500",
+			"pcode": "14501070000"
+		}],
+		"dataType": "json",
+		"sword": "SwordTree",
+		"name": "zgswskfjDm"
+	}, {
+		"data": [{
+			"caption": "西乡塘区",
+			"pcode": "450100",
+			"code": "450107"
+		}],
+		"dataType": "json",
+		"sword": "SwordTree",
+		"name": "xzqhszDm"
+	}, {
+		"data": [{
+			"caption": "西乡塘区",
+			"code": "450107000",
+			"xzqhDm": "450107"
+		}, {
+			"caption": "衡阳街道办事处",
+			"code": "450107001",
+			"xzqhDm": "450107"
+		}, {
+			"caption": "北湖街道办事处",
+			"code": "450107002",
+			"xzqhDm": "450107"
+		}, {
+			"caption": "西乡塘街道办事处",
+			"code": "450107003",
+			"xzqhDm": "450107"
+		}, {
+			"caption": "安吉街道办事处",
+			"code": "450107004",
+			"xzqhDm": "450107"
+		}, {
+			"caption": "华强街道办事处",
+			"code": "450107005",
+			"xzqhDm": "450107"
+		}, {
+			"caption": "新阳街道办事处",
+			"code": "450107006",
+			"xzqhDm": "450107"
+		}, {
+			"caption": "上尧街道办事处",
+			"code": "450107007",
+			"xzqhDm": "450107"
+		}, {
+			"caption": "安宁街道办事处",
+			"code": "450107008",
+			"xzqhDm": "450107"
+		}, {
+			"caption": "石埠街道办事处",
+			"code": "450107009",
+			"xzqhDm": "450107"
+		}, {
+			"caption": "心圩街道办事处",
+			"code": "450107010",
+			"xzqhDm": "450107"
+		}, {
+			"caption": "金陵镇",
+			"code": "450107100",
+			"xzqhDm": "450107"
+		}, {
+			"caption": "双定镇",
+			"code": "450107101",
+			"xzqhDm": "450107"
+		}, {
+			"caption": "坛洛镇",
+			"code": "450107105",
+			"xzqhDm": "450107"
+		}, {
+			"caption": "那龙矿务局",
+			"code": "450107450",
+			"xzqhDm": "450107"
+		}, {
+			"caption": "金光农场",
+			"code": "450107453",
+			"xzqhDm": "450107"
+		}, {
+			"caption": "高新技术开发区管委会",
+			"code": "450107454",
+			"xzqhDm": "450107"
+		}],
+		"sword": "SwordSelect",
+		"dataName": "DM_GY_JDXZ"
+	}, {
+		"name": "nsrxxMap",
+		"data": {
+			"bsryddh": {
+				"value": "15778803036"
+			},
+			"tzze": {
+				"value": "2000000.0"
+			},
+			"zgswjDm": {
+				"value": "14501070000"
+			},
+			"cyrs": {
+				"value": "3.0"
+			},
+			"gszgswjDm": {
+				"value": ""
+			},
+			"cwfzrxm": {
+				"value": "邓凯玲"
+			},
+			"wz": {
+				"value": ""
+			},
+			"zcdlxdh": {
+				"value": "13617873356"
+			},
+			"lsswdjyxqz": {
+				"value": ""
+			},
+			"djxh": {
+				"value": "10114501010114170071"
+			},
+			"kyslrq": {
+				"value": "2016-08-30 00:00:00"
+			},
+			"zzjglxDm": {
+				"value": "1"
+			},
+			"bzfsDm": {
+				"value": "3"
+			},
+			"bsrdzxx": {
+				"value": "1918488842@qq.com"
+			},
+			"lsswdjyxqq": {
+				"value": ""
+			},
+			"yhsjnfsDm": {
+				"value": ""
+			},
+			"zsxmcxbzDm": {
+				"value": ""
+			},
+			"ssdabh": {
+				"value": "91450107MA5KE0EQ2B"
+			},
+			"hyDm": {
+				"value": "5164"
+			},
+			"nsrfyhyxxList": {
+				"value": "[\"{\\\"sjgsdq\\\":\\\"\\\",\\\"lrrDm\\\":\\\"\\\",\\\"hyDm\\\":\\\"7240\\\",\\\"xh\\\":\\\"1\\\",\\\"yxbz\\\":\\\"Y\\\",\\\"djxh\\\":\\\"10114501010114170071\\\",\\\"fyhyuuid\\\":\\\"161D173D333DB7DC7A50EA5B75D345F3\\\",\\\"xgrDm\\\":\\\"\\\",\\\"xgrq\\\":\\\"\\\",\\\"lrrq\\\":\\\"\\\"}\"]"
+			},
+			"zzlxDm": {
+				"value": "80"
+			},
+			"scjyqxq": {
+				"value": "2016-08-30 00:00:00"
+			},
+			"fddbrsfzjhm": {
+				"value": "412727199005085478"
+			},
+			"cwfzryddh": {
+				"value": "15778803036"
+			},
+			"fddbrsfzjlxDm": {
+				"value": "201"
+			},
+			"kzztdjlxDm": {
+				"value": "1110"
+			},
+			"gjhdqszDm": {
+				"value": ""
+			},
+			"gytzbl": {
+				"value": "0.0"
+			},
+			"gdgrs": {
+				"value": "0.0"
+			},
+			"scjydlxdh": {
+				"value": "13617873356"
+			},
+			"shxydm": {
+				"value": "91450107MA5KE0EQ2B"
+			},
+			"fjmqybz": {
+				"value": "N"
+			},
+			"scjydzxzqhszDm": {
+				"value": "450107"
+			},
+			"scjyqxz": {
+				"value": "2066-08-29 00:00:00"
+			},
+			"bsrxm": {
+				"value": "邓凯玲"
+			},
+			"bsrsfzjzlDm": {
+				"value": "201"
+			},
+			"gdghlxDm": {
+				"value": "1"
+			},
+			"cwfzrdzxx": {
+				"value": "1918488842@qq.com"
+			},
+			"nsrbm": {
+				"value": ""
+			},
+			"pzsljglxDm": {
+				"value": "01"
+			},
+			"swdlrnsrsbh": {
+				"value": ""
+			},
+			"zcdzxzqhszmc": {
+				"value": "西乡塘区"
+			},
+			"kjzdzzDm": {
+				"value": "102"
+			},
+			"nsrzgswjgxxList": {
+				"value": "[\"{\\\"ssglyDm\\\":\\\"14501070052\\\",\\\"zgswjDm\\\":\\\"14501070000\\\",\\\"zgswjguuid\\\":\\\"\\\",\\\"sjgsdq\\\":\\\"\\\",\\\"lrrDm\\\":\\\"\\\",\\\"yxbz\\\":\\\"\\\",\\\"djxh\\\":\\\"\\\",\\\"zgswskfjDm\\\":\\\"14501070500\\\",\\\"xgrDm\\\":\\\"\\\",\\\"xgrq\\\":\\\"\\\",\\\"lrrq\\\":\\\"\\\",\\\"zgswjgtssxDm\\\":\\\"\\\"}\"]"
+			},
+			"lrrDm": {
+				"value": "14501940056"
+			},
+			"gszgswskfjDm": {
+				"value": ""
+			},
+			"jyfw": {
+				"value": "批发、零售：金属材料、矿产品、电子产品、通信设备、安防监控设备（以上项目除国家专控产品）、钢材、建筑材料（除危险化学品及木材）、机械设备、管材及配件、五金交电、水暖器材、机电产品、化妆品、日用百货、服装鞋帽、皮革制品、计算机、劳保用品、体育器材、酒店用品；庆典活动策划、礼仪服务、文化艺术交流活动策划、会展服务（以上项目除国家有专项规定外）；设计、制作、代理、发布国内各类广告。"
+			},
+			"wcjyhdssglzmbh": {
+				"value": ""
+			},
+			"djzclxmc": {
+				"value": "私营有限责任公司"
+			},
+			"pzzmhwjh": {
+				"value": ""
+			},
+			"djjgmc": {
+				"value": ""
+			},
+			"pzsljgmc": {
+				"value": ""
+			},
+			"zcdz": {
+				"value": "南宁市西乡塘区人民西路25号融昌邕江银座3号楼1单元1-2103号"
+			},
+			"zgswjmc": {
+				"value": "南宁市西乡塘区国家税务局"
+			},
+			"zgswskfjDm": {
+				"value": "14501070500"
+			},
+			"nsrztDm": {
+				"value": "03"
+			},
+			"hhrs": {
+				"value": "0.0"
+			},
+			"hjszd": {
+				"value": ""
+			},
+			"fddbrdzxx": {
+				"value": ""
+			},
+			"zrrtzbl": {
+				"value": "100.0"
+			},
+			"ssglyDm": {
+				"value": "14501070052"
+			},
+			"gdslxDm": {
+				"value": "1"
+			},
+			"scjydyzbm": {
+				"value": "530000"
+			},
+			"swdjblbz": {
+				"value": "Y"
+			},
+			"nsrsbh": {
+				"value": "91450107MA5KE0EQ2B"
+			},
+			"bsrgddh": {
+				"value": "3321167"
+			},
+			"jdxzDm": {
+				"value": "450107000"
+			},
+			"djjgDm": {
+				"value": "14501940800"
+			},
+			"cwfzrsfzjhm": {
+				"value": "450821199405073022"
+			},
+			"scjydz": {
+				"value": "南宁市西乡塘区人民西路25号融昌邕江银座3号楼1单元1-2103号"
+			},
+			"kqccsztdjbz": {
+				"value": "N"
+			},
+			"ynsrsbh": {
+				"value": "91450107MA5KE0EQ2B"
+			},
+			"wjcyrs": {
+				"value": "0.0"
+			},
+			"cwfzrsfzjzlDm": {
+				"value": "201"
+			},
+			"nsrmc": {
+				"value": "广西龙森胜贸易有限公司"
+			},
+			"swdlrlxdh": {
+				"value": ""
+			},
+			"fddbrgddh": {
+				"value": "3321167"
+			},
+			"djrq": {
+				"value": "2016-09-18 00:00:00"
+			},
+			"bsrsfzjhm": {
+				"value": "450821199405073022"
+			},
+			"zzhm": {
+				"value": "91450107MA5KE0EQ2B"
+			},
+			"djzclxDm": {
+				"value": "173"
+			},
+			"whsyjsfjfxxdjbz": {
+				"value": "Y"
+			},
+			"fddbrsfzjlxmc": {
+				"value": "居民身份证"
+			},
+			"zfjglxDm": {
+				"value": "0"
+			},
+			"fddbryddh": {
+				"value": "13617873356"
+			},
+			"nsrztmc": {
+				"value": "正常"
+			},
+			"hsfsDm": {
+				"value": "11"
+			},
+			"nsrywmc": {
+				"value": ""
+			},
+			"zcxs": {
+				"value": ""
+			},
+			"wztzbl": {
+				"value": "0.0"
+			},
+			"pzsljgDm": {
+				"value": "450100000"
+			},
+			"zgswskfjmc": {
+				"value": "南宁市西乡塘区国家税务局税源管理二股"
+			},
+			"dwlsgxDm": {
+				"value": "51"
+			},
+			"scjydzxzqhszmc": {
+				"value": "西乡塘区"
+			},
+			"zzsjylb": {
+				"value": "01,08"
+			},
+			"zzsqylxDm": {
+				"value": "9"
+			},
+			"hymc": {
+				"value": "金属及金属矿批发"
+			},
+			"cwfzrgddh": {
+				"value": "3321167"
+			},
+			"zczb": {
+				"value": "2000000.0"
+			},
+			"kzztdjlxmc": {
+				"value": "单位纳税人税务登记"
+			},
+			"swdlrmc": {
+				"value": ""
+			},
+			"gsdjxh": {
+				"value": ""
+			},
+			"lrrq": {
+				"value": "2016-09-18 15:39:06"
+			},
+			"ggrs": {
+				"value": "0.0"
+			},
+			"fddbrxm": {
+				"value": "刘士鹏"
+			},
+			"jdxzmc": {
+				"value": "西乡塘区"
+			},
+			"zcdyzbm": {
+				"value": "530000"
+			},
+			"gykglxDm": {
+				"value": ""
+			},
+			"ssglymc": {
+				"value": ""
+			},
+			"ygznsrlxDm": {
+				"value": "22"
+			},
+			"zzjgDm": {
+				"value": "MA5KE0EQ2"
+			},
+			"pgjgDm": {
+				"value": ""
+			},
+			"swdlrdzxx": {
+				"value": ""
+			},
+			"zcdzxzqhszDm": {
+				"value": "450107"
+			}
+		},
+		"sword": "SwordForm"
+	}, {
+		"trs": [{
+			"status": null,
+			"tds": {
+				"zsxmDm": {
+					"value": "30221"
+				},
+				"xh": {
+					"value": ""
+				},
+				"sybzDm1": {
+					"value": ""
+				},
+				"wdqzdbz": {
+					"value": ""
+				},
+				"bqynsfe": {
+					"value": "0.0"
+				},
+				"zszmDm": {
+					"value": "code,3022104001450001|caption,企业类纳税人水利建设基金"
+				},
+				"sflhdwse": {
+					"value": "0.0010"
+				},
+				"bqybtsfe": {
+					"value": "0.0"
+				},
+				"qtgrczbdcfthyzjsr": {
+					"value": ""
+				},
+				"rdpzuuid": {
+					"value": ""
+				},
+				"rdzsuuid": {
+					"value": ""
+				},
+				"sfkssqq": {
+					"value": "2017-10-01"
+				},
+				"jcx": {
+					"value": ""
+				},
+				"ysbse": {
+					"value": ""
+				},
+				"zspmDm": {
+					"value": "code,302210400|caption,地方水利建设基金"
+				},
+				"ysx": {
+					"value": "0.0"
+				},
+				"syzldz": {
+					"value": ""
+				},
+				"bqjmsfe": {
+					"value": "0.0"
+				},
+				"ssjmxzDm": {
+					"value": ""
+				},
+				"yssdl": {
+					"value": ""
+				},
+				"qtgrczbdczlqz": {
+					"value": ""
+				},
+				"sfkssqz": {
+					"value": "2017-10-31"
+				},
+				"qtgrczbdczjsfft": {
+					"value": ""
+				},
+				"bqyjsfe": {
+					"value": "0.0"
+				},
+				"sskcs": {
+					"value": "0.0"
+				},
+				"sybh1": {
+					"value": ""
+				},
+				"qtgrczbdczlqq": {
+					"value": ""
+				},
+				"jsfyj": {
+					"value": "0.0"
+				}
+			}
+		}],
+		"name": "skxxGrid",
+		"sword": "SwordGrid"
+	}, {
+		"trs": [{
+			"status": null,
+			"tds": {
+				"zsxmDm": {
+					"value": "30221"
+				},
+				"xh": {
+					"value": ""
+				},
+				"sybzDm1": {
+					"value": ""
+				},
+				"wdqzdbz": {
+					"value": ""
+				},
+				"bqynsfe": {
+					"value": "0.0"
+				},
+				"zszmDm": {
+					"value": "code,3022104001450001|caption,企业类纳税人水利建设基金"
+				},
+				"sflhdwse": {
+					"value": "0.0010"
+				},
+				"bqybtsfe": {
+					"value": "0.0"
+				},
+				"qtgrczbdcfthyzjsr": {
+					"value": ""
+				},
+				"rdpzuuid": {
+					"value": ""
+				},
+				"rdzsuuid": {
+					"value": ""
+				},
+				"sfkssqq": {
+					"value": "2017-10-01"
+				},
+				"jcx": {
+					"value": ""
+				},
+				"ysbse": {
+					"value": ""
+				},
+				"zspmDm": {
+					"value": "code,302210400|caption,地方水利建设基金"
+				},
+				"ysx": {
+					"value": "0.0"
+				},
+				"syzldz": {
+					"value": ""
+				},
+				"bqjmsfe": {
+					"value": "0.0"
+				},
+				"ssjmxzDm": {
+					"value": ""
+				},
+				"yssdl": {
+					"value": ""
+				},
+				"qtgrczbdczlqz": {
+					"value": ""
+				},
+				"sfkssqz": {
+					"value": "2017-10-31"
+				},
+				"qtgrczbdczjsfft": {
+					"value": ""
+				},
+				"bqyjsfe": {
+					"value": "0.0"
+				},
+				"sskcs": {
+					"value": "0.0"
+				},
+				"sybh1": {
+					"value": ""
+				},
+				"qtgrczbdczlqq": {
+					"value": ""
+				},
+				"jsfyj": {
+					"value": "0.0"
+				}
+			}
+		}],
+		"name": "sbxxList",
+		"sword": "SwordGrid"
+	}, {
+		"name": "nsrxxForm",
+		"data": {
+			"skssqq": {
+				"value": "2017-10-01"
+			},
+			"hyDm": {
+				"value": ""
+			},
+			"sbsxDm1": {
+				"value": "11"
+			},
+			"nsrsbh": {
+				"value": "91450107MA5KE0EQ2B"
+			},
+			"nsrmc": {
+				"value": "广西龙森胜贸易有限公司"
+			},
+			"sbrq1": {
+				"value": "2017-11-02"
+			},
+			"bsr": {
+				"value": ""
+			},
+			"qtgrczbdcfthyzjsr": {
+				"value": ""
+			},
+			"qtgrczbdczlqz": {
+				"value": ""
+			},
+			"qtgrczbdczjsfft": {
+				"value": ""
+			},
+			"jdxzDm": {
+				"value": ""
+			},
+			"zgswskfjDm": {
+				"value": ""
+			},
+			"qtgrczbdczlqq": {
+				"value": ""
+			},
+			"xzqhszDm": {
+				"value": ""
+			},
+			"skssqz": {
+				"value": "2017-10-31"
+			}
+		},
+		"sword": "SwordForm"
+	}, {
+		"trs": [{
+			"status": null,
+			"tds": {
+				"zsxmDm": {
+					"value": ""
+				},
+				"ysbje": {
+					"value": ""
+				},
+				"rdyxqz": {
+					"value": ""
+				},
+				"wdqzdbz": {
+					"value": ""
+				},
+				"jmsr": {
+					"value": ""
+				},
+				"zszmDm": {
+					"value": ""
+				},
+				"ynse": {
+					"value": ""
+				},
+				"jzjtskbz": {
+					"value": ""
+				},
+				"jsyj": {
+					"value": ""
+				},
+				"yzpzxh": {
+					"value": ""
+				},
+				"rdyxqq": {
+					"value": ""
+				},
+				"kssl": {
+					"value": ""
+				},
+				"rdpzuuid": {
+					"value": ""
+				},
+				"wdqzdmse": {
+					"value": ""
+				},
+				"skcsfsDm": {
+					"value": ""
+				},
+				"djxh": {
+					"value": "10114501010114170071"
+				},
+				"sksxDm": {
+					"value": ""
+				},
+				"fpjmslxDm": {
+					"value": ""
+				},
+				"sbqx": {
+					"value": "2017-11-15 00:00:00"
+				},
+				"zsZsxmDm": {
+					"value": ""
+				},
+				"sbfsDm": {
+					"value": "32"
+				},
+				"sbuuid": {
+					"value": "B8289B1EEB56C45E63566659F556B415"
+				},
+				"zfrDm": {
+					"value": ""
+				},
+				"zsxh": {
+					"value": ""
+				},
+				"xssr": {
+					"value": ""
+				},
+				"yslwqzd": {
+					"value": ""
+				},
+				"sysyuuid": {
+					"value": ""
+				},
+				"lsbbz": {
+					"value": ""
+				},
+				"hyDm": {
+					"value": ""
+				},
+				"sbsxDm1": {
+					"value": "11"
+				},
+				"cjclbz": {
+					"value": ""
+				},
+				"zfrq1": {
+					"value": ""
+				},
+				"pkrqq": {
+					"value": ""
+				},
+				"sbh": {
+					"value": ""
+				},
+				"hdse": {
+					"value": ""
+				},
+				"zfbz1": {
+					"value": "N"
+				},
+				"xgrDm": {
+					"value": ""
+				},
+				"hdynsjye": {
+					"value": ""
+				},
+				"pklyDm": {
+					"value": ""
+				},
+				"msxse": {
+					"value": ""
+				},
+				"jmspbaBz": {
+					"value": ""
+				},
+				"nssbrq": {
+					"value": "2017-11-02 00:00:00"
+				},
+				"zfsbz": {
+					"value": ""
+				},
+				"sqwsbbz": {
+					"value": ""
+				},
+				"jmse": {
+					"value": ""
+				},
+				"sphm": {
+					"value": ""
+				},
+				"zcdsyyjskje": {
+					"value": ""
+				},
+				"hdlx2": {
+					"value": ""
+				},
+				"xgrq": {
+					"value": "2017-11-02 11:33:50"
+				},
+				"tdjmbz": {
+					"value": ""
+				},
+				"ssjmxzhzDm": {
+					"value": ""
+				},
+				"ysfpblDm": {
+					"value": ""
+				},
+				"skzlDm": {
+					"value": ""
+				},
+				"jbzqnsqxDm": {
+					"value": ""
+				},
+				"swsxDm": {
+					"value": ""
+				},
+				"serviceName": {
+					"value": ""
+				},
+				"hdbl": {
+					"value": ""
+				},
+				"hdjsyj": {
+					"value": ""
+				},
+				"ynsejze": {
+					"value": ""
+				},
+				"zsdlfsDm": {
+					"value": ""
+				},
+				"lrrDm": {
+					"value": "14501980001"
+				},
+				"wdqzdxse": {
+					"value": ""
+				},
+				"dfpskje": {
+					"value": ""
+				},
+				"sl1": {
+					"value": ""
+				},
+				"pkrqz": {
+					"value": ""
+				},
+				"yzpzzlDm": {
+					"value": "BDA0610100"
+				},
+				"syyje": {
+					"value": ""
+				},
+				"qzd": {
+					"value": "0.0"
+				},
+				"sfhynsr": {
+					"value": ""
+				},
+				"jkqxDm": {
+					"value": ""
+				},
+				"cjczjsbz": {
+					"value": ""
+				},
+				"sfzyzspm": {
+					"value": ""
+				},
+				"yzfsrq": {
+					"value": ""
+				},
+				"ysx": {
+					"value": ""
+				},
+				"nsqxDm": {
+					"value": ""
+				},
+				"bqysbJsyjAxm": {
+					"value": ""
+				},
+				"bqysbse": {
+					"value": ""
+				},
+				"ysjcDm": {
+					"value": ""
+				},
+				"jkqx": {
+					"value": ""
+				},
+				"yzpzmxxh": {
+					"value": ""
+				},
+				"zgswskfjDm": {
+					"value": "14501070500"
+				},
+				"yjfsDm": {
+					"value": ""
+				},
+				"ybtse": {
+					"value": "0.0"
+				},
+				"zsl": {
+					"value": ""
+				},
+				"sbsxDm": {
+					"value": ""
+				},
+				"yjse": {
+					"value": ""
+				},
+				"kmblgktsgzDm": {
+					"value": ""
+				},
+				"bqysbCdeJsyj": {
+					"value": ""
+				},
+				"ssglyDm": {
+					"value": "14501070052"
+				},
+				"bz": {
+					"value": ""
+				},
+				"sfcfsbFlag": {
+					"value": ""
+				},
+				"lsmxuuid": {
+					"value": ""
+				},
+				"zsuuid": {
+					"value": ""
+				},
+				"jdxzDm": {
+					"value": ""
+				},
+				"yjqxDm": {
+					"value": ""
+				},
+				"skssswjgDm": {
+					"value": ""
+				},
+				"bqysbCdeJsyjAxm": {
+					"value": ""
+				},
+				"yzgsrq": {
+					"value": ""
+				},
+				"sbqxDm": {
+					"value": ""
+				},
+				"hsbj": {
+					"value": ""
+				},
+				"yskmDm": {
+					"value": ""
+				},
+				"zspmDm": {
+					"value": ""
+				},
+				"pzxh": {
+					"value": "10014517000033404934"
+				},
+				"syuuid": {
+					"value": ""
+				},
+				"fpdkJe": {
+					"value": ""
+				},
+				"bqysbJsyj": {
+					"value": ""
+				},
+				"se": {
+					"value": ""
+				},
+				"yssdl": {
+					"value": ""
+				},
+				"yjze": {
+					"value": ""
+				},
+				"yjyve": {
+					"value": ""
+				},
+				"kcse": {
+					"value": ""
+				},
+				"czlxDm": {
+					"value": ""
+				},
+				"zhjzl": {
+					"value": ""
+				},
+				"gkDm": {
+					"value": ""
+				},
+				"tzlxDm": {
+					"value": ""
+				},
+				"gzlxDm1": {
+					"value": "1"
+				},
+				"sjgsdq": {
+					"value": "14501070500"
+				},
+				"djzclxDm": {
+					"value": ""
+				},
+				"sfysb": {
+					"value": ""
+				},
+				"xwqymsxse": {
+					"value": ""
+				},
+				"xshwqzd": {
+					"value": ""
+				},
+				"sybh1": {
+					"value": ""
+				},
+				"yyzpzmxxh": {
+					"value": ""
+				},
+				"syyxqq": {
+					"value": ""
+				},
+				"ssyhlxDm": {
+					"value": ""
+				},
+				"jzyYdBz": {
+					"value": ""
+				},
+				"sbjbjgDm": {
+					"value": ""
+				},
+				"yjskztDm": {
+					"value": ""
+				},
+				"pzmxxh": {
+					"value": ""
+				},
+				"hzyqsbqx": {
+					"value": ""
+				},
+				"ssyhyyDm": {
+					"value": ""
+				},
+				"dwlsgxDm": {
+					"value": ""
+				},
+				"cbsxDm": {
+					"value": ""
+				},
+				"zzsqylxDm": {
+					"value": ""
+				},
+				"syqdsj": {
+					"value": ""
+				},
+				"hztykcjye": {
+					"value": ""
+				},
+				"rdzsuuid": {
+					"value": ""
+				},
+				"kjdjxh": {
+					"value": ""
+				},
+				"sbxxuuid": {
+					"value": ""
+				},
+				"skssqz": {
+					"value": "2017-10-31 00:00:00"
+				},
+				"zsfsDm": {
+					"value": ""
+				},
+				"sybh": {
+					"value": ""
+				},
+				"zsswjgDm": {
+					"value": ""
+				},
+				"lrrq": {
+					"value": "2017-11-02 11:33:50"
+				},
+				"skssqq": {
+					"value": "2017-10-01 00:00:00"
+				},
+				"ysbqx": {
+					"value": ""
+				},
+				"jsbz1": {
+					"value": ""
+				},
+				"zspzmxxh": {
+					"value": "0"
+				},
+				"skcllxDm": {
+					"value": ""
+				},
+				"jfrs": {
+					"value": ""
+				},
+				"qtmse": {
+					"value": ""
+				},
+				"swjgDm": {
+					"value": ""
+				},
+				"jzedBz": {
+					"value": ""
+				},
+				"zsxxid": {
+					"value": ""
+				},
+				"htqdrq": {
+					"value": ""
+				}
+			}
+		}],
+		"name": "sbbList",
+		"sword": "SwordGrid"
+	}, {
+		"name": "slxxForm",
+		"data": {
+			"slrq": {
+				"value": "2017-11-30"
+			},
+			"slr": {
+				"value": "WSSB"
+			},
+			"slswjg": {
+				"value": "南宁市西乡塘区国家税务局税源管理二股"
+			}
+		},
+		"sword": "SwordForm"
+	}, {
+		"name": "fjsxx",
+		"value": "10109:1,10302@103020301#103020302#103020303:1,10301@103021601#103021602#103021603#103022102#103019902:1,10301@103021701#103021702:0,30199@301990200:0,30221:0,30446:0,30217:0,30217:0,30221:0,30216:1,30203:1",
+		"type": ""
+	}, {
+		"name": "today",
+		"value": "2017-11-30",
+		"type": ""
+	}, {
+		"name": "skssqq",
+		"value": "2017-10-01",
+		"type": ""
+	}, {
+		"name": "skssqz",
+		"value": "2017-10-31",
+		"type": ""
+	}, {
+		"name": "swryMc",
+		"value": "WSSB",
+		"type": ""
+	}, {
+		"name": "yzpzzlDm",
+		"value": "BDA0610100",
+		"type": ""
+	}, {
+		"name": "cwgzbz",
+		"value": "cwgzbz",
+		"type": ""
+	}, {
+		"name": "djxh",
+		"value": "10114501010114170071",
+		"type": ""
+	}, {
+		"name": "pzxh",
+		"value": "10014517000033404934",
+		"type": ""
+	}, {
+		"name": "sbuuid",
+		"value": "B8289B1EEB56C45E63566659F556B415",
+		"type": ""
+	}, {
+		"trs": [],
+		"name": "xmxxList",
+		"sword": "SwordGrid"
+	}, {
+		"name": "lcswsxDm",
+		"value": "LCSXA061001019",
+		"type": ""
+	}, {
+		"name": "cxbj",
+		"value": null,
+		"type": ""
+	}, {
+		"name": "sfxstqxm",
+		"value": "Y",
+		"type": ""
+	}, {
+		"name": "ygzsxsj",
+		"value": "2016-05-01",
+		"type": ""
+	}, {
+		"name": "fjsxmsbbz",
+		"value": "N",
+		"type": ""
+	}, {
+		"name": "fjszspms",
+		"value": "302030100,302160100,101090203,101090102,101090202,101090301,101090201,101090103,302030200,304460201,101090303,302160200,101090101,302030300,302160300,101090302",
+		"type": ""
+	}, {
+		"name": "htmbfzkg",
+		"value": "Y",
+		"type": ""
+	}, {
+		"name": "gwssswjg",
+		"value": "14501070500",
+		"type": ""
+	}, {
+		"name": "sessionID",
+		"value": "7505938e702449a3b91a401c0d61a008",
+		"type": ""
+	}]
+}
