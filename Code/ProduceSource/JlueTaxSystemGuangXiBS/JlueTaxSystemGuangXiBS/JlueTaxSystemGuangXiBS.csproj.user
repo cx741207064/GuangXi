@@ -16,7 +16,7 @@
           <SQLDebugging>False</SQLDebugging>
           <ExternalProgram>
           </ExternalProgram>
-          <StartExternalURL>http://localhost:65045/QuestionMain.aspx?userid=GuangXiUser&amp;username=测试人员&amp;classid=9&amp;courseid=112&amp;sortid=601</StartExternalURL>
+          <StartExternalURL>http://localhost:65045/QuestionMain.aspx?userid=GuangXiUser&amp;username=测试人员&amp;classid=9&amp;courseid=112&amp;sortid=678</StartExternalURL>
           <StartCmdLineArguments>
           </StartCmdLineArguments>
           <StartWorkingDirectory>
