@@ -534,6 +534,7 @@
     </Content>
     <Content Include="hlwsb\sbkk\tsxCheck.json" />
     <Content Include="YHSSB.json" />
+    <Content Include="hlwsb\dm\SL_YSXM.json" />
     <None Include="Properties\PublishProfiles\IISConfig.pubxml" />
     <Content Include="ChuShiHua.ashx" />
     <Content Include="web\checkQyLoginNoCa.json" />

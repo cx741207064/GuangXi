@@ -42,6 +42,8 @@ namespace JlueTaxSystemGuangXiBS.Controllers
                 }
             }
 
+            getZZS_XSSR(ref re_json);
+
             Response.ContentType = "application/json";
             Response.Write(re_json);
         }
@@ -203,5 +205,49 @@ namespace JlueTaxSystemGuangXiBS.Controllers
             GTXResult gr = GTXMethod.DeleteUserReportData(id, "");
         }
 
+        public void getZZS_XSSR(ref JObject re_json)
+        {
+            string id = "";
+            GTXResult resultq = GTXMethod.GetGuangXiYSBQC();
+            if (resultq.IsSuccess)
+            {
+                List<GDTXGuangXiUserYSBQC> ysbqclist = JsonConvert.DeserializeObject<List<GDTXGuangXiUserYSBQC>>(resultq.Data.ToString());
+                if (ysbqclist.Count > 0)
+                {
+                    foreach (GDTXGuangXiUserYSBQC item in ysbqclist)
+                    {
+                        if (item.BDDM == "YBNSRZZS")
+                        {
+                            id = item.Id.ToString();
+                        }
+                    }
+                }
+            }
+
+            GTXResult gr = GTXMethod.GetUserReportData(id, "101011034");
+            if (gr.IsSuccess)
+            {
+                JArray jarr = new JArray();
+                jarr = JsonConvert.DeserializeObject<JArray>(gr.Data.ToString());
+                if (jarr.Count > 0)
+                {
+                    byte[] bytes = Convert.FromBase64String(jarr[0]["dataValue"].ToString().Replace(" ", "+"));
+                    string dataValue = Encoding.Default.GetString(bytes);
+                    JObject data_json = JsonConvert.DeserializeObject<JObject>(dataValue);
+                    if (data_json.HasValues)
+                    {
+                        JArray data_body = (JArray)data_json["BODY"];
+                        JArray re_DSLIST = (JArray)re_json["data"]["JCSJ"]["DSLIST"];
+
+                        double XSSR = double.Parse(data_body[0]["COL09"].ToString()) + double.Parse(data_body[1]["COL09"].ToString()) + double.Parse(data_body[2]["COL09"].ToString()) + double.Parse(data_body[3]["COL09"].ToString()) + double.Parse(data_body[4]["COL09"].ToString()) + double.Parse(data_body[5]["COL09"].ToString());
+                        re_DSLIST[0]["XSSR"] = new JValue(XSSR);
+                        re_DSLIST[1]["XSSR"] = new JValue(XSSR);
+                        re_DSLIST[2]["XSSR"] = new JValue(XSSR);
+
+                    }
+                }
+            }
+
+        }
     }
 }

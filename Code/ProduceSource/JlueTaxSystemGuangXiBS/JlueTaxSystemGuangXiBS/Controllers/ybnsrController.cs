@@ -120,7 +120,7 @@ namespace JlueTaxSystemGuangXiBS.Controllers
                         JArray data_body = (JArray)data_json["BODY"];
                         JArray re_body = (JArray)re_json["data"]["BODY"];
 
-                        double YBHW_LW_BYS_12 = double.Parse(data_body[0]["SE"].ToString());
+                        double YBHW_LW_BYS_12 = double.Parse(data_body[12]["SE"].ToString());
                         re_body[11]["YBHW_LW_BYS"] = new JValue(YBHW_LW_BYS_12);
 
                         double YBHW_LW_BYS_14 = double.Parse(data_body[15]["FS"].ToString());
