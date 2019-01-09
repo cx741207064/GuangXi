@@ -1,4 +1,4 @@
-http://www.gxgs.gov.cn:9711/web/
+http://etax.guangxi.chinatax.gov.cn:9711/web/dzswj/ythclient/mh.html
 
 91450900MA5KC6MH55
 aa123456
@@ -7,3 +7,6 @@ aa123456
 91450900MA5N56L202
 123456
 Fm12345678
+
+91450923MA5KBJ6Q7N
+Bf123456

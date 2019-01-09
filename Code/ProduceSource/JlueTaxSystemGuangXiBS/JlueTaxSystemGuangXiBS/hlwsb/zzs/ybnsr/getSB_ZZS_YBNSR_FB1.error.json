@@ -1,0 +1,1 @@
+{"code":"-1","msg":"EJB Exception: ; nested exception is: \n\thtjs.domain.exception.ITFCException: 取基础数据错误,其他异常htjs.domain.exception.ITFCException: 异常原因：征收项目:增值税     品目:商业(17%、16%)已申报，申报所属期为：2018-11-01至2018-11-30，无需再次申报，如需查询更正请前往所属办税服务厅。"}
