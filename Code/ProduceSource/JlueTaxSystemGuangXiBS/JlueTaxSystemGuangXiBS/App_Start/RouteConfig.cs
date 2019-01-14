@@ -45,6 +45,12 @@ defaults: new { controller = "ybnsr", action = "getSB_ZZS_YBNSR" }
 );
 
             routes.MapRoute(
+name: "cwbb",
+url: "hlwsb/cwbb/{controller}/{action}.do",
+defaults: new { controller = "xqy", action = "getSB_CWBB_XQY_ZCFZB" }
+);
+
+            routes.MapRoute(
 name: "hlwsb",
 url: "hlwsb/{action}",
 defaults: new { controller = "hlwsb", action = "GetSbTree" }

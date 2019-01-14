@@ -124,12 +124,15 @@
     <Compile Include="Controllers\dmController.cs" />
     <Compile Include="Controllers\fjsController.cs" />
     <Compile Include="Controllers\hlwsbController.cs" />
+    <Compile Include="Controllers\qysdsController.cs" />
     <Compile Include="Controllers\qyyhController.cs" />
     <Compile Include="Controllers\mainController.cs" />
     <Compile Include="Controllers\RootController.cs" />
     <Compile Include="Controllers\sbkkController.cs" />
     <Compile Include="Controllers\userInfoController.cs" />
     <Compile Include="Controllers\webController.cs" />
+    <Compile Include="Controllers\xgmController.cs" />
+    <Compile Include="Controllers\xqyController.cs" />
     <Compile Include="Controllers\ybnsrController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>

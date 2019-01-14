@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <TITLE>资料上传</TITLE>
+    <meta http-equiv="content-type" content="text/html;charset=utf-8"><script type="text/javascript" src="/commons/js/include_ui.js?dm=10"></script>
+    <script type="text/javascript" src="/commons/js/include_ui.js?dm=10"></script>
+    <script type="text/javascript" src="/hlwsb/commons/js/include_ui_hlwsb.js?dm=40"></script>
+    <script type="text/javascript" src="/hlwsb/commons/js/jquery.form.min.js"></script>
+    <script type="text/javascript" src="/hlwsb/commons/js/xml2json.min.js"></script>
+    <script type="text/javascript" src="sb_cwbb_zlsc.js"></script>
+    <style>
+        *{margin: 0;padding: 0; border:none; background: none;}
+        body{line-height: 1.42875143;font-family: "microsoft yahei";}
+        a{}
+        .prompt{background: url('../commons/images/tc_bg.png') 0 0 no-repeat #fff;width: 400px; position: absolute;}
+        .prompt_box{padding:45px;line-height: 10px }
+        .prompt_box .Notice{color:#f00; padding: 15px 20px;font-weight: bold}
+        .error_box{color: #ee6c6c; font-family: "microsoft yahei"; font-size: 14px; text-align: center;}
+
+        .formitem{margin-bottom: 10px; width:100%;}
+        .btngroup{width: 200px;margin-left: auto;margin-right: auto; height: auto; line-height: 32px; clear: both; overflow: hidden; padding-top: 0px;}
+        .btngroup a{display: block; background:#3793fa; text-align: center; color: #ffffff; text-decoration: none; font-family: "microsoft yahei"; font-size: 14px; border-radius: 6px; *background: url('btn_bg_new_bg.png') 0 0 no-repeat;}
+        .btngroup a.yzdl_btn{width:100%; height:32px;}
+        .shangchuan{text-align: center; padding: 15px;}
+        .forget_p{color: #0f80ce;}
+        .forget_p:hover{color: #ff2828}
+        .login_btn,.register_btn{border-radius:3px;background:#0f80ce;font-size:16px;color:#fff;text-align:center;line-height:40px;height:40px;font-size:14px;	display:inline-block;border:0;outline:none;	font-weight:bold;width: 150px}
+        .login_btn:hover{	background:#44b0fa;	}
+        .register_btn{background: #44b0fa}
+        .register_btn:hover{background: #0f80ce}
+        .fl{ float: left!important ;}
+        .fr{ float: right!important ;}
+        .clearfix{clear: both;}
+
+        /*wdl20181102 按钮*/
+        .prompt{
+            background: #fff;
+        }
+        .shangchuan{
+            padding: 30px 30px 20px;
+        }
+        .shangchuan input[type=file]{
+            cursor: pointer;
+            width:260px;
+            height: 30px;
+            line-height: 30px;
+        }
+        .prompt_box {
+            padding: 10px 30px 20px;
+            /*line-height: 10px;*/
+            text-align: center;
+        }
+        .clearfix {
+            clear: both;
+            width: 260px;
+            margin: 0 auto;
+        }
+        .login_btn,.register_btn{
+            cursor: pointer;
+            border-radius: 3px;
+            /*background: #0f80ce;*/
+            /*font-size: 16px;*/
+            color: #fff;
+            text-align: center;
+            line-height: 30px;
+            height: 30px;
+            font-size: 12px;
+            display: inline-block;
+            border: 0;
+            outline: none;
+            font-weight: normal;
+            width: 110px;
+            border: 1px solid #1e9fff;
+            background-color: #1e9fff;
+        }
+        .login_btn:hover,.register_btn:hover{
+            color: #fff;
+            background: #0087f1;
+            text-decoration:none;
+        }
+    </style>
+</head>
+<body>
+
+<div class="prompt">
+    <div class="shangchuan"><input type="file" id="myfile" name="myfile" style="border: 1px solid #ccc"/></div>
+    <div class="prompt_box">
+        <div class="formitem clearfix">
+        <a onclick="zlsc.UpladFile();" class="login_btn fl" >上传</a>
+        <a href="../printModel/cwbb/CWBBTemp.zip" class="register_btn fr" >下载XML模板</a>
+        </div>
+    </div>
+
+        <!--<div class="btngroup"><a class="yzdl_btn" onclick="zlsc.UpladFile()">上传</a></div>-->
+</div>
+
+<!--<input type="file" id="myfile" name="myfile" />-->
+<!--<input type="button" onclick="zlsc.UpladFile()" value="上传" />-->
+<!--<input type="button" onclick="cancleUploadFile()" value="取消" />-->
+</body>
+</html>

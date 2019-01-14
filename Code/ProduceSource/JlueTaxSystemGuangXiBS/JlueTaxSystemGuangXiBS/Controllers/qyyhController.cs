@@ -30,13 +30,13 @@ namespace JlueTaxSystemGuangXiBS.Controllers
         public string selectGnmkByYhidPidSb(string callback)
         {
             string return_str = "";
-            string str = System.IO.File.ReadAllText(Server.MapPath("selectGnmkByYhidPidSb.json"));
+            string str = System.IO.File.ReadAllText(Server.MapPath("selectGnmkByYhidPidSb.xgm.json"));
             JObject return_j = JsonConvert.DeserializeObject<JObject>(str);
             JArray list_ja = (JArray)return_j["list"];
             for (int i = 0; i < list_ja.Count; i++)
             {
                 JObject jo = (JObject)list_ja[i];
-                if (jo["SJ_MKXKMC"].ToString() != "增值税(一般纳税人适用)" && jo["MKXK_MC"].ToString() != "附加税(费)申报（增值税）" && jo["MKXK_MC"].ToString() != "印花税申报")
+                if (jo["SJ_MKXKMC"].ToString() != "增值税(一般纳税人适用)" && jo["SJ_MKXKMC"].ToString() != "增值税（小规模纳税人适用）查账征收" && jo["SJ_MKXKMC"].ToString() != "居民企业（查账征收）企业所得税月（季）度申报" && jo["SJ_MKXKMC"].ToString() != "财务报告报送与信息采集2013（小企业会计准则-月季）" && jo["MKXK_MC"].ToString() != "附加税(费)申报（增值税）" && jo["MKXK_MC"].ToString() != "印花税申报")
                 {
                     jo["MKXK_URL_PT"] = "";
                 }

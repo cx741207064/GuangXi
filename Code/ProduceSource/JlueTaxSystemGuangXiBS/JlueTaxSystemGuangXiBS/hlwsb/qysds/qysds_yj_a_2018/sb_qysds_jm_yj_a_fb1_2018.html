@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<HTML>
+<HEAD>
+    <meta http-equiv="content-type" content="text/html;charset=utf-8">
+    <TITLE>免税收入、减计收入、所得减免等优惠明细表</TITLE>
+    <script type="text/javascript" src="/commons/js/include_ui.js?dm=1030"></script>
+    <script type="text/javascript" src="/hlwsb/commons/js/include_ui_hlwsb.js?dm=51"></script>
+    <script type="text/javascript" src="sb_qysds_jm_yj_a_fb1_2018.js"></script>
+
+
+</HEAD>
+<BODY>
+<div class="panelBar">
+    <ul class="toolBar">
+        <li class="">
+            <a class="able"> <span> <input type="button" value="暂存"
+                                           id="" onmousemove="this.style.color='#f00'"
+                                           onmouseout="this.style.color='#000'" accesskey="s"
+                                           onclick="jm_yj_a.onCacheSave();"> </span> </a>
+        </li>
+        <li class="line">
+            line
+        </li>
+        <li class="">
+            <a class="save">
+                <span>
+                    <input type="button" id="save" value="保存" onmousemove="this.style.color='#f00'"
+                           onmouseout="this.style.color='#000'"
+                           accesskey="s" onclick="jm_yj_a.onSave();">
+                </span>
+            </a>
+        </li>
+        <li class="line">line</li>
+        <li class="">
+            <a class="cancel">
+                <span>
+                    <input type="button" id="delete" value="删除" onmousemove="this.style.color='#f00'"
+                           onmouseout="this.style.color='#000'"
+                           accesskey="d" onclick="jm_yj_a.onDelete();">
+                </span>
+            </a>
+        </li>
+        <li class="line">line</li>
+        <li class="">
+            <a class="print">
+                    <span>
+                        <input type="button" value="打印预览" onmousemove="this.style.color='#f00'"
+                               onmouseout="this.style.color='#000'"
+                               accesskey="d" onclick="jm_yj_a.onPrint();">
+                    </span>
+            </a>
+        </li>
+        <li class="line">line</li>
+        <li class="">
+            <a class="edit">
+                <span>
+                    <input type="button" id="editBtn" value="导入" onmousemove="this.style.color='#f00'"
+                           onmouseout="this.style.color='#000'"
+                           accesskey="d" onclick="jm_yj_a.openPopWin();">
+                </span>
+            </a>
+        </li>
+    </ul>
+    <div class="bzwd" onclick="hlwsbTools.helpWD();">
+    </div>
+</div>
+<div id="select"
+     style="top: 100px;border-color: red;border-width: 2px;border-style:solid;;z-index: 1;position:absolute;">
+
+    <input id="JM_ID" name="JM_ID" label="3_18">
+</div>
+
+<OBJECT ID="DCellWeb1"
+        CLASSID="CLSID:3F166327-8030-4881-8BD2-EA25350E574A"
+        onfocus="jm_yj_a.hideSelect();">
+</OBJECT>
+</BODY>
+</HTML>

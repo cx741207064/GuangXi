@@ -60,5 +60,27 @@ namespace JlueTaxSystemGuangXiBS.Controllers
             }
         }
 
+        public void getDM_QYSDS_JMSZC()
+        {
+            JObject return_j = new JObject();
+            string return_str = "";
+            string str = System.IO.File.ReadAllText(Server.MapPath("getDM_QYSDS_JMSZC.json"));
+            return_str = str;
+            return_j = JsonConvert.DeserializeObject<JObject>(str);
+            Response.ContentType = "application/json";
+            Response.Write(return_str);
+        }
+
+        public void getDM_QYSDS_ALL_YXBZ()
+        {
+            JObject return_j = new JObject();
+            string return_str = "";
+            string str = System.IO.File.ReadAllText(Server.MapPath("getDM_QYSDS_ALL_YXBZ.json"));
+            return_str = str;
+            return_j = JsonConvert.DeserializeObject<JObject>(str);
+            Response.ContentType = "application/json";
+            Response.Write(return_str);
+        }
+
     }
 }
