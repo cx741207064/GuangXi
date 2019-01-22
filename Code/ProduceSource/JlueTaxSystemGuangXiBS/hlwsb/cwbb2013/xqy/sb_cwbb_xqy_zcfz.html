@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<HTML>
+<HEAD>
+    <meta http-equiv="content-type" content="text/html;charset=utf-8">
+
+    <TITLE>资产负债表</TITLE>
+
+    <script type="text/javascript" src="/commons/js/include_ui.js?dm=10"></script>
+<script type="text/javascript" src="/hlwsb/commons/js/include_ui_hlwsb.js?dm=40"></script>
+<script type="text/javascript" src="sb_cwbb_xqy_zcfz.js"></script>
+</HEAD>
+<BODY>
+<div class="panelBar">
+    <ul class="toolBar">
+		<li class="">
+            <a class="save">
+                <span>
+                    <input type="button" value="保存" onmousemove="this.style.color='#f00'"
+                           onmouseout="this.style.color='#000'"
+                           accesskey="s" onclick="zcfz.onSave();">
+                </span>
+            </a>
+        </li>
+        <li class="line">line</li>
+        <li class="">
+            <a class="cancel">
+                <span>
+                    <input type="button" value="删除" onmousemove="this.style.color='#f00'"
+                           onmouseout="this.style.color='#000'"
+                           accesskey="d" onclick="zcfz.onDelete();">
+                </span>
+            </a>
+        </li>
+         <li class="line">line</li>
+               <li class="">
+                   <a class="print">
+                       <span>
+                           <input type="button" value="打印预览" onmousemove="this.style.color='#f00'"
+                                  onmouseout="this.style.color='#000'"
+                                  accesskey="d" onclick="return false;zcfz.onPrint();">
+                       </span>
+                   </a>
+         </li>
+          <li class="line">line</li>
+          <li class="">
+            <a class="">
+                    <input style="vertical-align: middle;" type="checkbox" onclick="zcfz.onEditBNLJ(this);"> 修改年初余额
+            </a>
+        </li>
+        <li class="line">line </li>
+        <li class="">
+            <a class="edit">
+                <span>
+                    <input type="button" value="导入XML" onmousemove="this.style.color='#f00'"
+                           onmouseout="this.style.color='#000'"
+                           accesskey="d" onclick="return false;zcfz.openZlsc();">
+                </span>
+            </a>
+        </li>
+        <li class="line">line</li>
+        <li class="">
+            <a class="edit">
+                <span>
+                    <input type="button" id="editBtn" value="导入EXCEL" onmousemove="this.style.color='#f00'"
+                           onmouseout="this.style.color='#000'"
+                           accesskey="d" onclick="return false;zcfz.openPopWin();">
+                </span>
+            </a>
+        </li>
+    </ul><div class="bzwd" onclick="return false;hlwsbTools.helpWD();"></div>
+</div>
+<OBJECT ID="DCellWeb1"
+        CLASSID="CLSID:3F166327-8030-4881-8BD2-EA25350E574A"
+        >
+       
+</OBJECT>
+</BODY>
+</HTML>
