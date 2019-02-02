@@ -8,6 +8,7 @@ using Newtonsoft.Json;
 using Newtonsoft.Json.Linq;
 using JlueTaxSystemGuangXiBS.Code;
 using System.Text;
+using System.IO;
 
 namespace JlueTaxSystemGuangXiBS.Controllers
 {
@@ -34,6 +35,16 @@ namespace JlueTaxSystemGuangXiBS.Controllers
             JObject re_json = new JObject();
             JObject data_json = new JObject();
             string str = System.IO.File.ReadAllText(System.Web.HttpContext.Current.Server.MapPath("getSB_ZZS_YBNSR.json"));
+
+            //企业所得税期初数设置
+            string Name = System.Web.HttpContext.Current.Session["Name"].ToString();
+            JToken industry = JToken.Parse(System.IO.File.ReadAllText(System.Web.HttpContext.Current.Server.MapPath("~/industry.json")));
+            industry = industry.Where(a => a["name"].ToString() == Name).ToList()[0];
+            if (industry["value"].ToString() != "")
+            {
+                str = File.ReadAllText(System.Web.HttpContext.Current.Server.MapPath("getSB_ZZS_YBNSR." + industry["value"] + ".json"));
+            }
+
             re_json = JsonConvert.DeserializeObject<JObject>(str);
             data_json = getSB_ZZS_YBNSR_Public(ref re_json, SBBZL_DM);
             if (data_json.HasValues)

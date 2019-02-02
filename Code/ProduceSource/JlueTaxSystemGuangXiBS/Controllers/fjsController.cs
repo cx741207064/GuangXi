@@ -49,6 +49,17 @@ namespace JlueTaxSystemGuangXiBS.Controllers
 
             getZZS_XSSR(ref re_json);
 
+            GTXResult gr1 = GTXMethod.GetCompany();
+            if (gr1.IsSuccess)
+            {
+                JObject jo = new JObject();
+                jo = JsonConvert.DeserializeObject<JObject>(gr1.Data.ToString());
+                if (jo.HasValues)
+                {
+                    re_json["data"]["HEAD"]["SSHY"] = JObject.Parse(System.IO.File.ReadAllText(System.Web.HttpContext.Current.Server.MapPath("~/hlwsb/dm/getSb_DM_WITH.dm.getDM_SSHY.json")))["data"]["BODY"].Where(a => a["MC"].ToString() == jo["GBHY"].ToString()).ToList()[0]["DM"];
+                }
+            }
+
             return re_json;
         }
 
@@ -227,7 +238,7 @@ namespace JlueTaxSystemGuangXiBS.Controllers
                 {
                     foreach (GDTXGuangXiUserYSBQC item in ysbqclist)
                     {
-                        if (item.BDDM == "YBNSRZZS")
+                        if (item.BDDM == "YBNSRZZS" || item.BDDM == "XGMZZS")
                         {
                             id = item.Id.ToString();
                         }

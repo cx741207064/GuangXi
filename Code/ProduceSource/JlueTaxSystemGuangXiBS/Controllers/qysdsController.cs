@@ -24,6 +24,16 @@ namespace JlueTaxSystemGuangXiBS.Controllers
             JObject re_json = new JObject();
             JObject data_json = new JObject();
             string str = System.IO.File.ReadAllText(System.Web.HttpContext.Current.Server.MapPath("getSB_QYSDS_JM_YJ_A_2015.json"));
+
+            //企业所得税期初数设置
+            string Name = System.Web.HttpContext.Current.Session["Name"].ToString();
+            JToken industry = JToken.Parse(System.IO.File.ReadAllText(System.Web.HttpContext.Current.Server.MapPath("~/industry.json")));
+            industry = industry.Where(a => a["name"].ToString() == Name).ToList()[0];
+            if (industry["value"].ToString() != "")
+            {
+                str = File.ReadAllText(System.Web.HttpContext.Current.Server.MapPath("getSB_QYSDS_JM_YJ_A_2015." + industry["value"] + ".json"));
+            }
+
             re_json = JsonConvert.DeserializeObject<JObject>(str);
             data_json = getQYSDS_JM_YJ_A_Public(ref re_json, SBBZL_DM);
             if (data_json.HasValues)
@@ -241,6 +251,11 @@ namespace JlueTaxSystemGuangXiBS.Controllers
                 {
                     JObject ZB_9 = JObject.FromObject(data_json["BODY"].Where(a => a["HC"].ToString() == "9").ToList()[0]);
                     re_json.SelectToken("data")["LJJE09"] = new JValue(decimal.Parse(ZB_9["LJJE"].ToString()));
+                    //re_json.SelectToken("$.data.BODY[?(@.HC == 1)]")["LJJE"] = new JValue(decimal.Parse(ZB_9["LJJE"].ToString()) * new decimal(.15));
+                    if (decimal.Parse(ZB_9["LJJE"].ToString()) > 1000000)
+                    {
+                        re_json.SelectToken("data")["SFSYXXWL"] = 1;
+                    }
 
                     JObject ZB_11 = JObject.FromObject(data_json["BODY"].Where(a => a["HC"].ToString() == "11").ToList()[0]);
                     re_json.SelectToken("data")["LJJE11"] = new JValue(decimal.Parse(ZB_11["LJJE"].ToString()));

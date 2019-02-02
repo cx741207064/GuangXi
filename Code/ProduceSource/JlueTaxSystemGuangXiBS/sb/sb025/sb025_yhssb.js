@@ -430,7 +430,8 @@ function declare() {
 							var sbbnsqx = yhssbGrid.trs[j].tds.nsqxDm.value;
 							var ssjmxzDm = yhssbGrid.trs[j].tds.ssjmxzDm.value;
 							var jmse = yhssbGrid.trs[j].tds.jmse.value;
-							if (sbbnsqx != "11" && btnsqx != sbbnsqx) {
+							//if (sbbnsqx != "11" && btnsqx != sbbnsqx) {
+							if (false) {
 								nsqxByhs += " 第" + (j + 1) + "行，纳税期限为"
 										+ getNsqxMcByDm(sbbnsqx) + ",";
 							}
@@ -644,6 +645,7 @@ function saveOnSuccess(req, resData) {
 		$w('sbToolBar').setDisabled('save');
 		$w("sbToolBar").setDisabled('printYhs');
 		$w("sbToolBar").setDisabled('print');
+		alert("申报成功！")
 
 	}
 
