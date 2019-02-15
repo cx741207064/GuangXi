@@ -459,7 +459,9 @@
     <Content Include="Video\js\jquery-1.12.4.min.js" />
     <Content Include="Video\js\video.js" />
     <Content Include="Video\Video.aspx" />
-    <Content Include="Web.config" />
+    <Content Include="Web.config">
+      <SubType>Designer</SubType>
+    </Content>
     <Content Include="web\checkQyLoginNoCa.json" />
     <Content Include="web\cm\clearSession.do" />
     <Content Include="web\commons\js\dwz\js\jquery.bgiframe.js" />
@@ -866,6 +868,9 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="hlwsb\zzs\ybnsr\getSB_ZZS_YBNSR.commerce.json" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\PublishProfiles\IIS.pubxml" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
