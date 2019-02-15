@@ -12,30 +12,39 @@ namespace JlueTaxSystemGuangXiBS.web.dzswj.taxclient
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            string questionId = (Request.QueryString["questionId"] == null ? "" : Request.QueryString["questionId"].ToString());
-            if (questionId != "")
+            try
             {
-                string userquestionId = Request.QueryString["userquestionId"].ToString();
-                string companyId = Request.QueryString["companyId"].ToString();
-                string classId = Request.QueryString["classid"].ToString();
-                string courseId = Request.QueryString["courseid"].ToString();
-                string userId = Request.QueryString["userid"].ToString();
-                string Name = Request.QueryString["Name"].ToString();
+                log4net.ILog log = log4net.LogManager.GetLogger(typeof(QuestionMain));
+                log.Info("login_index页面Page_Load方法开始执行！");
 
-                Session["questionId"] = questionId;
-                Session["userquestionId"] = userquestionId;
-                Session["companyId"] = companyId;
-                Session["classId"] = classId;
-                Session["courseId"] = courseId;
-                Session["userId"] = userId;
-                Session["Name"] = Name;
-
-                GTXResult resultCompany = GTXMethod.GetCompany();
-                if (resultCompany.IsSuccess)
+                string questionId = (Request.QueryString["questionId"] == null ? "" : Request.QueryString["questionId"].ToString());
+                if (questionId != "")
                 {
-                }
-            }
+                    string userquestionId = Request.QueryString["userquestionId"].ToString();
+                    string companyId = Request.QueryString["companyId"].ToString();
+                    string classId = Request.QueryString["classid"].ToString();
+                    string courseId = Request.QueryString["courseid"].ToString();
+                    string userId = Request.QueryString["userid"].ToString();
+                    string Name = Request.QueryString["Name"].ToString();
 
+                    Session["questionId"] = questionId;
+                    Session["userquestionId"] = userquestionId;
+                    Session["companyId"] = companyId;
+                    Session["classId"] = classId;
+                    Session["courseId"] = courseId;
+                    Session["userId"] = userId;
+                    Session["Name"] = Name;
+
+                }
+
+                log.Info("login_index页面Page_Load方法执行结束！");
+
+            }
+            catch (Exception ex)
+            {
+                log4net.ILog log = log4net.LogManager.GetLogger(typeof(login_index));
+                log.Error(ex.Message);
+            }
         }
     }
 }

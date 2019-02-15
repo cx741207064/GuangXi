@@ -12,6 +12,9 @@ namespace JlueTaxSystemGuangXiBS
         protected void Application_Start()
         {
             GlobalConfiguration.Configure(WebApiConfig.Register);
+
+            log4net.Config.XmlConfigurator.ConfigureAndWatch(new System.IO.FileInfo(AppDomain.CurrentDomain.BaseDirectory + "log4net.config"));
+
         }
 
         protected void Application_PostAuthorizeRequest()
