@@ -12,16 +12,17 @@ namespace JlueTaxSystemGuangXiBS
         protected void Application_Start()
         {
             GlobalConfiguration.Configure(WebApiConfig.Register);
-
-            log4net.Config.XmlConfigurator.ConfigureAndWatch(new System.IO.FileInfo(AppDomain.CurrentDomain.BaseDirectory + "log4net.config"));
-
         }
-
-        protected void Application_PostAuthorizeRequest()
+        /// <summary>
+        /// 如果是api，则Session只读
+        /// </summary>
+        protected void Application_PostAuthorizeRequest(object sender, System.EventArgs e)
         {
-            if (true)
+
+            HttpApplication obj = (HttpApplication)sender;
+            if (obj.Request.RawUrl.ToLower().Contains(".do") || (!obj.Request.RawUrl.ToLower().Contains(".")))
             {
-                HttpContext.Current.SetSessionStateBehavior(System.Web.SessionState.SessionStateBehavior.Required);
+                HttpContext.Current.SetSessionStateBehavior(System.Web.SessionState.SessionStateBehavior.ReadOnly);
             }
         }
 
