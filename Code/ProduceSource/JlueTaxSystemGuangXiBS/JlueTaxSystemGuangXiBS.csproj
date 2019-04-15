@@ -315,8 +315,8 @@
     <Content Include="hlwsb\zzs\ybnsr\getSB_ZZS_YBNSR.json" />
     <Content Include="hlwsb\zzs\ybnsr\getSB_ZZS_YBNSR_FB1.error.json" />
     <Content Include="hlwsb\zzs\ybnsr\getSB_ZZS_YBNSR_FB1.init.json" />
-    <Content Include="hlwsb\zzs\ybnsr\getSB_ZZS_YBNSR_FB1.json" />
-    <Content Include="hlwsb\zzs\ybnsr\getSB_ZZS_YBNSR_FB2.json" />
+    <Content Include="hlwsb\zzs\ybnsr\getSB_ZZS_YBNSR_FB1.industry.json" />
+    <Content Include="hlwsb\zzs\ybnsr\getSB_ZZS_YBNSR_FB2.industry.json" />
     <Content Include="hlwsb\zzs\ybnsr\getSB_ZZS_YBNSR_FB3.json" />
     <Content Include="hlwsb\zzs\ybnsr\getSB_ZZS_YBNSR_JMSMXB.json" />
     <Content Include="hlwsb\zzs\ybnsr\getSB_ZZS_YBNSR_YGZSFFXCSMXB.init.json" />
@@ -882,6 +882,8 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="log4net.config" />
+    <Content Include="hlwsb\zzs\ybnsr\getSB_ZZS_YBNSR_FB1.commerce.json" />
+    <Content Include="hlwsb\zzs\ybnsr\getSB_ZZS_YBNSR_FB2.commerce.json" />
     <None Include="Properties\PublishProfiles\IIS.pubxml" />
   </ItemGroup>
   <PropertyGroup>

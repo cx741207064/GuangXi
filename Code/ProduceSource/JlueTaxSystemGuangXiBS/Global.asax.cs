@@ -4,6 +4,7 @@ using System.Linq;
 using System.Web;
 using System.Web.Http;
 using System.Web.Routing;
+using System.Web.SessionState;
 
 namespace JlueTaxSystemGuangXiBS
 {
@@ -13,18 +14,10 @@ namespace JlueTaxSystemGuangXiBS
         {
             GlobalConfiguration.Configure(WebApiConfig.Register);
         }
-        /// <summary>
-        /// 如果是api，则Session只读
-        /// </summary>
-        protected void Application_PostAuthorizeRequest(object sender, System.EventArgs e)
+        public override void Init()
         {
-
-            HttpApplication obj = (HttpApplication)sender;
-            if (obj.Request.RawUrl.ToLower().Contains(".do") || (!obj.Request.RawUrl.ToLower().Contains(".")))
-            {
-                HttpContext.Current.SetSessionStateBehavior(System.Web.SessionState.SessionStateBehavior.ReadOnly);
-            }
+            this.PostAuthenticateRequest += (sender, e) => HttpContext.Current.SetSessionStateBehavior(SessionStateBehavior.Required);
+            base.Init();
         }
-
     }
 }
