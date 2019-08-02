@@ -7,7 +7,7 @@
 // </自动生成>
 //------------------------------------------------------------------------------
 
-namespace JlueTaxSystemGuiZhouBS {
+namespace JlueTaxSystemGuangXiBS {
     
     
     public partial class VideoManage1 {

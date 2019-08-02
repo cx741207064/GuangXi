@@ -1,4 +1,4 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="VideoGDTax.aspx.cs" Inherits="JlueTaxSystemGuiZhouBS.VideoManage.VideoGDTax" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="VideoGDTax.aspx.cs" Inherits="JlueTaxSystemGuangXiBS.VideoManage.VideoGDTax" %>
 
 <!DOCTYPE html>
 

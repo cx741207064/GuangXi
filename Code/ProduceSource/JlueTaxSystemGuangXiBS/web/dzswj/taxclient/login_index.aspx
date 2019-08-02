@@ -479,5 +479,6 @@
         $(".zcfgtz table tr:nth-child(2n-1)").css({ "background": "#f9fafd", "border": "1px solid #ecedf1" });
     </script>
 </body>
-
+<script type='text/javascript' src='/driver/driver.min.js'></script>
+<link rel="stylesheet" href="/driver/driver.min.css">
 </html>

@@ -358,10 +358,13 @@ var login_index_yw = (function () {
                         }
 
                         $("#top_tab_ul").html(topHtml);
+                        var script = document.createElement('script');
+                        script.type = "text/javascript";
+                        script.src = "/driver/mydriver.js?v=1.0";
+                        document.body.appendChild(script);
 
                         $("#top_cont_ul").html(contHtml);
 
-                        // $('#top_cont_ul').find('li').eq(0).find('div').eq(3).hide();
                         $('#top_cont_ul').find('li').eq(1).find('div:last').hide();
 
                         //打开页面默认选中

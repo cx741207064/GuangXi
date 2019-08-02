@@ -1,10 +1,8 @@
 $(document).ready(function () {
 	index_gds.onLoad();
-	if(!jcptTools.getIsLogin()){
-		$("#wep_form_cadl").find("input[name='USER_ZH']").val("123");
-		$("#wep_form_cadl").find("input[name='USER_MM']").val("123456");
-		index_gds.onLogin();
-	}
+	$("#wep_form_cadl").find("input[name='USER_ZH']").val("123");
+	$("#wep_form_cadl").find("input[name='USER_MM']").val("123456");
+	index_gds.onLogin();
 });
 
 function onCaChanged(p, w) {
@@ -2088,7 +2086,12 @@ var index_gds = (function () {
 							    jcptTools.OpenModel(jcptTools.getLoginIndex());
                             }
 						} else {
-                            window.location.reload();
+							$("#id_header_msg>.wep_button").hide();
+							$("#id_header_msg>span").show();
+							$("#nsrmc").html(jcptTools.getUserDataByKey("NSRMC"));
+							if(false){
+								window.location.reload();
+							}
                         }
 					}
 
