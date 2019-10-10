@@ -28,6 +28,7 @@ var jm_yj_a_fb2 = (function () {
     return {
         //跳转到打印页面
         onPrint: function () {
+            return false;
             var str = hlwsbTools.urlStr({
                 SBBZL_DM: SBBZL_DM,
                 SSSQ_Q: SSSQ_Q,
@@ -383,7 +384,7 @@ var jm_yj_a_fb2 = (function () {
         initData: function (jsonObj) {
             data1 = {
                 HEAD: jsonObj.data.HEAD,
-                BODY: []
+                BODY: jsonObj.data.BODY,
             };
             DCellWeb1.initDataToCell({
                 cols: ["COL01", "COL02", "COL03", "COL04", "COL05", "COL06"],
@@ -408,7 +409,8 @@ var jm_yj_a_fb2 = (function () {
             }
         },
         //导入
-        openPopWin:function(){
+        openPopWin: function () {
+            return false;
             var msg = "导入";
             var winParam = {
                 id: 'winTIPS', title: msg,

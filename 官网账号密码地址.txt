@@ -1,4 +1,4 @@
-http://etax.guangxi.chinatax.gov.cn:9711/web/dzswj/ythclient/mh.html
+https://etax.guangxi.chinatax.gov.cn:9723/web/dzswj/ythclient/mh.html
 
 91450900MA5KC6MH55
 aa123456
@@ -10,3 +10,9 @@ Fm12345678
 
 91450923MA5KBJ6Q7N
 Bf123456
+
+91450703MA5LB89JXN
+广西瑞佳荣达贸易有限公司
+一般纳税人
+密码：G123456s
+法人身份证号码342225198011164444

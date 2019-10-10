@@ -361,7 +361,8 @@
 			"QCWJSE_JZJT": "0.00",
 			"ZFJG_SBJNFS": "1",
 			"MDTYTSE": "0.0",
-			"BQJNQJSE": "0.0"
+            "BQJNQJSE": "0.0",
+            "ybxmbqsjsw": ""
 		},
 		"BODY": [{
 			"NSRSBH": "91450900MA5N56L202",
@@ -564,11 +565,11 @@
 		}, {
 			"NSRSBH": "91450900MA5N56L202",
 			"JZJTHW_LW_BYS": "0",
-			"YBHW_LW_BYS": "2785.47",
+			"YBHW_LW_BYS": "0",
 			"SSSQ_Z": "2018-11-30",
 			"SBBXH": "91450900MA5N56L2022018110120181130101011021",
 			"HC": "19",
-			"YBHW_LW_BNLJ": "2785.47",
+			"YBHW_LW_BNLJ": "0",
 			"SSSQ_Q": "2018-11-01",
 			"JZJTHW_LW_BNLJ": "0",
 			"TBRQ": "2018-12-10 13:59:48"

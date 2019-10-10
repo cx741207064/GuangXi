@@ -1,0 +1,67 @@
+﻿{
+    "data": [
+        {
+            "trs": [
+                {
+                    "status": null,
+                    "tds": {
+                        "cfdz": {
+                            "value": ""
+                        },
+                        "xmlbz": {
+                            "value": "0"
+                        }
+                    }
+                },
+                {
+                    "status": null,
+                    "tds": {
+                        "cfdz": {
+                            "value": ""
+                        },
+                        "xmlbz": {
+                            "value": "1"
+                        }
+                    }
+                },
+                {
+                    "status": null,
+                    "tds": {
+                        "skssqz": {
+                            "value": "2018-12-31"
+                        },
+                        "xmlbz": {
+                            "value": "3"
+                        }
+                    }
+                },
+                {
+                    "status": null,
+                    "tds": {
+                        "cfdz": {
+                            "value": "2DD83FEB4AA1E675C0E8B1E7639AD9FC"
+                        },
+                        "skssqz": {
+                            "value": "2018-06-30"
+                        },
+                        "xmlbz": {
+                            "value": "2"
+                        }
+                    }
+                }
+            ],
+            "name": "bsxxlist",
+            "sword": "SwordGrid"
+        },
+        {
+            "name": "gwssswjg",
+            "value": "14507031000",
+            "type": ""
+        },
+        {
+            "name": "sessionID",
+            "value": "e9d64dd9b8954d618242085b26b61d38",
+            "type": ""
+        }
+    ]
+}

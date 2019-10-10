@@ -23,6 +23,9 @@ var ybnsr2016 = (function () {
     var bAdd = true;
 
     var JZJTZG;
+    var jjdjbz='N';
+    var jjdjmrtk = "";
+    var zzsJjdz = "";
     // 私有方法
 
     // 公有方法
@@ -37,8 +40,9 @@ var ybnsr2016 = (function () {
         }, onLoad: function () {
             curSeg = ybnsr2016;
             // 引用报表控制
+            
             dcell(DCellWeb1, "/hlwsb/printModel/zzs/ybnsr/ybnsr2016/sb_zzs_ybnsr_2016.cll");
-
+          
             curSeg.onQuery();
             // 删除组件释放内存
 
@@ -47,7 +51,7 @@ var ybnsr2016 = (function () {
             });
         },
         onPrint: function () {
-
+            return false;
             var str = hlwsbTools.urlStr({
                 SBBZL_DM: SBBZL_DM,
                 SSSQ_Q: SSSQ_Q,
@@ -69,6 +73,50 @@ var ybnsr2016 = (function () {
                 url: url,
                 params: {SBBZL_DM: SBBZL_DM, SSSQ_Q: SSSQ_Q, SSSQ_Z: SSSQ_Z, YGZNSRLX_DM: YGZNSRLX_DM},
                 callback: [curSeg.pageFlowControl]
+            });
+        },
+        //生成季中转一般人时间   广西特色20190731-baoxiaodi
+        zzsTsxx: function (jsonObj) {
+            sysdat = jsonObj.data.HEAD.TBRQ;
+            pressq = jsonObj.data.presssq;//2019-06-01，2019-05-01
+            pressqz = jsonObj.data.presssqz;//2019-06-30，2019-05-31
+            beforssq = jsonObj.data.beforsssq;//2019-05-01，2019-04-01
+            histssq = jsonObj.data.histsssq;//2019-04-01，2019-03-01
+            var sysdatarr = sysdat.split('-');
+            myMonth = sysdatarr[1];
+            if (myMonth == '01' || myMonth == '12' || myMonth == '04' || myMonth == '03' || myMonth == '07' || myMonth == '06' || myMonth == '10' || myMonth == '09') {
+                curSeg.onGetSfzxx(myMonth);
+            }
+        },
+        onGetSfzxx: function (myMonth,jsonObj) {
+            if (myMonth == '01' || myMonth == '04' || myMonth == '07' || myMonth == '10') {
+                curSeg.runSfzxx(pressq, beforssq, histssq);
+            } else {
+                curSeg.runSfzxx(pressq, beforssq, '');
+            }
+        },
+        //查询是否属于新规则
+        runSfzxx: function (ssq3, ssq2, ssq1) {
+            month1 = ssq1.split('-')[1];
+            month2 = ssq2.split('-')[1];
+            //从cookie中获取纳税人名称
+            var nsrmc = hlwsbTools.getNSRMC();
+            if (ssq3 && ssq3 != '') {
+                month3 = ssq3.split('-')[1];
+            }
+            var sssq_z = ssq1 == "" ? ssq2 : ssq1; //可选择月份是3个 用ssq1,2个 用ssq2
+            baseTools.xhrAjax({
+                url: "/hlwsb/sbkk/getSfzxxsw.do",
+                params: {NSRSBH: baseTools.getUserZh(), SSSQ_Q: ssq3, SSSQ_Z: sssq_z},
+                callback: [function (jsonObj) {
+                    jzzzg = jsonObj.JZZZG;
+                    var data = jsonObj.data;
+                    if (data && data.length > 0) {
+                        //属于新规则的纳税人不能进行保存
+                        document.getElementById("save").disabled = true;
+                        alert("由于您单位("+nsrmc+")为 '季度中转登记增值税一般纳税人'，目前系统暂不支持'季度中转登记增值税一般纳税人'的纳税人进行增值税及其附加税申报，请到办税服务厅进行申报。");
+                    }
+                }]
             });
         },
         save: function () {
@@ -188,8 +236,38 @@ var ybnsr2016 = (function () {
 //            DCellWeb1.setValByLabel('A2', "特别提醒：系统级异常，需联系运维人员进一步分析调试。该报表暂不允许填写。");
             SBBXH = jsonObj.data.HEAD.SBBXH;
             SBBZT = jsonObj.data.HEAD.SBBZT;
+            jjdjmrtk = jsonObj.data.YMKZ.JJDJMRTK;
+            jjdjbz = jsonObj.data.YMKZ.JJDJBZ;
+            zzsJjdz = jsonObj.data.YMKZ.ZZSJJDZ;
             if (jsonObj.data.HEAD.SBBZT) {
                 bAdd = false;
+            }
+           // curSeg.zzsTsxx(jsonObj);
+        },
+        checkJjdz:function(){
+            if(jjdjmrtk=="Y"&& jjdjbz=='N' && zzsJjdz=="Y"){
+                if (confirm("按照政策规定，自2019年4月1日至2021年12月31日，对生产、生活性服务业纳税人，可以适用加计抵减政策。\n" +
+                    "生产、生活性服务业纳税人，是指提供邮政服务、电信服务、现代服务、生活服务（以下称四项服务）取得的销售额占全部销售额的比重超过50%的纳税人。\n" +
+                    "四项服务的具体范围按照《销售服务、无形资产、不动产注释》（财税〔2016〕36号印发）执行。\n" +
+                    "如果您符合上述政策规定，可以通过填写《适用加计抵减政策的声明》，来确认适用加计抵减政策。\n" +
+                    "点击“确定”填写《适用加计抵减政策的声明》,\n点击“取消”不进行填写")) {
+
+                    if(parent.openNewTab){//平台登陆，调用平台方法
+//                    	parent.openNewTab("4",表名，url,mkxkid)
+                        parent.openNewTab("4","适用加计抵减政策的声明", "/hlwsb/zzs/ybnsr/sb_zzs_ybnsr_fb4_2019txsm.html?SBBZL_DM=101011055&SSSQ_Q= "+baseTools.getUrlQueryString("SSSQ_Q")+"&SSSQ_Z="+baseTools.getUrlQueryString("SSSQ_Z")+"&NSRLX_DM="+baseTools.getUrlQueryString("NSRLX_DM"),"79004");
+                    }else{//网报端登陆，调用网报密码
+                        parent.navTab.openTab("101011055", "zzs/ybnsr/sb_zzs_ybnsr_fb4_2019txsm.html?SBBZL_DM=101011055&SSSQ_Q= "+baseTools.getUrlQueryString("SSSQ_Q")+"&SSSQ_Z="+baseTools.getUrlQueryString("SSSQ_Z")+"&NSRLX_DM="+baseTools.getUrlQueryString("NSRLX_DM"), {title:"适用加计抵减政策的声明",external:true});
+                    }
+                }else{
+                    if (confirm("是否关闭填写《适用加计抵减政策的声明》提醒？关闭以后不再提示！")) {
+                        var url = "/hlwsb/zzs/ybnsr/insertSB_TSYWMD_ZZSJSDJ.do";
+                        baseTools.xhrAjax({
+                            url: url,
+                            params: {},
+                            callback: []
+                        });
+                    }
+                }
             }
         },
         onOpenTbsxsm: function () {
@@ -214,6 +292,12 @@ var ybnsr2016 = (function () {
 
         initControl: function (jsonObj) {
             var ymkz = jsonObj.data.YMKZ;
+            //附表4第6、7行本期实际抵减
+            var ybxmbqsj = ymkz.ybxmbqsjsw;
+          //  var ybxmbqsj =  jsonObj.data.BODY[18].YBHW_LW_BYS;
+            var jzjtbqsj = ymkz.jzjtbqsjsw;
+            DCellWeb1.DefineDoubleVar("YBXMBQSJ", ybxmbqsj);
+            DCellWeb1.DefineDoubleVar("JZJTBQSJ", jzjtbqsj);
             //var YGZNSRLX_DM = ymkz.YGZNSRLX_DM;
             var bl = ymkz.JSXXSEBL;
             if (!SBBZT) {
@@ -238,6 +322,7 @@ var ybnsr2016 = (function () {
                 for (var i = 10; i < 47; i++) {
                     DCellWeb1.SetCellBackColor(6, i, 0, 4);
                     DCellWeb1.SetCellInput(6, i, 0, 5);
+                    DCellWeb1.SetCellBackColor(6, i, 0,DCellWeb1.FindColorIndex(0xEBEBEB,1));
                 }
             }
             var ZFJG_SBJNFS = ymkz.ZFJG_SBJNFS;
@@ -254,7 +339,7 @@ var ybnsr2016 = (function () {
             } else if (ZFJG_SBJNFS == 4) {
                 tip += "您为申报缴纳方式为((预征率预征)分支机构按固定预征率或定额税率申报预缴）的总机构，可填写28行分次预缴税额";
                 DCellWeb1.SetCellInput(4, 37, 0, 2);
-                DCellWeb1.SetCellBackColor(4, 37, 0, 1);
+                DCellWeb1.SetCellBackColor(4, 37, 0, DCellWeb1.FindColorIndex(0xFFFFFF,1));//修改单元格颜色为白色
             }else if(ZFJG_SBJNFS==6){
             	//提示有误：该户为总机构，下属的分支机构的申报缴纳方式为(财政划拨)不需要申报，由总机构申报"。总机构只需要按照正常户填写申报即可。
 //                tip += "您为申报缴纳方式为(财政划拨)不需要申报，由总机构申报";
@@ -276,9 +361,9 @@ var ybnsr2016 = (function () {
                 var formula = 'If(D20=0,0,If((D20-D27)*(' + bl + '/D20)<E22,(D20-D27)*(' + bl + '/D20),E22))';
                 DCellWeb1.setFormulaByLabel('E27', formula);//
 
-                formula = 'D20-D27-E27';
+               // formula = 'D20-D27-E27';
                 //D28---1901
-                DCellWeb1.setFormulaByLabel('D28', formula);
+            //    DCellWeb1.setFormulaByLabel('D28', formula);
                 //E22---1302
                 formula = 'E22-E27';
                 //E29---2002
@@ -454,11 +539,12 @@ var ybnsr2016 = (function () {
 //              return;
 //        },
         //导入
-        openPopWin:function(){
+        openPopWin: function () {
+            return false;
             var msg = "导入";
             var winParam = {
                 id: 'winTIPS', title: msg,
-                url: '/hlwsb/components/excelToJson/sb_excel_upload.html?bbmc=ybnsr2016&&startRow=8&&sheetIndex=1&templatePath=../../printModel/zzs/ybnsr/ybnsr2016/sb_zzs_ybnsr_2016.zip',
+                url: '/hlwsb/components/excelToJson/sb_excel_upload.html?bbmc=ybnsr2016&&startRow=8&&sheetIndex=1&templatePath=printModel/zzs/ybnsr/ybnsr2016/sb_zzs_ybnsr_2016.zip',
                 width: 400,
                 height: 150
             };
@@ -468,7 +554,7 @@ var ybnsr2016 = (function () {
                 height: 200
             });
         },
-
+        
         fillData:function(jsonArray){
             return true;
         },
@@ -476,7 +562,9 @@ var ybnsr2016 = (function () {
          * 需要的时候可以覆盖该方法 在ajax调用中，在得到数据时调用该方法
          */
         pageFlowControl: function (jsonObj, xhrArgs) {
-        	var SBBZL_DM = baseTools.getUrlQueryString("SBBZL_DM");
+            var SBBZL_DM = baseTools.getUrlQueryString("SBBZL_DM");
+           // var col18 = jsonObj.data.BODY[18].YBHW_LW_BYS;
+            // DCellWeb1.setValByLabel("D25", col18);
             switch (parseInt(jsonObj.code)) {
                 // 查询操作返回标志
                 case 0:
@@ -485,6 +573,7 @@ var ybnsr2016 = (function () {
                     curSeg.initData(jsonObj);
                     curSeg.initControl(jsonObj);
                     curSeg.initannotation();
+                    curSeg.checkJjdz();
 //                    DCellWeb1.editLjs(["YBHW_LW_BNLJ", "JZJTHW_LW_BNLJ"], document.getElementById("ljs").checked);
                     curSeg.initTishi();
                     break;
@@ -508,7 +597,16 @@ var ybnsr2016 = (function () {
                 case 3:
                     //alert("提取成功,提取成功后，请保存数据");
                     //curSeg.initLjs(jsonObj);
+                    // curSeg.initData(jsonObj);
+                    // DCellWeb1.setValByLabel("D25", col18);
+                    //累计数要放在初始化数据前面
+                    curSeg.initLjs(jsonObj);
+                    //var ybxmbqsj =  jsonObj.data.BODY[18].YBHW_LW_BYS;
+        
+                    //DCellWeb1.DefineDoubleVar("YBXMBQSJ", ybxmbqsj);
                     curSeg.initData(jsonObj);
+                    curSeg.initControl(jsonObj);
+                    curSeg.initannotation();
                     cell.calculateAllJs();
                     if (confirm("提取成功,提取成功后，请保存数据\r\n 确定要保存吗？")) {
                         curSeg.onSave(1);

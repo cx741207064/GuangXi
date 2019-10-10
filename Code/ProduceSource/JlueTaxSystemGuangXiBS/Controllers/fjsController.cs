@@ -44,6 +44,7 @@ namespace JlueTaxSystemGuangXiBS.Controllers
                     re_body[i]["COL11"] = data_body[i]["COL11"];
                     re_body[i]["COL12"] = data_body[i]["COL12"];
                     re_body[i]["COL13"] = data_body[i]["COL13"];
+                    re_body[i]["XGMJZE"] = data_body[i]["XGMJZE"];
                 }
             }
 
@@ -58,6 +59,13 @@ namespace JlueTaxSystemGuangXiBS.Controllers
                 {
                     re_json["data"]["HEAD"]["SSHY"] = JObject.Parse(System.IO.File.ReadAllText(System.Web.HttpContext.Current.Server.MapPath("~/hlwsb/dm/getSb_DM_WITH.dm.getDM_SSHY.json")))["data"]["BODY"].Where(a => a["MC"].ToString() == jo["GBHY"].ToString()).ToList()[0]["DM"];
                 }
+            }
+            string Name = System.Web.HttpContext.Current.Session["Name"].ToString();
+            JToken industry = JToken.Parse(System.IO.File.ReadAllText(System.Web.HttpContext.Current.Server.MapPath("~/industry.json")));
+            industry = industry.Where(a => a["name"].ToString() == Name).ToList()[0];
+            if (industry["value"].ToString()== "")
+            {
+                re_json["data"]["BODY"][0]["XGMYHZC"] = "Y";
             }
 
             return re_json;

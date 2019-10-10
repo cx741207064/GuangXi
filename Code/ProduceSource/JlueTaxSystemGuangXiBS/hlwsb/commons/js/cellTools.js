@@ -1018,9 +1018,9 @@ function dcell(cell, url) {
             //此处不自动计算，为了确保修改的公式单元格提交时不自动计算、
             //对于处于编辑状态的单元格不让提交
             //cell.CalculateAll();
-            doc.HEAD.ZDJSBZ = 0;
+          //  doc.HEAD.ZDJSBZ = 0;
         } else {
-            doc.HEAD.ZDJSBZ = 1;
+          //  doc.HEAD.ZDJSBZ = 1;
         }
         var doubleVarMap = cell.GetDoubleVar_J("COUNT");
         if(isZero=="N") {   //2017.01.01 lijun
@@ -1031,9 +1031,9 @@ function dcell(cell, url) {
 
         var ljs = document.getElementById("ljs");
         if (ljs && ljs.checked) {
-            doc.HEAD.XGBNLJBZ = 1;
+           // doc.HEAD.XGBNLJBZ = 1;
         } else {
-            doc.HEAD.XGBNLJBZ = 0;
+           // doc.HEAD.XGBNLJBZ = 0;
         }
 
         var headCols = param.headCols;

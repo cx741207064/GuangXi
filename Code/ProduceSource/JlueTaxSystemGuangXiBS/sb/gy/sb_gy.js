@@ -543,11 +543,12 @@ function qzDateCheck(skssqq, skssqz, today, nsqxdm) {
 				qDates[1], 10) >= 10 && parseInt(zDates[1], 10) <= 12))) {
 			return "按季申报，所属期起和所属期止必须在同一个季度！";
 		}
-		if (!(parseInt(qDates[2], 10) == 1 && (parseInt(qDates[1], 10) == 1
-				|| parseInt(qDates[1], 10) == 4 || parseInt(qDates[1], 10) == 7 || parseInt(
-				qDates[1], 10) == 10))) {
-			return "按季申报，所属期起必须为某季度的第一天！";
-		}
+		//if (!(parseInt(qDates[2], 10) == 1 && (parseInt(qDates[1], 10) == 1
+		//		|| parseInt(qDates[1], 10) == 4 || parseInt(qDates[1], 10) == 7 || parseInt(
+		//		qDates[1], 10) == 10))) {
+		//    return "按季申报，所属期起必须为某季度的第一天！";
+		//    //return true;
+		//}
 		if (!(zDates[2] == monthDay(zDates[0], parseInt(zDates[1], 10)) && (parseInt(
 				zDates[1], 10) == 3
 				|| parseInt(zDates[1], 10) == 6 || parseInt(zDates[1], 10) == 9 || parseInt(
@@ -2797,7 +2798,7 @@ function cjhVal (obj) {
 function pandSpbz(option,selItem,obj) {
 	if(selItem!=undefined && selItem!=null){
 		if(selItem.spbaBz!='Y'){
-		      swordAlert('所选择的税收减免性质没有进行税收减免备案。');
+		    //  swordAlert('所选择的税收减免性质没有进行税收减免备案。');
 		}
 	}
 }

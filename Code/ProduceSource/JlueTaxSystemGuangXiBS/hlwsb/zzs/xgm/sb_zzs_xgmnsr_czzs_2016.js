@@ -63,6 +63,7 @@ var czzs = (function () {
             });
         },
         onPrint: function () {
+            return false;
             var str = hlwsbTools.urlStr({
                 SBBZL_DM: SBBZL_DM,
                 SSSQ_Q: SSSQ_Q,
@@ -1397,7 +1398,8 @@ var czzs = (function () {
 			window.showModalDialog("/hlwsb/bbsxsm/zzs_xgmnsr_2016.html",'',"dialogWidth=520px;dialogHeight=330px;center:yes;status:no;scroll:no;");
         },
 //导入
-        openPopWin:function(){
+        openPopWin: function () {
+            return false;
             var msg = "导入";
             var winParam = {
                 id: 'winTIPS', title: msg,

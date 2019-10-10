@@ -123,7 +123,8 @@ var czzs = (function() {
             $(window).unload(function () {
             });
         } ,
-        onPrint:function() {
+        onPrint: function () {
+            return false;
             var str = hlwsbTools.urlStr({
          				SBBZL_DM : SBBZL_DM,
          				SSSQ_Q : SSSQ_Q,
@@ -471,7 +472,7 @@ var czzs = (function() {
         },
         //导入
         openPopWin:function(){
-
+            return false;
             var msg = "导入";
             var winParam = {
                 id: 'winTIPS', title: msg,

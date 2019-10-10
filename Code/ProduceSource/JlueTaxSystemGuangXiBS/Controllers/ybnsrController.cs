@@ -56,18 +56,58 @@ namespace JlueTaxSystemGuangXiBS.Controllers
                     re_body[i]["JZJTHW_LW_BYS"] = data_body[i]["JZJTHW_LW_BYS"];
                 }
             }
+            string id = "", tbrq = "", rqQ = "", rqZ = "";
+            GTXResult resultq = GTXMethod.GetGuangXiYSBQC();
+            if (resultq.IsSuccess)
+            {
+                List<GDTXGuangXiUserYSBQC> ysbqclist = JsonConvert.DeserializeObject<List<GDTXGuangXiUserYSBQC>>(resultq.Data.ToString());
+                if (ysbqclist.Count > 0)
+                {
+                    foreach (GDTXGuangXiUserYSBQC item in ysbqclist)
+                    {
+                        if (item.BDDM == "YBNSRZZS")
+                        {
+                            id = item.Id.ToString();
+                            tbrq = item.HappenDate;
+                            rqQ = item.SKSSQQ;
+                            rqZ = item.SKSSQZ;
 
+                        }
+                    }
+                }
+            }
+            GTXResult gr3 = GTXMethod.GetUserReportData(id, "101011025");
+            if (gr3.IsSuccess)
+            {
+                JArray jarr = new JArray();
+                jarr = JsonConvert.DeserializeObject<JArray>(gr3.Data.ToString());
+                if (jarr.Count > 0)
+                {
+                    byte[] bytes = Convert.FromBase64String(jarr[0]["dataValue"].ToString().Replace(" ", "+"));
+                    string dataValue = Encoding.Default.GetString(bytes);
+                    data_json = JsonConvert.DeserializeObject<JObject>(dataValue);
+                    if (data_json.HasValues)
+                    {
+                        JArray data_body = (JArray)data_json["BODY"];
+                        JObject re_body1 = (JObject)re_json["data"]["YMKZ"];
+                       // JArray re_body = (JArray)re_json["data"]["BODY"];
+
+                        // double YBHW_LW_BYS_19 = double.Parse(re_body[18]["YBHW_LW_BYS"].ToString()) - double.Parse(data_body[8]["BQSJDJSE"].ToString());
+                        double YBHW_LW_BYS_19_1 = double.Parse(data_body[8]["BQSJDJSE"].ToString());
+
+                        //  re_body[18]["YBHW_LW_BYS"] = new JValue(YBHW_LW_BYS_19);
+                        re_body1["ybxmbqsjsw"] = new JValue(YBHW_LW_BYS_19_1);
+                    }
+                }
+            }
             return re_json;
         }
-
-        [Route("extractSB_ZZS_YBNSR.do")]
-        public JObject extractSB_ZZS_YBNSR()
+        [Route("getZZSFB4JJDJ.do")]
+        public Double getZZSFB4JJDJ(double col4)
         {
+            //string col4 =System. HttpContext.Current.Request["col4"] ?? string.Empty;
             JObject re_json = new JObject();
-            string str = System.IO.File.ReadAllText(System.Web.HttpContext.Current.Server.MapPath("extractSB_ZZS_YBNSR.json"));
-            re_json = JsonConvert.DeserializeObject<JObject>(str);
-
-            string id = "";
+            string id = ""; double col5 = 0;
             GTXResult resultq = GTXMethod.GetGuangXiYSBQC();
             if (resultq.IsSuccess)
             {
@@ -84,6 +124,78 @@ namespace JlueTaxSystemGuangXiBS.Controllers
                 }
             }
 
+            GTXResult gr = GTXMethod.GetUserReportData(id, "101011021");
+            if (gr.IsSuccess)
+            {
+                JArray jarr = new JArray();
+                jarr = JsonConvert.DeserializeObject<JArray>(gr.Data.ToString());
+                if (jarr.Count > 0)
+                {
+                    byte[] bytes = Convert.FromBase64String(jarr[0]["dataValue"].ToString().Replace(" ", "+"));
+                    string dataValue = Encoding.Default.GetString(bytes);
+                    JObject data_json = JsonConvert.DeserializeObject<JObject>(dataValue);
+                    if (data_json.HasValues)
+                    {
+                        JArray data_body = (JArray)data_json["BODY"];
+                     
+
+                        double YBHW_LW_BYS_19 = Convert.ToDouble(data_body[18]["YBHW_LW_BYS"]);
+                        ////若本行第4列>=0 且第4列<主表第11栏-主表第18栏，则第5列(col405) = 第4列(col409)
+                        //若第4列 >=主表第11栏-第18栏(col19)，则第5栏=主表11栏-主表18栏
+                        //若第4列<0，则第5列等于0
+                        if (col4 >= 0 && col4 < YBHW_LW_BYS_19)
+                        {
+                           col5 = col4;
+                        }
+                        else if (col4 >= YBHW_LW_BYS_19)
+                        {
+                           col5 = YBHW_LW_BYS_19;
+                        }else
+                        {
+                           col5 = 0;
+                        }
+                    }
+                }
+            }
+          
+            
+
+            return col5;
+        
+        }
+        [Route("extractSB_ZZS_YBNSR.do")]
+        public JObject extractSB_ZZS_YBNSR()
+        {
+            JObject re_json = new JObject();
+            string str = System.IO.File.ReadAllText(System.Web.HttpContext.Current.Server.MapPath("extractSB_ZZS_YBNSR.json"));
+            re_json = JsonConvert.DeserializeObject<JObject>(str);
+
+            string id = "", tbrq = "", rqQ = "", rqZ="";
+            GTXResult resultq = GTXMethod.GetGuangXiYSBQC();
+            if (resultq.IsSuccess)
+            {
+                List<GDTXGuangXiUserYSBQC> ysbqclist = JsonConvert.DeserializeObject<List<GDTXGuangXiUserYSBQC>>(resultq.Data.ToString());
+                if (ysbqclist.Count > 0)
+                {
+                    foreach (GDTXGuangXiUserYSBQC item in ysbqclist)
+                    {
+                        if (item.BDDM == "YBNSRZZS")
+                        {
+                            id = item.Id.ToString();
+                            tbrq = item.HappenDate;
+                            rqQ = item.SKSSQQ;
+                            rqZ = item.SKSSQZ;
+
+                        }
+                    }
+                }
+            }
+             
+                   
+
+            re_json["data"]["HEAD"]["TBRQ"] = new JValue(tbrq);
+            re_json["data"]["HEAD"]["SSSQ_Q"] = new JValue(rqQ);
+            re_json["data"]["HEAD"]["SSSQ_Z"] = new JValue(rqZ);
             GTXResult gr = GTXMethod.GetUserReportData(id, "101011034");
             if (gr.IsSuccess)
             {
@@ -99,7 +211,7 @@ namespace JlueTaxSystemGuangXiBS.Controllers
                         JArray data_body = (JArray)data_json["BODY"];
                         JArray re_body = (JArray)re_json["data"]["BODY"];
 
-                        double YBHW_LW_BYS_1 = double.Parse(data_body[0]["COL09"].ToString()) + double.Parse(data_body[3]["COL09"].ToString());
+                        double YBHW_LW_BYS_1 = double.Parse(data_body[0]["COL09"].ToString()) + double.Parse(data_body[2]["COL09"].ToString());
                         re_body[0]["YBHW_LW_BYS"] = new JValue(YBHW_LW_BYS_1);
 
                         double YBHW_LW_BYS_4 = double.Parse(data_body[0]["COL07"].ToString()) + double.Parse(data_body[1]["COL07"].ToString()) + double.Parse(data_body[3]["COL07"].ToString()) + double.Parse(data_body[4]["COL07"].ToString());
@@ -113,6 +225,9 @@ namespace JlueTaxSystemGuangXiBS.Controllers
 
                         double YBHW_LW_BYS_11 = double.Parse(data_body[0]["COL10"].ToString()) + double.Parse(data_body[1]["COL10"].ToString()) + double.Parse(data_body[2]["COL10"].ToString()) + double.Parse(data_body[3]["COL10"].ToString()) + double.Parse(data_body[4]["COL10"].ToString()) + double.Parse(data_body[5]["COL10"].ToString());
                         re_body[10]["YBHW_LW_BYS"] = new JValue(YBHW_LW_BYS_11);
+
+                        //double YBHW_LW_BYS_19 = double.Parse(data_body[0]["COL11"].ToString()) - double.Parse(data_body[0]["COL18"].ToString()) - double.Parse(data_body[2]["COL10"].ToString());
+                        //re_body[18]["YBHW_LW_BYS"] = new JValue(YBHW_LW_BYS_19);
 
                         double YBHW_LW_BYS_21 = double.Parse(data_body[8]["COL10"].ToString()) + double.Parse(data_body[9]["COL10"].ToString()) + double.Parse(data_body[10]["COL10"].ToString()) + double.Parse(data_body[11]["COL10"].ToString()) + double.Parse(data_body[12]["COL10"].ToString()) + double.Parse(data_body[13]["COL10"].ToString());
                         re_body[20]["YBHW_LW_BYS"] = new JValue(YBHW_LW_BYS_21);
@@ -145,7 +260,30 @@ namespace JlueTaxSystemGuangXiBS.Controllers
                     }
                 }
             }
+            GTXResult gr3 = GTXMethod.GetUserReportData(id, "101011025");
+            if (gr3.IsSuccess)
+            {
+                JArray jarr = new JArray();
+                jarr = JsonConvert.DeserializeObject<JArray>(gr3.Data.ToString());
+                if (jarr.Count > 0)
+                {
+                    byte[] bytes = Convert.FromBase64String(jarr[0]["dataValue"].ToString().Replace(" ", "+"));
+                    string dataValue = Encoding.Default.GetString(bytes);
+                    JObject data_json = JsonConvert.DeserializeObject<JObject>(dataValue);
+                    if (data_json.HasValues)
+                    {
+                        JArray data_body = (JArray)data_json["BODY"];
+                        JObject re_body1 = (JObject)re_json["data"]["YMKZ"];
+                        JArray re_body = (JArray)re_json["data"]["BODY"];
 
+                       // double YBHW_LW_BYS_19 = double.Parse(re_body[18]["YBHW_LW_BYS"].ToString()) - double.Parse(data_body[8]["BQSJDJSE"].ToString());
+                        double YBHW_LW_BYS_19_1 = double.Parse(data_body[8]["BQSJDJSE"].ToString());
+                        double YBHW_LW_BYS_23_1 = double.Parse(data_body[0]["BQSJDJSE"].ToString()) + double.Parse(data_body[1]["BQSJDJSE"].ToString()) + double.Parse(data_body[2]["BQSJDJSE"].ToString()) + double.Parse(data_body[3]["BQSJDJSE"].ToString()) + double.Parse(data_body[4]["BQSJDJSE"].ToString()) ;
+                        re_body[22]["YBHW_LW_BYS"] = new JValue(YBHW_LW_BYS_23_1);
+                        re_body1["ybxmbqsjsw"] = new JValue(YBHW_LW_BYS_19_1);
+                    }
+                }
+            }
             return re_json;
         }
 
@@ -356,6 +494,7 @@ namespace JlueTaxSystemGuangXiBS.Controllers
                 while (QCYELIST.Count < 8);
                 re_json["data"]["BODY"] = data_json["BODY"];
                 re_json["data"]["YMKZ"]["QCYELIST"] = QCYELIST;
+                re_json["data"]["FPXXLIST"] = data_json["BODY"];
             }
 
             return re_json;
@@ -403,6 +542,8 @@ namespace JlueTaxSystemGuangXiBS.Controllers
             string SBBZL_DM = System.Web.HttpContext.Current.Request["SBBZL_DM"];
 
             JObject re_json = new JObject();
+            JObject in_jo=new JObject();
+             JArray re_jo=new JArray();
             JObject data_json = new JObject();
             string str = System.IO.File.ReadAllText(System.Web.HttpContext.Current.Server.MapPath("getSB_ZZS_FB4.json"));
             re_json = JsonConvert.DeserializeObject<JObject>(str);
@@ -410,17 +551,18 @@ namespace JlueTaxSystemGuangXiBS.Controllers
             if (data_json.HasValues)
             {
                 JArray data_body = (JArray)data_json["BODY"];
-                JArray re_body = (JArray)re_json["data"]["BODY"];
+               // JArray re_body = (JArray)re_json["data"]["BODY"];
                 for (int i = 0; i < data_body.Count; i++)
                 {
-                    re_body[i]["BQFSE"] = data_body[i]["BQFSE"];
-                    re_body[i]["QCYE"] = data_body[i]["QCYE"];
-                    re_body[i]["QMYE"] = data_body[i]["QMYE"];
-                    re_body[i]["BQSJDJSE"] = data_body[i]["BQSJDJSE"];
-                    re_body[i]["BQYDJSE"] = data_body[i]["BQYDJSE"];
+                    in_jo["BQFSE"] = data_body[i]["BQFSE"];
+                    in_jo["QCYE"] = data_body[i]["QCYE"];
+                    in_jo["QMYE"] = data_body[i]["QMYE"];
+                    in_jo["BQSJDJSE"] = data_body[i]["BQSJDJSE"];
+                    in_jo["BQYDJSE"] = data_body[i]["BQYDJSE"];
+                    re_jo.Add(in_jo);
                 }
             }
-
+            re_json["data"]["BODY"] = data_json["BODY"];
             return re_json;
         }
 

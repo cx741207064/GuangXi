@@ -1,0 +1,55 @@
+﻿{
+    "data": [
+        {
+            "trs": [
+                {
+                    "status": null,
+                    "tds": {
+                        "zlbsuuid": {
+                            "value": ""
+                        },
+                        "ssqq": {
+                            "value": ""
+                        },
+                        "cfdz": {
+                            "value": ""
+                        },
+                        "bbh": {
+                            "value": ""
+                        },
+                        "cjbj": {
+                            "value": ""
+                        },
+                        "xmlmc": {
+                            "value": ""
+                        },
+                        "ssqz": {
+                            "value": ""
+                        },
+                        "fjuuidGrid": {
+                            "value": ""
+                        },
+                        "xmlbh": {
+                            "value": ""
+                        },
+                        "lrrq": {
+                            "value": ""
+                        }
+                    }
+                }
+            ],
+            "name": "resultList",
+            "sword": "SwordGrid"
+        },
+        {
+            "name": "gwssswjg",
+            "value": "14507031000",
+            "type": ""
+        },
+        {
+            "name": "sessionID",
+            "value": "7e8ef928805644fcba8fdef0302273e9",
+            "type": ""
+        }
+    ]
+}

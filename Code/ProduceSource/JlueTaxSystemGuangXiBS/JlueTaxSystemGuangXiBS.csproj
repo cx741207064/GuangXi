@@ -127,6 +127,7 @@
     <Content Include="driver\driver.min.css" />
     <Content Include="driver\driver.min.js" />
     <Content Include="driver\mydriver.js" />
+    <Content Include="DZBSXTKJ022YhmMmDlCtrl_guXLocalTaxWinOpen.html" />
     <Content Include="Error\401.html" />
     <Content Include="Error\403.html" />
     <Content Include="Error\404.html" />
@@ -136,13 +137,17 @@
     <Content Include="Error\500.html" />
     <Content Include="Error\501.html" />
     <Content Include="Error\502.html" />
+    <Content Include="form.sword.SB151zlbsslCtrl_initBd.aspx" />
     <Content Include="form.sword.SBGyCtrl_toNsrzcbb.html" />
     <Content Include="Global.asax" />
     <Content Include="gt3_public\cacheindex.js" />
+    <Content Include="gt3_public\formula_engine.js" />
     <Content Include="gt3_public\jsDelegate.js" />
+    <Content Include="gy\dy\script\LodopFuncs.js" />
     <Content Include="gy\gy002\queryNsrxxByNsrsbhComm.js" />
     <Content Include="gy\gy007\sbbckFromDzcx.js" />
     <Content Include="gy\gy011\gyPrint.js" />
+    <Content Include="gy\gy013\attachOperate_flzlList.js" />
     <Content Include="gy\gy017\gy017zjsmbs.js" />
     <Content Include="gy\tysl\tyslComm\tysl_flzl.js" />
     <Content Include="gy\tysl\tyslComm\tysl_saveSxslxx.js" />
@@ -214,7 +219,6 @@
     <Content Include="hlwsb\printModel\cwbb2013\xqy\sb_cwbb_xqy_lrb_yb.cll" />
     <Content Include="hlwsb\printModel\cwbb2013\xqy\sb_cwbb_xqy_xjllb_yb.cll" />
     <Content Include="hlwsb\printModel\cwbb2013\xqy\sb_cwbb_xqy_zcfz.cll" />
-    <Content Include="hlwsb\printModel\fjs\sb_fjs_zb.cll" />
     <Content Include="hlwsb\printModel\qysds\qysds_yj_a\sb_qysds_jm_yj_a_cgwgqybgb.cll" />
     <Content Include="hlwsb\printModel\qysds\qysds_yj_a\sb_qysds_jm_yj_a_dynsbab.cll" />
     <Content Include="hlwsb\printModel\qysds\qysds_yj_a_2018\sb_qysds_jm_yj_a_2018.cll" />
@@ -235,7 +239,6 @@
     <Content Include="hlwsb\printModel\zzs\ybnsr\ybnsr2016\sb_zzs_bdcfqdcjsb.cll" />
     <Content Include="hlwsb\printModel\zzs\ybnsr\ybnsr2016\sb_zzs_fb3_2016.cll" />
     <Content Include="hlwsb\printModel\zzs\ybnsr\ybnsr2016\sb_zzs_fb4_2016.cll" />
-    <Content Include="hlwsb\printModel\zzs\ybnsr\ybnsr2016\sb_zzs_ybnsr_2016.cll" />
     <Content Include="hlwsb\printModel\zzs\ybnsr\ybnsr2016\sb_zzs_ybnsr_jmsmxb_2016.cll" />
     <Content Include="hlwsb\printModel\zzs\ybnsr\ybnsr2016\sb_zzs_ybnsr_ygzsffxcsmxb.cll" />
     <Content Include="hlwsb\printModel\zzs\ybnsr\ybnsr2016\sb_zzs_yzqy.cll" />
@@ -341,8 +344,16 @@
     <Content Include="hlwsb\zzs\ybnsr\sb_zzs_fp_hz.js" />
     <Content Include="hlwsb\zzs\ybnsr\sb_zzs_ybnsr_fb1_2017.html" />
     <Content Include="hlwsb\zzs\ybnsr\sb_zzs_ybnsr_fb1_2017.js" />
+    <Content Include="hlwsb\zzs\ybnsr\sb_zzs_ybnsr_fb1_2019.html" />
+    <Content Include="hlwsb\zzs\ybnsr\sb_zzs_ybnsr_fb1_2019.js" />
     <Content Include="hlwsb\zzs\ybnsr\sb_zzs_ybnsr_fb2_2017.html" />
     <Content Include="hlwsb\zzs\ybnsr\sb_zzs_ybnsr_fb2_2017.js" />
+    <Content Include="hlwsb\zzs\ybnsr\sb_zzs_ybnsr_fb2_2019.html" />
+    <Content Include="hlwsb\zzs\ybnsr\sb_zzs_ybnsr_fb2_2019.js" />
+    <Content Include="hlwsb\zzs\ybnsr\sb_zzs_ybnsr_fb3_2019.html" />
+    <Content Include="hlwsb\zzs\ybnsr\sb_zzs_ybnsr_fb3_2019.js" />
+    <Content Include="hlwsb\zzs\ybnsr\sb_zzs_ybnsr_fb4_2019.html" />
+    <Content Include="hlwsb\zzs\ybnsr\sb_zzs_ybnsr_fb4_2019.js" />
     <Content Include="hlwsb\zzs\ybnsr\sb_zzs_ybnsr_hzfpb_2015.html" />
     <Content Include="hlwsb\zzs\ybnsr\sb_zzs_ybnsr_hzfpb_2015.js" />
     <Content Include="hlwsb\zzs\ybnsr\updateSB_ZZS_BDCFQDCJSB.json" />
@@ -379,6 +390,13 @@
     <Content Include="js\json2.js" />
     <Content Include="js\point_line.js" />
     <Content Include="QuestionMain.aspx" />
+    <Content Include="sb\gy\phjmgy_js.js" />
+    <Content Include="sb\sb000\sb_tempdel.js" />
+    <Content Include="sb\sb104\sb104_lrb.js" />
+    <Content Include="sb\sb104\sb104_xjllb.js" />
+    <Content Include="sb\sb104\sb104_zcfzb.js" />
+    <Content Include="sword.SB104xqykjzzcwbsCtrl_toSbfb01.html" />
+    <Content Include="sword.SB151zlbsslCtrl_initView.html" />
     <Content Include="sb\gy\sb_constants.js" />
     <Content Include="sb\gy\sb_gy.js" />
     <Content Include="sb\gy\sword_extend.js" />
@@ -388,6 +406,7 @@
     <Content Include="sb\sb025\sb025_yhssb.js" />
     <Content Include="sb\sb058\sb058_sbzf.js" />
     <Content Include="sb\sb066\sb066_sbzf.js" />
+    <Content Include="sb\sb151\sb151_zlbssldjb.js" />
     <Content Include="sb\sb175\sb175_fxmtysb.js" />
     <Content Include="sb\sb246\sb246_fjsfnssb.js" />
     <Content Include="sb\sb246\sb246_Head.js" />
@@ -745,6 +764,13 @@
     <Compile Include="Controllers\xgmController.cs" />
     <Compile Include="Controllers\xqyController.cs" />
     <Compile Include="Controllers\ybnsrController.cs" />
+    <Compile Include="form.sword.SB151zlbsslCtrl_initBd.aspx.cs">
+      <DependentUpon>form.sword.SB151zlbsslCtrl_initBd.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="form.sword.SB151zlbsslCtrl_initBd.aspx.designer.cs">
+      <DependentUpon>form.sword.SB151zlbsslCtrl_initBd.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -858,6 +884,7 @@
     <Content Include="ChuShiHua.ashx" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="wsbs\pages\layout\layout3\cacheAdapter.js" />
     <Content Include="YHSSB.json" />
   </ItemGroup>
   <ItemGroup>
@@ -887,7 +914,33 @@
     <Content Include="log4net.config" />
     <Content Include="hlwsb\zzs\ybnsr\getSB_ZZS_YBNSR_FB1.commerce.json" />
     <Content Include="hlwsb\zzs\ybnsr\getSB_ZZS_YBNSR_FB2.commerce.json" />
+    <Content Include="hlwsb\printModel\zzs\ybnsr\ybnsr2016\sb_zzs_ybnsr_2016.cll" />
+    <Content Include="hlwsb\printModel\zzs\ybnsr\sb_zzs_fb1_2019.cll" />
+    <Content Include="hlwsb\zzs\ybnsr\getZZSFB4JJDJ.json" />
+    <Content Include="hlwsb\printModel\zzs\ybnsr\sb_zzs_fb2_2019.cll" />
+    <Content Include="hlwsb\printModel\zzs\ybnsr\sb_zzs_fb3_2019.cll" />
+    <Content Include="hlwsb\printModel\zzs\ybnsr\sb_zzs_fb4_2019.cll" />
+    <Content Include="hlwsb\printModel\fjs\sb_fjs_zb.cll" />
+    <None Include="ajax.sword.GY017ZjsmbsCtrl_getCsz.json" />
+    <Content Include="ajax.sword.SB151zlbsslCtrl_queryKjzdzzDmByDjxh.json" />
+    <Content Include="ajax.sword.SB151zlbsslCtrl_checkNsrcwkjzdxx.json" />
+    <Content Include="ajax.sword.SB151zlbsslCtrl_getZlbsbdlb.json" />
+    <Content Include="ajax.sword.SB151zlbsslCtrl_save.json" />
+    <Content Include="form.sword.SB151zlbsslCtrl_initBd.html" />
+    <Content Include="ajax.sword.SB151zlbsslCtrl_jysfcfcj.json" />
+    <Content Include="ajax.sword.SB151zlbsslCtrl_querySqss.json" />
+    <Content Include="ajax.sword.SB151zlbsslCtrl_queryBssq.json" />
+    <Content Include="ajax.sword.SB151zlbsslCtrl_checkSfcfbs.json" />
+    <Content Include="ajax.sword.SB104xqykjzzcwbsCtrl_queryXmlByzlbsuuid.json" />
+    <Content Include="ajax.sword.SBGyCtrl_getPhjmPzxx.json" />
+    <Content Include="ajax.sword.SB025YhssbCtrl_getMrSkssqzTime.json" />
+    <Content Include="ajax.sword.TyslCtrl_saveSxslxx.json" />
+    <Content Include="hlwsb\dm\getSb_DM_WITH.dm.getDM_ZSPM_FJS.json" />
+    <None Include="Properties\PublishProfiles\guanxi.pubxml" />
     <None Include="Properties\PublishProfiles\IIS.pubxml" />
+    <Content Include="SB104xqykjzzcwbsCtrl_queryXmlByzlbsuuid.json" />
+    <Content Include="sword.SB104xqykjzzcwbsCtrl_toSbfb.html" />
+    <Content Include="sword.SB104xqykjzzcwbsCtrl_toSbfb02.html" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

@@ -61,7 +61,8 @@ var fb1 = (function() {
 			});
 		},
 		// 跳转到打印页面
-		onPrint : function() {
+		onPrint: function () {
+		    return false;
 			var str = hlwsbTools.urlStr( {
 				SBBZL_DM : SBBZL_DM,
 				SSSQ_Q : SSSQ_Q,
@@ -311,7 +312,7 @@ var fb1 = (function() {
 	},
         //导入
         openPopWin:function(){
-
+            return false;
             var msg = "导入";
             var winParam = {
                 id: 'winTIPS', title: msg,

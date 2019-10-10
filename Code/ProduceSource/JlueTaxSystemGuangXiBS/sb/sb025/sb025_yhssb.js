@@ -8,10 +8,11 @@ var sb025_cszForXML;
 var gt3_cszForXML;
 var sb025_pxzh = null;
 var gt3 = {};
+var xzcs = null;// 西藏参数
 gt3.zxbztzsuuid = "";// 自行补正通知书UUID
 gt3.djxh;
 var kdqsssrfpbz;
-var yhskg = "N";//优化网上办税系统的印花税申报优惠提醒服务ZOG00_201808090001
+var yhskg = "N";// 优化网上办税系统的印花税申报优惠提醒服务ZOG00_201808090001
 var zspmArray = new Array();
 var gt3_sbxxList;// 申报信息列表
 var gt3_yhshdList;// 印花税核定信息列表
@@ -22,6 +23,7 @@ gt3.type = ""; // 调用changeSbssqz方法的参数
 var yzpzxh = "";
 gt3.uniqueNsqx = ""; // 如果认定多个纳税期限，一次只能申报一个
 gt3.nsqxList = "";
+gt3.ctrl = "SB025YhssbCtrl";
 gt3.lybz = "1";// HAD41_201604150036 印花税按次申报所属期起止可以修改为任意一天 2016-04-25
 var _arrVars_NOywpt = {};
 var zspmDefJmxxMap = new Map();
@@ -30,6 +32,18 @@ var cszfj = "";// 允许申报"其它营业账簿（101110599）或权利许可�
 var qtpzCs = "";// 其他凭证是否提示
 var gzsekg;// 更正开关
 var ybtseyz;// 原应补退税额
+var yhsnsqxDm = "06";
+var phjzbl = 0.00;// 普惠减征比例
+var bqsfsyxgmyhzc = "";// 本期是否适用小规模优惠政策
+var sfsyzs = "";// 是否享用折算
+var nsqx2zszg = "";// 纳税期限对折算资格
+var phzsbl = 0.00;// 折算比例
+var phjmzg = "";
+var nsrzgsfxgm = "";
+var yqwrdybrBz = "";
+// 是否启用导出按钮 by:张俊，2019年3月20日11:30:56
+var isEnableExportButton = "";
+var nmg_qz = "N";// 内蒙特色需求（签章）
 
 /**
  * 点击功能树加载数据初始化方法
@@ -38,12 +52,26 @@ var ybtseyz;// 原应补退税额
  * @return
  */
 var htmdyzkg = "N";// 是否启用新版打印 网报
-var drxzdrmbkg = "Y" ;//印花税申报（导入、下载导入模版）是否屏蔽开关
+var drxzdrmbkg = "Y";// 印花税申报（导入、下载导入模版）是否屏蔽开关
 function init(resData) {
+	nmg_qz = resData.getAttr("nmg_qz", resData);
+	nmxtcs = resData.getAttr("nmxtcs");
+	xzcs = resData.getAttr("xzcs");
+	// 调用此方法隐藏“申报错误更正”按钮
+	//hidecwgzbtn();
+	// 从res中获取skssqqNew、skssqzNew参数，如果存在值，则调整页面属期 by:张俊，2018年12月28日09:38:02
+	var skssqqNew = resData.getAttr("skssqqNew");
+	var skssqzNew = resData.getAttr("skssqzNew");
+	if ($chk(skssqqNew) && $chk(skssqzNew)) {
+		$w("nsrxxForm").setValue("skssqq", skssqqNew);
+		$w("nsrxxForm").setValue("skssqz", skssqzNew);
+	}
 	jspt_czsm_butncontrol("sbToolBar", "SB025_00");// 填表说明
 	gzsekg = resData.getAttr("gzsekg"); // 网报更正税额开关
 	htmdyzkg = resData.getAttr("htmdyzkg"); // 网报打印参数
 	drxzdrmbkg = resData.getAttr("drxzdrmbkg"); // 网报打印参数
+	// 是否启用导出按钮 by:张俊，2019年3月20日11:30:56
+	isEnableExportButton = resData.getAttr("isEnableExportButton");
 	// 网报特有代码start ++++++++++
 	if ($chk(resData.getAttr("sbgnxts"))) {
 		$('sbgnxts').innerHTML = resData.getAttr("sbgnxts");// 网报特有逻辑
@@ -54,6 +82,20 @@ function init(resData) {
 	cszfj = resData.getAttr("cszfj");
 	qtpzCs = resData.getAttr("qtpzCs");
 	yhskg = resData.getAttr("yhskg");
+	var nxwrdbz = resData.getAttr("nxwrdbz");
+	if ("Y" == nxwrdbz) {// 宁夏无税费种认定给出提示
+		$w("yhssbGrid").reset();
+		swordAlert("没有可申报的税费种认定信息！");
+		return;
+	}
+	var yhsnsqxkg = "N"; // 默认为N
+	yhsnsqxkg = resData.getAttr("yhsnsqxkg");
+	// 网上办税系统的印花税申报时纳税期限是否隐藏
+	if (yhsnsqxkg == "Y") {
+		document.getElementById("zrrTR3").style.display = "block";
+		// document.getElementsByName("nsqxkg").style.display="block";
+		// document.getElementById("nsqxkg").css('display','block');
+	}
 	if (drxzdrmbkg = "Y") {
 		$$("div[name='import']")[1].style.display = "none";
 		$$("div[name='download']")[1].style.display = "none";
@@ -70,37 +112,59 @@ function init(resData) {
 	if ("Y" == cszfj) {// 允许申报"其它营业账簿（101110599）或权利许可证照（101110400）"，并提示纳税人去大厅进行申报并领取印花税票，福建专用。
 		swordAlert("如果需要领取印花税票贴花，请前往办税服务厅进行相关应税凭证的申报并领取印花税票。");
 	}
+	var zdyTsnr = resData.getAttr("zdyTsnr"); // 进入印花税申报模块后提示框内容
+	if ($chk(zdyTsnr)) {
+		swordAlert(zdyTsnr);
+	}
+	initPhjmxzDms(resData);
+
 	sb025_cszForXML = resData.getAttr("cszForXML");// xml的参数值
 	if (sb025_cszForXML != null && sb025_cszForXML != undefined) {
 		if (sb025_cszForXML == "SBCWGZ") {// 错误更正
-				cwgzbz = 'cwgzbz';
-				ybtseyz = resData.getAttr("ybtseyz"); // 网报应补退税额原值
-				gt3_yhshdList = pc.getResData("yhshdList", resData);
-				kdqsssrfpbz = resData.getAttr('kdqsssrfpbz');
-				gt3.zrd = resData.getAttr('zrd');// 税费种认定标记
-				gt3.zrrBz = resData.getAttr('zrrBz');
-				XMLForSBCWGZ(resData);
-				var flzlGrid = $w('flzlGrid');
-				if (!flzlGrid.collapseDiv.hasClass('x-tool-s')) {
-					flzlGrid.toggle();
-				}
-				_arrVars_NOywpt['yqtfpGrid'] = pc.getResData("yqtfpGrid",
-						resData);
-				$w('sbToolBar').setDisabled('import');// 点亮保存按钮
-				if ("sbbck" == resData.getAttr("scenceCs")) {
-					$w('sbToolBar').setDisabled('save');//置灰保存按钮
-					$w('sbToolBar').setDisabled('import');
-					$w('sbToolBar').setEnabled('print');
-					$w("nsrxxForm").disable();
-					$w("slxxForm").disable();
-					$w("yhssbGrid").readonly();
-				}
+			cwgzbz = 'cwgzbz';
+			bqsfsyxgmyhzc = $w('nsrxxForm').getValue("bqsfsyxgmyhzc").code;
+			var phjmxzDm = resData.getAttr("phjmxzDm");
+			$w('nsrxxForm').setValue("phjmxzDm", phjmxzDm);
+			ybtseyz = resData.getAttr("ybtseyz"); // 网报应补退税额原值
+			gt3_yhshdList = pc.getResData("yhshdList", resData);
+			kdqsssrfpbz = resData.getAttr('kdqsssrfpbz');
+			gt3.zrd = resData.getAttr('zrd');// 税费种认定标记
+			gt3.zrrBz = resData.getAttr('zrrBz');
+			XMLForSBCWGZ(resData);
+			if (bqsfsyxgmyhzc == "Y") {
+				checkzszg();
+			}
+			var flzlGrid = $w('flzlGrid');
+			if (!flzlGrid.collapseDiv.hasClass('x-tool-s')) {
+				flzlGrid.toggle();
+			}
+			_arrVars_NOywpt['yqtfpGrid'] = pc.getResData("yqtfpGrid", resData);
+			//$w('sbToolBar').setDisabled('import');// 点亮保存按钮
+			//$w('sbToolBar').setEnabled('print');
+			if ("sbbck" == resData.getAttr("scenceCs")) {
+				$w('sbToolBar').setDisabled('save');// 置灰保存按钮
+				$w('sbToolBar').setDisabled('import');
+				$w("nsrxxForm").disable();
+				$w("slxxForm").disable();
+				$w("yhssbGrid").readonly();
+			}
+
+			// 电子税务局特色改造，判断纳税人是否享受普惠减免 start
+			nsrzgsfxgm = resData.getAttr("nsrzgsfxgm");
+			if ("Y" == nsrzgsfxgm) {
+				$w("nsrxxForm").setValue("bqsfsyxgmyhzc", "Y");
+			} else {
+				$w("nsrxxForm").setValue("bqsfsyxgmyhzc", "N");
+			}
+			// zzsxgmnsr();//去掉自动计算的问题普惠被自动计算了
+			// 电子税务局特色改造，判断纳税人是否享受普惠减免 end
 		} else if ("sbbck" == sb025_cszForXML) {// 申报表单查看
 			var nsrxxForm = $w('nsrxxForm');
 			var zrrBz = resData.getAttr("zrrBz");
 			if ($chk(zrrBz) && "Y" == zrrBz) {
 				$("zrrTR1").style.display = "block";
 				$("zrrTR2").style.display = "block";
+				$("zrrTR3").style.display = "block";
 				nsrxxForm._itemSwitch("hyDm", "pulltree", {
 					'rule' : 'must'
 				});
@@ -135,6 +199,8 @@ function init(resData) {
 				}
 			});
 			$w("yhssbGrid").readonly();
+			// 控制导出按钮是否可用 by:张俊，2019年2月18日17:08:41
+			controlExportButton();
 			return;
 		}
 	} else {
@@ -182,6 +248,9 @@ function init(resData) {
 	if ($chk(bz) && bz == "Y") {
 		$w('nsrxxForm').enable('sblx');
 	}
+	// 控制导出按钮是否可用 by:张俊，2019年2月18日17:08:41
+	controlExportButton();
+	// debugger;
 }
 // 申报导入处理方法
 function drxx() {
@@ -205,19 +274,30 @@ function drxx() {
 // 导入功能页面表单数据信息回填方法
 function boxCallBackForSBdr(resData) {
 	resData = JSON.decode(JSON.encode(resData));
+	var msg = resData.getAttr("msg");
+	if ($chk(msg)) {
+		swordConfirm("导入数据校验失败，" + "是否获取日志？", {
+			okBtnName : "是",
+			cancelBtnName : "否",
+			onOk : function() {
+				WriteTxt(msg);
+			}
+		});
+		return;
+	}
 	// 修改此时的申报渠道属性
 	gt3_cszForXML = "sbdr";
 
 	// 页面表单头部信息全部置灰并将所有页面表单锁死不允许填写
-	//$w("nsrxxForm").disable();
+	// $w("nsrxxForm").disable();
 	// 获得主表三个表单元素并将其回写页面
 	var yhssbGrid = pc.getResData("yhssbGrid", resData);
 	var nsrxxForm = pc.getResData("nsrxxForm", resData);
 	var fjxxForm = pc.getResData("fjxxForm", resData);
 	var nsrxxmc = nsrxxForm.data.nsrmc.value;
 	$w("slxxForm").setValue('slr', nsrxxmc);
-//	$w("yhssbGrid").reset();
-//	cwgzInsertRowData(yhssbGrid);
+	// $w("yhssbGrid").reset();
+	// cwgzInsertRowData(yhssbGrid);
 	gt3.DrYhssbGrid = yhssbGrid;
 	$w("nsrxxForm").initData(nsrxxForm);
 	$_cshFlag = "0";
@@ -231,7 +311,18 @@ function boxCallBackForSBdr(resData) {
 	var nsrsbh = nsrxxFormObj.getValue("nsrsbh");
 	var cxbz = "4";// 4.查询自然人和纳税人（纳税人需要权限过滤）；
 	queryNsrxxbyNsrsbh(nsrsbh, queryNsrxxSuccess, cxbz);
-	//$w("yhssbGrid").readonly();// 导入数据不可编辑
+	// $w("yhssbGrid").readonly();// 导入数据不可编辑
+}
+/**
+ * 导入日志的展示
+ * 
+ * @return
+ */
+function WriteTxt(drycxx) {
+	swordAlertDiv(drycxx, {
+		width : 800,
+		height : 500
+	});
 }
 
 /**
@@ -239,11 +330,15 @@ function boxCallBackForSBdr(resData) {
  * 
  * @return
  */
-function getSbdrInitData(){
-	if(gt3_cszForXML=="sbdr"){
+function getSbdrInitData() {
+	if (gt3_cszForXML == "sbdr") {
 		$w("yhssbGrid").reset();
+		bqsfsyxgmyhzc = $w("nsrxxForm").getValue("bqsfsyxgmyhzc").code;
+		if (bqsfsyxgmyhzc == "Y") {
+			checkzszg();
+		}
 		cwgzInsertRowData(gt3.DrYhssbGrid, "Y");
-		//恢复为空
+		// 恢复为空
 		gt3.DrYhssbGrid = null;
 	}
 }
@@ -288,7 +383,18 @@ function toForm() {
  */
 function loadBaseInfo(req, resData) {
 	// 将受理人SET到页面中，获取登记信息中的办税人姓名
+	var msg = resData.getAttr('msg');
+	if ($chk(msg)) {
+		swordAlert(msg);
+		$w('yhssbGrid').reset();
+		return;
+	}
 	$w("slxxForm").setValue('bsr', nsrxxVO.bsrxm);
+	nsrzgsfxgm = resData.getAttr("nsrzgsfxgm");
+	phzsbl = resData.getAttr('phzsbl');
+	$w("nsrxxForm").setValue("phjmxzDm", "");
+	$w("nsrxxForm").setValue("phjzbl", "");
+	$w("nsrxxForm").setValue("phjmswsxDm", "");
 	$w('yhssbGrid').reset();
 	kdqsssrfpbz = resData.getAttr("kdqsssrfpbz", resData);
 	var nsrmc = nsrxxVO.nsrmc;
@@ -305,18 +411,39 @@ function loadBaseInfo(req, resData) {
 			&& gt3_newsbxxList != "") {
 		for ( var j = 0; j < gt3_newsbxxList.trs.length; j++) {
 			yhts(gt3_newsbxxList.trs[j].tds.zspmDm.value);
-			}
+		}
 		var sbxxListTds = gt3_newsbxxList.trs;
 		if (sbxxListTds.length > 0) {
-			sb025_nsqxDm = sbxxListTds[0].tds.nsqxDm.value;
+			gt3.uniqueNsqx = sbxxListTds[0].tds.nsqxDm.value;
 			// 查询过税费中认定默认增加行数
 			InitJs(gt3_newsbxxList);
 		} else {
 			addRow();
 		}
+		// 上期未申报监控此为提示性
+		var sqwsbBz = resData.getAttr('sqwsbBz');
+		if (sqwsbBz == "Y") {
+			var sqwsbMes = resData.getAttr('sqwsbMes');
+			swordAlert("该纳税人存在上期未申报！");
+		}
 	}
 	// 自查补报
 	changeSblx();
+
+	// 电子税务局特色改造，判断纳税人是否享受普惠减免 start
+	if (nsrzgsfxgm == "N") {
+		$w('nsrxxForm').setValue("bqsfsyxgmyhzc", "N");
+	} else if (nsrzgsfxgm == "Y") {
+		$w("nsrxxForm").setValue('bqsfsyxgmyhzc', "Y");
+	} else if (nsrzgsfxgm == "X") {
+		// 辽宁外省跨区税源户默认值置为空
+		$w("nsrxxForm").setValue('bqsfsyxgmyhzc', "");
+	} else {
+		$w("nsrxxForm").setValue('bqsfsyxgmyhzc', "Y");
+		sfsyzs = "Y";
+	}
+	zzsxgmnsr();
+	// 电子税务局特色改造，判断纳税人是否享受普惠减免 end
 }
 
 /**
@@ -394,168 +521,201 @@ function declare() {
 			return;
 		}
 	}
-	swordConfirm(
-			"您是否确认填写无误，提交申报?",
-			{
-				onOk : function save() {
-					if (!$w("yhssbGrid").validate()
-							|| !$w("nsrxxForm").validate()) {
-						return;
-					}
-					var slxxForm = $w("slxxForm");
-					if(!$w('slxxForm').validate()){
-						return;
-					}
-					// ZOG00_201604130040 优化列表删除校验 2016-04-13 begin
-					// var children = $w('yhssbGrid').dataDiv().getChildren();
-					var children = $w('yhssbGrid').getAllNoDeleteGridData().trs;
-					// ZOG00_201604130040 优化列表删除校验 2016-04-13 end
-					var yhssbGrid = $w("yhssbGrid").getAllNoDeleteGridData();
-					if (children.length < 1) {
-						swordAlert("请至少填写一条申报表数据");
-						return;
-					}
-					if (jyyqtfb()) {
-						swordAlert("油气田企业税款分配表中存在必录项未填写,或者存在已分配应补退税额合计不等于分配前应补退税额合计的记录,请修改");
-						return;
-					}
-					// 校验表头税款所属期是否与申报表中的纳税期限相符
-					var btnsqx = getNsqxDm($w("nsrxxForm").getValue("skssqq"),
-							$w("nsrxxForm").getValue("skssqz"));
-					var nsqxByhs = "";
-					var jmByhs = "";
-					if (yhssbGrid.trs.length > 0) {
-						for ( var j = 0; j < yhssbGrid.trs.length; j++) {
-//							yhts(yhssbGrid.trs[j].tds.zspmDm.value);
-							var sbbnsqx = yhssbGrid.trs[j].tds.nsqxDm.value;
-							var ssjmxzDm = yhssbGrid.trs[j].tds.ssjmxzDm.value;
-							var jmse = yhssbGrid.trs[j].tds.jmse.value;
-							//if (sbbnsqx != "11" && btnsqx != sbbnsqx) {
-							if (false) {
-								nsqxByhs += " 第" + (j + 1) + "行，纳税期限为"
-										+ getNsqxMcByDm(sbbnsqx) + ",";
-							}
-							if ((!$chk(ssjmxzDm) && $chk(jmse) && parseFloat(jmse) > 0)
-									|| ($chk(ssjmxzDm) && (!$chk(jmse) || parseFloat(jmse) == 0))) {
-								jmByhs += (j + 1) + ",";
-							}
-						}
-					}
-					if ($chk(nsqxByhs)) {
-						nsqxByhs = nsqxByhs.substring(0, nsqxByhs.length - 1);
-						swordAlert("["
-								+ nsqxByhs
-								+ " ]，与纳税人信息中所属时期起止不符，不允许申报。（请检查税（费）种认定信息或者参数表cs_dj_mrqxgz的配置的纳税期限）");
-						return;
-					}
-					if ($chk(jmByhs)) {
-						jmByhs = jmByhs.substring(0, jmByhs.length - 1);
-						swordAlert("第[" + jmByhs
-								+ "]行违反减免性质和减免税额必须同时为空或同时不为空的原则，请重新填写");
-						return;
-					}
-					// 重复申报
-					var StringCfsb = "";
-					if (children.length > 0) {
-						for ( var i = 0; i < yhssbGrid.trs.length; i++) {
-							var msg = yhssbGrid.trs[i].tds.msg.value;
-							if ($chk(msg)) {
-								StringCfsb = StringCfsb + "第" + (i + 1) + "行,";
-							}
-						}
-					}
-					if ($chk(StringCfsb)) {
-						swordAlert("印花税申报信息表" + StringCfsb + "存在重复申报");
-						return;
-					}
-
-					// 校验代理人信息
-					var dlr = $w("slxxForm").getValue("dlr");
-					var dlrsfzjhm1 = $w("slxxForm").getValue("dlrsfzjhm1");
-//					if ($chk(dlr) && !$chk(dlrsfzjhm1)) {
-//						swordAlert("请填写代理人身份证号");
-//						return;
-//					} else if (!$chk(dlr) && $chk(dlrsfzjhm1)) {
-//						swordAlert("请填写代理人");
-//						return;
-//					}
-
-					if (kdqsssrfpbz == "Y") {
-						var gridDataObj = {
-							"sword" : "SwordGrid",
-							"name" : "sbxxGrid",
-							"trs" : [ {
-								"status" : "",
-								"tds" : {
-									"zsxmDm" : {
-										"value" : ""
-									},
-									"zspmDm" : {
-										"value" : ""
-									},
-									"skssqq" : {
-										"value" : ""
-									},
-									"skssqz" : {
-										"value" : ""
-									},
-									"ynse" : {
-										"value" : ""
-									},
-									"yjse" : {
-										"value" : ""
-									}
-								}
-							} ]
-						};
-						for ( var i = 0, j = 0; i < yhssbGrid.trs.length; i++, j++) {
-							gridDataObj.trs[j] = yhssbGrid.trs[i];
-							gridDataObj.trs[j].tds["zsxmDm"] = {
-								value : "10111"
-							};
-							gridDataObj.trs[j].tds["zspmDm"] = {
-								value : yhssbGrid.trs[i].tds.zspmDm.value
-							};
-							gridDataObj.trs[j].tds["skssqq"] = {
-								value : $w("nsrxxForm").getValue("skssqq")
-							};
-							gridDataObj.trs[j].tds["skssqz"] = {
-								value : $w("nsrxxForm").getValue("skssqz")
-							};
-							gridDataObj.trs[j].tds["ynse"] = {
-								value : yhssbGrid.trs[i].tds.bqynse.value
-							};
-							gridDataObj.trs[j].tds["yjse"] = {
-								value : yhssbGrid.trs[i].tds.bqyjse1.value
-							};
-						}
-
-						var kstlBtn = new SwordSubmit();
-						kstlBtn.setCtrl("SBGyCtrl_openkdqsssrfpFb");
-						kstlBtn.pushData(gridDataObj);
-						kstlBtn.pushData("djxh", nsrxxVO.djxh);// 要把登记序号传过来
-						// 。SBGyCtrl里没有地方取到这个值。
-						swordAlertIframe('', {
-							titleName : "跨地区税收收入分配表",
-							width : 1000,
-							height : 800,
-							param : window,
-							isNormal : 'true',
-							isMax : 'true',
-							isClose : 'true',
-							isMin : "true",
-							submit : kstlBtn
-						});
-					} else {
-						sbbSavejx();
-					}
-				},
-				onCancel : function() {
+	swordConfirm("您是否确认填写无误，提交申报?", {
+		onOk : function() {
+			save();
+		},
+		onCancel : function() {
+			return;
+		}
+	});
+}
+function save() {
+	if (!$w("yhssbGrid").validate() || !$w("nsrxxForm").validate()) {
+		return;
+	}
+	var slxxForm = $w("slxxForm");
+	if (!$w('slxxForm').validate()) {
+		return;
+	}
+	// ZOG00_201604130040 优化列表删除校验 2016-04-13 begin
+	// var children = $w('yhssbGrid').dataDiv().getChildren();
+	var children = $w('yhssbGrid').getAllNoDeleteGridData().trs;
+	// ZOG00_201604130040 优化列表删除校验 2016-04-13 end
+	var yhssbGrid = $w("yhssbGrid").getAllNoDeleteGridData();
+	if (children.length < 1) {
+		swordAlert("请至少填写一条申报表数据");
+		return;
+	}
+	if (jyyqtfb()) {
+		swordAlert("油气田企业税款分配表中存在必录项未填写,或者存在已分配应补退税额合计不等于分配前应补退税额合计的记录,请修改");
+		return;
+	}
+	// 校验表头税款所属期是否与申报表中的纳税期限相符
+	var btnsqx = getNsqxDm($w("nsrxxForm").getValue("skssqq"), $w("nsrxxForm")
+			.getValue("skssqz"));
+	var nsqxByhs = "";
+	var jmByhs = "";
+	if (yhssbGrid.trs.length > 0) {
+		for ( var j = 0; j < yhssbGrid.trs.length; j++) {
+			// yhts(yhssbGrid.trs[j].tds.zspmDm.value);
+			var sbbnsqx = yhssbGrid.trs[j].tds.nsqxDm.value;
+			var ssjmxzDm = yhssbGrid.trs[j].tds.ssjmxzDm.value;
+			var jmse = yhssbGrid.trs[j].tds.jmse.value;
+			if (sbbnsqx != "11" && btnsqx != sbbnsqx) {
+				nsqxByhs += " 第" + (j + 1) + "行，纳税期限为" + getNsqxMcByDm(sbbnsqx)
+						+ ",";
+			}
+			if ((!$chk(ssjmxzDm) && $chk(jmse) && parseFloat(jmse) > 0)
+					|| ($chk(ssjmxzDm) && (!$chk(jmse) || parseFloat(jmse) == 0))) {
+				jmByhs += (j + 1) + ",";
+			}
+		}
+	}
+	if ($chk(nsqxByhs)) {
+		nsqxByhs = nsqxByhs.substring(0, nsqxByhs.length - 1);
+		swordAlert("["
+				+ nsqxByhs
+				+ " ]，与纳税人信息中所属时期起止不符，不允许申报。（请检查税（费）种认定信息或者参数表cs_dj_mrqxgz的配置的纳税期限）");
+		return;
+	}
+	if ($chk(jmByhs)) {
+		jmByhs = jmByhs.substring(0, jmByhs.length - 1);
+		swordAlert("第[" + jmByhs + "]行违反减免性质和减免税额必须同时为空或同时不为空的原则，请重新填写");
+		return;
+	}
+	// 普惠减免税额
+	if (yhssbGrid.trs.length > 0) {
+		var bqsfsyxgmyhzc = $w("nsrxxForm").getValue("bqsfsyxgmyhzc").code;
+		if (bqsfsyxgmyhzc == "Y") {
+			for ( var j = 0; j < yhssbGrid.trs.length; j++) {
+				var phjmse = yhssbGrid.trs[j].tds.phjmse.value;
+				var bqynse = yhssbGrid.trs[j].tds.bqynse.value;
+				var jmse = yhssbGrid.trs[j].tds.jmse.value;
+				var bqybtse = yhssbGrid.trs[j].tds.bqybtse.value;
+				phjzbl = $w('nsrxxForm').getValue("phjzbl");
+				var phjmseJs = calPhjmse(bqynse, jmse, phjzbl);
+				if (sfsyzs == "Y") {
+					phjmseJs = phjmseJs.multiple(phzsbl / 1);
+				}
+				phjmseJs = phjmseJs.round(2);
+				if (phjmse > phjmseJs) {
+					swordAlert(" 第" + (j + 1) + "行" + "增值税小规模纳税人减征额不能大于"
+							+ phjmseJs.round(2) + "。");
+					return;
+				} else if (phjmse < 0) {
+					swordAlert(" 第" + (j + 1) + "行" + "增值税小规模纳税人减征额不能小于0。");
 					return;
 				}
-			});
-}
+			}
+		} else {
+			for ( var j = 0; j < yhssbGrid.trs.length; j++) {
+				var phjmse = yhssbGrid.trs[j].tds.phjmse.value;
+				if (phjmse != 0) {
+					swordAlert("当选择不适用增值税小规模纳税人减征优惠时,第" + (j + 1) + "行"
+							+ "增值税小规模纳税人减征额必须为0。");
+					return;
+				}
+			}
+		}
+	}
+	// 重复申报
+	var StringCfsb = "";
+	if (children.length > 0) {
+		for ( var i = 0; i < yhssbGrid.trs.length; i++) {
+			var msg = yhssbGrid.trs[i].tds.msg.value;
+			if ($chk(msg)) {
+				StringCfsb = StringCfsb + "第" + (i + 1) + "行,";
+			}
+		}
+	}
+	if ($chk(StringCfsb)) {
+		swordAlert("印花税申报信息表" + StringCfsb + "存在重复申报");
+		return;
+	}
 
+	// 校验代理人信息
+	var dlr = $w("slxxForm").getValue("dlr");
+	var dlrsfzjhm1 = $w("slxxForm").getValue("dlrsfzjhm1");
+	// if ($chk(dlr) && !$chk(dlrsfzjhm1)) {
+	// swordAlert("请填写代理人身份证号");
+	// return;
+	// } else if (!$chk(dlr) && $chk(dlrsfzjhm1)) {
+	// swordAlert("请填写代理人");
+	// return;
+	// }
+
+	if (kdqsssrfpbz == "Y") {
+		var gridDataObj = {
+			"sword" : "SwordGrid",
+			"name" : "sbxxGrid",
+			"trs" : [ {
+				"status" : "",
+				"tds" : {
+					"zsxmDm" : {
+						"value" : ""
+					},
+					"zspmDm" : {
+						"value" : ""
+					},
+					"skssqq" : {
+						"value" : ""
+					},
+					"skssqz" : {
+						"value" : ""
+					},
+					"ynse" : {
+						"value" : ""
+					},
+					"yjse" : {
+						"value" : ""
+					}
+				}
+			} ]
+		};
+		for ( var i = 0, j = 0; i < yhssbGrid.trs.length; i++, j++) {
+			gridDataObj.trs[j] = yhssbGrid.trs[i];
+			gridDataObj.trs[j].tds["zsxmDm"] = {
+				value : "10111"
+			};
+			gridDataObj.trs[j].tds["zspmDm"] = {
+				value : yhssbGrid.trs[i].tds.zspmDm.value
+			};
+			gridDataObj.trs[j].tds["skssqq"] = {
+				value : $w("nsrxxForm").getValue("skssqq")
+			};
+			gridDataObj.trs[j].tds["skssqz"] = {
+				value : $w("nsrxxForm").getValue("skssqz")
+			};
+			gridDataObj.trs[j].tds["ynse"] = {
+				value : yhssbGrid.trs[i].tds.bqynse.value
+			};
+			gridDataObj.trs[j].tds["yjse"] = {
+				value : yhssbGrid.trs[i].tds.bqyjse1.value
+			};
+		}
+
+		var kstlBtn = new SwordSubmit();
+		kstlBtn.setCtrl("SBGyCtrl_openkdqsssrfpFb");
+		kstlBtn.pushData(gridDataObj);
+		kstlBtn.pushData("djxh", nsrxxVO.djxh);// 要把登记序号传过来
+		// 。SBGyCtrl里没有地方取到这个值。
+		swordAlertIframe('', {
+			titleName : "跨地区税收收入分配表",
+			width : 1000,
+			height : 800,
+			param : window,
+			isNormal : 'true',
+			isMax : 'true',
+			isClose : 'true',
+			isMin : "true",
+			submit : kstlBtn
+		});
+	} else {
+	    sbbSavejx();
+
+	}
+}
 function sbbSavejx() {
 	gt3.djxh = nsrxxVO.djxh;
 	var yhssbGrid = $w("yhssbGrid").getAllNoDeleteGridData();
@@ -626,7 +786,7 @@ function saveOnSuccess(req, resData) {
 	var nsrxxFrom = $w("nsrxxForm");
 	yzpzxh = sbsaveReturnVO.data.pzxh.value;
 	var flzlGridData = $w('flzlGrid').getCheckedData("check");
-	if (sb025_cszForXML == "SBCWGZ") {// 错误更正
+	if (sb025_cszForXML != "SBCWGZ") {// 错误更正
 		saveSxslxx(yzpzxh, gt3.djxh, nsrxxFrom.getValue("nsrsbh"), nsrxxFrom
 				.getValue("nsrmc"), "SLSXA061001007", "LCSXA061001009", swjgDm,
 				flzlGridData);
@@ -638,21 +798,29 @@ function saveOnSuccess(req, resData) {
 		var ybtse = sbsaveReturnVO.data.ybtse.value;
 		sbcwgzGyjs(pzxhPre, ybtse.round(2), gt3.djxh, resData, 'declare', null);
 	} else {
-		// $w('sbToolBar').setDisabled('save');
-		// $w("sbToolBar").setEnabled('printYhs');
-		// $w("sbToolBar").setEnabled('print');
-
 		$w('sbToolBar').setDisabled('save');
-		$w("sbToolBar").setDisabled('printYhs');
-		$w("sbToolBar").setDisabled('print');
-		alert("申报成功！")
+		$w("sbToolBar").setEnabled('printYhs');
+		$w("sbToolBar").setEnabled('print');
+	    // 控制导出按钮是否可用 by:张俊，2019年2月18日17:08:41
+         swordConfirm("申报成功！",
+            {
+					onOk:function(){
+						 window.top.close();
+					},
+					onCancel : function() {
+						return false;
+					}
+				}
 
+            );
+     // window.parent.window.close();
+	    //	controlExportButton();
+       
 	}
 
 }
 
-
-function getDefaultJmxx(ssjmxzDm, zspmDm){
+function getDefaultJmxx(ssjmxzDm, zspmDm) {
 	var skssqq = $w("nsrxxForm").getValue("skssqq");
 	var skssqz = $w("nsrxxForm").getValue("skssqz");
 	var result = null;
@@ -663,10 +831,10 @@ function getDefaultJmxx(ssjmxzDm, zspmDm){
 	queryBtn.pushData("djxh", gt3.djxh);
 	queryBtn.pushData("zspmDm", zspmDm);
 	queryBtn.setOptions({
-		async:'false',
-		mask:'false',
-		ctrl:'SB025YhssbCtrl_getDefaultJmxx',
-		onSuccess:function(req,res){
+		async : 'false',
+		mask : 'false',
+		ctrl : 'SB025YhssbCtrl_getDefaultJmxx',
+		onSuccess : function(req, res) {
 			var ssjmxzmc = res.getAttr("ssjmxzmc");
 			var jmfd = res.getAttr("jmfd");
 			var swsxDm = res.getAttr("swsxDm");
@@ -674,7 +842,7 @@ function getDefaultJmxx(ssjmxzDm, zspmDm){
 			var jmsl = res.getAttr("jmsl");
 			var spbaBz = res.getAttr("spbaBz");
 			var jmzlxDm = res.getAttr("jmzlxDm");
-			if($chk(jmzlxDm)){
+			if ($chk(jmzlxDm)) {
 				result = new Array(7);
 				result[0] = jmzlxDm;
 				result[1] = jmfd;
@@ -729,13 +897,24 @@ function jisuanbqynybtse(realvalue, showvalue, rowData, el, row, srcRealvalue) {
 	if (jmse > bqynse) {
 		jmse = bqynse;
 	}
+	var phjmse = 0.0;// 普惠减免税额
+	var bqsfsyxgmyhzc = $w("nsrxxForm").getValue("bqsfsyxgmyhzc").code;
+	if (bqsfsyxgmyhzc == "Y") {
+		phjzbl = $w('nsrxxForm').getValue("phjzbl");
+		phjmse = calPhjmse(bqynse, jmse, phjzbl);
+	}
 
 	if ((grid1.getCheckedRowData().getValue('bqynse') / 1) >= 0
 			&& (jmse / 1) >= 0
 			&& (grid1.getCheckedRowData().getValue('bqyjse1') / 1) >= 0) {
+		if (sfsyzs == "Y") {
+			phjmse = phjmse.multiple(phzsbl / 1);
+		}
+		phjmse = phjmse.round(2);
 		var bqybtse = (bqynse / 1).subtract(jmse / 1).subtract(
-				grid1.getCheckedRowData().getValue('bqyjse1') / 1);
-		var zspmDm = grid1.getCheckedRowData().getValue('zspmDm');
+				grid1.getCheckedRowData().getValue('bqyjse1') / 1).subtract(
+				phjmse / 1);
+		zspmDm = grid1.getCheckedRowData().getValue('zspmDm');
 		bqybtse = jsyhsje(zspmDm, bqybtse);
 		data = {
 			"tds" : {
@@ -750,6 +929,9 @@ function jisuanbqynybtse(realvalue, showvalue, rowData, el, row, srcRealvalue) {
 				},
 				"jmsemr" : {
 					"value" : jmse
+				},
+				"phjmse" : {
+					"value" : phjmse
 				}
 			}
 		};
@@ -763,6 +945,7 @@ function jisuanbqynybtse(realvalue, showvalue, rowData, el, row, srcRealvalue) {
 		};
 	}
 	grid1.updateRow(grid1.getCheckedRow(), data);
+	updateDefJmxx($w('yhssbGrid'), row, zspmDm, sysl);
 }
 
 // 减免计算--计算本期应退（补）税额
@@ -796,13 +979,22 @@ function jisuanbqybtse(realvalue, showvalue, rowData, el, row, srcRealvalue) {
 		jmse = jmsemr;
 	}
 	if (jmse == 0) {
-		jmse = bqynse;
+		grid1.updateCell(row.getCell("ssjmxzDm"), "");
 	}
 	queryJmxxAndYjsk("jm");
 	if (rowData.getValue('bqynse') != null && jmse != null
 			&& rowData.getValue('bqyjse1') != null) {
+		var phjmse = 0.0;// 普惠减免税额
+		if (bqsfsyxgmyhzc == "Y") {
+			phjzbl = $w('nsrxxForm').getValue("phjzbl");
+			phjmse = calPhjmse(bqynse, jmse, phjzbl);
+		}
+		if (sfsyzs == "Y") {
+			phjmse = phjmse.multiple(phzsbl / 1);
+		}
+		phjmse = phjmse.round(2);
 		var ybtse = (rowData.getValue('bqynse') / 1).subtract(jmse / 1)
-				.subtract(rowData.getValue('bqyjse1') / 1);
+				.subtract(rowData.getValue('bqyjse1') / 1).subtract(phjmse / 1);
 		var zspmDm = rowData.getValue('zspmDm');
 		ybtse = jsyhsje(zspmDm, ybtse);
 		var data = {
@@ -812,6 +1004,9 @@ function jisuanbqybtse(realvalue, showvalue, rowData, el, row, srcRealvalue) {
 				},
 				"bqybtse" : {
 					"value" : ybtse
+				},
+				"phjmse" : {
+					"value" : phjmse
 				}
 			}
 		};
@@ -881,6 +1076,91 @@ function yhsjmxxCheck(jsyj, bqynse, ssjmxzDm, jme, zsxmDm, jmxxList, pzxh) {
 	}
 	return jmse;
 }
+/**
+ * 获得可用的预缴金额
+ * 
+ * @param yjxxList
+ *            预缴税款列表
+ * @param zspmDm
+ *            征收品目代码
+ * @param bqyjje
+ *            页面输入的本期预缴金额
+ * @return 可以使用的预缴金额
+ */
+function getBqKyyjjeYhs(yjxxList, zspmDm, bqyjje, ysyyjse) {
+	if (bqyjje > 0) {
+		var yjye1 = 0;
+		if ($chk(yjxxList) && $chk(yjxxList.trs) && yjxxList.trs.length > 0) {
+			for ( var i = 0; i < yjxxList.trs.length; i++) {
+				var zspmDm1 = yjxxList.trs[i].tds.zspmDm.value;
+				if (zspmDm == zspmDm1) {
+					yjye1 = yjye1.accAdd(yjxxList.trs[i].tds.yjye1.value);
+				}
+			}
+			// yjye1 = yjye1.accAdd(ysyyjse).round(2);
+			// 错误更正时，已使用的预缴金额合计
+			var yjseHj = getYjseHj(zspmDm);
+			// 多行品目相同时，需要累加已使用预缴
+			var ysyyjjeHj = getYsyyjjeHj(zspmDm);
+			// 其他行已使用预缴金额合计
+			var qthYsyyjjeHj = ysyyjjeHj.subtract(bqyjje);
+			// 本次还可以使用的最大预缴金额
+			var ksyyjje = yjye1.accAdd(yjseHj).subtract(qthYsyyjjeHj).round(2);
+			if (ksyyjje <= 0) {
+				ksyyjje = 0.00;
+			}
+			if (bqyjje > ksyyjje) {
+				bqyjje = ksyyjje;
+			}
+		} else {
+			swordAlertWrong("没有查询到纳税人的已缴税款信息,不能录入本期已缴税款!");
+			bqyjje = 0.0;
+		}
+	} else if (bqyjje <= 0) {
+		bqyjje = 0.00;
+	}
+	return bqyjje;
+}
+
+/**
+ * 已使用预缴金额求和
+ * 
+ * @param zspmDm
+ * @return
+ */
+function getYsyyjjeHj(zspmDm) {
+	var grid = $w('yhssbGrid');
+	var gridData = grid.getAllNoDeleteGridData().trs;
+	var ysyyjjeHj = 0;
+	for ( var i = 0; i < gridData.length; i++) {
+		var tdsdata = gridData[i].tds;
+		var zspmDmAll = tdsdata.zspmDm.value;
+		if (zspmDm == zspmDmAll) {
+			ysyyjjeHj = ysyyjjeHj.accAdd(tdsdata.bqyjse1.value);
+		}
+	}
+	return ysyyjjeHj;
+}
+
+/**
+ * 已缴金额求和
+ * 
+ * @param zspmDm
+ * @return
+ */
+function getYjseHj(zspmDm) {
+	var grid = $w('yhssbGrid');
+	var gridData = grid.getAllNoDeleteGridData().trs;
+	var yjseHj = 0;
+	for ( var i = 0; i < gridData.length; i++) {
+		var tdsdata = gridData[i].tds;
+		var zspmDmAll = tdsdata.zspmDm.value;
+		if (zspmDm == zspmDmAll) {
+			yjseHj = yjseHj.accAdd(tdsdata.yjse.value);
+		}
+	}
+	return yjseHj;
+}
 
 // 已缴金额 --本期应退（补）税额
 function jisuanbqybtse1(realvalue, showvalue, rowData, el, row, srcRealvalue) {
@@ -908,7 +1188,8 @@ function jisuanbqybtse1(realvalue, showvalue, rowData, el, row, srcRealvalue) {
 			&& rowData.getValue('bqyjse1') != null) {
 
 		var bqybtse = (rowData.getValue('bqynse') / 1).subtract(
-				rowData.getValue('jmse') / 1).subtract(bqyjje / 1);
+				rowData.getValue('jmse') / 1).subtract(bqyjje / 1).subtract(
+				rowData.getValue('phjmse') / 1);
 		var zspmDm = rowData.getValue('zspmDm');
 		bqybtse = jsyhsje(zspmDm, bqybtse);
 		var data = {
@@ -974,11 +1255,11 @@ function InitJs(sbxxList) {
 		var yhssbbxxGrid = $w("yhssbGrid");
 		yhssbbxxGrid.reset();
 		var tempData;
-		//ZOG00_201810170021 根据《XQ20180302 — 关于修改其他账簿印花税申报规则的需求》
-		//当申报印花税，征收品目选择“其他营业账簿”，税款属期为2018年5月1日后的，金三系统自动默认纳税人享受减免税，自动带出减免税性质代码，“应补退税额”自动填为“0”。
+		// ZOG00_201810170021 根据《XQ20180302 — 关于修改其他账簿印花税申报规则的需求》
+		// 当申报印花税，征收品目选择“其他营业账簿”，税款属期为2018年5月1日后的，金三系统自动默认纳税人享受减免税，自动带出减免税性质代码，“应补退税额”自动填为“0”。
 		var skssqq = $w("nsrxxForm").getValue("skssqq");
 		for ( var i = 0; i < sbxxList.trs.length; i++) {
-			var defaultSsjmxzDm = "";//默认减免性质
+			var defaultSsjmxzDm = "";// 默认减免性质
 			tempData = sbxxList.trs[i].tds;
 			var sl = tempData.sl1.value;
 			var rdpzuuid = tempData.rdpzuuid.value;
@@ -992,13 +1273,14 @@ function InitJs(sbxxList) {
 				var jmsl = "";
 				var ssjmxzmc = "";
 				var spbaBz = "";
-				
+
 				var hdse = "0";
 				var hdbl = "0";
 				var bqynse = "0";
 				var bqybtse = "0";
 				var yjze = 0;
 				var hdlx2 = "";
+				var phjmse = 0;
 				if ($chk(tempData.hdbl)) {
 					hdbl = tempData.hdbl.value;
 					if (hdbl / 1 > 0) {
@@ -1019,25 +1301,54 @@ function InitJs(sbxxList) {
 				bqynse = (hdbl / 1).multiple(hdse / 1).multiple(sl / 1);
 				bqynse = bqynse.round(2);
 				var jmse = 0.0;
-				var skssqqFloat = parseFloat(skssqq.replace(/-/g, '').replace(/\//g, ''));
-				if(zspmDm == "101110599" && skssqqFloat >= parseFloat("20180501")){//其他营业账簿, 2018-05-01以后
+				var skssqqFloat = parseFloat(skssqq.replace(/-/g, '').replace(
+						/\//g, ''));
+				if (zspmDm == "101110599"
+						&& skssqqFloat >= parseFloat("20180501")) {// 其他营业账簿,
+					// 2018-05-01以后
 					defaultSsjmxzDm = "0009129907";
 					var defJmxxArray = getDefJmxxArray(defaultSsjmxzDm, zspmDm);
-					if($chk(defJmxxArray)){
-						var jsyj = (hdbl/1).multiple(hdse/1);
+					if ($chk(defJmxxArray)) {
+						var jsyj = (hdbl / 1).multiple(hdse / 1);
 						jmzlxDm = defJmxxArray[0];
 						jmfd = defJmxxArray[1];
 						jmed = defJmxxArray[2];
 						jmsl = defJmxxArray[3];
 						ssjmxzmc = defJmxxArray[4];
 						spbaBz = defJmxxArray[5];
-						jmse = getMrjmseBySsjmxz(jmzlxDm,jsyj/1,bqynse/1,sl/1,jmfd/1,jmed/1,jmsl/1);
+						jmse = getMrjmseBySsjmxz(jmzlxDm, jsyj / 1, bqynse / 1,
+								sl / 1, jmfd / 1, jmed / 1, jmsl / 1);
 					}
 				}
-				
-				bqybtse = (bqynse/1)- jmse -(yjze/1);	
+				if (zspmDm == "101110501"
+						&& skssqqFloat >= parseFloat("20180501")) {// 其他营业账簿,
+					// 2018-05-01以后
+					defaultSsjmxzDm = "0009129906";
+					var defJmxxArray = getDefJmxxArray(defaultSsjmxzDm, zspmDm);
+					if ($chk(defJmxxArray)) {
+						var jsyj = (hdbl / 1).multiple(hdse / 1);
+						jmzlxDm = defJmxxArray[0];
+						jmfd = defJmxxArray[1];
+						jmed = defJmxxArray[2];
+						jmsl = defJmxxArray[3];
+						ssjmxzmc = defJmxxArray[4];
+						spbaBz = defJmxxArray[5];
+						jmse = getMrjmseBySsjmxz(jmzlxDm, jsyj / 1, bqynse / 1,
+								sl / 1, jmfd / 1, jmed / 1, jmsl / 1);
+					}
+				}
+				var phjzbl = $w("nsrxxForm").getValue("phjzbl");
+				if (!$chk(phjzbl)) {
+					phjzbl = 0;
+				}
+				phjmse = calPhjmse(bqynse, jmse, phjzbl);
+				if (sfsyzs == "Y") {
+					phjmse = phjmse.multiple(phzsbl / 1);
+				}
+				phjmse = phjmse.round(2);
+				bqybtse = (bqynse / 1) - jmse - (yjze / 1) - phjmse;
 				bqybtse = jsyhsje(zspmDm, bqybtse);
-				
+
 				var dataObj = {
 					'tds' : {
 						'sysl' : {
@@ -1085,22 +1396,39 @@ function InitJs(sbxxList) {
 						'hdlx2' : {
 							'value' : hdlx2
 						},
-						'jmzlxDm':{
+						'jmzlxDm' : {
 							'value' : jmzlxDm
 						},
-						'jmsl':{
+						'jmsl' : {
 							'value' : jmsl
 						},
-						'jmed':{
+						'jmed' : {
 							'value' : jmed
 						},
-						'jmfd':{
+						'jmfd' : {
 							'value' : jmfd
+						},
+						'phjmse' : {
+							'value' : phjmse
 						}
 					}
 				};
 				var row = yhssbbxxGrid.insertRow(dataObj);
-				yhssbbxxGrid.updateCell(row.getCell("ssjmxzDm"),defaultSsjmxzDm,ssjmxzmc);
+				yhssbbxxGrid.updateCell(row.getCell("ssjmxzDm"),
+						defaultSsjmxzDm, ssjmxzmc);
+				if ((zspmDm == "101110599" || zspmDm == "101110501")
+						&& skssqqFloat >= parseFloat("20180501")) {// 当品目为
+					// 其他营业账簿,资金账簿时减免性质和减免税额不能编辑
+					// 2018-05-01以后
+					yhssbbxxGrid.cellDisable(row.getCell("jmse"));
+					yhssbbxxGrid.cellDisable(row.getCell("ssjmxzDm"));
+					if (jmse == 0) {
+						yhssbbxxGrid.updateCell(row.getCell("ssjmxzDm"), "");
+					}
+				} else {
+					yhssbbxxGrid.cellEnable(row.getCell("jmse"));
+					yhssbbxxGrid.cellEnable(row.getCell("ssjmxzDm"));
+				}
 			}
 		}
 		// 设置计税金额，核定数据项是否可用
@@ -1110,19 +1438,23 @@ function InitJs(sbxxList) {
 
 /**
  * 获取默认的减免信息，先从缓存取，再查数据
- * @param defaultSsjmxzDm 默认减免性质
- * @param zspmDm 征收品目
+ * 
+ * @param defaultSsjmxzDm
+ *            默认减免性质
+ * @param zspmDm
+ *            征收品目
  * @return
  */
-function getDefJmxxArray(defaultSsjmxzDm, zspmDm){
+function getDefJmxxArray(defaultSsjmxzDm, zspmDm) {
 	var defJmxxArray = zspmDefJmxxMap.get(zspmDm);
-	if(!$chk(defJmxxArray)){//缓存中没有
+	if (!$chk(defJmxxArray)) {// 缓存中没有
 		defJmxxArray = getDefaultJmxx(defaultSsjmxzDm, zspmDm);
-		if($chk(defJmxxArray)){//查到数据
+		if ($chk(defJmxxArray)) {// 查到数据
 			zspmDefJmxxMap.remove(zspmDm);
 			zspmDefJmxxMap.put(zspmDm, defJmxxArray);
-		}else{
-			swordAlert("该行征收品目应享受减免，但减免性质（ "+defaultSsjmxzDm+"）未备案且未在系统中配置。");
+		} else {
+			swordAlert("该行征收品目应享受减免，但减免性质（ " + defaultSsjmxzDm
+					+ "）未备案且未在系统中配置。");
 		}
 	}
 	return defJmxxArray;
@@ -1133,6 +1465,7 @@ function XMLForSBCWGZ(resData) {
 	if (gt3.zrrBz == 'Y') {// 无税费种认定或自然人情况
 		$("zrrTR1").style.display = "block";
 		$("zrrTR2").style.display = "block";
+		$("zrrTR3").style.display = "block";
 		nsrxxForm._itemSwitch("hyDm", "pulltree", {
 			'rule' : 'must'
 		});
@@ -1158,6 +1491,7 @@ function XMLForSBCWGZ(resData) {
 	nsrxxVO.djxh = gt3.djxh;
 	sb025_pxzh = gt3_cwgzMap.data.pzxh.value;
 	$w("nsrxxForm").disable();
+	$w("nsrxxForm").enable([ 'bqsfsyxgmyhzc' ]);
 	$w("slxxForm").enable("slr");
 	var flzlGrid = $w('flzlGrid');
 	if (!flzlGrid.collapseDiv.hasClass('x-tool-s')) {
@@ -1189,6 +1523,7 @@ function cwgzInsertRowData(yhssbGridGz, drbz) {
 					hdlx = "2";
 				}
 			}
+			var nsqxDm = tempData.nsqxDm.value;
 			var dataObj = {
 				tds : {
 					zspmDm : {
@@ -1229,13 +1564,16 @@ function cwgzInsertRowData(yhssbGridGz, drbz) {
 					},
 					hdlx2 : {
 						value : hdlx
+					},
+					phjmse : {
+						value : tempData.phjmse.value
 					}
 				}
 			};
 			var row = yhssbGrid.insertRow(dataObj);
-			if(drbz == "Y"){//导入才处理
+			if (drbz == "Y") {// 导入才处理
 				var zspmDm = tempData.zspmDm.value;
-				if(zspmDm == "101110599" && !$chk(ssjmxzDm)){//没导入减免性质
+				if (zspmDm == "101110599" && !$chk(ssjmxzDm)) {// 没导入减免性质
 					updateDefJmxx(yhssbGrid, row, zspmDm, tempData.sysl.value);
 				}
 			}
@@ -1316,8 +1654,9 @@ function changeZspm(option, selItem, obj) {
 	var jsjeCell = row.getCell("jsje");
 	var hddeCell = row.getCell("hdzsHdde");
 	var hdblCell = row.getCell("hdzsHdbl");
-
-	if ($chk(gt3_sbxxList)&&gt3_sbxxList.trs.length > 0) {
+	var jmxzCell = row.getCell("ssjmxzDm");
+	yhssbbxxGrid.updateCell(jmxzCell, "");
+	if ($chk(gt3_sbxxList) && gt3_sbxxList.trs.length > 0) {
 		var zspmIsRd = "0";
 		for ( var i = 0; i < gt3_sbxxList.trs.length; i++) {
 			var tempData = gt3_sbxxList.trs[i].tds;
@@ -1331,6 +1670,7 @@ function changeZspm(option, selItem, obj) {
 				var bqynse = "0";
 				var bqybtse = "0";
 				var yjze = "0";
+				var phjmse = "0";
 				if ($chk(tempData.hdbl)) {
 					hdbl = tempData.hdbl.value;
 					if (hdbl > 0) {
@@ -1404,6 +1744,9 @@ function changeZspm(option, selItem, obj) {
 						},
 						hdlx2 : {
 							'value' : hdlx2
+						},
+						phjmse : {
+							'value' : phjmse
 						}
 					}
 				};
@@ -1452,6 +1795,9 @@ function changeZspm(option, selItem, obj) {
 					},
 					hdlx2 : {
 						'value' : ""
+					},
+					phjmse : {
+						'value' : "0.00"
 					}
 				}
 			};
@@ -1459,7 +1805,7 @@ function changeZspm(option, selItem, obj) {
 		}
 	} else {
 		var dataObj = null;
-		if ($chk(gt3_yhshdList)&&gt3_yhshdList.trs.length > 0) {
+		if ($chk(gt3_yhshdList) && gt3_yhshdList.trs.length > 0) {
 			for ( var i = 0; i < gt3_yhshdList.trs.length; i++) {
 				var tempData = gt3_yhshdList.trs[i].tds;
 				var hdlx2 = tempData.hdlx2.value;
@@ -1519,6 +1865,9 @@ function changeZspm(option, selItem, obj) {
 							},
 							hdlx2 : {
 								'value' : hdlx2
+							},
+							'phjmse' : {
+								'value' : "0.00"
 							}
 						}
 					};
@@ -1562,6 +1911,9 @@ function changeZspm(option, selItem, obj) {
 							},
 							hdlx2 : {
 								'value' : ""
+							},
+							'phjmse' : {
+								'value' : "0.00"
 							}
 						}
 					};
@@ -1607,6 +1959,9 @@ function changeZspm(option, selItem, obj) {
 					},
 					hdlx2 : {
 						'value' : ""
+					},
+					phjmse : {
+						'value' : "0.00"
 					}
 				}
 			};
@@ -1616,67 +1971,97 @@ function changeZspm(option, selItem, obj) {
 		hdblCell.set("disabled", hdblZt);
 		skxxGrid.updateRow(row, dataObj);
 	}
-	////ZOG00_201810170021 根据《XQ20180302 — 关于修改其他账簿印花税申报规则的需求》
-	//当申报印花税，征收品目选择“其他营业账簿”，税款属期为2018年5月1日后的，金三系统自动默认纳税人享受减免税，自动带出减免税性质代码，“应补退税额”自动填为“0”。
+	// //ZOG00_201810170021 根据《XQ20180302 — 关于修改其他账簿印花税申报规则的需求》
+	// 当申报印花税，征收品目选择“其他营业账簿”，税款属期为2018年5月1日后的，金三系统自动默认纳税人享受减免税，自动带出减免税性质代码，“应补退税额”自动填为“0”。
+	// 当申报印花税，征收品目选择“印花税-资金账簿（101110501）”，税款属期为2018年5月1日后的，金三系统自动默认纳税人享受减免税，自动带出减免税性质代码，减免税额自动带出，且减免税额=本期应纳税额
+	// *50%， “应补退税额”自动填为“0”。
+
 	updateDefJmxx(skxxGrid, row, zspmDm, sysl);
 }
 
-function updateDefJmxx(grid, row, zspmDm, sysl){
+function updateDefJmxx(grid, row, zspmDm, sysl) {
+	grid.cellEnable(row.getCell("ssjmxzDm"));
+	grid.cellEnable(row.getCell("jmse"));
+	var ssjmxzDmCell = row.getCell("ssjmxzDm");
 	var rowData = grid.getOneRowData(row);
-	var jsje = emptyToZ(rowData.getValue("jsje"))/1;
-	var hdzsHdde = emptyToZ(rowData.getValue("hdzsHdde"))/1;
-	var hdzsHdbl = emptyToZ(rowData.getValue("hdzsHdbl"))/1;
-	var jsyj = GyFormatRound(jsje.accAdd((hdzsHdde/1).multiple(hdzsHdbl/1)), 2);
+	var jsje = emptyToZ(rowData.getValue("jsje")) / 1;
+	var hdzsHdde = emptyToZ(rowData.getValue("hdzsHdde")) / 1;
+	var hdzsHdbl = emptyToZ(rowData.getValue("hdzsHdbl")) / 1;
+	var jsyj = jsje.accAdd((hdzsHdde / 1).multiple(hdzsHdbl / 1));
 	var skssqq = $w("nsrxxForm").getValue("skssqq");
-	
+	bgsfsyxgmyhzc = $w("nsrxxForm").getValue("bqsfsyxgmyhzc").code;
+	var bqynse = grid.getCheckedRowData().getValue("bqynse");
 	var skssqqFloat = parseFloat(skssqq.replace(/-/g, '').replace(/\//g, ''));
-	if(zspmDm == "101110599" && skssqqFloat >= parseFloat("20180501")){//其他营业账簿, 2018-05-01以后
-		var bqynse = GyFormatRound(jsyj.multiple(sysl/1), 2);
+	var spbaBz = "";
+	if ((zspmDm == "101110599" || zspmDm == "101110501")
+			&& skssqqFloat >= parseFloat("20180501") && bqynse / 1 > 0) {// 其他营业账簿,2018-05-01以后
+		grid.cellDisable(row.getCell("jmse"));
+		grid.cellDisable(ssjmxzDmCell);
+		bqynse = jsyj.multiple(sysl / 1);
+		bqynse = bqynse.round(2);
 		var jmzlxDm = "";
 		var jmfd = "";
 		var jmed = "";
 		var jmsl = "";
 		var ssjmxzmc = "";
-		var spbaBz = "";
 		var jmse = 0.0;
-		var defaultSsjmxzDm = "0009129907";
-		var defJmxxArray = getDefJmxxArray(defaultSsjmxzDm, zspmDm);
-		if($chk(defJmxxArray)){
+		var defaultSsjmxzDm_Qtyyzb = "0009129907";
+		if (zspmDm == "101110501") {
+			defaultSsjmxzDm_Qtyyzb = "0009129906";
+		}
+		var defJmxxArray = getDefJmxxArray(defaultSsjmxzDm_Qtyyzb, zspmDm);
+		if ($chk(defJmxxArray)) {
 			jmzlxDm = defJmxxArray[0];
 			jmfd = defJmxxArray[1];
 			jmed = defJmxxArray[2];
 			jmsl = defJmxxArray[3];
 			ssjmxzmc = defJmxxArray[4];
 			spbaBz = defJmxxArray[5];
-			jmse = getMrjmseBySsjmxz(jmzlxDm,jsyj/1,bqynse/1,sysl/1,jmfd/1,jmed/1,jmsl/1);
+			jmse = getMrjmseBySsjmxz(jmzlxDm, jsyj / 1, bqynse / 1, sysl / 1,
+					jmfd / 1, jmed / 1, jmsl / 1);
+			jmse = jmse.round(2);
 		}
-		var yjze = emptyToZ(rowData.getValue("bqyjse1"))/1;
-		var bqybtse = (bqynse/1)- jmse -(yjze/1);	
-		bqybtse = jsyhsje(zspmDm,bqybtse);
+		var yjze = emptyToZ(rowData.getValue("bqyjse1")) / 1;
+		var phjmse = 0.0;
+		if (bgsfsyxgmyhzc == "Y") {
+			phjmse = calPhjmse(bqynse, jmse, phjzbl);
+		}
+		if (sfsyzs == "Y") {
+			phjmse = phjmse.multiple(phzsbl / 1);
+		}
+		phjmse = phjmse.round(2);
+		var bqybtse = (bqynse / 1) - jmse - (yjze / 1) - phjmse;
+		bqybtse = jsyhsje(zspmDm, bqybtse);
 		var dataObj = {
 			'tds' : {
 				'jmse' : {
 					'value' : jmse
 				},
 				'bqybtse' : {
-					'value' : bqybtse+""							
+					'value' : bqybtse + ""
 				},
-				'jmzlxDm':{
+				'jmzlxDm' : {
 					'value' : jmzlxDm
 				},
-				'jmsl':{
+				'jmsl' : {
 					'value' : jmsl
 				},
-				'jmed':{
+				'jmed' : {
 					'value' : jmed
 				},
-				'jmfd':{
+				'jmfd' : {
 					'value' : jmfd
+				},
+				'phjmse' : {
+					'value' : phjmse
 				}
 			}
 		};
 		grid.updateRow(row, dataObj);
-		grid.updateCell(row.getCell("ssjmxzDm"),defaultSsjmxzDm,ssjmxzmc);
+		grid.updateCell(ssjmxzDmCell, defaultSsjmxzDm_Qtyyzb, ssjmxzmc);
+		if ("Y" == yhskg) {
+			grid.cellDisable(ssjmxzDmCell);
+		}
 	}
 }
 
@@ -1772,6 +2157,13 @@ function emptyToZ(obj) {
 }
 
 function addRow() {
+	var yhssbForm = $w("nsrxxForm");
+	var skssqq = yhssbForm.getValue("skssqq");
+	var skssqz = yhssbForm.getValue("skssqz");
+	if (!$chk(skssqq) || !$chk(skssqz)) {
+		swordAlert("请先选择税款所属期后再增行!");
+		return;
+	}
 	var yhssbGrid = $w("yhssbGrid");
 	var rowdata = {
 		tds : {
@@ -1791,6 +2183,9 @@ function addRow() {
 				value : '0.00'
 			},
 			bqyjse1 : {
+				value : '0.00'
+			},
+			phjmse : {
 				value : '0.00'
 			},
 			bqybtse : {
@@ -2017,9 +2412,21 @@ function changeJmxz(option, selItem, obj) {
 		var rowData = yhssbGrid.getCheckedRowData();
 		yhssbGrid.updateCell(row.getCell("jmse"), "0.00");
 		var bqynse = rowData.getValue("bqynse") / 1;
-		var bqybtse = (bqynse / 1).subtract(rowData.getValue('bqyjse1') / 1);
+		var phjmse = 0.00;
+		bqsfsyxgmyhzc = $w('nsrxxForm').getValue("bqsfsyxgmyhzc").code;
+		if (bqsfsyxgmyhzc == "Y") {
+			phjzbl = $w('nsrxxForm').getValue("phjzbl");
+			phjmse = calPhjmse(bqynse, 0.00, phjzbl);
+		}
+		if (sfsyzs == "Y") {
+			phjmse = phjmse.multiple(phzsbl / 1);
+		}
+		phjmse = phjmse.round(2);
+		var bqybtse = (bqynse / 1).subtract(rowData.getValue('bqyjse1') / 1)
+				.subtract(phjmse / 1);
 		var zspmDm = rowData.getValue('zspmDm');
 		bqybtse = jsyhsje(zspmDm, bqybtse);
+		yhssbGrid.updateCell(row.getCell("phjmse"), phjmse);
 		yhssbGrid.updateCell(row.getCell("bqybtse"), bqybtse);
 	} else {
 		// 校验是否备案
@@ -2042,8 +2449,17 @@ function changeJmxz(option, selItem, obj) {
 		if (jmse > bqynse) {
 			jmse = bqynse;
 		}
-		var bqybtse = (bqynse / 1).subtract(jmse / 1).subtract(
-				rowData.getValue('bqyjse1') / 1);
+		var phjmse = 0.0;
+		if (bqsfsyxgmyhzc == "Y") {
+			phjzbl = $w('nsrxxForm').getValue("phjzbl");
+			phjmse = calPhjmse(bqynse, jmse, phjzbl);
+		}
+		if (sfsyzs == "Y") {
+			phjmse = phjmse.multiple(phzsbl / 1);
+		}
+		phjmse = phjmse.round(2);
+		var bqybtse = (bqynse / 1).subtract(jmse / 1).subtract(phjmse / 1)
+				.subtract(rowData.getValue('bqyjse1') / 1);
 		var zspmDm = rowData.getValue('zspmDm');
 		bqybtse = jsyhsje(zspmDm, bqybtse);
 		var dataObj = {
@@ -2056,6 +2472,9 @@ function changeJmxz(option, selItem, obj) {
 				},
 				bqybtse : {
 					value : bqybtse
+				},
+				phjmse : {
+					value : phjmse
 				}
 			}
 		};
@@ -2067,14 +2486,106 @@ function changeJmxz(option, selItem, obj) {
  */
 function changeSsqq() {
 	var yhssbForm = $w("nsrxxForm");
-	var ssqq = yhssbForm.getValue("skssqq");
-	if (!$chk(ssqq)) {
+	var ssqzBtn = new SwordSubmit();
+	var sq = new Date();
+	var skssqq;
+	if ("11" == gt3.uniqueNsqx) {
+		skssqq = sq.toLocaleDateString();
+	} else {
+		skssqq = yhssbForm.getValue("skssqq");
+	}
+	$w("nsrxxForm").setValue("skssqz", "");
+	if (!$chk(skssqq)) {
+		swordAlert("税款所属期起不能为空!");
 		return;
 	}
-	yhssbForm.setValue("skssqz", "");
-	yhssbForm.getFieldEl("skssqz").focus();
+	queryNsqx(skssqq);
+	ssqzBtn.setCtrl("SBGyCtrl" + "_jsskssqz");
+	ssqzBtn.setFunction('onSuccess', 'loadBaseInfo1');
+	ssqzBtn.setFunction('onError', "loadBaseInfo1OnError");
+	ssqzBtn.pushData('skssqq', skssqq);
+	ssqzBtn.pushData('nsqxdm', gt3.uniqueNsqx);
+	ssqzBtn.submit();
 }
-
+function loadBaseInfo1OnError() {
+	$w('yhssbGrid').reset();
+	$w("nsrxxForm").setValue("skssqq", "");
+	$w("nsrxxForm").setValue("skssqz", "");
+}
+function loadBaseInfo1(req, res) {
+	var yhssbForm = $w("nsrxxForm");
+	var skssqq = res.getAttr("skssqq");
+	var skssqz = res.getAttr("skssqz");
+	if ($chk(gt3.uniqueNsqx)) {
+		yhssbForm.setValue("skssqz", skssqz);
+		yhssbForm.setValue("skssqq", skssqq);
+		yhsnsqxDm = gt3.uniqueNsqx;
+		checkSkssqz();
+	} else {
+		yhssbForm.setValue("skssqz", "");
+		// 电子税务局特色改造，.focus()报js错误 start
+		// yhssbForm.getFieldEl("skssqz").focus();
+		// 电子税务局特色改造，.focus()报js错误 end
+		$w("yhssbGrid").reset();
+		if (nsrzgsfxgm == "N") {
+			$w('nsrxxForm').setValue("bqsfsyxgmyhzc", "N");
+		} else {
+			$w("nsrxxForm").setValue('bqsfsyxgmyhzc', "");
+		}
+		$w("nsrxxForm").setValue("phjmxzDm", "");
+		$w("nsrxxForm").setValue("phjzbl", "");
+		$w("nsrxxForm").setValue("phjmswsxDm", "");
+	}
+	gt3.uniqueNsqx = "";
+}
+function queryNsqx(skssqq) {
+	var ssqqBtn = new SwordSubmit();
+	ssqqBtn.setCtrl("SB025YhssbCtrl_queryYhsRdInfo");
+	ssqqBtn.setFunction('onSuccess', 'loadBaseInfo2');
+	ssqqBtn.pushData('nsrxxVO', JSON.encode(JSON.decode(nsrxxJsonVO)));
+	// 电子税务局特色改造，传nsrxxForm，要不然后台空指针报错 start
+	ssqqBtn.pushData($w("nsrxxForm").getSubmitData());
+	// 电子税务局特色改造，传nsrxxForm，要不然后台空指针报错 end
+	ssqqBtn.pushData('skssqq', skssqq);
+	ssqqBtn.submit();
+}
+function loadBaseInfo2(req, res) {
+	gt3.nsqxList = pc.getResData("nsqxList", res);
+	var sbnsqx = "";
+	if ($chk(gt3.nsqxList)) {
+		var sbxxListTds = gt3.nsqxList.trs;
+		var sksqq1 = ($w("nsrxxForm").getValue('skssqq')).split("-")[1] / 1;
+		var sksqz1 = ($w("nsrxxForm").getValue('skssqz')).split("-")[1] / 1;
+		var ssqqday = ($w("nsrxxForm").getValue('skssqq')).split("-")[2] / 1;
+		var ssqzday = ($w("nsrxxForm").getValue('skssqz')).split("-")[2] / 1;
+		var ssqleng = sksqz1 - sksqq1;
+		if (ssqleng == 0 && ssqqday != ssqzday) {
+			ssqleng = "06";// 月
+		} else if (ssqleng == 2) {
+			ssqleng = "08";// 季
+		} else if (ssqleng == 11) {
+			ssqleng = "10";// 年
+		} else if (ssqleng == 5) {
+			ssqleng = "09";// 半年
+		} else if (ssqqday == ssqzday || ssqqday != 1) {
+			ssqleng = "11";// 次
+		}
+		if ($chk(ssqleng)) {
+			for ( var i = 0; sbxxListTds.length > i; i++) {// 循环sbxxListTds取出与页面属期相匹配的纳税人期限代码
+				if (sbxxListTds[i].tds.nsqxDm.value == ssqleng) {// 属期先减结果集与sbxxListTds相匹配并取出纳税期限。
+					gt3.uniqueNsqx = sbxxListTds[i].tds.nsqxDm.value;
+					sbnsqx = gt3.uniqueNsqx;
+					break;
+				}
+			}
+		}
+		if (!$chk(sbnsqx)) {// 属期相减结果与sbxxListTds中的纳税期限没有匹配成功是默认给出第一条数据的纳税人期限
+			gt3.uniqueNsqx = "06";
+		}
+	} else {
+		gt3.uniqueNsqx = "11";// 如果纳税人没有税种认定，默认带出来的次
+	}
+}
 /**
  * 查询认定的纳税期限
  * 
@@ -2329,7 +2840,6 @@ function initBd(resData) {
 	}
 }
 
-var yhsnsqxDm = "06";
 /**
  * 检查录入的所属期起止
  * 
@@ -2516,29 +3026,57 @@ function openTab(inputEl) {
 	}
 }
 // 油气田分配相关js结束____________________
+/**
+ * 获取默认税款属期起止时间
+ */
+function getMrSkssqzTime() {
+	if (gt3.djxh == undefined || gt3.djxh == null || gt3.djxh == "") {
+		return;
+	}
+	var jyBtn = new SwordSubmit();
+	jyBtn.pushData('djxh', gt3.djxh);
+	jyBtn.pushData('zrrBz', gt3.zrrBz);
+	jyBtn.setCtrl(ctrl + "_getMrSkssqzTime");
+	jyBtn.setFunction('onSuccess', 'getSkssqzTimeSuccess');
+	jyBtn.submit();
+}
+
+/**
+ * 获取默认税款属期起止时间成功回调函数
+ */
+function getSkssqzTimeSuccess(req, resData) {
+    return true;
+	// 获得后台传过来的系统日期
+	if (!zxswdjFlag) { // 注销税务登记，不计算属期
+		$w("nsrxxForm").setValue('skssqq', resData.getAttr('skssqq'));
+		$w("nsrxxForm").setValue('skssqz', resData.getAttr('skssqz'));
+	}
+	checkyhsSkssqz();
+}
 /*******************************************************************************
  * 打印
  */
 function print() {
-//	var yhssbGridData = $w("yhssbGrid").getAllNoDeleteGridData();
-//	var nsrxxForm = $w("nsrxxForm").getSubmitData();
-//	var slxxForm = $w("slxxForm").getSubmitData();
-//	var jsjeHj = 0.00;
-//	var bqybtseHj = 0.00;
-//	if ($chk($w("yhssbGrid"))) {
-//		var hjRow = $w('yhssbGrid').hjRow;// 取到合计div元素
-//		var HjDiv = hjRow.getElements("div");// 取到合计cell数组
-//		jsjeHj = HjDiv[1].get("realvalue");
-//		bqybtseHj = HjDiv[9].get("realvalue");
-//	}
-//	var printBtn = new SwordSubmit();
-//	printBtn.pushData(nsrxxForm);
-//	printBtn.pushData(slxxForm);
-//	printBtn.pushData(yhssbGridData);
-//	printBtn.pushData("jsjeHj", jsjeHj);
-//	printBtn.pushData("bqybtseHj", bqybtseHj);
-//	printBtn.setCtrl(ctrl + "_print");
-//	swordOpenWin('/sword?ctrl=' + ctrl + '_print&r=' + Math.random(), printBtn);
+	// var yhssbGridData = $w("yhssbGrid").getAllNoDeleteGridData();
+	// var nsrxxForm = $w("nsrxxForm").getSubmitData();
+	// var slxxForm = $w("slxxForm").getSubmitData();
+	// var jsjeHj = 0.00;
+	// var bqybtseHj = 0.00;
+	// if ($chk($w("yhssbGrid"))) {
+	// var hjRow = $w('yhssbGrid').hjRow;// 取到合计div元素
+	// var HjDiv = hjRow.getElements("div");// 取到合计cell数组
+	// jsjeHj = HjDiv[1].get("realvalue");
+	// bqybtseHj = HjDiv[9].get("realvalue");
+	// }
+	// var printBtn = new SwordSubmit();
+	// printBtn.pushData(nsrxxForm);
+	// printBtn.pushData(slxxForm);
+	// printBtn.pushData(yhssbGridData);
+	// printBtn.pushData("jsjeHj", jsjeHj);
+	// printBtn.pushData("bqybtseHj", bqybtseHj);
+	// printBtn.setCtrl(ctrl + "_print");
+	// swordOpenWin('/sword?ctrl=' + ctrl + '_print&r=' + Math.random(),
+	// printBtn);
 	gyTaxPrintWordOrExcel();
 }
 /*******************************************************************************
@@ -2589,7 +3127,7 @@ function checkYhsRdInfonsqx() {
 // 更改纳税期限回调方法
 function checkSkssqzNsqx(req, resData) {
 	var skssqq = resData.getData("skssqq").value;
-	//更新“skssqq”“skssqz”
+	// 更新“skssqq”“skssqz”
 	var skssqz = resData.getData("skssqz").value;
 	$w("nsrxxForm").setValue("skssqq", skssqq);
 	$w("nsrxxForm").setValue("skssqz", skssqz);
@@ -2606,32 +3144,418 @@ function checkSkssqzNsqx(req, resData) {
 	ssqzBtn.pushData("uniqueNsqx", yhsnsqxDm);
 	ssqzBtn.submit();
 }
-//根据《财政部　税务总局关于对营业账簿减免印花税的通知》（财税〔2018〕50 号）文件要求，为切实落实纳税人税收优惠应享尽享，现对网上申报系统印花税申报模块进行优化。
+// 根据《财政部 税务总局关于对营业账簿减免印花税的通知》（财税〔2018〕50
+// 号）文件要求，为切实落实纳税人税收优惠应享尽享，现对网上申报系统印花税申报模块进行优化。
 function yhts(zspmDm) {
 	var skssqq = ($w("nsrxxForm").getFormData().skssqq).substring(0, 4);
 	if ("Y" == yhskg && Number(skssqq) >= 2018) {
 		if ("101110599" == zspmDm) {
-			swordAlert("2018年5月1日之后启用的营业账簿，可通过选择减免性质代码‘0009129907|其他账簿免征印花税|《财政部 税务总局关于对营业账簿减免印花税的通知》 财税〔2018〕50号’，享受资金账簿减半征收印花税");
+			swordAlert("2018年5月1日起，对按件贴花五元的其他账簿，可通过选择减免性质代码‘0009129907|其他账簿免征印花税|《财政部 税务总局关于对营业账簿减免印花税的通知》 财税〔2018〕50号’，享受其他账簿免征印花税");
 		}
 		if ("101110501" == zspmDm) {
 			swordAlert("2018年5月1日之后到账的实收资本和资本公积，可通过选择减免性质代码‘0009129906|资金账簿减半征收印花税|《财政部 税务总局关于对营业账簿减免印花税的通知》 财税〔2018〕50号’，享受资金账簿减半征收印花税");
 		}
 	}
 }
-function downloadEX(){
+function downloadEX() {
 	var ctrlSub = new SwordSubmit();
-	ctrlSub.options.postType="download";
-	ctrlSub.setCtrl("DrPublicPageCtrl_download?fileName=/template/sb/sb025/TAX_SB_025_Yhssb_V1.0.xls");
+	ctrlSub.options.postType = "download";
+	ctrlSub
+			.setCtrl("DrPublicPageCtrl_download?fileName=/template/sb/sb025/TAX_SB_025_Yhssb_V1.0.xls");
 	ctrlSub.submit();
 }
 /*******************************************************************************
  * 打印回执
  */
-function printHz() {	
+function printHz() {
 	var printBtn = new SwordSubmit();
-	printBtn.pushData("yzpzxh",yzpzxh);
-	printBtn.pushData("sbbmc","印花税申报回执");
+	printBtn.pushData("yzpzxh", yzpzxh);
+	printBtn.pushData("sbbmc", "印花税申报回执");
 	printBtn.setCtrl("SBDyCtrl" + "_printHz");
 	swordOpenWin('/sword?ctrl=' + "SBDyCtrl" + '_printHz&r=' + Math.random(),
 			printBtn);
+}
+
+function zzsxgmnsr(selectDiv, selectData, selectObj) {
+	sfsyzs = "N";
+	nsqx2zszg = "N";
+	var yhssbGrid = $w("yhssbGrid");
+	var nsrxxForm = $w("nsrxxForm");
+	// 电子税务局特色改造，当为一般纳税人且选择是时，提示start
+	var bqsfsyxgmyhzc = nsrxxForm.getValue("bqsfsyxgmyhzc").code;
+	if ("Y" == nsrzgsfxgm && "N" == bqsfsyxgmyhzc) {
+		swordAlert("增值税小规模纳税人应适用增值税小规模纳税人地方税种和相关附加减征政策。");
+		$w("nsrxxForm").setValue("bqsfsyxgmyhzc", "Y");
+	} else if ("Y" == bqsfsyxgmyhzc && "N" == nsrzgsfxgm) {
+		swordAlert("您是增值税一般纳税人，不应享受该减免。");
+		$w("nsrxxForm").setValue("bqsfsyxgmyhzc", "N");
+	} else if ("Y" != nsrzgsfxgm && "N" != nsrzgsfxgm && "X" != nsrzgsfxgm) {
+		//swordAlert("该申报属期内同时存在一般人纳税人和小规模纳税人资格信息，系统已经按照规则进行优惠折算。");
+		$w("nsrxxForm").setValue("bqsfsyxgmyhzc", "Y");
+		//sfsyzs = "Y";
+	}
+    //bqsfsyxgmyhzc = nsrxxForm.getValue("bqsfsyxgmyhzc").code;
+    bqsfsyxgmyhzc =selectData.code;
+	// 电子税务局特色改造，当为一般纳税人且选择是时，提示end
+	if (bqsfsyxgmyhzc == "Y") {
+		// 若选择 是,先取配置信息
+		bqsfsyxgmyhzc = "Y";
+		var skssqq = $w("nsrxxForm").getValue("skssqq");
+		var skssqz = $w("nsrxxForm").getValue("skssqz");
+		var result = getPhjmPzxx(null, skssqq, skssqz, gt3.zsxmDm, nsrxxForm);
+		if (result) {
+			nsrxxForm._itemSwitch("phjzbl", "text", {
+				'rule' : 'must'
+			});
+			nsrxxForm._itemSwitch("phjmxzDm", "select", {
+				'rule' : 'must'
+			});
+			nsrxxForm.disable('phjzbl');
+			nsrxxForm.disable('phjmxzDm');
+			// 校验资格
+		    //var ret = checkPhjmzg(gt3.djxh, skssqq, skssqz, nsrxxForm);
+			var ret = "1";
+			if (ret == "1" || ret == "0" || ret == "2") {
+				// 若存在yhssbGrid,则自动计算
+				if (yhssbGrid.totalRows() != 0) {
+					var rowsData = yhssbGrid.getAllNoDeleteGridData();
+					var rows = yhssbGrid.dataDiv().getChildren(
+							'div[status!=delete]');
+					var length = rowsData.trs.length;
+					for ( var i = 0; i < length; i++) {
+						var row = rows[i];
+						var rowData = rowsData.trs[i];
+						var zspmDm = rowData.tds.zspmDm.value;
+						var bqynse = rowData.tds.bqynse.value;
+						var jmse = rowData.tds.jmse.value;
+						phjzbl = $w('nsrxxForm').getValue("phjzbl");
+						var phjmse = calPhjmse(bqynse, jmse, phjzbl);
+						if (sfsyzs == "Y") {
+							phjmse = phjmse.multiple(phzsbl / 1);
+						}
+						phjmse = phjmse.round(2);
+						var bqybtse = (bqynse / 1).subtract(jmse / 1).subtract(
+								rowData.tds.bqyjse1.value / 1).subtract(
+								phjmse / 1);
+						bqybtse = jsyhsje(zspmDm, bqybtse);
+						yhssbGrid.updateCell(row.getCell("phjmse"), phjmse);
+						yhssbGrid.updateCell(row.getCell("bqybtse"), bqybtse);
+					}
+				}
+			} else if (ret == "-1") {
+				// 不能享受,操作错误
+				bqsfsyxgmyhzc = $w('nsrxxForm').getValue("bqsfsyxgmyhzc").code;
+				$w("nsrxxForm")._itemSwitch("phjzbl", "text", {
+					'rule' : ''
+				});
+				$w("nsrxxForm")._itemSwitch("phjmxzDm", "select", {
+					'rule' : ''
+				});
+			} else if (ret == "3") {
+				checkzszg();
+				if (yhssbGrid.totalRows() != 0) {
+					var rowsData = yhssbGrid.getAllNoDeleteGridData();
+					var rows = yhssbGrid.dataDiv().getChildren(
+							'div[status!=delete]');
+					var length = rowsData.trs.length;
+					for ( var i = 0; i < length; i++) {
+						var row = rows[i];
+						var rowData = rowsData.trs[i];
+						var zspmDm = rowData.tds.zspmDm.value;
+						var bqynse = rowData.tds.bqynse.value;
+						var jmse = rowData.tds.jmse.value;
+						phjzbl = $w('nsrxxForm').getValue("phjzbl");
+						var phjmse = calPhjmse(bqynse, jmse, phjzbl);
+						if (sfsyzs == "Y") {
+							phjmse = phjmse.multiple(phzsbl / 1);
+						}
+						phjmse = phjmse.round(2);
+						var bqybtse = (bqynse / 1).subtract(jmse / 1).subtract(
+								rowData.tds.bqyjse1.value / 1).subtract(
+								phjmse / 1);
+						bqybtse = jsyhsje(zspmDm, bqybtse);
+						yhssbGrid.updateCell(row.getCell("phjmse"), phjmse);
+						yhssbGrid.updateCell(row.getCell("bqybtse"), bqybtse);
+					}
+				}
+			}
+		} else {
+			bqsfsyxgmyhzc = $w('nsrxxForm').getValue("bqsfsyxgmyhzc").code;
+			$w("nsrxxForm")._itemSwitch("phjzbl", "text", {
+				'rule' : ''
+			});
+			$w("nsrxxForm")._itemSwitch("phjmxzDm", "select", {
+				'rule' : ''
+			});
+		}
+	} else {
+		$w("nsrxxForm")._itemSwitch("phjzbl", "text", {
+			'rule' : ''
+		});
+		$w("nsrxxForm")._itemSwitch("phjmxzDm", "select", {
+			'rule' : ''
+		});
+        $w("nsrxxForm").setValue('bqsfsyxgmyhzc', "N");
+		sfsyzs = "N";
+		bqsfsyxgmyhzc = "N";
+		nsrxxForm.setValue("phjmxzDm", "");
+		nsrxxForm.setValue("phjzbl", "");
+		nsrxxForm.setValue("phjmswsxDm", "");
+		if (yhssbGrid.totalRows() != 0) {
+			var rowsData = yhssbGrid.getAllNoDeleteGridData();
+			var rows = yhssbGrid.dataDiv().getChildren('div[status!=delete]');
+			var length = rowsData.trs.length;
+			for ( var i = 0; i < length; i++) {
+				var row = rows[i];
+				var rowData = rowsData.trs[i];
+				var zspmDm = rowData.tds.zspmDm.value;
+				var bqynse = rowData.tds.bqynse.value;
+				var jmse = rowData.tds.jmse.value;
+				var phjmse = 0.00;
+				var bqybtse = (bqynse / 1).subtract(jmse / 1).subtract(
+						rowData.tds.bqyjse1.value / 1).subtract(phjmse / 1);
+				bqybtse = jsyhsje(zspmDm, bqybtse);
+				yhssbGrid.updateCell(row.getCell("phjmse"), phjmse);
+				yhssbGrid.updateCell(row.getCell("bqybtse"), bqybtse);
+			}
+		}
+	}
+}
+
+// 查看纳税人是否具有则算资格
+function checkzszg() {
+	var skssqq = $w("nsrxxForm").getValue("skssqq");
+	var skssqz = $w("nsrxxForm").getValue("skssqz");
+	var chkBtn = new SwordSubmit();
+	chkBtn.setCtrl("SBGyCtrl_hasPhjmzg");
+	chkBtn.setFunction('onSuccess', 'checkZsSuccess');
+	chkBtn.pushData("djxh", gt3.djxh);
+	chkBtn.pushData("skssqq", skssqq);
+	chkBtn.pushData("skssqz", skssqz);
+	chkBtn.submit();
+}
+function checkZsSuccess(req, resData) {
+	var skssqq = $w("nsrxxForm").getValue("skssqq");
+	var skssqz = $w("nsrxxForm").getValue("skssqz");
+	var qDates = splitStr(skssqq);// 年月日的数组
+	var zDates = splitStr(skssqz);// 年月日的数组
+	if (((parseInt(qDates[1], 10) == 1 && parseInt(zDates[1], 10) == 6) || (parseInt(
+			qDates[1], 10) == 7 && parseInt(zDates[1], 10) == 12))
+			|| ((parseInt(qDates[1], 10) == 1 && parseInt(zDates[1], 10) == 12))) {
+		nsqx2zszg = "Y";// 半年或者年 才会有折算
+	}
+	phzsbl = resData.getAttr("phzsbl");
+	if (phzsbl != 1 && nsqx2zszg == "Y") {
+		sfsyzs = "Y";
+		swordAlert("该申报属期内同时存在一般人纳税人和小规模纳税人资格信息，系统已经按照规则进行优惠折算。");
+	}
+}
+function jisuanafterphjmse() {
+	var data;
+	var grid1 = $w('yhssbGrid');// 表格对象
+	// 普惠减免税额
+	var phjmse = grid1.getCheckedRowData().getValue('phjmse') / 1;
+	var bqynse = grid1.getCheckedRowData().getValue('bqynse') / 1;
+	var jmse = grid1.getCheckedRowData().getValue('jmse') / 1;
+	var bqybtse = grid1.getCheckedRowData().getValue('bqybtse') / 1;
+	bqsfsyxgmyhzc = $w('nsrxxForm').getValue("bqsfsyxgmyhzc").code;
+	if (bqsfsyxgmyhzc == "Y") {
+		phjzbl = $w('nsrxxForm').getValue("phjzbl");
+		var phjmseJs = calPhjmse(bqynse, jmse, phjzbl);
+		if (sfsyzs == "Y") {
+			phjmseJs = phjmseJs.multiple(phzsbl / 1);
+		}
+		if (phjmse > phjmseJs) {
+			swordAlert("增值税小规模纳税人减征额不能大于" + phjmseJs.round(2) + "。");
+			phjmse = phjmseJs.round(2);
+		} else if (phjmse < 0) {
+			swordAlert("增值税小规模纳税人减征额不能小于0。");
+			phjmse = phjmseJs.round(2);
+		}
+		if (phjmse < phjmseJs && "Y" == xzcs) {
+			//西藏需求当用户手动对系统自动带出的减免数据修改变小时，系统通过弹窗给予提示性信息，但是不予阻断。
+			xzPhjmJy(phjmseJs, bqynse, jmse, phjmse, grid1, bqybtse);
+		} else {
+			bqybtse = (bqynse / 1).subtract(jmse / 1).subtract(
+					grid1.getCheckedRowData().getValue('bqyjse1') / 1)
+					.subtract(phjmse / 1);
+
+			var zspmDm = grid1.getCheckedRowData().getValue('zspmDm');
+			bqybtse = jsyhsje(zspmDm, bqybtse);
+
+			data = {
+				"tds" : {
+					"phjmse" : {
+						"value" : phjmse
+					},
+					"bqybtse" : {
+						"value" : bqybtse
+					}
+				}
+			};
+			grid1.updateRow(grid1.getCheckedRow(), data);
+		}
+	} else {
+		data = {
+			"tds" : {
+				"phjmse" : {
+					"value" : 0.00
+				}
+			}
+		};
+		grid1.updateRow(grid1.getCheckedRow(), data);
+		swordAlert("选择不享用增值税小规模纳税人减征优惠时,增值税小规模纳税人减征额必须为0。");
+	}
+}
+/*
+ * 西藏需求普惠减免税额变更校验方法
+ */
+function xzPhjmJy(phjmseJs, bqynse, jmse, phjmse, grid1, bqybtse) {
+	var xzdata;
+	swordConfirm("是否确定要修改减征优惠数据！", {
+		okBtnName : "确定",
+		cancelBtnName : "取消",
+		onOk : function() {//点击确定时对减免税额进行修改，并重新计算相关税额。
+			phjmse = phjmse.round(2);
+			bqybtse = (bqynse / 1).subtract(jmse / 1).subtract(
+					grid1.getCheckedRowData().getValue('bqyjse1') / 1)
+					.subtract(phjmse / 1);
+			var zspmDm = grid1.getCheckedRowData().getValue('zspmDm');
+			bqybtse = jsyhsje(zspmDm, bqybtse);
+			xzdata = {
+				"tds" : {
+					"phjmse" : {
+						"value" : phjmse
+					},
+					"bqybtse" : {
+						"value" : bqybtse
+					}
+				}
+			};
+			grid1.updateRow(grid1.getCheckedRow(), xzdata);
+		},
+		onCancel : function() {//点击取消时减免税额保持原来数值不变，并重新计算相关税额。
+			phjmse = phjmseJs.round(2);
+			bqybtse = (bqynse / 1).subtract(jmse / 1).subtract(
+					grid1.getCheckedRowData().getValue('bqyjse1') / 1)
+					.subtract(phjmse / 1);
+			var zspmDm = grid1.getCheckedRowData().getValue('zspmDm');
+			bqybtse = jsyhsje(zspmDm, bqybtse);
+			xzdata = {
+				"tds" : {
+					"phjmse" : {
+						"value" : phjmse
+					},
+					"bqybtse" : {
+						"value" : bqybtse
+					}
+				}
+			};
+			grid1.updateRow(grid1.getCheckedRow(), xzdata);
+		}
+	});
+}
+
+/**
+ * 导出文档前确认导出文件类型
+ * 
+ * @return
+ */
+function beforeExport() {
+	if (nmg_qz == "Y") {
+		swordConfirm("请插入UK后点确定继续！", {
+			okBtnName : "确定",
+			// cancelBtnName : "Word文档",
+			onOk : function() {
+				var drxxBtn = new SwordSubmit();
+				drxxBtn.setCtrl('SB702SbdyCtrl_tzCaPage');
+				swordAlertIframe('', {
+					titleName : "申报加签",
+					width : 450,
+					height : 300,
+					param : window,
+					isNormal : 'true',
+					isMax : 'true',
+					isClose : 'true',
+					isMin : "true",
+					submit : drxxBtn
+				});
+			}
+		});
+
+	} else {
+		swordConfirm("请选择要导出的文件类型！PDF文档适用于打印输出，Word文档可进行二次编辑。", {
+			okBtnName : "PDF文档",
+			cancelBtnName : "Word文档",
+			onOk : function() {
+				exportFile("PDF");
+			},
+			onCancel : function() {
+				exportFile("DOC");
+			}
+		});
+	}
+
+}
+
+/**
+ * 导出文件
+ */
+function exportFile(format) {
+	// 申报保存成功直接就在yzpzxh获取
+	var pzxh = yzpzxh;
+	if (!$chk(pzxh)) {
+		// 错误更正的话，从gt3_cwgzMap获取（非业务平台开发）
+		if ($chk(gt3_cwgzMap)) {
+			pzxh = gt3_cwgzMap.data.pzxh.value;
+		} else if ($chk(parent.$w("sbsjxxGrid"))) {
+			// 申报表查看的话，从parent.$w("sbsjxxGrid")获取
+			pzxh = parent.$w("sbsjxxGrid").getCheckedData('xz').trs[0].tds.pzxh.value;
+		} else if (top.document.URL.indexOf('pzxh') > 0) {
+			// 根据部署方式的不同，pzxh有可能在url里
+			pzxh = top.document.URL.substring(
+					top.document.URL.indexOf('pzxh') + 7, top.document.URL
+							.indexOf('pzxh') + 27);
+		}
+	}
+	var submit = new SwordSubmit();
+	submit.setCtrl("SB702SbdyCtrl_printByPzxh");
+	submit.pushData('pzxh', pzxh);
+	submit.pushData('format', format);
+	submit.options.postType = "form";
+	submit.submit();
+	// 下面代码先注释掉，使用pdfjs的时候可以用 by:张俊，2019年2月21日10:50:52
+	/*
+	 * if("PDF"==format&&(!$chk(document.documentMode)||(($chk(document.documentMode))&&(document.documentMode>10)))){
+	 * //如果文档是PDF且浏览器支持html5的话（IE浏览器要求文档模式是10以上）直接打开预览 var
+	 * param=encodeURIComponent('/sword?ctrl=SB702SbdyCtrl_printByPzxh?format='+format+'&pzxh='+pzxh);
+	 * window.open('/gy/pdfjs/web/viewer.html?file='+param); }else{
+	 * submit.submit(); }
+	 */
+}
+
+/**
+ * 控制导出按钮是否可用
+ * 
+ * @return
+ */
+function controlExportButton() {
+	// 控制新版导出按钮是否可见
+	if ('Y' == isEnableExportButton) {
+		$w('sbToolBar').setDisplay('export');
+		// pzxh不为空的情况下点亮导出按钮
+		if ($chk(yzpzxh) || $chk(gt3_cwgzMap)
+				|| ($chk(parent.$w("sbsjxxGrid")))
+				|| (top.document.URL.indexOf('pzxh') > 0)) {
+			$w('sbToolBar').setEnabled('export');
+		} else {
+			$w('sbToolBar').setDisabled('export');
+		}
+	} else {
+		$w('sbToolBar').setHide('export');
+	}
+}
+function fh(str) {
+	swordAlert(str);
+	return;
 }

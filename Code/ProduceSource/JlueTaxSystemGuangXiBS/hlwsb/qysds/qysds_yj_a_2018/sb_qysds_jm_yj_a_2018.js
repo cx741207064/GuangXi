@@ -62,7 +62,7 @@ var jm_yj_a = (function () {
     return {
         //跳转到打印页面
         onPrint: function () {
-
+            return false;
             if (bAdd) {
                 alert("请先保存报表，再进行打印");
                 return;
@@ -842,7 +842,8 @@ var jm_yj_a = (function () {
         },
 
 //导入
-        openPopWin:function(){
+        openPopWin: function () {
+            return false;
             var msg = "导入";
             var winParam = {
                 id: 'winTIPS', title: msg,

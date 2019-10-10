@@ -1,0 +1,46 @@
+﻿{
+    "data": [
+        {
+            "data": [
+                {
+                    "zsxmDm": "10111",
+                    "jmed": "0.0",
+                    "jmsl": "0.0",
+                    "jmfd": "0.5",
+                    "phjzbl": "50.0",
+                    "ssjmxzDm": "0009049901",
+                    "caption": "《财政部 税务总局关于实施小微企业普惠性税收减免政策的通知》 财税〔2019〕13号",
+                    "code": "0009049901",
+                    "swsxDm": "SXA031900989"
+                }
+            ],
+            "sword": "SwordSelect",
+            "dataName": "phjmxzDmList"
+        },
+        {
+            "name": "phjmxzDm",
+            "value": "0009049901",
+            "type": ""
+        },
+        {
+            "name": "phjmswsxDm",
+            "value": "SXA031900989",
+            "type": ""
+        },
+        {
+            "name": "phjzbl",
+            "value": "50",
+            "type": ""
+        },
+        {
+            "name": "gwssswjg",
+            "value": "16403021900",
+            "type": ""
+        },
+        {
+            "name": "sessionID",
+            "value": "962ef140841b41158fe5d672d44680b9",
+            "type": ""
+        }
+    ]
+}

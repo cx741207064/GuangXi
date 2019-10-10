@@ -1,1 +1,86 @@
-{"data":[{"data":[{"caption":"0.0","zspmDm":"","code":"0.0"}],"sword":"SwordSelect","dataName":"hdList"},{"trs":[],"name":"yhshdList","sword":"SwordGrid"},{"name":"zrd","value":"N","type":""},{"name":"kdqsssrfpbz","value":"N","type":""},{"name":"skssqz","value":"2018-11-30","type":""},{"name":"skssqq","value":"2018-11-01","type":""},{"trs":[],"name":"sbxxvoList","sword":"SwordGrid"},{"trs":[],"name":"newsbxxList","sword":"SwordGrid"},{"trs":[],"name":"jmxxList","sword":"SwordGrid"},{"trs":[],"name":"yjxxList","sword":"SwordGrid"},{"data":[{"caption":"印花税申报表","code":"00"}],"dataType":"json","sword":"SwordTree","name":"SwordTreeJSON"},{"name":"gwssswjg","value":"24509021800","type":""},{"name":"sessionID","value":"f44ea75cc34047ed951abbc2e3052047","type":""}]}
+{
+    "data": [
+        {
+            "data": [
+                {
+                    "caption": "0.0",
+                    "zspmDm": "",
+                    "code": "0.0"
+                }
+            ],
+            "sword": "SwordSelect",
+            "dataName": "hdList"
+        },
+        {
+            "trs": [
+            ],
+            "name": "yhshdList",
+            "sword": "SwordGrid"
+        },
+        {
+            "name": "zrd",
+            "value": "N",
+            "type": ""
+        },
+        {
+            "name": "kdqsssrfpbz",
+            "value": "N",
+            "type": ""
+        },
+        {
+            "name": "skssqz",
+            "value": "2018-11-30",
+            "type": ""
+        },
+        {
+            "name": "skssqq",
+            "value": "2018-11-01",
+            "type": ""
+        },
+        {
+            "trs": [
+            ],
+            "name": "sbxxvoList",
+            "sword": "SwordGrid"
+        },
+        {
+            "trs": [
+            ],
+            "name": "newsbxxList",
+            "sword": "SwordGrid"
+        },
+        {
+            "trs": [
+            ],
+            "name": "jmxxList",
+            "sword": "SwordGrid"
+        },
+        {
+            "trs": [
+            ],
+            "name": "yjxxList",
+            "sword": "SwordGrid"
+        },
+        {
+            "data": [
+                {
+                    "caption": "印花税申报表",
+                    "code": "00"
+                }
+            ],
+            "dataType": "json",
+            "sword": "SwordTree",
+            "name": "SwordTreeJSON"
+        },
+        {
+            "name": "gwssswjg",
+            "value": "24509021800",
+            "type": ""
+        },
+        {
+            "name": "sessionID",
+            "value": "f44ea75cc34047ed951abbc2e3052047",
+            "type": ""
+        }
+    ]
+}

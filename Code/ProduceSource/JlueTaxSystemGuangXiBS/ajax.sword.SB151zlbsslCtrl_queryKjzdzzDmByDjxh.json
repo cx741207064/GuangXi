@@ -1,0 +1,113 @@
+﻿{
+    "data": [
+        {
+            "name": "bzgkba_hb",
+            "value": "N",
+            "type": ""
+        },
+        {
+            "name": "fbaxlkg",
+            "value": "N",
+            "type": ""
+        },
+        {
+            "name": "kjzdabz_hb",
+            "value": "N",
+            "type": ""
+        },
+        {
+            "name": "hnXtcs",
+            "value": "N",
+            "type": ""
+        },
+        {
+            "name": "zlbsxlDm",
+            "value": "ZL1001003",
+            "type": ""
+        },
+        {
+            "name": "zlbsxlDm",
+            "value": "ZL1001003",
+            "type": ""
+        },
+        {
+            "trs": [
+                {
+                    "status": null,
+                    "tds": {
+                        "bbbsqDm": {
+                            "value": "3"
+                        },
+                        "cwkjbblxDm": {
+                            "value": "02"
+                        },
+                        "cwbbzlDm": {
+                            "value": "01"
+                        }
+                    }
+                },
+                {
+                    "status": null,
+                    "tds": {
+                        "bbbsqDm": {
+                            "value": "3"
+                        },
+                        "cwkjbblxDm": {
+                            "value": "02"
+                        },
+                        "cwbbzlDm": {
+                            "value": "02"
+                        }
+                    }
+                }
+            ],
+            "name": "nsrcwzdxxList",
+            "sword": "SwordGrid"
+        },
+        {
+            "name": "zcfzbCwkjbblx",
+            "value": "02",
+            "type": ""
+        },
+        {
+            "name": "QfjtBz",
+            "value": "N",
+            "type": ""
+        },
+        {
+            "name": "kjzdzzDm",
+            "value": "102",
+            "type": ""
+        },
+        {
+            "name": "yxqq",
+            "value": "2017-08-01",
+            "type": ""
+        },
+        {
+            "name": "yxqz",
+            "value": "2099-08-31",
+            "type": ""
+        },
+        {
+            "name": "ssqq",
+            "value": "2019-04-02",
+            "type": ""
+        },
+        {
+            "name": "ssqz",
+            "value": "2019-06-30",
+            "type": ""
+        },
+        {
+            "name": "gwssswjg",
+            "value": "14507031000",
+            "type": ""
+        },
+        {
+            "name": "sessionID",
+            "value": "d283e5f079574abf83e6cbcd6197a901",
+            "type": ""
+        }
+    ]
+}

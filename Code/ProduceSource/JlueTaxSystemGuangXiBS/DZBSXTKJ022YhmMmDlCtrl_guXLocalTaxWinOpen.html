@@ -1,0 +1,310 @@
+﻿
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head lang="en">
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=8,9">
+    <title></title>
+
+
+    <!-- style -->
+    <link rel="stylesheet" href="/wings/include/font/font-awesome.min.css" />
+    <link rel="stylesheet" href="/wings/core/css/exception_dialog.css" />
+    <link rel="stylesheet" href="/wings/include/bootstrap/3.3.7/css/bootstrap.css" />
+    <link rel="stylesheet" href="/wings/include/bootstrap/3.3.7/css/bootstrap.wings.css" />
+    <link rel="stylesheet" href="/wings/include/plugins/dialog/bootstrap-dialog.css" />
+    <link rel="stylesheet" href="/wings/core/css/wingsToolbars.css" />
+    <link rel="stylesheet" href="/wings/core/plugins/wingsTab/wingsTab.css" />
+    <link rel="stylesheet" href="/wings/core/plugins/wingsMenu/wingsMenuStyle.css" />
+    <link rel="stylesheet" href="/wings/core/plugins/wingsFileUpload/wingsFileUpload.css" />
+
+    <!-- domain.js -->
+    <script type="text/javascript" src="/wingWeb/domain.js"></script>
+    <!-- common component -->
+    <script src="/wings/include/common/json2.min.js"></script>
+    <script src="/wings/include/jquery/1.10.2/jquery.min.js"></script>
+    <script src="/wings/include/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+    <!-- Dialog component -->
+    <script src="/wings/include/plugins/dialog/bootstrap-dialog.js"></script>
+    <script src="/wings/core/plugins/wingsDialog/wingsDialog.js"></script>
+
+    <!-- swordAdapter 依赖Dialog组件-->
+    <script src="/wings/core/js/SwordAdapter.js"></script>
+    <!-- wings标签 -->
+    <script src="/wings/core/js/wings.min.js"></script>
+    <!-- wings控制参数 -->
+    <script src="/wingWeb/wingsParam.js"></script>
+
+    <!-- loading fresh -->
+    <script type="text/javascript" src="/wings/include/plugins/progressbar/spin.js"></script>
+    <script type="text/javascript" src="/wings/core/plugins/wingsprogressbar/wingsprogressbar.js"></script>
+
+    <!-- 工具栏 -->
+    <script type="text/javascript" src="/wings/core/plugins/wingsToolbar/wingsToolbar.js"></script>
+    <script type="text/javascript" src="/wings/core/plugins/wingsToolbar/wingsToolbar2.js"></script>
+    <script type="text/javascript" src="/wings/core/plugins/wingsToolbar/wingsToolbar3.js"></script>
+
+    <!-- tab -->
+    <script type="text/javascript" src="/wings/core/plugins/wingsTab/wingsTab.js"></script>
+
+    <!-- suggest -->
+    <script src="/wings/include/plugins/bootstrapSuggest/bootstrap-suggest-forwings.js"></script>
+    <script type="text/javascript" src="/wings/core/plugins/wingsSuggest/wingsSuggest.js"></script>
+
+    <!-- menu -->
+    <script type="text/javascript" src="/wings/core/plugins/wingsMenu/wingsMenu.js"></script>
+
+    <script src="/wings/include/plugins/store/store.legacy.min.js"></script>
+
+    <link rel="stylesheet" href="/wings/core/css/exception_dialog.css" />
+
+    <!-- frametab & 手风琴  & tab -->
+    <script src="/wings/core/plugins/wingsFrameTab/wingsFrameTab.js"></script>
+    <link href="/wings/core/plugins/wingsFrameTab/wingsFrameTab.css" rel="stylesheet">
+    <link href="/wings/core/plugins/wingsAccordion/wingsAccordion.css" rel="stylesheet">
+    <script src="/wings/core/plugins/wingsAccordion/wingsAccordion.js"></script>
+    <script type="text/javascript" src="/wsbs/gdslhgx/index.js"></script>
+
+    <style>
+        span.pull-p { /*新加样式*/
+            float: left;
+            font-size: 26px;
+            font-weight: bold;
+            color: #006AA0;
+            height: 55px;
+            font-family: 微软雅黑;
+            margin: 7px 0 0 10px;
+        }
+
+        .header {
+            width: 100%;
+            height: 80px;
+            background-color: #fff;
+            min-width: 1024px;
+        }
+
+        .head_center {
+            margin: auto;
+            width: 90%;
+            height: 80px;
+            padding-top: 11px;
+            min-width: 1000px;
+        }
+
+        .head_nav {
+            float: right;
+            height: 42px;
+            line-height: 42px;
+        }
+
+            .head_nav .head_nav_list {
+                float: left;
+                padding: 0 10px;
+            }
+
+                .head_nav .head_nav_list a {
+                    float: left;
+                    padding: 0 10px;
+                    color: #838282;
+                    font-size: 17px;
+                    font-weight: bold;
+                }
+
+                    .head_nav .head_nav_list a:hover {
+                        color: #1f76d5;
+                    }
+
+            .head_nav .dropdown {
+                padding: 0 10px;
+            }
+
+                .head_nav .dropdown .caret {
+                    margin-left: 7px;
+                    margin-top: 18px;
+                    color: #8a8fa2;
+                }
+
+            .head_nav .header_pic {
+                position: relative;
+                width: 36px;
+                height: 36px;
+            }
+
+            .head_nav .mt3 {
+                margin-top: 3px;
+            }
+
+            .head_nav .header_pic img {
+                position: absolute;
+                left: 0;
+                top: 0;
+                width: 36px;
+                height: 36px;
+            }
+
+            .head_nav .header_pic .z-index1 {
+                z-index: 4;
+            }
+
+            .head_nav .header_pic .z-index2 {
+                z-index: 5;
+            }
+
+            .head_nav .head_bell {
+                position: relative;
+                padding: 0 15px;
+            }
+
+                .head_nav .head_bell i {
+                    line-height: 42px;
+                    font-size: 18px;
+                    color: #888;
+                }
+
+                .head_nav .head_bell .bell_num {
+                    position: absolute;
+                    top: 3px;
+                    right: 5px;
+                    width: 18px;
+                    height: 18px;
+                    background-image: url(../images/num_bg.png);
+                    text-align: center;
+                    font-size: 8px;
+                    line-height: 18px;
+                    color: #fff;
+                    z-index: 1;
+                }
+
+            .head_nav a.head_sign_out i {
+                padding-left: 10px;
+                line-height: 42px;
+                color: #888;
+                font-size: 22px;
+            }
+
+                .head_nav a.head_sign_out i:hover {
+                    color: #4091e2;
+                }
+
+        /*nav style*/
+        .row {
+            margin-left: 0;
+            margin-right: 0;
+        }
+
+        .nav1-tabs {
+            background-color: #408ce0 !important;
+            height: 45px !important;
+            padding: 0 5% 0 5%;
+        }
+
+            .nav1-tabs > li {
+                padding: 0 20px;
+                margin-bottom: 0;
+            }
+
+        .tabLi {
+            background: none;
+            margin: 0;
+            line-height: 45px;
+            font-size: 14px;
+            color: #fff;
+            height: 45px;
+            border-right: solid 1px #fff;
+            max-width: 150px;
+            overflow: hidden;
+        }
+
+            .tabLi .wings_frame_a {
+                padding: 0 10px;
+            }
+
+        .nav1-tabs > li > a {
+            border: none;
+            padding: 0 !important;
+        }
+
+            .nav1-tabs > li > a, .nav1-tabs > li > a:focus {
+                margin-right: 0;
+                color: #fff;
+                line-height: 45px;
+            }
+
+        .nav1-tabs > li.active > a, .nav1-tabs > li.active > a:hover, .nav1-tabs > li.active > a:focus {
+            font-size: 14px;
+        }
+
+
+
+        li.active {
+            background-color: orange;
+        }
+
+        .nav-tabs > li.active > a, .nav-tabs > li.active > a:hover, .nav-tabs > li.active > a:focus {
+            border-bottom: solid 3px orange;
+            background-color: none !important;
+            background-color: orange;
+        }
+
+        ul.two > li.active {
+            background-color: transparent;
+        }
+
+        .nav1-tabs > .right {
+            position: absolute;
+            right: 30px;
+            bottom: 15px;
+            padding: -2px;
+        }
+
+        .nav1-tabs .right:hover {
+            padding: 18px 20px 0px 20px;
+            background: #F9B759;
+            height: 48px;
+            position: absolute;
+            bottom: -1px;
+        }
+
+        .nav1-tabs > li:hover {
+            padding: 2px 20px 0 20px;
+            margin-bottom: 0;
+            background: #F9B759;
+            height: 49px;
+            margin-top: -2px;
+        }
+
+        .icon-chevron-left {
+            margin: 0 20px 0 0;
+            background: url(/wings/core/plugins/wingsFrameTab/img/R-rarrow.png) no-repeat 7px center;
+            display: inline-block;
+            width: 24px;
+            height: 21px;
+        }
+
+        .nav1-tabs > li:first-child > a {
+            margin: 0px 0px 0px 0px !important;
+        }
+
+        .min_width {
+            min-width: 1024px;
+        }
+    </style>
+</head>
+<body class="min_width">
+    <div wings='PageInit' onsuccess="initSuccess();"></div>
+    <div id="zcd">
+        <div class="row">
+            <div class="l_col-md-12" id="ycd_begin">
+                <div wings="WingsFrameTab" name="tab1" topheight="30" iframewidth="100%" class="relative index_nav_1"
+                     hasscroll="true" maxtabsnum="9999" showtabsnum="1" holdtabsnum="1">
+                </div>
+            </div>
+        </div>
+    </div>
+    <input id="dllx" type="hidden" value="null" />
+</body>
+
+</html>
+
+<div id="SwordPageData" style='display:none' data='{"data":[{"name":"dllx","value":null,"type":""},{"name":"ymmc","value":"广西税务网上申报(B站)","type":""},{"name":"yhlx","value":"DW","type":""},{"name":"nsrztDm","value":"03","type":""},{"name":"openfunType","value":"01","type":""},{"name":"openfunUrl","value":"/sword?ctrl=SB151zlbsslCtrl_initView","type":""},{"name":"openfunName","value":"财务报告报送与信息采集","type":""},{"name":"sessionID","value":"fc7b63f7776346459b6d0a9840734ff8","type":""}]}'></div>

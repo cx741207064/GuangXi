@@ -48,6 +48,7 @@ var tljs = (function () {
         }
         ,
         onPrint: function () {
+            return false;
             var str = hlwsbTools.urlStr({
                 SBBZL_DM: SBBZL_DM,
                 SSSQ_Q: SSSQ_Q,
@@ -494,7 +495,8 @@ var tljs = (function () {
             DCellWeb1.setCellInputByLabel("A8", 5);
         },
         //导入
-        openPopWin:function(){
+        openPopWin: function () {
+            return false;
             var msg = "导入";
             var winParam = {
                 id: 'winTIPS', title: msg,

@@ -1,0 +1,133 @@
+﻿{
+    "data": [
+        {
+            "trs": [
+                {
+                    "status": null,
+                    "tds": {
+                        "sfxcj": {
+                            "value": "Y"
+                        },
+                        "xh": {
+                            "value": "1"
+                        },
+                        "sfyhd": {
+                            "value": "Y"
+                        },
+                        "cwbbzlDm": {
+                            "value": "01"
+                        },
+                        "ljwz": {
+                            "value": "/sb/sb104/sb104_zcfzb.html"
+                        },
+                        "bszlmc": {
+                            "value": "《资产负债表（适用执行小企业准则的企业）》"
+                        },
+                        "bb": {
+                            "value": "true"
+                        },
+                        "sftj": {
+                            "value": "true"
+                        },
+                        "bszlDm": {
+                            "value": "ZLA0610212"
+                        },
+                        "tjbs": {
+                            "value": ""
+                        }
+                    }
+                },
+                {
+                    "status": null,
+                    "tds": {
+                        "sfxcj": {
+                            "value": "Y"
+                        },
+                        "xh": {
+                            "value": "2"
+                        },
+                        "sfyhd": {
+                            "value": "Y"
+                        },
+                        "cwbbzlDm": {
+                            "value": "01"
+                        },
+                        "ljwz": {
+                            "value": "/sb/sb104/sb104_zcfzb.jsp"
+                        },
+                        "bszlmc": {
+                            "value": "《利润表_月报（适用执行小企业准则的企业）》"
+                        },
+                        "bb": {
+                            "value": "true"
+                        },
+                        "sftj": {
+                            "value": "true"
+                        },
+                        "bszlDm": {
+                            "value": "ZLA0610213"
+                        },
+                        "tjbs": {
+                            "value": ""
+                        }
+                    }
+                },
+                
+                {
+                    "status": null,
+                    "tds": {
+                        "sfxcj": {
+                            "value": "Y"
+                        },
+                        "xh": {
+                            "value": "4"
+                        },
+                        "sfyhd": {
+                            "value": "Y"
+                        },
+                        "cwbbzlDm": {
+                            "value": "01"
+                        },
+                        "ljwz": {
+                            "value": "/sb/sb104/sb104_zcfzb.jsp"
+                        },
+                        "bszlmc": {
+                            "value": "《现金流量表_月报（适用执行小企业会计准则的企业）》"
+                        },
+                        "bb": {
+                            "value": ""
+                        },
+                        "sftj": {
+                            "value": ""
+                        },
+                        "bszlDm": {
+                            "value": "ZLA0610215"
+                        },
+                        "tjbs": {
+                            "value": "true"
+                        }
+                    }
+                }
+               
+                
+            ],
+            "name": "yhdzlGrid",
+            "sword": "SwordGrid"
+        },
+        {
+            "name": "zlsl",
+            "value": "3",
+            "type": ""
+        },
+        {
+            "name": "gwssswjg",
+            "value": "14507031000",
+            "type": ""
+        },
+        {
+            "name": "sessionID",
+            "value": "20cf12b0c7544afcbd85b3621add3cc1",
+            "type": ""
+        }
+    ]
+}

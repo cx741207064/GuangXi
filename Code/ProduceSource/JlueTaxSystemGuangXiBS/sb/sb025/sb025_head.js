@@ -242,7 +242,7 @@ function queryNsrxxSuccess(nsrParam, zrrParam) {
 	// 导入时，不能执行changeSbssqz()
 	if ($_cshFlag == 1) {
 		nsrxxForm.enable('skssqq');
-		checkSkssqz();
+		getMrSkssqzTime();
 		
 	} else{
 		$_cshFlag = 1;
@@ -274,8 +274,6 @@ function reloadNsrzfhySuc(req, res){
 	var zhyMc=res.getAttr("zhyMc");
 	if($chk(zhyMc)){
 		$w('nsrxxForm').setValue("hyDm", "code,"+zhyDm+"|caption,"+zhyMc);
-	    
-
 	}
 
 }
@@ -294,38 +292,22 @@ function checkSkssqz() {
 	
 	
 	var nsqxdm = yhsnsqxDm;
-//	if (nsqxdm != null && nsqxdm != undefined) {
-//		if (checkDate3(skssqq, skssqz, sbrq, nsqxdm)) {
-//			var ssqzBtn = new SwordSubmit();
-//			ssqzBtn.setCtrl(ctrl + "_changeSbssqq");
-//			ssqzBtn.setFunction('onSuccess', 'loadBaseInfo');
-//			ssqzBtn.pushData('nsrxxVO', JSON.encode(JSON.decode(nsrxxJsonVO)));
-//			ssqzBtn.pushData($w("nsrxxForm").getSubmitData());
-//			ssqzBtn.pushData("lybz", gt3.lybz);//HAD41_201604150036 印花税按次申报所属期起止可以修改为任意一天 2016-04-25
-//			ssqzBtn.pushData('zrrBz', gt3.zrrBz);
-//			ssqzBtn.pushData("gt3nsqx", gt3_nsqx);
-//			ssqzBtn.pushData("uniqueNsqx", nsqxdm);
-//			ssqzBtn.submit();
-//		}
-//	} else {
 	if(gt3.djxh==undefined || gt3.djxh==null || gt3.djxh==""){
 		return;
 	}
 		var ssqzBtn = new SwordSubmit();
 		ssqzBtn.setCtrl(ctrl + "_changeSbssqq");
 		ssqzBtn.setFunction('onSuccess', 'loadBaseInfo');
-//		ssqzBtn.setFunction('onError', "sb025OnError");
-		
+		ssqzBtn.setFunction('onError', "sb025OnError");
 		ssqzBtn.pushData('nsrxxVO', JSON.encode(JSON.decode(nsrxxJsonVO)));
 		ssqzBtn.pushData($w("nsrxxForm").getSubmitData());
 		ssqzBtn.pushData('zrrBz', gt3.zrrBz);
-//		ssqzBtn.pushData("lybz", gt3.lybz);//HAD41_201604150036 印花税按次申报所属期起止可以修改为任意一天 2016-04-25
-		ssqzBtn.pushData("gt3nsqx", yhsnsqxDm);
-		ssqzBtn.pushData("uniqueNsqx", yhsnsqxDm);
+		ssqzBtn.pushData("uniqueNsqx", nsqxdm);
 		ssqzBtn.submit();
-//	}
 }
-
+function sb025OnError(){
+	$w('sbToolBar').setDisabled('save');
+}
 //改变税款所属期起止时需要的校验函数，return true和false
 function checkDate3(skssqq, skssqz, sbrq1, nsqxdm) {
 	var qDates = splitStr(skssqq);// 年月日的数组
