@@ -1,0 +1,367 @@
+body{
+	background-color: #f1f3f5;
+	padding-top: 18px;
+	color: #333;
+}
+.yrbj_blue{
+	color: #1a85cd;
+}
+.yrbj{
+	width: 1000px;
+	margin: 0 auto;
+	margin-bottom: 30px;
+	padding: 0 15px 72px 15px;
+	border: 1px solid #d8d9dd;
+	background-color: #ffffff;
+}
+.yrbj_title{
+	position: relative;
+	padding-top: 16px;
+	text-align: center;
+	font-size: 24px;
+}
+.yrbj_blxz{
+	position: absolute;
+	right: 0;
+	bottom: 0;
+	cursor: pointer;
+	font-size: 13px;
+	color: #1a85cd;
+}
+.yrbj_progress{
+	height: 76px;
+	line-height: 76px;
+	padding:7px 0 0 44px;
+	font-size: 18px;
+	overflow: hidden;
+	background:transparent url(../img/yrbj_img1.png) no-repeat center center;
+}
+.yrbj_progress_2,.yrbj_progress_3{
+	margin-left: 198px;
+	font-size: 18px;
+}
+.yrbj_commom_li{
+	margin-bottom: 30px;
+}
+.yrbj_commom ul li h4{
+	padding: 26px 0 6px 5px;
+	font-size: 14px;
+	border-bottom: 1px solid #ededed;
+}
+.yrbj_commom ul li h4 span{
+	margin-left: 2px;
+	font-size: 13px;
+	color: #0098f4;
+}
+.yrbj_form{
+	padding:22px 0 ;
+}
+.yrbj_form>li{
+	float: left;
+	width: 50%;
+	height: 28px;
+	line-height: 28px;
+	margin-bottom: 10px;
+	/*overflow: hidden;*/
+	font-size: 13px;
+}
+.yrbj_form li .layui-form-label{
+	display: inline-block;
+	width: 178px;
+	line-height: 28px;
+	padding: 0;
+}
+.yrbj_form li .layui-input{
+	display: inline-block;
+	width: 294px;
+	height: 28px;
+	line-height: 28px;
+}
+.yrbj_first_show legend{
+	margin: 0 auto;
+	font-size: 13px;
+	font-weight: normal;
+}
+.yrbj_first_show fieldset{
+	margin: 0;
+	border-color: #ededed;
+}
+.yrbj_first_show ul li{
+	height: auto;
+	font-size: 14px;
+}
+.yrbj_show_div{
+	margin-top:18px ;
+}
+.yrbj_show_div>div{
+	float: left;
+	width: 50%;
+}
+.yrbj_show_div .layui-form-label{
+	display: inline-block;
+	width: 178px;
+	padding: 0;
+	line-height: 20px;
+}
+.yrbj_show_div span{
+	display: inline-block;
+	vertical-align: middle;
+	margin-left: 15px;
+	width: 280px;
+	line-height: 20px;
+}
+.yrbj_show_div1 span{
+	width: 764px;
+}
+.yrbj_show_box{
+	margin-bottom: 38px;
+}
+.yrbj_show_btn{
+	display: block;
+	width: 186px;
+	line-height: 30px;
+	margin: 0 auto;
+	border: 1px solid #1e9fff;
+	border-radius: 3px;
+	text-align: center;
+	color: #1e9fff;
+	font-size: 13px;
+	cursor: pointer;
+}
+.yrbj_table{
+	table-layout: fixed;
+	width: 100%;
+	margin-top: 12px;
+	font-size: 13px;
+	color: #1a1a1a;
+	text-align: center;
+}
+.yrbj_table th,.yrbj_table td{
+	border: 1px solid #ededed;
+}
+.yrbj_table th{
+	padding: 7.5px 0;
+	background-color: #f0f3f6;
+}
+.yrbj_table td{
+	padding: 10px 8px;
+}
+.yrbj_table_title{
+	margin-top: 17px;
+	color: #1e9fff;
+	font-size: 13px;
+}
+.yrbj_btn{
+	display: block;
+	margin: 0 auto;
+	width: 116px;
+	line-height: 30px;
+	border-radius: 3px;
+	text-align: center;
+	cursor: pointer;
+	color: #fff;
+	font-size: 13px;
+	background-color: #1e9fff;
+}
+.blxz_box{
+	padding: 18px 15px;
+	font-size: 14px;
+}
+.blxz_box li{
+	margin-bottom: 8px;
+	line-height: 24px;
+	text-indent: 28px;
+}
+.layui-layer .layui-layer-title{
+	padding: 0 80px;
+	text-align: center;
+	font-size: 18px;
+}
+.yrbj_ywsx{
+	margin-top: 28px;
+}
+.yrbj_ywsx .layui-form-label{
+	width:100px;
+	padding: 0;
+	line-height: 26px;
+	font-size: 14px;
+}
+.yrbj_ywsx .layui-input-block{
+	min-height: auto;
+}
+.yrbj_ywsx .layui-form-radio>i{
+	font-size: 18px;
+}
+.yrbj_ywsx .layui-form-radio{
+	margin: 0 10px 0 0;
+}
+.yrbj_img{
+	display: block;
+    margin: 0 auto;
+}
+.yrbj_ywsx_other p{
+	padding: 10px 0 18px 15px;
+	font-size: 18px;
+}
+.yrbj_ywsx_other li{
+	display: inline-block;
+	margin-left: 60px;
+	font-size: 14px;
+}
+.yrbj_tj ul{
+	padding: 0 15px 48px 15px;
+	border-bottom: 1px solid #ededed;
+	background: transparent url(../img/yrbj_img4.png) no-repeat center center;
+}
+.yrbj_tj ul li{
+	float: left;
+	width: 50%;
+}
+.yrbj_tj h6{
+	padding: 35px 0 30px 0;
+	text-align: center;
+	font-size: 16px;
+}
+.yrbj_tj ul li p{
+	margin-bottom: 10px;
+	line-height: 24px;
+	font-size: 14px;
+	text-indent: 28px;
+}
+.yrbj_table_edit td{
+	padding: 0;
+}
+.yrbj_table_edit input{
+	border: none;
+	line-height: 36px;
+	height: 36px;
+}
+.yrbj_three_li li{
+	width: 100%;
+}
+.yrbj_three_li li .layui-input-block{
+	width: 778px;
+}
+.yrbj_three_li li .layui-input-block{
+	min-height: auto;
+}
+.yrbj_three_li li .layui-form-radio>i{
+	font-size: 18px;
+}
+.yrbj_three_li li .layui-form-radio{
+	margin: 0 10px 0 0;
+}
+.yrbj_three_tips{
+	padding: 16px 15px;
+	margin-bottom: 22px;
+	line-height: 22px;
+	border: 1px solid #fff5ad;
+	font-size: 12px;
+	background-color: #fffee5;
+}
+.tc_box{
+	padding: 18px 30px;
+}
+.tc_box .yrbj_commom_li,.tc_box .yrbj_commom_li li{
+	margin-bottom: 0;
+}
+.tc_box .yrbj_form{
+	padding: 10px 0;
+}
+.tc_box ul li h4{
+	padding-top: 18px;
+}
+.tc_box .yrbj_commom_li span{
+	display: inline-block;
+	vertical-align: middle;
+	width: 680px;
+}
+.wxtx_box{
+	padding: 30px 0 30px 30px;
+}
+.wxtx_left{
+	width: 535px;
+	padding-right: 30px;
+	border-right: 1px solid #ededed;
+}
+.wxtx_left p{
+	padding-bottom: 20px;
+	font-size: 14px;
+}
+.wxtx_left ul{
+	padding-left: 22px;
+	line-height: 24px;
+	font-size: 13px;
+}
+.wxtx_right{
+	padding: 0 36px;
+}
+.wxtx_right .wxtx_img{
+
+}
+.wxtx_right li{
+	float: left;
+}
+.table_op{
+	padding-top: 5px;
+	text-align: right;
+}
+.table_op span{
+	cursor: pointer;
+}
+.table_del{
+	margin-left: 10px;
+}
+.smrz{
+	display: block;
+	position: absolute;
+	right: 0;
+	bottom: 5px;
+	width: 98px;
+	padding-left: 24px;
+	line-height: 24px;
+	text-align: center;
+	color: #fff !important;
+	border-radius: 3px;
+	cursor: pointer;
+	background: #53acf3 url('../img/yrbj_img10.png') no-repeat center center;
+}
+.layui-form-radio div{
+	color: #333 !important;
+}
+.layui-form-radio>i{
+	color: #c2c2c2 !important;
+}
+.layui-form-radioed>i,.layui-form-radioed div{
+	color: #1e9fff !important;
+}
+.nsrtc_box{
+	padding: 17px 0 0 0;
+}
+.nsrtc_box ul{
+	padding-right: 52px;
+	border-right: 1px solid #ededed;
+}
+.nsrtc_box li{
+	margin-bottom: 10px;
+	font-size: 13px;
+}
+.nsrtc_box li .layui-form-label{
+	width: 90px;
+	line-height: 26px;
+	padding: 0;
+	text-align: left;
+}
+.nsrtc_box li .layui-input{
+	width: 232px;
+	line-height: 26px;
+	height: 26px;
+}
+.nsrtc_ewm{
+	padding-left: 43px;
+	text-align: center;
+}
+.nsrtc_ewm p{
+	margin-top: 10px;
+	font-size: 14px;
+}

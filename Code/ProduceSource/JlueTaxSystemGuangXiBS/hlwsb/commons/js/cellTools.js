@@ -802,6 +802,50 @@ function dcell(cell, url) {
         }
     };
 
+    /**
+     * cell填充数据方法，对于有多个栏目的表格用此方法填充数据更灵活
+     *
+     * cols:     array  数据库字段
+     * data：    object  业务数据
+     * nsrxxCols array  纳税人的字段名称
+     * headCols  array  头部信息的字段
+     * count    int 数据行数
+     * pyl      int 偏移量
+     * iszdjskxg   boolean true 是否自动计算并且可修改;
+     */
+    cell.initDataToCell_1 = function (param) {
+        var data = param.data;
+        var arr = param.cols;
+        var nsrxxCols = param.nsrxxCols;
+        var body = data.BODY;
+        var head = data.HEAD;
+        var headCols = param.headCols;
+        var iszdjskxg = param.iszdjskxg;
+        var count = param.count;
+        var pyl = param.pyl;
+        if (head) {
+            window._HEAD = head;
+        }
+
+        if (!body || body.length == 0) {
+            //没有数值后填充零值
+            fillZERO(count, arr, 0);
+        } else {
+            fillData({count: count, datas: body, cols: arr, pyl: pyl});
+        }
+        if (nsrxxCols && head) {
+            fillNsrxx(nsrxxCols, head);
+        }
+
+        if (headCols && head) {
+            fillDataSL(headCols, head);
+        }
+        if (iszdjskxg != true && !(head.SBBZT == '3' || head.SBBZT == '2')) {
+
+            checkCalculateState(head);
+        }
+    };
+
     cell.getValue = function (col, row, sheet) {
         return getData(col, row, sheet);
     };
@@ -821,7 +865,7 @@ function dcell(cell, url) {
 
                 var digital = cell.GetCellDigital(col, row, sheet);
                 value = Number(value.toFixed(digital));
-                if (value > 1000000000000 || value < -1000000000000) {
+                if (value > 10000000000000 || value < -10000000000000) {
                     alert('值' + value + '过大');
                     cell.MoveToCell(col, row);
                     throw new Error('数值过大');
@@ -868,7 +912,7 @@ function dcell(cell, url) {
 
                     var digital = cell.GetCellDigital(col, row, sheet);
                     value = Number(value.toFixed(digital));
-                    if (value > 1000000000000 || value < -1000000000000) {
+                    if (value > 10000000000000 || value < -10000000000000) {
                         alert('值' + value + '过大');
                         cell.MoveToCell(col, row);
                         throw new Error('数值过大');
@@ -1018,9 +1062,9 @@ function dcell(cell, url) {
             //此处不自动计算，为了确保修改的公式单元格提交时不自动计算、
             //对于处于编辑状态的单元格不让提交
             //cell.CalculateAll();
-          //  doc.HEAD.ZDJSBZ = 0;
+            doc.HEAD.ZDJSBZ = 0;
         } else {
-          //  doc.HEAD.ZDJSBZ = 1;
+            doc.HEAD.ZDJSBZ = 1;
         }
         var doubleVarMap = cell.GetDoubleVar_J("COUNT");
         if(isZero=="N") {   //2017.01.01 lijun
@@ -1031,9 +1075,9 @@ function dcell(cell, url) {
 
         var ljs = document.getElementById("ljs");
         if (ljs && ljs.checked) {
-           // doc.HEAD.XGBNLJBZ = 1;
+            doc.HEAD.XGBNLJBZ = 1;
         } else {
-           // doc.HEAD.XGBNLJBZ = 0;
+            doc.HEAD.XGBNLJBZ = 0;
         }
 
         var headCols = param.headCols;
@@ -1048,6 +1092,65 @@ function dcell(cell, url) {
 
         return JSON.stringify(doc);
     };
+
+    /**
+     * 简单存储的通用方法，返回json格式。对于有多个栏目的表格此方法更适用
+     *
+     * cols:数据库字段
+     * headCols : 保存到主表的信息
+     * pyl:偏移量
+     * count:行数
+     * returnType
+     *
+     */
+    cell.submitJsonjs_1 = function (param) {
+        var arr = param.cols;
+        var isZero = param.isZero;
+        var pyl = param.pyl;
+        var count = param.count;
+        //cell.SaveEdit();
+        cell.DefineDoubleVar("control", 0);
+        var calcInput = document.getElementById("calcInput");
+        var doc = {
+            HEAD: {},
+            BODY: []
+        };
+        doc.HEAD = window._HEAD;
+        if (!calcInput || calcInput.checked) {
+            //此处不自动计算，为了确保修改的公式单元格提交时不自动计算、
+            //对于处于编辑状态的单元格不让提交
+            //cell.CalculateAll();
+            doc.HEAD.ZDJSBZ = 0;
+        } else {
+            doc.HEAD.ZDJSBZ = 1;
+        }
+        // var doubleVarMap = cell.GetDoubleVar_J("COUNT");
+        if(isZero=="N") {   //2017.01.01 lijun
+            doc.BODY = buildJSON_null(arr, count, pyl, null, null, isZero);
+        }else{
+            doc.BODY = buildJSON(arr, count, pyl, null, null);
+        }
+
+        var ljs = document.getElementById("ljs");
+        if (ljs && ljs.checked) {
+            doc.HEAD.XGBNLJBZ = 1;
+        } else {
+            doc.HEAD.XGBNLJBZ = 0;
+        }
+
+        var headCols = param.headCols;
+        if (headCols) {
+            doc = buildHeadJSON(headCols, doc);
+        }
+
+        var returnType = param.returnType;
+        if (returnType && returnType == "object") {
+            return doc;
+        }
+
+        return JSON.stringify(doc);
+    };
+
     /**
      * 单行表格存储使用方法
      */
@@ -2189,8 +2292,8 @@ function showInput(col, row) {
 
         top = getHeight(row, n_row) + offset.top;
 
-        document.getElementById("div1").style.left = left;
-        document.getElementById("div1").style.top = top;
+        document.getElementById("div1").style.left = left + 'px';
+        document.getElementById("div1").style.top = top + 'px';
         var value = DCellWeb1.getValue(col, row, 0);
         inputNode.val(value);
         inputNode.focus();
@@ -2244,7 +2347,7 @@ function checkNumber(value, digital) {
         return false;
     }
 
-    if (value >= 1000000000000 || value <= -1000000000000) {
+    if (value >= 10000000000000 || value <= -10000000000000) {
         alert("输入的数据太大，请修改!");
         return false;
     }

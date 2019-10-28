@@ -12,15 +12,16 @@ jcptTools.cnf = {
     wssqURL: '',
     hlwsbURL: '',
     sbURL: '',
-    dssbURL:'',
-    sjwzPort:9731,
-    webUrl:'http://www.gxgs.gov.cn:9731',
-    zrdssbUrl : '',
-    zrgssbUrl : 'http://www.gxgs.gov.cn:8012',
-    clfUrl : ''
+    sbzsURL: '',//申报征收
+    dssbURL:''
+    // ,
+    // sjwzPort:10009,
+    // webUrl:'http://zxhd.gxgs.gov.cn:10009',
+    // zrdssbUrl : 'http://10.104.120.13:7001',
+    // zrgssbUrl : 'http://87.12.64.46:7102'
 };
 
-jcptTools.cnf.dswtzrrURL = "http://neusoft.hads.tax:7003/webroot/pages/home/gds_index.jsp"; //地税网厅自然人跳转地址测试
+// jcptTools.cnf.dswtzrrURL = "http://neusoft.hads.tax:7003/webroot/pages/home/gds_index.jsp"; //地税网厅自然人跳转地址测试
 
 jcptTools.checkCookie = function () {
     var cookieEnabled = (navigator.cookieEnabled) ? true : false;
@@ -35,10 +36,9 @@ jcptTools.setCookie = function (key, val) {
         val = baseTools.stringify(val);
     }
     $.cookie(key, val, {
-        domian: DOMAIN
-        //,path: ":65045/"
-        ,path: "/"
-        ,expires:0.25
+        //domain: DOMAIN, IE不支持设置Cookie域名
+        // expires: 1,
+        path: "/"
     });
 };
 jcptTools.delCookie = function (key) {
@@ -49,8 +49,13 @@ jcptTools.delCookie = function (key) {
     });
 };
 
-jcptTools.getLogin = function () {
-    return this.getWebRoot() + "/dzswj/ythclient/mh.html";
+
+jcptTools.getLogin = function (parm) {
+    if(parm != "undefined" && parm != undefined && parm != null && parm != ""){
+        return this.getWebRoot() + "/dzswj/ythclient/mh.html?parm="+parm;
+    }else{
+        return this.getWebRoot() + "/dzswj/ythclient/mh.html";
+    }
 };
 jcptTools.getMain = function () {
     return this.getWebRoot() + "/dzswj/taxclient/main.html";
@@ -106,6 +111,12 @@ jcptTools.setCookieSwjgNsr = function (data) {
     return true;
 };
 
+jcptTools.getParams = function (name){//获取页面参数
+    var reg =new RegExp("(^|&)" + name +"=([^&]*)(&|$)");
+    var r = window.location.search.substr(1).match(reg);
+    if(r!=null){ return decodeURI(r[2]); return null;
+    }
+};
 
 jcptTools.getCookie = function (key) {
     if (!this.checkCookie()) {
@@ -160,6 +171,21 @@ jcptTools.getIsZrr = function () {
         return false;
     }
 };
+
+//判断是否是企业
+jcptTools.getIsQy = function () {
+    var dq_yhsf = jcptTools.getUserDataByKey("DQ_YHSF");
+    if (dq_yhsf) {
+        if (dq_yhsf == "QY" || dq_yhsf == "GLY" || dq_yhsf == "GLY_PT" || dq_yhsf == "BSR"){
+            return true;
+        } else {
+            return false;
+        }
+    } else {
+        return false;
+    }
+};
+
 //判断是否是地税单管户
 jcptTools.getIsDsdgh = function () {
     var ghlx = jcptTools.getUserDataByKey("GHLX");
@@ -308,6 +334,7 @@ jcptTools.countDown = function (obj, time, msg) {
         obj.get(0).onclick = function() {
             return;
         }
+        obj.text(time + msg);
         timerReg = setInterval(function () {
             time -= 1;
             if (time > 0) {
@@ -324,6 +351,7 @@ jcptTools.countDown = function (obj, time, msg) {
         oldText = obj.val();
         //将按钮设置为禁用，防止重复点击
         obj.attr("disabled", "disabled");
+        obj.val(time + msg);
         timerReg = setInterval(function () {
             time -= 1;
             if (time > 0) {
@@ -420,20 +448,24 @@ jcptTools.convertStatus = function (val) {
  * 根据软件编号查询 局端地址
  */
 jcptTools.getRjbbUrl = function (rjbb) {
-    var jddz = "";
-    baseTools.xhrAjax({
-        url: "/server/main/getRjbbUrl.do",
-        async: false,
-        params: {
-            RJBB_BM: rjbb
-        },
-        callback: [function (jsonObj, xhrArgs) {
-            if (jsonObj.code == 0) {
-                jddz = jsonObj.data.JDDZ;
-            }
-        }]
-    });
-    return jddz;
+    var jddz = window[rjbb];
+    if(jddz == undefined || jddz ==''){
+        baseTools.xhrAjax({
+            url: "/server/main/getRjbbUrl.do",
+            async: false,
+            params: {
+                RJBB_BM: rjbb
+            },
+            callback: [function (jsonObj, xhrArgs) {
+                if (jsonObj.code == 0) {
+                    jddz = jsonObj.data.JDDZ;
+                    window[rjbb]=jddz;
+                }
+            }]
+        });
+    }
+    //return jddz;
+    return jcptTools.replaceProtocolPortPort(jddz);
 };
 /**
  * 获取网厅地址
@@ -503,6 +535,29 @@ jcptTools.getSBUrl = function () {
         });
     } else {
         jcptTools.cnf.sbURL = url;
+    }
+};
+/**
+ * 获取社保征收地址
+ */
+jcptTools.getSBZSUrl = function () {
+    var url = dzswjCommon.getCookieCddwByKeyVal("dzswj.sbzs");
+    if (url == undefined || url == '') {
+        baseTools.xhrAjax({
+            url: "/server/main/getRjbbUrl.do",
+            async: false,
+            params: {
+                RJBB_BM: 'dzswj.sbzs'
+            },
+            callback: [function (jsonObj, xhrArgs) {
+                if (jsonObj.code == 0) {
+                    jcptTools.cnf.sbzsURL = jsonObj.data.JDDZ;
+                    dzswjCommon.setCookieCddwByKeyVal("dzswj.sbzs", jsonObj.data.JDDZ);
+                }
+            }]
+        });
+    } else {
+        jcptTools.cnf.sbzsURL = url;
     }
 };
 /**
@@ -591,13 +646,13 @@ jcptTools.getGzfwUrl = function () {
 //根据url生成绝对路径 https
 jcptTools.getHttpsByUrl = function (url) {
     // alert("https");
-    var url = "http://" + window.location.host + url;
+    var url = window.location.protocol+"//" + window.location.host + url;
     return url;
 };
 //根据url生成绝对路径 http
 jcptTools.getHttpByUrl = function (url) {
     // alert("http");
-    var url = "http://" + window.location.host + url;
+    var url = window.location.protocol+"//" + window.location.host + url;
     return url;
 };
 
@@ -704,3 +759,64 @@ jcptTools.gotoLoginIndex = function () {
         }
     }
 }
+
+
+//转换协议端口
+jcptTools.replaceProtocolPortPort = function(url){
+    return jcptTools.replaceProtocol(jcptTools.replacePort(url));
+}
+//转换端口
+jcptTools.replacePort = function (url) {
+    var protocol =window.location.protocol;
+    if(protocol == "https:" && url){
+        if(url.indexOf(":9904")!= -1){//申报
+            return url.replace(":9904",":9726");
+        }else if(url.indexOf(":9801")!= -1){//网厅
+            return url.replace(":9801",":9724");
+        }else if(url.indexOf(":9711")!= -1){//平台
+            return url.replace(":9711",":9723");
+        }else if(url.indexOf(":9811")!= -1){//电子影像
+            return url.replace(":9811",":9725");
+        }else if(url.indexOf(":9812")!= -1){//电子签章
+            return url.replace(":9812",":9721");
+        }else if(url.indexOf(":9731")!= -1){//公共服务
+            return url.replace(":9731",":9722");
+        }else if(url.indexOf(":7005")!= -1){//中软
+            return url.replace(":7005",":7006");
+        }else if(url.indexOf(":9006")!= -1){//重点税源
+            return url.replace(":9006",":9106");
+        }
+    }
+    return url;
+}
+//转换协议
+jcptTools.replaceProtocol = function(url){
+    var protocol = window.location.protocol;
+    if(protocol == "https:" && url){
+        return url.replace("http://","https://");
+    }
+    return url;
+}
+jcptTools.dateFormat = function (fmt,dateTime) {
+    if(dateTime){
+        if((typeof  dateTime) == "string"){
+            dateTime = dateTime.replace(/-/g,"/");//将-替换/，使得ie兼容
+        }
+    }
+    var date = new Date(dateTime);
+    var o = {
+        "M+": date.getMonth() + 1, //月份
+        "d+": date.getDate(), //日
+        "H+": date.getHours(), //小时
+        "m+": date.getMinutes(), //分
+        "s+": date.getSeconds(), //秒
+        "q+": Math.floor((date.getMonth() + 3) / 3), //季度
+        "S": date.getMilliseconds() //毫秒
+    };
+    if (/(y+)/.test(fmt)) fmt = fmt.replace(RegExp.$1, (date.getFullYear() + "").substr(4 - RegExp.$1.length));
+    for (var k in o)
+        if (new RegExp("(" + k + ")").test(fmt)) fmt = fmt.replace(RegExp.$1, (RegExp.$1.length == 1) ? (o[k]) : (("00" + o[k]).substr(("" + o[k]).length)));
+    return fmt;
+}
+
+

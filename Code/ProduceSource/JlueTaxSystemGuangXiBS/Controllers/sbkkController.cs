@@ -8,6 +8,7 @@ using Newtonsoft.Json;
 using Newtonsoft.Json.Linq;
 using JlueTaxSystemGuangXiBS.Code;
 using System.Text;
+using System.Web.Http.Results;
 
 namespace JlueTaxSystemGuangXiBS.Controllers
 {
@@ -59,7 +60,7 @@ namespace JlueTaxSystemGuangXiBS.Controllers
                         jo["NSRLX_MC"] = i.TaskName;
                         jo["SBXMMC"] = i.TaskName;
                         jo["ZSPM_DM"] = i.BDDM;
-                        jo["NSRLX_DM"] = "XX";
+                        jo["NSRLX_DM"] = i.BDDM;
                         jo["SBJG_MS"] = i.SBZT;
                         jo["SSSQ_Q"] = i.SKSSQQ;
                         jo["ISFKJC"] = "Y";
@@ -147,7 +148,7 @@ namespace JlueTaxSystemGuangXiBS.Controllers
         [Route("tsxCheck.do")]
         public JObject tsxCheck()
         {
-            string ZSPM_DM = System.Web.HttpContext.Current.Request["ZSPM_DM"];
+            string NSRLX_DM = System.Web.HttpContext.Current.Request["NSRLX_DM"];
 
             JObject re_json = new JObject();
 
@@ -163,7 +164,7 @@ namespace JlueTaxSystemGuangXiBS.Controllers
                 {
                     foreach (GDTXGuangXiUserYSBQC item in ysbqclist)
                     {
-                        if (item.BDDM == ZSPM_DM)
+                        if (item.BDDM == NSRLX_DM)
                         {
                             id = item.Id.ToString();
                         }
@@ -183,6 +184,31 @@ namespace JlueTaxSystemGuangXiBS.Controllers
             }
 
             return re_json;
+        }
+
+        [Route("checkSB_SBXX.do")]
+        public JObject checkSB_SBXX()
+        {
+            JObject re_json = new JObject();
+
+            string return_str = "";
+            string str = System.IO.File.ReadAllText(System.Web.HttpContext.Current.Server.MapPath("checkSB_SBXX.json"));
+            return_str = str;
+            re_json = JsonConvert.DeserializeObject<JObject>(return_str);
+            return re_json;
+        }
+
+        [Route("kk.html")]
+        [HttpGet]
+        public ResponseMessageResult kk()
+        {
+            string return_str = "";
+            string str = System.IO.File.ReadAllText(AppDomain.CurrentDomain.BaseDirectory + "FunctionNotOpen.html");
+            return_str = str;
+            return ResponseMessage(new HttpResponseMessage()
+            {
+                Content = new StringContent(return_str, System.Text.Encoding.UTF8, "text/html")
+            });
         }
 
     }

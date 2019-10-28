@@ -454,6 +454,19 @@ body,
 	border: none;
 }
 
+
+.wep_xbnsr_btn{
+	background-color: #1e9fff;
+	width: 100%;
+	height: 32px;
+	line-height: 33px;
+	border-radius: 4px;
+	font-size: 12px;
+	color: #fff;
+	margin-right: 5px;
+	border: none;
+}
+
 #wep_form_dxdl .wep_login_btn,
 #wep_form_dxdl .wep_send_msg {
 	width: 188px;
@@ -545,7 +558,17 @@ body,
 .wep_xzlj .wep_xzlj_left a:hover {
 	color: #2563c8;
 }
-
+#wdl_dxdl3 .sfdl_new{
+	display: inline-block;
+	width: 188px;
+	height: 42px;
+	line-height: 42px;
+	vertical-align: middle;
+}
+#wdl_dxdl3 .sfdl_new .layui-form-select{
+	display: inline-block;
+	margin-top: 6px;
+}
 /*Ã¦Â³Â¨Ã¥â€ Å’Ã¦Â¡â€ */
 .wep_registerform {
 	width: 350px;
@@ -673,14 +696,24 @@ body,
 .widthHalfAll{
 	width: 188px!important;
 }
-.topPw,.username,.widthHalf{
+.topPw,.username,.widthHalf,.usernh,.userwh{
 	position: absolute;
 	top: 6px;
 }
-
+.usernhs,
+.userwhs,
+.usernh,
+.userwh{
+    width: 188px !important;
+}
+.userwh{
+    right: 0;
+}
 .passwords,
 .usernames,
-.widthHalfs {
+.widthHalfs,
+.usernhs,
+.userwhs{
 	margin-top: 6px;
 }
 .title{
@@ -726,10 +759,55 @@ body,
 }
 
 /* 环境监测样式 */
+#m_check_result .tip{
+	background: #fff1D3;
+	line-height: 26px;
+	text-indent: 32px;
+	color:#bf4322;
+
+}
+.check_result{
+	border-bottom: 1px solid  #e4ecec  ;
+}
+
+.result_box{
+	padding-top:43px;
+	padding-bottom:5px;
+	font-size: 22px;
+	color: #333;
+}
+#m_check_result .help{
+	width:40%;
+	float: right;
+	border-left: 1px #e4ecec solid;
+	padding-left: 47px;
+	margin-top: 10px;
+}
+#m_check_result .help i{
+	display: inline-block;
+	width:19px;
+	height: 19px;
+	background: url(../imgs/p_tsxx.png);
+	margin-right: 8px;
+	vertical-align: middle;
+}
+.p_tel{
+	padding-top:10px;
+	/*border-top:1px dotted #b5b5b5  ;*/
+}
+#m_check_result  p.check_title{
+	font-size: 14px;
+	font-weight: bold;
+	line-height: 30px;
+}
+.check_content p{
+	border-bottom: 1px #e4ecec solid;
+}
 .m_main {
 	background: #fff;
-	padding: 30px 30px 30px 340px;
-	height: 500px;
+	/*padding: 30px 30px 30px 340px;*/
+	/*padding: 30px 30px 30px 30px;*/
+	/*height: 430px;*/
 	overflow: hidden;
 	display: none;
 }
@@ -747,21 +825,23 @@ body,
 }
 
 .m_check_right ul {
-	height: 400px;
-	overflow-y: auto;
+	/*height: 400px;*/
+	/*overflow-y: auto;*/
 }
 
 .m_check_right li {
 	border-bottom: 1px #e4ecec solid;
+	height: 50px;
+	line-height: 50px;
 }
 
 .m_check_right a,
 .m_check_right span {
-	display: block;
+	display: inline-block;
 }
 
 .m_check_right a {
-	padding: 5px 40px;
+	padding: 0px 40px;
 	position: relative;
 }
 
@@ -785,12 +865,8 @@ body,
 	font-size: 30px !important;
 }
 
-.m_check_right span {
-	padding: 3px;
-}
-
 .m_check_right .f16 {
-	font-size: 16px;
+	/*font-size: 16px;*/
 }
 
 .m_check_right .c_pass {
@@ -803,13 +879,13 @@ body,
 	font-size: 14px;
 }
 
-.m_check_success {
-	background: url(../imgs/green.jpg) 70px center no-repeat;
-}
+/*.m_check_success {*/
+	/*background: url(../imgs/green.jpg) 70px center no-repeat;*/
+/*}*/
 
-.m_check_error {
-	background: url(../imgs/orange.jpg) 70px center no-repeat;
-}
+/*.m_check_error {*/
+	/*background: url(../imgs/orange.jpg) 70px center no-repeat;*/
+/*}*/
 
 .exit_bt {
 	display: block;
@@ -997,7 +1073,7 @@ body,
 
 
 /*下载弹框页面*/
-.wxl_downLoad table {
+.wxl_downLoad, table {
     width: 94%;
     margin: 0 auto;
     font-size: 14px;
@@ -1029,4 +1105,101 @@ body,
 .wxl_downLoad table td a{
 	text-decoration: underline;
 	color:#4585EB;
+}
+.layui-layer-page .layui-layer-content{
+    overflow:visible !important;
+}
+.layui-layer-page .layui-layer-title{
+	background: #f8f8f8;
+}
+
+/*  wdl20190122数字证书登陆添加hot  */
+.wdl_szzs{
+	position: relative;
+}
+.wdl_szzs .wdl_bot{
+	position: absolute;
+	top: -12px;
+	left: 27px;
+}
+
+/*  wdl20190124登录窗口添加图片验证码  */
+.wdl_yzm_img{
+	/*display: block;*/
+	/*float:left;*/
+	position: absolute;
+	width: 80px;
+	height:33px;
+	top: 7px;
+	left: 299px;
+}
+.wdl_yzm{
+	position: relative;
+	top: 0;
+	left: 0;
+	width: 296px !important;
+}
+.wdl_yzm .yzmInput{
+	/*width: 100% !important;*/
+	margin-top:6px;
+}
+
+.wdl_szzs .wdl_bot{
+	left: 37px;
+}
+/* wdl20190215 还原登录输入框动态样式 */
+.wep_button.wep_loginform .wrong {
+	border: 1px solid #ff5621;
+	box-shadow: 0px 0px 14px -3px #ff5621;
+	-webkit-box-shadow: 0px 0px 14px -3px #ff5621;
+	-moz-box-shadow: 0px 0px 14px -3px #ff5621;
+}
+
+.wep_button.wep_loginform .right {
+	border: 1px solid #1578ed;
+	box-shadow: 0px 0px 14px -3px #1578ed;
+	-webkit-box-shadow: 0px 0px 14px -3px #1578ed;
+	-moz-box-shadow: 0px 0px 14px -3px #1578ed;
+}
+
+
+.wdl_layui-layer1 .layui-layer-content {
+    overflow: auto !important;
+}
+
+/* wdl20190221 5种登录时的样式  */
+.wdl_loginform{
+	width:520px
+}
+.wdl_loginform.wep_button select{
+	width:238px;
+}
+.login_wrap .wdl_loginform .layui-form-select{
+	width:238px;
+}
+.wdl_loginform .widthHalf,.wdl_loginform .widthHalfAll,.wdl_loginform .usernhs,.wdl_loginform .userwhs,.wdl_loginform .usernh,.wdl_loginform .userwh{
+	width:238px !important;
+}
+.wdl_loginform #wep_form_dxdl .wep_login_btn{
+	width:480px;
+}
+.wdl_loginform .sfdl_new{
+	display: inline-block;
+	width: 238px;
+	height: 42px;
+	line-height: 42px;
+	vertical-align: middle;
+}
+.wdl_loginform .sfdl_new .layui-form-select{
+	display: inline-block;
+	margin-top: 6px;
+}
+/*.wdl_loginform .sfdl_new .layui-form-select{*/
+	/*top: 6px;*/
+/*}*/
+
+.wdl_tips{
+	color:#e88122;
+	white-space: normal;
+	line-height: 22px;
 }

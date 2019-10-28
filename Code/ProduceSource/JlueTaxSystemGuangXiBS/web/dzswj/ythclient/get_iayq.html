@@ -6,12 +6,15 @@
     <script src="js/json_parse.js"></script>
     <script src="js/json_parse_state.js"></script>
     <script src="js/cycle.js"></script>
+    <!--<script src="js/jquery-1.7.1.min.js"></script>-->
+    <script src="../../commons/js/base/jquery-1.7.1.min.js"></script>
     <!--
    <meta http-equiv="X-UA-Compatible" content="IE=8" >
     -->
     <title></title>
 
     <script type='text/javascript'>
+        jQuery.support.cors = true ;
 
         var hostUrl = window.location.host.match('\\w+.([\\w.-]+)[:\\w]*');
         var DOMAIN = hostUrl[1];
@@ -22,8 +25,9 @@
         }
 
         var _xmlhttp;
-        var _url = "http://localhost:25386";
+        // var _url = "http://localhost:25386";
         //var _url = "http://127.0.0.1:8089";
+        var _url = "https://127.0.0.1:16000";
         var functionFlg = 0;
         var InData;
         var pin;
@@ -46,11 +50,15 @@
                     _xmlhttp = new ActiveXObject("Microsoft.XMLHTTP");
                 }
             }
+            try{
+                _xmlhttp.onreadystatechange=callback;
+                _xmlhttp.open("POST", _url, false);
+                _xmlhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+                _xmlhttp.send(json);
+            }catch (e) {
+                parent.document.getElementById("sta1").value="0";
+            }
 
-            _xmlhttp.onreadystatechange=callback;
-            _xmlhttp.open("POST", _url, false);
-            _xmlhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
-            _xmlhttp.send(json);
         }
 
 
@@ -88,9 +96,9 @@
                 else if(_xmlhttp.status == 490)
                 {
                     alert("证书密码错误，请重新输入！你的错误机会还有"+_xmlhttp.statusText+"次。");
-                }
-                else
-                {
+                }else if(_xmlhttp.status == 0 || _xmlhttp.status == 455){
+                    parent.document.getElementById("sta1").value=_xmlhttp.status;
+                }else{
                     alert("证书密码错误，请重新输入！你的错误机会还有"+_xmlhttp.statusText+"次。");
                 }
             }

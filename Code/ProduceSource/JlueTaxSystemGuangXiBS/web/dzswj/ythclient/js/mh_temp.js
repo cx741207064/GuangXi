@@ -204,7 +204,7 @@ var mhtt = (function () {
                         alert("获取地方税费业务信息超时，你可办理其他业务，或5分钟后重新登录。");
                     }
                     if (jsonObj.data.DSKHBZ == 'Y') {
-                        alert("您已成功开通广西壮族自治区地税网上税务局！默认密码Aa加纳税人识别号后8位。");
+                        alert("您已成功开通广西壮族自治区地税网上税务局！默认密码Aa加社会信用代码后8位。");
                     }
 
                     baseTools.hideMash(maskObj);
@@ -215,7 +215,7 @@ var mhtt = (function () {
                         var form = layui.form;
                         form.render();
 
-                        $('#sfcx').find('input').val("请选择身份");
+                        $('#sfcx').find('input').val("请选择登录身份");
                         $('#sfhm').find('input').val("请选择手机号码");
                     })
 

@@ -590,6 +590,7 @@ var dzswjCommon = (function () {
 
         //退出登录
         dzswjLoginOut: function (type) {
+            return false;
             if (confirm("确定退出吗?")) {
                 logout(type);
             }

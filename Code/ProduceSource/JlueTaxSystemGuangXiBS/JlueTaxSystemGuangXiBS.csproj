@@ -547,7 +547,6 @@
     <Content Include="web\dzswj\taxclient\css\slider.css" />
     <Content Include="web\dzswj\taxclient\css\style.css" />
     <Content Include="web\dzswj\taxclient\css\webuploader.min.css" />
-    <Content Include="web\dzswj\taxclient\FunctionNotOpen.html" />
     <Content Include="web\dzswj\taxclient\hdzx\css\htjs_hdzx.css" />
     <Content Include="web\dzswj\taxclient\hdzx\js\wddb.js" />
     <Content Include="web\dzswj\taxclient\hdzx\wddb.html" />
@@ -642,7 +641,6 @@
     <Content Include="web\dzswj\taxclient\js\slider_ztree.js" />
     <Content Include="web\dzswj\taxclient\left.html" />
     <Content Include="web\dzswj\taxclient\left2.html" />
-    <Content Include="web\dzswj\taxclient\login_index.aspx" />
     <Content Include="web\dzswj\taxclient\login_index.html" />
     <Content Include="web\dzswj\taxclient\main.html" />
     <Content Include="web\dzswj\taxclient\main_gzfw.html" />
@@ -668,6 +666,7 @@
     <Content Include="web\dzswj\ythclient\js\mh_temp.js" />
     <Content Include="web\dzswj\ythclient\js\regValidator.js" />
     <Content Include="web\dzswj\ythclient\js\up_qyyh_pwd.js" />
+    <Content Include="web\dzswj\ythclient\mh.aspx" />
     <Content Include="web\dzswj\ythclient\mh.html" />
     <Content Include="web\dzswj\ythclient\up_qyyh_pwd.html" />
     <Content Include="web\gtsdhByhJy.json" />
@@ -685,7 +684,6 @@
     <Content Include="web\server\platform\ptgl\qyyh\selectGnmkByYhidPidNoSb.json" />
     <Content Include="web\server\platform\ptgl\qyyh\selectGnmkByYhidPidSb.xgm.json" />
     <Content Include="web\server\platform\userInfo\initUrl.json" />
-    <Content Include="web\server\platform\userInfo\initUrl.origin.json" />
     <Content Include="web\sso\control\ssoLogout.do" />
     <Content Include="wings\core\css\exception_dialog.css" />
     <Content Include="wings\core\css\wingsToolbars.css" />
@@ -753,12 +751,14 @@
     <Compile Include="Controllers\cxdyController.cs" />
     <Compile Include="Controllers\dmController.cs" />
     <Compile Include="Controllers\fjsController.cs" />
+    <Compile Include="Controllers\gnmkController.cs" />
     <Compile Include="Controllers\hlwsbController.cs" />
     <Compile Include="Controllers\mainController.cs" />
     <Compile Include="Controllers\qysdsController.cs" />
     <Compile Include="Controllers\qyyhController.cs" />
     <Compile Include="Controllers\RootController.cs" />
     <Compile Include="Controllers\sbkkController.cs" />
+    <Compile Include="Controllers\taxclientController.cs" />
     <Compile Include="Controllers\userInfoController.cs" />
     <Compile Include="Controllers\webController.cs" />
     <Compile Include="Controllers\xgmController.cs" />
@@ -774,6 +774,8 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Models\GDTXDate.cs" />
+    <Compile Include="Models\Nsrxx.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="publicmethod.cs" />
     <Compile Include="QuestionMain.aspx.cs">
@@ -814,12 +816,12 @@
     <Compile Include="Video\Video.aspx.designer.cs">
       <DependentUpon>Video.aspx</DependentUpon>
     </Compile>
-    <Compile Include="web\dzswj\taxclient\login_index.aspx.cs">
-      <DependentUpon>login_index.aspx</DependentUpon>
+    <Compile Include="web\dzswj\ythclient\mh.aspx.cs">
+      <DependentUpon>mh.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="web\dzswj\taxclient\login_index.aspx.designer.cs">
-      <DependentUpon>login_index.aspx</DependentUpon>
+    <Compile Include="web\dzswj\ythclient\mh.aspx.designer.cs">
+      <DependentUpon>mh.aspx</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup>
@@ -827,7 +829,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Models\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="server\wssq\ctais2\taxerLoginAction.json" />

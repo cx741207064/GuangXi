@@ -11,7 +11,7 @@ var czzs = (function() {
     //私有属性
     var curSeg; // 保存czzs对象的
     var SBBXH = '';
-    var SBBZL_DM = '';
+    var SBBZL_DM = '101012009';
     var SSSQ_Q='';
     var SSSQ_Z='';
     var SBBZT="";
@@ -24,6 +24,8 @@ var czzs = (function() {
     var data1;
     //公有方法
 	var gz="";
+    var DJXH ='';
+    var BQMSETS;//本期免税额提示框标志 "Y"弹 "N"不弹
     return {
        
         onLoad:function() {
@@ -95,12 +97,77 @@ var czzs = (function() {
                   		 return row[opts.textField].indexOf(q)>=0;
                   	   },
 	               	    onSelect : function(recode) {	               	    	
+				var JMXZ_DM=recode.JMXZ_DM;
 	               	    	DCellWeb1.SetDroplistCellKey(col, row, 0, recode.XLH);	               	    	
 	               	    	//DCellWeb1.setValue(col,row,0, recode.XH + '_' + recode.JMXZ_MC);
 	               	    	$("#select").bgiframe({
 		               			width: 0,
 		               			height : 0
 		               		});
+                            if (col == 2 && ((row > 8 && row < row1) || (row > row2 && row < row3) )) {
+                                //20190618彩影让添加提示
+                                if(col == 2 && (row > row2 && row < row3)){
+                                    if (JMXZ_DM=="0001041504"){
+                                        alert("此代码适用的情形是：《财政部 税务总局关于金融机构小微企业贷款利息收入免征增值税政策的通知》（财税〔2018〕91号）规定的金融机构向小微企业、个体工商户发放1000万元以下贷款免征增值税");
+                                    }
+                                    if (JMXZ_DM=="0001041502"){
+                                        alert("此代码适用的情形是：《财政部 税务总局关于支持小微企业融资有关税收政策的通知》（财税〔2017〕77号）规定的金融机构向农户发放100万元以下贷款免征增值税");
+                                    }
+                                    if (JMXZ_DM=="0001041505"){
+                                        alert("此代码适用的情形是：《财政部 税务总局关于支持小微企业融资有关税收政策的通知》（财税〔2017〕77号）规定的金融机构向小微企业、个体工商户发放100万元以下贷款免征增值税");
+                                    }
+                                }
+							//20190328 chenbojun获取“重点群体人员”是否采集
+                            	if (JMXZ_DM=="0001013612"||JMXZ_DM=="0001013613"){
+                                    baseTools.xhrAjax({
+                                        url: '/hlwsb/dm/getJMXZDM_ZDQT.do',
+                                        params: {DJXH: DJXH},
+                                        callback: [function (jsonObj) {
+                                           // alert(JSON.stringify(jsonObj.data.zdqtCount))
+                                            if (jsonObj.data.zdqtCount <= 0) {
+                                                if(confirm('没有采集企业重点群体人员信息，不能享受这个减免性质，点击“确定”按钮进行采集。')){
+                                                    if(parent.openNewTab){//平台登陆，调用平台方法
+                                                        parent.openNewTab("4","企业重点群体人员采集", "/hlwsb/zzs/ybnsr/sb_zzs_ybnsr_zdqtrycj.html","79116");
+                                                    }else{//网报端登陆，调用网报密码
+                                                        parent.navTab.openTab("101011056", "zzs/ybnsr/sb_zzs_ybnsr_zdqtrycj.html", {title:"企业重点群体人员采集",external:true});
+                                                    }
+                                                }
+                                                //alert('您本年度未采集"企业重点群体人员信息"，不能享受对应减免优惠，请到税务机关进行采集');
+                                                DCellWeb1.SetDroplistCellKey(col, row, 0, ' ');
+                                                DCellWeb1.SetCellString(col, row, 0, ' ');
+                                            } /*else {
+                                            	alert("已采集");
+                                            }*/
+                                        }]
+                                    });
+								}
+								else if (JMXZ_DM=="0001011814"){
+								//20190328 chenbojun获取“自主就业退役士兵”是否采集
+                                    baseTools.xhrAjax({
+                                        url: '/hlwsb/dm/getJMXZDM_TYSB.do',
+                                        params: {DJXH: DJXH},
+                                        callback: [function (jsonObj) {
+                                           // alert(JSON.stringify(jsonObj.data.tysbCount))
+                                            if (jsonObj.data.tysbCount <= 0) {
+                                                if(confirm('没有采集企业退役士兵信息，不能享受这个减免性质，点击“确定”按钮进行采集。')){
+                                                    if(parent.openNewTab){//平台登陆，调用平台方法
+                                                        parent.openNewTab("4","企业退役士兵采集", "/hlwsb/zzs/ybnsr/sb_zzs_ybnsr_qytysbcj.html","79117");
+                                                    }else{//网报端登陆，调用网报密码
+                                                        parent.navTab.openTab("101011057", "zzs/ybnsr/sb_zzs_ybnsr_qytysbcj.html", {title:"企业退役士兵采集",external:true});
+                                                    }
+                                                }
+                                                //alert('您本年度未采集"企业退役士兵信息"，不能享受对应减免优惠，请到税务机关进行采集');
+                                                DCellWeb1.SetDroplistCellKey(col, row, 0, ' ');
+                                                DCellWeb1.SetCellString(col, row, 0, ' ');
+                                            }/* else {
+                                                alert("已采集");
+                                            }*/
+                                        }]
+                                    });
+								}
+
+                            }
+
 	               	    },
 	               	    onUnselect : function() {
 	               	    	alert('un');
@@ -123,19 +190,18 @@ var czzs = (function() {
             $(window).unload(function () {
             });
         } ,
-        onPrint: function () {
-            return false;
+        onPrint:function() {
             var str = hlwsbTools.urlStr({
          				SBBZL_DM : SBBZL_DM,
          				SSSQ_Q : SSSQ_Q,
          				SSSQ_Z : SSSQ_Z,
          				NSRLX_DM : NSRLX_DM
          			});
-            	window.location="/hlwsb/zzs_print/xgm/sb_zzs_xgmnsr_czzs_jmsmxb_2016.html?"+str;
+            	window.location = hlwsbTools.cnf.clientURL+ "/hlwsb/zzs_print/xgm/sb_zzs_xgmnsr_czzs_jmsmxb_2016.html?"+str;
             	},
         //查询数据
         onQuery:function() {
-            SBBZL_DM = baseTools.getUrlQueryString("SBBZL_DM");    //获取页面申报表种类代码标记
+            // SBBZL_DM = baseTools.getUrlQueryString("SBBZL_DM");    //获取页面申报表种类代码标记
             SSSQ_Q= baseTools.getUrlQueryString("SSSQ_Q");
             SSSQ_Z= baseTools.getUrlQueryString("SSSQ_Z");
             NSRLX_DM =  baseTools.getUrlQueryString("NSRLX_DM");
@@ -211,54 +277,66 @@ var czzs = (function() {
              });
              
              if (map2.BODY.length > 0) {
-            	 if(!confirm('请确认“免税额”填写是否正确')){
-                  	return false;
-                  }
-            	 for (var i = 0; i < map2.BODY.length; i++) {
-            		 var xzdm = map2.BODY[i].XZDM;
-            		 if(xzdm == ""){
-            			 alert("免税项目第"+(i+1)+"行中“免税性质代码和名称”不能为空");
-            			 return false;
-            		 }
-            		 
-            		 for (var j = 0 ;j<i;j++){
-            			 var xzdm1 = map2.BODY[j].XZDM;
-            			 if (xzdm1 == xzdm ) {
-            				 alert("免税性质代码及名称不能重复，请重新选择!");
-            				 return false;
-            			 }
-            		 }
-            		 
-            		 
-            		 var msxse = map2.BODY[i].COL3;
-            		 var jxse = map2.BODY[i].COL4;
-            		 if(jxse < 0){
-            			 alert("免税项目第"+(i+1)+"行中“免税销售额对应的进项税额”不能小于0");
-            			 return false;
-            		 }
-            		 /****
-            		  * 第3列小于0时。不校验该关系。允许第4列填0或者负数
-            		  * feng 20150512 lijunbo
-            		  */
-            		 if(msxse>0){
-            			 if(jxse>msxse){
-            				 alert("免税项目第"+(i+1)+"行中“免税销售额对应的进项税额”不能大于“扣除后免税销售额”");
-            				 return false;
-            			 }
-            		 }else{
-            			 if(jxse!=0 && jxse>msxse){
-            				 alert("免税项目第"+(i+1)+"行中“免税销售额对应的进项税额”不能大于“扣除后免税销售额”");
-            				 return false;
-            			 }
-            		 }
-            		 
-            		 var mse1 = map2.BODY[i].COL5;
-            		 if(mse1 < 0){
-            			 alert("免税项目第"+(i+1)+"行中“免税额”不能小于0");
-            			 return false;
-            		 }
-            	 }
-	            }
+                 if (!confirm('请确认“免税额”填写是否正确')) {
+                     return false;
+                 }
+                 for (var i = 0; i < map2.BODY.length; i++) {
+                     var xzdm = map2.BODY[i].XZDM;
+                     if (xzdm == "") {
+                         alert("免税项目第" + (i + 1) + "行中“免税性质代码和名称”不能为空");
+                         return false;
+                     }
+                     for (var j = 0; j < i; j++) {
+                         var xzdm1 = map2.BODY[j].XZDM;
+                         if (xzdm1 == xzdm) {
+                             alert("免税性质代码及名称不能重复，请重新选择!");
+                             return false;
+                         }
+                     }
+
+
+                     var msxse = map2.BODY[i].COL3;
+                     var jxse = map2.BODY[i].COL4;
+                     if (jxse < 0) {
+                         alert("免税项目第" + (i + 1) + "行中“免税销售额对应的进项税额”不能小于0");
+                         return false;
+                     }
+                     /****
+                      * 第3列小于0时。不校验该关系。允许第4列填0或者负数
+                      * feng 20150512 lijunbo
+                      */
+                     if (msxse > 0) {
+                         if (jxse > msxse) {
+                             alert("免税项目第" + (i + 1) + "行中“免税销售额对应的进项税额”不能大于“扣除后免税销售额”");
+                             return false;
+                         }
+                     } else {
+                         if (jxse != 0 && jxse > msxse) {
+                             alert("免税项目第" + (i + 1) + "行中“免税销售额对应的进项税额”不能大于“扣除后免税销售额”");
+                             return false;
+                         }
+                     }
+
+                     var mse1 = map2.BODY[i].COL5;
+                     if (mse1 < 0) {
+                         alert("免税项目第" + (i + 1) + "行中“免税额”不能小于0");
+                         return false;
+                     }
+                     //2019-09-20 188版本添加校验 不符合第3列“扣除后免税销售额” ×3% ≤第5列“免税额”≤第3列“扣除后免税销售额”×5%时，向纳税人显示提示语（具体如下），
+                     // 并设置“确认”按钮。当纳税人点击“确认”按钮后，本期申报不再提示该提示语。
+                     var col01 = map2.BODY[i].COL1;
+                     if (BQMSETS == "Y" && ((col01 > 0 && mse1 == 0) || !(msxse * 0.03 <= mse1 && mse1 <= msxse * 0.05))) {
+                         if (confirm("本期免税额栏次请按照以下公式：第5列“免税额”＝第3列“扣除后免税销售额”×征收率填写")) {
+                             var url = "/hlwsb/zzs/xgm/insertSB_TSYWMD_XGM_JMMXB.do";
+                             baseTools.xhrAjax({
+                                 url: url,
+                                 params: {SBBZL_DM: SBBZL_DM},
+                                 callback: []
+                             });
+                         }
+                     }
+                 }
+             }
              
              
 			 map1.BODY = map1.BODY.concat(map2.BODY);
@@ -379,6 +457,7 @@ var czzs = (function() {
                 HEAD: jsonObj.data.HEAD,
                 BODY: []
             };
+            DJXH = jsonObj.data.DJXH;
 //        	alert(JSON.stringify(jsonObj.data.BODY));
        	 DCellWeb1.initSelectCell({
              col: "HJ",
@@ -458,6 +537,7 @@ var czzs = (function() {
         	});
 			 SBBXH = jsonObj.data.HEAD.SBBXH;
 	         SBBZT = jsonObj.data.HEAD.SBBZT;
+             BQMSETS = jsonObj.data.BQMSETS;
 	         if (jsonObj.data.HEAD.SBBZT && jsonObj.data.HEAD.SBBZT == 1) {
 	                bAdd = false;
 	         }else if(!(jsonObj.data.HEAD.SBBZT)  ){
@@ -472,11 +552,11 @@ var czzs = (function() {
         },
         //导入
         openPopWin:function(){
-            return false;
+
             var msg = "导入";
             var winParam = {
                 id: 'winTIPS', title: msg,
-                url: '/hlwsb/components/excelToJson/sb_excel_upload.html?bbmc=czzs&&startRow=8&&sheetIndex=1&templatePath=../../printModel/zzs/xgm/sb_zzs_xgmnsr_czzs_2016_all.zip',
+                url: '/hlwsb/components/excelToJson/sb_excel_upload.html?bbmc=czzs&&startRow=8&&sheetIndex=1&templatePath=printModel/zzs/xgm/sb_zzs_xgmnsr_czzs_2016_all.zip',
                 width: 400,
                 height: 150
             };
@@ -511,6 +591,7 @@ var czzs = (function() {
                     top.main.changeNodeStatus(SBBZL_DM,"1");
                     bAdd = false;
                     DCellWeb1.ProtectFormula = false;
+                    curSeg.onLoad();
                     break;
                 // 删除操作返回标志
                 case 2:

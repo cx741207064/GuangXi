@@ -2,11 +2,11 @@
     "code":"0",
     "msg":"操作成功",
     "data":{
-        "NSRSBH":"91450923MA5KBJ6Q7N",
+        "NSRSBH":"91450900677703752A",
         "isPrint":null,
-        "SSSQ_Z":"2018-12-31",
+        "SSSQ_Z":"2019-09-30",
         "YMKZ":{
-            "ZZSYSHWQZD":"90000.0",
+            "ZZSYSHWQZD":"300000.0",
             "HDYNSE":"0.0",
             "ISYHY":"N",
             "HDXSE":"0.0",
@@ -58,14 +58,6 @@
                     "BNLJ_YSFW":"0.0"
                 },
                 {
-                    "BNLJ_YSHWJLW":"1542.72",
-                    "BNLJ_YSFW":"0.0"
-                },
-                {
-                    "BNLJ_YSHWJLW":"1542.72",
-                    "BNLJ_YSFW":"0.0"
-                },
-                {
                     "BNLJ_YSHWJLW":"0.0",
                     "BNLJ_YSFW":"0.0"
                 },
@@ -98,11 +90,19 @@
                     "BNLJ_YSFW":"0.0"
                 },
                 {
-                    "BNLJ_YSHWJLW":"46.28",
+                    "BNLJ_YSHWJLW":"0.0",
                     "BNLJ_YSFW":"0.0"
                 },
                 {
-                    "BNLJ_YSHWJLW":"46.28",
+                    "BNLJ_YSHWJLW":"0.0",
+                    "BNLJ_YSFW":"0.0"
+                },
+                {
+                    "BNLJ_YSHWJLW":"0.0",
+                    "BNLJ_YSFW":"0.0"
+                },
+                {
+                    "BNLJ_YSHWJLW":"0.0",
                     "BNLJ_YSFW":"0.0"
                 },
                 {
@@ -126,7 +126,7 @@
             "YSHWLWSL":"0.17",
             "YSHWLWYJS":"0.0",
             "YSFWZSL":"0.03",
-            "HYDM":"5211",
+            "HYDM":"1411",
             "YSFWFPDKBHSXSE3":"0.0",
             "YSFWFPDKBHSXSE5":"0.0",
             "ISYQWRDYBNSR":"N",
@@ -135,7 +135,7 @@
             "QMSEFZJGYZJNSK5":"0.0",
             "ISSHOW":"1"
         },
-        "SBBXH":"91450923MA5KBJ6Q7N2018100120181231101012008",
+        "SBBXH":"91450900677703752A2019070120190930101012008",
         "BODY":[
             {
                 "COL10":"0.00",
@@ -157,23 +157,23 @@
             }
         ],
         "SBBZL_DM":"101012008",
-        "SSSQ_Q":"2018-10-01",
+        "SSSQ_Q":"2019-07-01",
         "ZSPMLIST":[
             {
-                "ZSPM_DM":"101014001",
+                "ZSPM_DM":"101010398",
                 "ZSL":"0.03"
             }
         ],
-        "DJXH":"10114509010114109676",
+        "DJXH":"10114509000046136227",
         "HEAD":{
-            "NSRSBH":"91450923MA5KBJ6Q7N",
+            "NSRSBH":"91450900677703752A",
             "isPrint":null,
-            "SSSQ_Z":"2018-12-31",
-            "SBBXH":"91450923MA5KBJ6Q7N2018100120181231101012008",
+            "SSSQ_Z":"2019-09-30",
+            "SBBXH":"91450900677703752A2019070120190930101012008",
             "SBBZL_DM":"101012008",
-            "SSSQ_Q":"2018-10-01",
-            "DJXH":"10114509010114109676",
-            "TBRQ":"2019-01-09"
+            "SSSQ_Q":"2019-07-01",
+            "DJXH":"10114509000046136227",
+            "TBRQ":"2019-10-15"
         }
     }
 }

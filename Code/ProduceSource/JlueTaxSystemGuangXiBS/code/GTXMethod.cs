@@ -39,6 +39,16 @@ namespace JlueTaxSystemGuangXiBS.Code
             return JsonConvert.DeserializeObject<GTXResult>(json);
         }
 
+        public static GTXResult GetCompanyDetail()
+        {
+            string companyId = CurrentUser.GetInstance().GetCurrentCompanyId;
+            string path = System.Configuration.ConfigurationManager.AppSettings["Practicepath"];
+            publicmethod p = new publicmethod();
+            string fullpath = path + "/APIPractice/Company.asmx/GetDetailByCompanyId?CompanyId=" + companyId;
+            string json = p.Get(fullpath);
+            return JsonConvert.DeserializeObject<GTXResult>(json);
+        }
+
         /// <summary>
         /// 获取学员题目信息
         /// </summary>

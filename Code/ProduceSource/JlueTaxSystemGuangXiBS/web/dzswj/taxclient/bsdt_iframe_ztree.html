@@ -2,7 +2,7 @@
 <html>
 
 <head>
-	<TITLE> ZTREE DEMO - Standard Data </TITLE>
+	<title></title>
 	<meta http-equiv="content-type" content="text/html; charset=UTF-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=10" />
 	<link rel="stylesheet" href="../common/reset.css">
@@ -12,7 +12,9 @@
 	<link rel="stylesheet" href="../plugs/layui/css/layui.css" />
 	<link rel="stylesheet" href="css/layer_open.css" />
 	<link rel="stylesheet" href="../plugs/ztree/zTreeStyle.css" type="text/css">
-
+	<link rel="stylesheet" href="css/bsdt_iframe_ztree.css" type="text/css">
+	<link rel="stylesheet" href="css/left2.css" />
+	<script src="../../commons/js/base/cross_domain_htjs.js"></script>
 	<script src="../commons/include_ui_jcpt.js?dm=5051" type="text/javascript"></script>
 	<!--<script src="../../commons/js/include_ui.js"></script>-->
 	<script type="text/javascript" src="../plugs/ztree/jquery.ztree.all.js"></script>
@@ -25,8 +27,62 @@
 	<!--<script src="js/bsdt_index1.js" type="text/javascript" charset="utf-8"></script>-->
 	<script src="js/jquery.contextMenu.min.js"></script>
 	<script src="js/hlwsbUtils.js" type="text/javascript" charset="utf-8"></script>
-	<script src="js/bsdt_iframe_ztree.js" type="text/javascript" charset="utf-8"></script>
-	<script src="js/bsdt_iframe_ztree_pt.js" type="text/javascript" charset="utf-8"></script>
+	<script src="js/bsdt_iframe_ztree.js?version=20190722" type="text/javascript" charset="utf-8"></script>
+	<script src="js/bsdt_iframe_ztree_pt.js?version=20190618" type="text/javascript" charset="utf-8"></script>
+	<script src="js/login_index_cygn.js?version=20190619" type="text/javascript" charset="utf-8"></script>
+	<script src="js/bsdt_yw.js?version=20190618" type="text/javascript" charset="utf-8"></script>
+	<script src="../commons/js/gnmkUtils.js"></script>
+	<script  src="../commons/js/base/base_tools.js"></script>
+	<script type="text/javascript">
+		//全局变量，其他操作需操作数
+		var globeZtree = $.fn.zTree.getZTreeObj("sidebarZtr");
+		var menuMap = new Map();
+        menuMap.put("10101","增值税及附加税费申报");
+        menuMap.put("10106","个人所得税");
+        menuMap.put("10109","增值税及附加税费申报");//城市维护建设税
+        menuMap.put("30203","增值税及附加税费申报");//教育费附加
+        menuMap.put("30216","增值税及附加税费申报");//地方教育附加
+        menuMap.put("10104","企业所得税");//企业所得税
+        menuMap.put("10111","税费缴纳");//印花税
+        menuMap.put("30218","残疾人");//残疾人就业保障金
+        menuMap.put("30217","文化事业");//文化事业建设费
+        menuMap.put("10113","土地增值税");//土地增值税
+        menuMap.put("10107","资源税");//资源税
+        menuMap.put("10110","房产税");//房产税
+        menuMap.put("10102","消费税-烟类");//消费税
+        menuMap.put("10112","城镇土地使用");//城镇土地使用税
+        menuMap.put("10114","车船税");//车船税
+        menuMap.put("10118","耕地");//耕地占用税
+        menuMap.put("10120","烟叶税");//烟叶税
+        menuMap.put("30175","废弃电器");//废弃电器电子产品处理基金收入
+        menuMap.put("10121","环境保护税");//环境保护税
+        menuMap.put("00000","财务报告报送与信息采集");//财务报告报送与信息采集
+
+
+
+
+        function Map() {
+			this.elements=new Array();
+			this.put = function (_key,_value) {
+				this.elements.push({key:_key,value:_value});
+            }
+            this.get = function (_key,_value) {
+				try {
+					for(var i=0;i<this.elements.length;i++){
+					    if(this.elements[i].key == _key){
+					        return this.elements[i].value;
+						}
+					}
+                }catch (e) {
+					return null;
+                }
+            }
+
+        }
+
+
+	</script>
+
 	<style>
 		html,body {
 			overflow: hidden;
@@ -86,7 +142,29 @@
 			vertical-align: sub;
 			border: 0;
 		}
+		.tsxz_con p{
+		line-height:22px;
+		}
+
+		 /* wdl20190218不再显示样式 */
+		.wdl_close_btn{
+			margin: 0 auto;
+			text-align: center;
+			padding-bottom: 10px;
+		}
+		.wdl_close_btn input[type=checkbox]{
+			margin-right:5px;
+		}
+		.changyong_gongneng{
+			overflow: hidden;;
+		}
+		.changyong_gongneng ul > li {
+			float: left;;
+			line-height: 28px;
+			border: 1px solid #0ae; border-radius: 3px; margin-right: 10px; color: #0ae; padding: 0 15px; margin-top: 10px;
+		}
 	</style>
+	<script src="../commons/js/gnmkUtils.js"></script>
 </head>
 
 <body>
@@ -95,13 +173,35 @@
 
     </div>-->
 	<!--左侧区域start-->
-	<div class="slidebar_ztree sidebar" id="sidebar_ztree" style="overflow: auto;margin-top:5px">
-			<div class="wxn_drawer" style="position: fixed;left: 0;right:0;z-index: 1;margin-top:0px">
+	<div class="slidebar_ztree sidebar" id="sidebar_ztree" style="overflow:hidden;">
+		<div class="add_slidear slider_cy" style=" position: relative; padding-top: 35px;">
+			<div class="wxn_drawer" style="position:absolute; width:100%; z-index: 1; margin-top: -30px;">
+				<i class="icon iconfont icon-huaban"></i>
+				常用功能
+				<span style=" float: right; padding-right: 15px;" id="wxl_btn_setting_dzyw">添加</span>
+				<span style="float: right; padding-right: 15px;" id="cygn_arrow_up" onclick="leftSlider.cygnArrowUp(this)">∧</span>
+			</div>
+			<ul id="common_function" class="cn_content_list" ></ul>
+		</div>
+		<!--<div class="add_slidear" style=" position: relative;">-->
+
+
+		<!--<ul id="common_function" class="cn_content_list" ></ul>-->
+		<!--</div>-->
+		<div class="add_slidear slider_xt" style=" position: relative;">
+			<div class="wxn_drawer" style="position: absolute;left: 0;right:0;z-index: 1;margin-top:-35px; margin-right: 0;">
+				<div  style="float: right; padding-right: 10px"  onclick="leftSlider.foldup();">
+					一键折叠
+				</div>
 				<i class="icon iconfont icon-huaban"></i>
 				系统功能
 			</div>
-			<ul id="sidebarZtr" class="ztree" style="margin-top:35px"></ul>
+
+			<ul id="sidebarZtr" class="ztree" style="margin-top:35px; overflow: auto;"></ul>
+		</div>
+
 	</div>
+
 	<div id="dragBOx">
 		<div class="dragMork">
 
@@ -159,8 +259,147 @@
 		<iframe id="kf-sso-login3-zrgs" style="display: none;"></iframe>
 		<input type="hidden" id="kf-hdipt-dssb-mkmc">
 		<input type="hidden" id="kf-hdipt-dssb-mkurl">
+		<input type="hidden" id="kf-hdipt-dssb-sid">
+        <input type="hidden" id="kf-hdipt-dssb-id">
 
 	</div>
 	</div>
+	<div class="wdl_yyxz_tk" id="wdl_yyxz_tk" style="display:none;">
+			<!-- <p class="text_alc title wxl_f_16">常见问题</p> -->
+			<div class="tsxz_con">
+				<p>1、为什么我打开申报表或业务申请表单，界面一片白色没有任何显示？</p>
+				<p>答：您需要<a href="http://etax.guangxi.chinatax.gov.cn:19920/download/cellsoft.zip" style="color:#0090ff;font-size:12px;text-decoration: underline;" target="_blank">下载</a>并安装表格控件，表单才能正常显示。</p>
+				<p>2、为什么我打开申报表，能看见表单，但全部单元格都显示灰色，不让编辑？</p>
+				<p>答：您需要点击IE浏览器上的工具菜单，选择Internet选项-安全-站点-添加，把当前站点加入安全信任站点；
+					    您也可以<a href="http://etax.guangxi.chinatax.gov.cn:19920/download/setupfix.zip" style="color:#0090ff;font-size:12px;text-decoration: underline;" target="_blank">下载</a>、安装、运行环境检测修复工具，一键修复所有使用环境问题后，重新打开浏览器登录电子税务局。</p>
+				<p>3、我如何报送增值税报表？</p>
+				<p>答：电子税务局申报操作流程包括：报表填写并保存——申报提交——税费缴纳——报表打印等４个步骤。申报提交功能在我要办税——税费申报及缴纳——税费缴纳——申报表提交模块。
+				             打开该模块后，勾选申报项目名称，点击上方申报数据提交按钮即可报送增值税报表。</p>
+			    <p>4、一表集成系统没有带出来数据，怎么办？</p>
+				<p>答：如发票刚刚上传，请等待增值税发票税控开票软件数据同步后，再进行申报操作；或是可以点击附表1表头上方【删除】按钮，重新点击【刷新发票数据】进行刷新。</p>
+				<br>
+			</div>
+			<p class="wdl_close_btn"><input id="kf-bzxs" type="checkbox"><label for="kf-bzxs">不再显示</label></p>
+			<!--<p class="text_alc"><span class="wxl_btn wxl_bg_blue wxl_clr_f wdl_btn_recept" onclick="layer.closeAll();">关闭</span></p>-->
+			<p class="text_alc wdl_text_alc">
+				<span class="layui-layer-setwin">
+					<!--<a class="layui-layer-ico layui-layer-close layui-layer-close1" style="" href="javascript:;"></a>-->
+					<span class="wxl_btn wxl_bg_blue wxl_clr_f wdl_btn_recept" onclick="leftSlider.closeCjwt();">关闭</span>
+                </span>
+            </p>
+	</div>
+
+	<!--20190117右下角通知提醒-->
+	<div class="wdl_yyxz_tk" id="wdl_tx3">
+		<!--<div class="tsxz_con">
+			<p>我是内容</p>
+			<br>
+		</div>-->
+		<!--<p class="text_alc">-->
+			<!--<span class="layui-layer-setwin">-->
+				<!--<a class="layui-layer-ico layui-layer-close layui-layer-close1" style="" href="javascript:;"></a>-->
+				<!--<span class="wxl_btn wxl_bg_blue wxl_clr_f wdl_btn_recept">关闭</span>-->
+			<!--</span>-->
+		<!--</p>-->
+	</div>
+
+	<!-- 前端设置-->
+	<div class="wxn_collAdd1" style="display: none;" id="wxn_collAdd_dzyw">
+		<div class="layui-form" action="">
+			<!--常用功能-->
+			<div class="layui-form-item" >
+				<div>已选择常用功能:</div>
+				<div id="CHANGYONGGONGNENG" class="changyong_gongneng">
+				</div>
+			</div>
+
+			<div class="layui-inline">
+				<select name="city" lay-verify="" lay-filter="typeFilter" id="menuType">>
+					<option value="">请选择业务分类</option>
+					<!--<option value="010">税源信息采集</option>
+                <option value="021">申报缴纳</option>
+                <option value="0571">涉税事项办理</option>-->
+				</select>
+			</div>
+			<div class="layui-inline" style="margin: 0 5px;">
+				<input type="text" name="title" placeholder="请输入功能名称" autocomplete="off" class="layui-input "
+					   id="seachTitle">
+				<img class="wxn_search_icon" src="img/search_icon.png" width="17" height="14" alt="">
+				<div class="wxl_tip_box" style="width:100%;position: absolute;background: #fff;box-shadow: 0px 3px 7px 0px #737383">
+					<ul>
+					</ul>
+				</div>
+			</div>
+			<div class="layui-inline">
+				<button class="layui-btn" style="background:#1e9fff;" lay-submit lay-filter="formSearch" id="laySearch" onclick="javascript:login_index_cygn.searchMenu()">搜索</button>
+				<button class="layui-btn" style="background:#1e9fff;" lay-submit lay-filter="formDemo" id="confirmSubmit">确认</button>
+				<button type="reset" class="layui-btn layui-btn-primary" onclick="leftSlider.closeColl()">关闭</button>
+			</div>
+			<!--<div class="layui-form-item">-->
+			<!--<div class="wxl_collSwdj1" id="CYGNLIST">-->
+			<!--</div>-->
+			<!--</div>-->
+			<div class="layui-form-item">
+				<div class="layui-tab layui-tab-brief" lay-filter="caidan">
+					<ul class="layui-tab-title">
+						<li class="layui-this">我要办税</li>
+						<li>我的信息</li>
+						<li>我要查询</li>
+						<li>互动中心</li>
+						<li>公众服务</li>
+					</ul>
+					<div class="layui-tab-content" style="height: 600px">
+						<div class="layui-tab-item layui-show">
+							<div class="wxl_collSwdj1" id="WOYAOBANSHUI">
+							</div>
+						</div>
+						<div class="layui-tab-item" >
+							<div class="wxl_collSwdj1" id="CYGNLIST">
+							</div>
+						</div>
+						<div class="layui-tab-item" >
+							<div class="wxl_collSwdj1" id="WOYAOCHAXUN">
+							</div>
+						</div>
+						<div class="layui-tab-item" >
+							<div class="wxl_collSwdj1" id="HUDONGZHOGNXIN">
+							</div>
+						</div>
+						<div class="layui-tab-item" >
+							<div class="wxl_collSwdj1" id="GONGZHONGFUWU">
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<!--<div class="layui-form-item" style="height:30px;">-->
+			<!--<div class="layui-inline" style="position:absolute;bottom:0px;left:50%;margin-left:-72px;">-->
+			<!--<button class="layui-btn" style="background:#1e9fff;" lay-submit lay-filter="formDemo" id="confirmSubmit">确认</button>-->
+			<!--<button type="reset" class="layui-btn layui-btn-primary" onclick="index.closeColl()">关闭</button>-->
+			<!--</div>-->
+			<!--</div>-->
+		</div>
+	</div>
+    <script type="text/javascript">
+        $(document).ready(function () {
+             setTimeout(function () {
+                 var zsxmdm=baseTools.getUrlQueryString("zsxmdm");
+                 if(zsxmdm!='' && zsxmdm!='null' && zsxmdm!='undefined'){
+                     var nodeName = menuMap.get(zsxmdm);
+                     var result = globeZtree.getNodesByParamFuzzy("name",nodeName);
+                     for(var i=0;i<result.length;i++) {
+                         var node = result[i];
+                         if (!node.open) {
+                             globeZtree.expandNode(node, true, true);
+                         } else {
+                             globeZtree.expandNode(node, false, false);
+                         }
+                     }
+                 }
+             },3000)
+
+        });
+
+	</script>
 </body>
 </html>

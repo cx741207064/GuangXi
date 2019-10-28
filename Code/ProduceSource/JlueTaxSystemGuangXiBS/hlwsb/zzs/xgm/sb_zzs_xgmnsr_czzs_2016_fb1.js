@@ -7,7 +7,7 @@ var fb1 = (function() {
 	// 私有属性
 	var curSeg; // 保存fb1对象的
 	var SBBXH = '';
-	var SBBZL_DM = '';
+	var SBBZL_DM = '101012008';
 	var SSSQ_Q = '';
 	var SSSQ_Z = '';
 	var SBBZT = '';
@@ -45,7 +45,7 @@ var fb1 = (function() {
 		},
 		// 查询数据
 		onQuery : function() {
-			SBBZL_DM = baseTools.getUrlQueryString("SBBZL_DM"); // 获取页面申报表种类代码标记
+			// SBBZL_DM = baseTools.getUrlQueryString("SBBZL_DM"); // 获取页面申报表种类代码标记
 			SSSQ_Q = baseTools.getUrlQueryString("SSSQ_Q");
 			SSSQ_Z = baseTools.getUrlQueryString("SSSQ_Z");
             gz= baseTools.getUrlQueryString("gz");
@@ -61,8 +61,7 @@ var fb1 = (function() {
 			});
 		},
 		// 跳转到打印页面
-		onPrint: function () {
-		    return false;
+		onPrint : function() {
 			var str = hlwsbTools.urlStr( {
 				SBBZL_DM : SBBZL_DM,
 				SSSQ_Q : SSSQ_Q,
@@ -312,11 +311,11 @@ var fb1 = (function() {
 	},
         //导入
         openPopWin:function(){
-            return false;
+
             var msg = "导入";
             var winParam = {
                 id: 'winTIPS', title: msg,
-                url: '/hlwsb/components/excelToJson/sb_excel_upload.html?bbmc=fb1&&startRow=8&&sheetIndex=1&templatePath=../../printModel/zzs/xgm/sb_zzs_xgmnsr_czzs_2016_all.zip',
+                url: '/hlwsb/components/excelToJson/sb_excel_upload.html?bbmc=fb1&&startRow=8&&sheetIndex=1&templatePath=printModel/zzs/xgm/sb_zzs_xgmnsr_czzs_2016_all.zip',
                 width: 400,
                 height: 150
             };

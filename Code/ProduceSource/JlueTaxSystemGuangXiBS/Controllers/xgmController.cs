@@ -108,6 +108,13 @@ namespace JlueTaxSystemGuangXiBS.Controllers
             return re_json;
         }
 
+        [Route("updateSB_ZZS_XGMNSR_CZZS_FB1_2016.do")]
+        public JObject updateSB_ZZS_XGMNSR_CZZS_FB1_2016()
+        {
+            JObject re_json = insertSB_ZZS_XGMNSR_CZZS_FB1_2016();
+            return re_json;
+        }
+
         [Route("delSB_ZZS_XGMNSR_CZZS_FB1_2016.do")]
         public JObject delSB_ZZS_XGMNSR_CZZS_FB1_2016()
         {

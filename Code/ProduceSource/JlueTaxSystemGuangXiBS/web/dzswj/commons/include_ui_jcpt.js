@@ -7,7 +7,7 @@
  */
 var hostUrl = window.location.host.match('\\w+.([\\w.-]+)[:\\w]*');
 //var DOMAIN = hostUrl[1];
-var DOMAIN = "localhost";
+var DOMAIN = document.domain;
 var COOKIE_DOMAIN = '.' + DOMAIN;
 try {
     document.domain = DOMAIN;
@@ -98,7 +98,7 @@ function getCssJsPath(basePath, dm) {
     switch (parseInt(dm, 10)) {
         case 50://基础类css/JS
             path.push('<script src="' + basePath + 'base/jquery.min.js" type="text/javascript"></script>');
-            path.push('<script src="' + basePath + 'base/base_tools.js" type="text/javascript"></script>');
+            path.push('<script src="' + basePath + 'base/base_tools.js?version=20190328" type="text/javascript"></script>');
             path.push('<script src="' + basePath + 'base/jquery.cookie.js" type="text/javascript"></script>');
             path.push('<script src="' + basePath + 'base/backspace_disable.js" type="text/javascript"></script>');
             path.push('<link href="' + basePath + '../../common/loading.css"  rel="stylesheet" type="text/css">');
@@ -113,6 +113,10 @@ function getCssJsPath(basePath, dm) {
             path.push('<link href="' + basePath + 'dataTables/jquery.dataTables.css"  rel="stylesheet" type="text/css">');
             path.push('<link href="' + basePath + 'dataTables/table.css"  rel="stylesheet" type="text/css">');
             path.push('<script src="' + basePath + 'dataTables/jquery.dataTables.js" type="text/javascript"></script>');
+            break;
+        case 75://表格 datatables
+            path.push('<link href="' + basePath + '../../plugs/layui/css/layui.css"  rel="stylesheet" type="text/css">');
+            path.push('<script src="' + basePath + '../../plugs/layui/layui.all.js" type="text/javascript"></script>');
             break;
         default:
             break;

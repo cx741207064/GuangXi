@@ -30,7 +30,8 @@ $(document).ready(function () {
         $('.top').css('height', '460px');
         $('.footer').css('bottom', '0');
         $('.wrap').css("min-width","1200px");
-        mh.tipcon();
+        // mh.tipcon();
+        mh.showElePage1();
     }
 
     if (typeof external.get_version != "undefined") { //显示版本号
@@ -62,6 +63,7 @@ var mh = (function () {
         //首页帮助
         $("#dzswj_help").click(function () {
 
+            return false;
             if (typeof external.get_version != "undefined") {
                 var url = window.location.protocol + "//" + window.location.host + '/web/dzswj/help/index.html';
                 external.Open_IE_Url(url);
@@ -71,29 +73,36 @@ var mh = (function () {
                 var ileft = 0;
                 var itop = 0;
                 var param = "location=yes,titlebar=yes,menubar=yes,toolbar=yes,modal=yes,resizable=yes,width=" + winwidth + ",height=" + winheight + ",left=" + ileft + ",top=" + itop;
-                window.open("/web/dzswj/help/index.html", "_blank", param);
+                window.open("/web/dzswj/help/index.html", "_blank");
             }
         });
 
-        if (typeof external.Run_Fwzs != "undefined") {
-        } else {
-            var hostname = window.location.host;
-            hostname = hostname.substring(hostname.indexOf(".")+1);
-            var WshShell=null;
-            try{
-                WshShell = new ActiveXObject("WScript.Shell");
-                str = WshShell.RegRead("HKCU\\Software\\Microsoft\\Windows\\CurrentVersion\\Internet Settings\\ZoneMap\\Domains\\"+hostname+"\\http");
-                //alert(str);
-            }catch(e){
-                layui.use('layer', function () {
-                    var layer = layui.layer;
-                    layer.confirm('<p class="airTest">检测到客户环境未将"' + hostname + '"添加到信任站点，请先下载环境检测工具进行检测并修复！<a class="airTestDown" href="/web/downloads/setupfix.zip" target="_blank">下载</a>环境监测工具</p>', {
-                        btn: ['确定'],
-                        offset:'200px'
-                    })
-                });
-            }
-        }
+        //鼠标悬停显示操作指南二维码
+        $(".czzn a").hover(function () {
+            $(".erweima").fadeIn(300);
+        },function () {
+            $(".erweima").fadeOut(300);
+        });
+
+        /* if (typeof external.Run_Fwzs != "undefined") {
+         } else {
+             var hostname = window.location.host;
+             hostname = hostname.substring(hostname.indexOf(".")+1);
+             var WshShell=null;
+             try{
+                 WshShell = new ActiveXObject("WScript.Shell");
+                 str = WshShell.RegRead("HKCU\\Software\\Microsoft\\Windows\\CurrentVersion\\Internet Settings\\ZoneMap\\Domains\\"+hostname+"\\http");
+                 //alert(str);
+             }catch(e){
+                 layui.use('layer', function () {
+                     var layer = layui.layer;
+                     layer.confirm('<p class="airTest">检测到客户环境未将"' + hostname + '"添加到信任站点，请先下载环境检测工具进行检测并修复！<a class="airTestDown" href="/web/downloads/setupfix.zip" target="_blank">下载</a>环境监测工具</p>', {
+                         btn: ['确定'],
+                         offset:'200px'
+                     })
+                 });
+             }
+         }*/
 
     };
     return {
@@ -110,20 +119,34 @@ var mh = (function () {
             curSeg.bindEvent();
             curSeg.otherSystemSkip();
             // curSeg.judgeTrust();
+            //检测网速
+            curSeg.checkNetSpeed();
+            //加载通知公告
+            gnmkUtils.selectPtTzgg('mh');
+            //加载安全证书安装提示
+            // mh.alertBox2('#aqzs_tx','600px','200px');
 
+            //通知提醒：1弹出 、0不弹
+            // curSeg.alertBox1OnOff(1);
         },
 
         /*提示框*/
-        tipcon:function(){
+        tipcon: function () {
             layui.use('layer', function () {
                 var layer = layui.layer;
+                var $ggtc = $("#ggtc");
+                // console.log($ggtc);
                 layer.open({
                     type: 1,
-                    title:"温馨提醒",
+                    title: "温馨提醒",
                     // anim: 2,
-                    area:["950px","auto"],
+                    shade:0,
+                    area: ["950px", "auto"],
                     shadeClose: true, //开启遮罩关闭
-                    content: $("#ggtc")
+                    content: $ggtc
+                });
+                $ggtc.parents('.layui-layer').css({
+                    'border': '#58b8f3 solid 8px'
                 })
             });
         },
@@ -144,7 +167,7 @@ var mh = (function () {
                         closeBtn: 1,
                         // anim: 2,
                         title: '下载控件',
-                        area: ['850px', '250px'],
+                        area: ['850px', '350px'],
                         shadeClose: true,
                         content: $('.wxl_downLoad')
                     });
@@ -211,127 +234,146 @@ var mh = (function () {
             })
         },
 
-        //判断是否添加信任站点
-        judgeTrust: function () {
-        },
-
         //环境监测判断是否是壳子
         showElePage: function () {
             if (typeof external.run_fixtool != 'undefined') {
                 external.run_fixtool();
             } else {
-                mh.exploreElePage();
+                    mh.exploreElePage();
             }
         },
-
+        //环境监测判断是否是壳子,且如果环境监测符合要求，则不弹出监测结果弹窗，如果环境监测不符合要求，则弹出结果。
+        showElePage1: function () {
+            var dom = document.URL;
+            if(dom.indexOf('https:') == 0){
+            if (typeof external.run_fixtool != 'undefined') {
+                external.run_fixtool();
+            } else {
+                if (mh.judgeSys()[1] && mh.judgeExplore()[1] && document.getElementById('Dcellweb1').AllowCopy && window.screen.width >= 1280 ){
+                   return;
+                }else{
+                    mh.exploreElePage();
+                }
+            }
+            }
+        },
         //弹出环境监测页面
         exploreElePage: function () {
-            layer.open({
-                type: 1,
-                title: '环境监测反馈结果',
-                shadeClose: true,
-                area: ['70%',"545px"], //宽高
-                content: $('#m_check_result'),
-                success: function () {
-                    var flag = 1;
-                    //系统检测
-                    $('.sysStatus').find('.f16').html("电脑系统:" + mh.judgeSys()[0]);
-                    if (mh.judgeSys()[1]) {
-                        mh.showTOE('.sysStatus', 1);
-                    } else {
-                        mh.showTOE('.sysStatus', 0);
-                        flag = 0;
-                    }
-
-                    //浏览器检测
-                    $(".exploreStatus").find(".f16").html("浏览器:" + mh.judgeExplore()[0]);
-                    if (mh.judgeExplore()[1]) {
-                        mh.showTOE('.exploreStatus', 1);
-                    } else {
-                        mh.showTOE('.exploreStatus', 0, "建议使用ie8以上浏览器");
-                        flag = 0;
-                    }
-
-                    //CA验证
-                    // if (document.all.camanger.object != null) {
-                    //     $(".caStatus").find(".f16").html("CA控件安装情况:已安装");
-                    //     mh.showTOE('.caStatus', 1);
-                    // } else {
-                    //     $(".caStatus").find(".f16").html("CA控件安装情况:未安装");
-                    //     mh.showTOE('.caStatus', 0, "", "ca");
-                    //     flag = 0;
-                    // }
-
-                    // cell华表检测
-                    // if (document.getElementById('Dcellweb1').OpenFile) {
-                    //     $(".cellStatus").find(".f16").html("报表控件安装情况:已安装");
-                    //     mh.showTOE('.cellStatus', 1);
-                    // } else {
-                    //     $(".cellStatus").find(".f16").html("报表控件安装情况:未安装");
-                    //     mh.showTOE('.cellStatus', 0);
-                    // }
-
-                    try {
-                        if (document.getElementById('Dcellweb1').AllowCopy) {
-                            $(".cellStatus").find(".f16").html("报表控件安装情况:已安装");
-                            mh.showTOE('.cellStatus', 1);
+            layui.use('layer', function () {
+                var layer = layui.layer;
+                layer.open({
+                    type: 1,
+                    title: '电子税务局使用环境检测',
+                    shadeClose: true,
+                    area: ['1068px', "545px"], //宽高
+                    content: $('#m_check_result'),
+                    success: function () {
+                        var flag = 1;
+                        //系统检测
+                        $('.sysStatus').find('.f16').html("电脑系统:" + mh.judgeSys()[0]);
+                        if (mh.judgeSys()[1]) {
+                            mh.showTOE('.sysStatus', 1);
                         } else {
+                            mh.showTOE('.sysStatus', 0);
+                            flag = 0;
+                        }
+
+                        //浏览器检测
+                        $(".exploreStatus").find(".f16").html("浏览器（建议使用IE8）:" + mh.judgeExplore()[0]);
+                        if (mh.judgeExplore()[1]) {
+                            mh.showTOE('.exploreStatus', 1);
+                        } else {
+                            mh.showTOE('.exploreStatus', 0, "建议使用ie8以上浏览器");
+                            flag = 0;
+                        }
+
+                        //CA验证
+                        // if (document.all.camanger.object != null) {
+                        //     $(".caStatus").find(".f16").html("CA控件安装情况:已安装");
+                        //     mh.showTOE('.caStatus', 1);
+                        // } else {
+                        //     $(".caStatus").find(".f16").html("CA控件安装情况:未安装");
+                        //     mh.showTOE('.caStatus', 0, "", "ca");
+                        //     flag = 0;
+                        // }
+
+                        // cell华表检测
+                        // if (document.getElementById('Dcellweb1').OpenFile) {
+                        //     $(".cellStatus").find(".f16").html("报表控件安装情况:已安装");
+                        //     mh.showTOE('.cellStatus', 1);
+                        // } else {
+                        //     $(".cellStatus").find(".f16").html("报表控件安装情况:未安装");
+                        //     mh.showTOE('.cellStatus', 0);
+                        // }
+
+                        try {
+                            if (document.getElementById('Dcellweb1').AllowCopy) {
+                                $(".cellStatus").find(".f16").html("报表控件安装情况:已安装");
+                                mh.showTOE('.cellStatus', 1);
+                            } else {
+                                $(".cellStatus").find(".f16").html("报表控件安装情况:未安装");
+                                mh.showTOE('.cellStatus', 0, "", "cell");
+                            }
+                        } catch (error) {
                             $(".cellStatus").find(".f16").html("报表控件安装情况:未安装");
                             mh.showTOE('.cellStatus', 0, "", "cell");
                         }
-                    } catch (error) {
-                        $(".cellStatus").find(".f16").html("报表控件安装情况:未安装");
-                        mh.showTOE('.cellStatus', 0, "", "cell");
-                    }
 
-                    //分辨率检测
+                        //分辨率检测
 
-                    $('.fblStatus').find('.f16').html('分辨率检测:  您的分辨率为' + window.screen.width + '×' + window.screen.height);
-                    if(window.screen.width >= 1280){
-                        mh.showTOE('.fblStatus',1);
-                    }else{
-                        curSeg.showTOE('.fblStatus',0,"建议使用1280×720及以上分辨率");
-                    }
-
-
-                    //判断网络，电脑系统，浏览器只要有一个不通过，就显示未通过
-                    for (var i = 0; i < 3; i++) {
-                        var dom = $('.m_check_right li').eq(i);
-                        if (dom.find('span').eq(1).html().indexOf("不通过") > -1) {
-                            $('#m_check_result').css("background", "url(imgs/orange.jpg) 70px center no-repeat")
+                        $('.fblStatus').find('.f16').html('分辨率检测:  您的分辨率为' + window.screen.width + '×' + window.screen.height);
+                        if (window.screen.width >= 1280) {
+                            mh.showTOE('.fblStatus', 1);
+                        } else {
+                            curSeg.showTOE('.fblStatus', 0, "建议使用1280×720及以上分辨率");
                         }
-                    }
-                    if(flag==0){
-                        /*layer.confirm("您的环境检测不通过会影响使用，是否强制登录？",
-                            function (index) {
-                                mh.closeLayer();
-                                login_index_yw.showLogin();
-                                layer.close(index);
-                        });*/
 
-                        layui.use('layer', function () {
-                            var layer = layui.layer;
-                            layer.open({
-                                type: 1,
-                                closeBtn: false, //不显示关闭按钮
-                                area:'300px',
-                                anim: 4,
-                                icon:3,
-                                title: '提示信息',
-                                resize: false,
-                                fixed: false,
-                                shade:0.7,
-                                content: '<div style="padding: 30px;">您的环境检测不通过会影响使用，是否强制登录？</div>',
-                                btn:['确定','取消'],
-                                btnAlign:'c',
-                                yes: function(){
-                                    mh.closeLayer();
-                                    $('.wep_login').click();
-                                }
-                            });
-                        });
+
+                        //判断网络，电脑系统，浏览器只要有一个不通过，就显示未通过
+                        for (var i = 0; i < 5; i++) {
+                            var dom = $('.m_check_right li').eq(i);
+                            if (dom.find('span').eq(1).html().indexOf("不通过") > -1) {
+                                // $('#m_check_result').css("background", "url(imgs/orange.jpg) 70px center no-repeat")
+                                $(".check_result_bhg").show();
+                                $(".check_result_hg").hide();
+                                return;
+                            } else {
+                                $(".check_result_bhg").hide();
+                                $(".check_result_hg").show()
+                            }
+                        }
+                        /*      if (flag == 0) {
+                                  /!*layer.confirm("您的环境检测不通过会影响使用，是否强制登录？",
+                                      function (index) {
+                                          mh.closeLayer();
+                                          login_index_yw.showLogin();
+                                          layer.close(index);
+                                  });*!/
+
+                                  layui.use('layer', function () {
+                                      var layer = layui.layer;
+                                      layer.open({
+                                          type: 1,
+                                          closeBtn: false, //不显示关闭按钮
+                                          area: '300px',
+                                          anim: 4,
+                                          icon: 3,
+                                          title: '提示信息',
+                                          resize: false,
+                                          fixed: false,
+                                          shade: 0.7,
+                                          content: '<div style="padding: 30px;">您的环境检测不通过会影响使用，是否强制登录？</div>',
+                                          btn: ['确定', '取消'],
+                                          btnAlign: 'c',
+                                          yes: function () {
+                                              mh.closeLayer();
+                                              $('.wep_login').click();
+                                          }
+                                      });
+                                  });
+                              }*/
                     }
-                }
+                });
             });
         },
 
@@ -434,7 +476,7 @@ var mh = (function () {
                 }
                 if (download) {
                     if (download == "cell") {
-                        $(name).find('span').eq(1).html('不通过  <a href="/web/downloads/cellsoft.zip" class="mh_downlaod">下载cell控件</a>');
+                        $(name).find('span').eq(1).html('不通过 ');
                     }
                 }
                 $(name).find('i').removeClass("icon-chenggong").removeClass("c_pass").addClass("icon-zuowu_tanhao").addClass("c_nopass");
@@ -523,6 +565,12 @@ var mh = (function () {
                     dzswjCommon.setCookieCommonUrl("GZFW_CS",obj);
                     dzswjCommon.setCookieCddwID("75019", "75042", "77077");
                     window.location.href=jcptTools.getGzfwUrl();*/
+                } else if(i == "81174"){//注销税务登记申请（优化版）
+                    var url = jcptTools.getMain();
+                    url += '?tid=75019';
+                    url += '&pid=81002';
+                    url += '&id=81174';
+                    dzswjCommon.liClick(url, '2');
                 }
             }
         },
@@ -694,6 +742,147 @@ var mh = (function () {
                 dzswjCommon.liClick('/web/dzswj/taxclient/main.html?tid=75018&pid=75040&id=75077', '1')
 
             }
+        },
+        /*通知提醒*/
+        alertBox1:function(dom,width,height){
+     		layui.use('layer', function(){
+    			var layer = layui.layer;
+    			layer.open({
+    				closeBtn:1,
+    				title:"通知",
+    			  	type: 1,
+    			  	area: [width, height],
+                    offset:'rb',
+                    shade:0,
+                    // closeBtn:1,
+                    zIndex:19891010,
+                    // btn:['关闭'],
+    			  	content: $(dom),//这里content是一个DOM，注意：最好该元素要存放在body最外层，否则可能被其它的相对元素所影响
+                    success:function (layero,index){
+                        // console.log(layero.selector,index);
+                        $(layero.selector).addClass('wdl_layui-layer');
+                        $(layero.selector).addClass('wdl_layui-layer1');
+                        // $(layero.selector).find('.layui-layer-content').css('overflow','auto !important');
+                    }
+                });
+    		});
+     	},
+
+        //安装安全证书提醒
+        alertBox2:function(dom,width,height){
+            layui.use('layer', function(){
+                var layer = layui.layer;
+                // layer.open({
+                //     closeBtn:1,
+                //     title:"通知",
+                //     type: 1,
+                //     area: [width, height],
+                //     // offset:'rb',
+                //     shade:0,
+                //     // closeBtn:1,
+                //     zIndex:19891012,
+                //     // btn:['关闭'],
+                //     content: $(dom),//这里content是一个DOM，注意：最好该元素要存放在body最外层，否则可能被其它的相对元素所影响
+                //     success:function (layero,index){
+                //         $(layero.selector).addClass('wdl_layui-layer');
+                //         $(layero.selector).addClass('wdl_layui-layer1');
+                //     }
+                // });
+                var $ggtc = $("#aqzs_tx");
+                // console.log($ggtc);
+                layer.open({
+                    type: 1,
+                    title: "温馨提醒",
+                    // anim: 2,
+                    shade:0,
+                    area: ["950px", "auto"],
+                    shadeClose: true, //开启遮罩关闭
+                    content: $ggtc
+                });
+                $ggtc.parents('.layui-layer').css({
+                    'border': '#58b8f3 solid 8px'
+                })
+            });
+        },
+        alertBox1OnOff:function (sign) {
+            if(sign==1){
+                curSeg.alertBox1('#wdl_tx','320px','200px');
+            // }else{
+            //     alert(false);
+            }
+        },
+        // 只关闭当前layer
+        closeLayer1:function (index) {
+            // mh.closeLayer();
+            // login_index_yw.showLogin();
+            layer.close(index);
+        },
+
+        checkNetSpeed:function () {
+            var total = 0;
+            var lastTotal = 0;
+            var seconds = 0;
+            var netTime = setInterval(function () {
+                    var netSize = total-lastTotal;
+                    if(netSize >75){
+                        $("#netspeed").text("稳定性良好");
+                    }else if(netSize<=75 && netSize>50){
+                        $("#netspeed").text("稳定性良好");
+                    }else{
+                        $("#netspeed").text("稳定性较差");
+                    }
+                    // if (parseInt(total - lastTotal).toString().length > 4) {
+                    //     $("#speed").text('速度:' + ((total - lastTotal) / 1024).toFixed(2) + "m/s");
+                    // } else {
+                    //     $("#speed").text('速度:' + parseInt(total - lastTotal) + "k/s");
+                    // }
+                    seconds = seconds + 1;
+                    lastTotal = total;
+
+                }
+                , 1000);
+
+            var xhr = new XMLHttpRequest();
+            xhr.onreadystatechange =function(){
+                if(xhr.readyState==3){
+                    total=xhr.responseText.length/1024;
+                    //text.text("已下载大小:"+(total=xhr.responseText.length/1024)+"k");
+                    //alert(total)
+                }else if(xhr.readyState==4){
+                    // text.text("已下载大小:"+(total=xhr.responseText.length/1024)+"k");
+                    //alert(xhr.responseText)
+                    //alert(total)
+                    total=xhr.responseText.length/1024;
+                }
+
+            }
+            xhr.onload = function (e) {
+                if (this.status == 200) {
+                    var speed = 0;
+                    if (seconds > 0) {
+                        speed=(total/seconds).toFixed(2);
+                        if(speed >75){
+                            window.clearInterval(netTime);
+                            $("#netspeed").text("稳定性良好");
+                        }else if(speed<=75 && speed>50){
+                            window.clearInterval(netTime);
+                            $("#netspeed").text("稳定性良好");
+                        }else{
+                            window.clearInterval(netTime);
+                            $("#netspeed").text("稳定性较差");
+                        }
+                    } else {
+                        window.clearInterval(netTime);
+                        $("#netspeed").text("稳定性良好");
+                    }
+
+                }
+            };
+            var timestamp = (new Date()).getTime();
+            xhr.open('GET', '/web/dzswj/ythclient/imgs/mh_topbg.png?time=' + timestamp, true);
+            xhr.send(null);
         }
+
+
     }
 })()

@@ -7,9 +7,9 @@
 // </自动生成>
 //------------------------------------------------------------------------------
 
-namespace JlueTaxSystemGuangXiBS.web.dzswj.taxclient {
+namespace JlueTaxSystemGuangXiBS.web.dzswj.ythclient {
     
     
-    public partial class login_index {
+    public partial class mh {
     }
 }

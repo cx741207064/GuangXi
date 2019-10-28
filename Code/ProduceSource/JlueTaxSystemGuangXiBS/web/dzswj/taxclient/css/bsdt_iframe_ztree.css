@@ -1,0 +1,38 @@
+.cn_content_list{
+    overflow: hidden;
+    margin-bottom:5px;
+    padding: 10px; padding-top: 0;
+}
+.cn_content_list_min_heigh{
+    max-height: 0px !important;
+}
+.cn_content_list li{
+    font-size: 12px;
+    padding-left: 5px;
+    height: 25px;
+    line-height: 25px;
+    border-bottom: 1px dashed #e2e2e3;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    font-family: Verdana, Arial, Helvetica, AppleGothic, sans-serif;
+}
+
+.cn_content_list li:hover {
+    color: #0994dc;
+    cursor: pointer;
+}
+
+.cn_content_list li span {
+    margin: 0 10px;
+}
+
+.content_title_arrow{
+    float: right;
+    padding-right: 15px;
+    display: inline-block;
+}
+.layui-this{
+    color: #0d62e9!important;
+    font-weight: bolder;
+}

@@ -1,1 +1,43 @@
-{"code":"0","msg":"操作成功","data":{"NSRSBH":"91450923MA5KBJ6Q7N","isPrint":null,"SSSQ_Z":"2018-12-31","SBBXH":"91450923MA5KBJ6Q7N2018100120181231101012009","BODY":[],"YGZNSRLX_DM":"10","SBBZL_DM":"101012009","SSSQ_Q":"2018-10-01","DJXH":"10114509010114109676","NRSZG_DM":null,"HEAD":{"NSRSBH":"91450923MA5KBJ6Q7N","isPrint":null,"SSSQ_Z":"2018-12-31","SBBXH":"91450923MA5KBJ6Q7N2018100120181231101012009","YGZNSRLX_DM":"10","SBBZL_DM":"101012009","SSSQ_Q":"2018-10-01","DJXH":"10114509010114109676","NRSZG_DM":null,"TBRQ":"2019-01-09"}}}
+{
+    "code":"0",
+    "msg":"操作成功",
+    "data":{
+        "NSRSBH":"91450900677703752A",
+        "BQMSETS":"Y",
+        "isPrint":null,
+        "SSSQ_Z":"2019-09-30",
+        "SBBXH":"91450900677703752A2019070120190930101012009",
+        "BODY":[
+
+        ],
+        "YGZNSRLX_DM":"10",
+        "SBBZL_DM":"101012009",
+        "SSSQ_Q":"2019-07-01",
+        "DJXH":"10114509000046136227",
+        "NRSZG_DM":null,
+        "HEAD":{
+            "ZCDZ":"",
+            "SBBXH":"91450900677703752A2019070120190930101012009",
+            "NSRMC":"",
+            "DHHM":"",
+            "FDDBR_XM":"",
+            "SBBZL_DM":"101012009",
+            "HY_DM":"",
+            "KHYH":"",
+            "YJSE":"0",
+            "SBBZT":"2",
+            "YZLC":"",
+            "TBRQ":"2019-10-08",
+            "SCJYDZ":"",
+            "NSRSBH":"91450900677703752A",
+            "YHZH":"",
+            "SSSQ_Z":"2019-09-30",
+            "ZDJSBZ":"",
+            "SSSQ_Q":"2019-07-01",
+            "XGMBDCXSE":"",
+            "DJXH":"10114509000046136227",
+            "DJZCLX_DM":"",
+            "XGBNLJBZ":""
+        }
+    }
+}

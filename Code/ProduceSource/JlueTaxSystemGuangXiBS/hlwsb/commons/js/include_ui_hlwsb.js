@@ -126,6 +126,17 @@ function getCssJsPath(basePath, dm) {
             path.push('<script src="' + basePath + 'common_vb.vbs" type="text/vbscript" charset="UTF-8"></script>');
             path.push('<script src="' + basePath + '../../../commons/js/datepicker/WdatePicker.js" type="text/javascript"></script>');
             break;
+        case 45:
+            if(eFlag && openM != '' && openM == 'filelogin') {
+                lj = external.get_fexists('html/hlwsbWeb/hlwsb/commons/js/base_hlwsb.js');
+                path.push('<script src="' + lj + '" type="text/javascript"></script>');
+            } else {
+                path.push('<script src="' + basePath + 'base_hlwsb.js" type="text/javascript"></script>');
+            }
+            path.push('<script src="' + basePath + 'hlwsbTools.min.js" type="text/javascript"></script>');
+            path.push('<script src="' + basePath + 'cellTools.js" type="text/javascript"></script>');
+            path.push('<script src="' + basePath + 'common_vb.vbs" type="text/vbscript" charset="UTF-8"></script>');
+            break;
         case 60:
 
             if(eFlag && openM != '' && openM == 'filelogin') {

@@ -35,7 +35,7 @@ Sub DCellWeb1_EditFinish(text, approve)
     End If
    
     If cellType = 0 And ( numType = 1 Or numType = 5) Then
-	    If text >= 1000000000000 Or text <= -1000000000000 Then
+	    If text >= 10000000000000 Or text <= -10000000000000 Then
 	    	alert( "输入的数据太大，请修改!")
 	        approve=0
 	        Exit Sub
