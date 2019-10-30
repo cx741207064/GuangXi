@@ -32,7 +32,7 @@ switch (inlineOutlinepro) {
     case 'sc':
         //正式环境
         window.dzyxImgPath = "https://etax.guangxi.chinatax.gov.cn:9725/yximg/";//电子影像图片路径
-        window.zrdssbUrl = "https://wsbs.guangxi.chinatax.gov.cn:7006";//中软地税申报
+        window.zrdssbUrl = "";//中软地税申报
         window.zrgssbUrl = "https://wsbs.guangxi.chinatax.gov.cn:7006";//中软国税申报
         window.gxwzUrl = "https://etax.guangxi.chinatax.gov.cn:9722";//广西网站路径
         window.xbnsrtc = replaceProtocolPortPort("http://etax.guangxi.chinatax.gov.cn:9801/taxclient/wssq/ywsq/djl/scbsbl/scbl_login.html");//广西新办纳税人套餐（直接跳转旧的页面）

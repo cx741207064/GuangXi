@@ -9,6 +9,8 @@ using Newtonsoft.Json.Linq;
 using JlueTaxSystemGuangXiBS.Code;
 using System.Text;
 using System.IO;
+using JlueTaxSystemGuangXiBS.code;
+using System.Web.Http.Results;
 
 namespace JlueTaxSystemGuangXiBS.Controllers
 {
@@ -196,7 +198,9 @@ namespace JlueTaxSystemGuangXiBS.Controllers
             re_json["data"]["HEAD"]["TBRQ"] = new JValue(tbrq);
             re_json["data"]["HEAD"]["SSSQ_Q"] = new JValue(rqQ);
             re_json["data"]["HEAD"]["SSSQ_Z"] = new JValue(rqZ);
-            GTXResult gr = GTXMethod.GetUserReportData(id, "101011034");
+
+            //提取附表一数据
+            GTXResult gr = GTXMethod.GetUserReportData(id, SBBZL_DM.sb_zzs_ybnsr_fb1);
             if (gr.IsSuccess)
             {
                 JArray jarr = new JArray();
@@ -236,7 +240,8 @@ namespace JlueTaxSystemGuangXiBS.Controllers
                 }
             }
 
-            GTXResult gr2 = GTXMethod.GetUserReportData(id, "101011035");
+            //提取附表二数据
+            GTXResult gr2 = GTXMethod.GetUserReportData(id, SBBZL_DM.sb_zzs_ybnsr_fb2);
             if (gr2.IsSuccess)
             {
                 JArray jarr = new JArray();
@@ -260,7 +265,9 @@ namespace JlueTaxSystemGuangXiBS.Controllers
                     }
                 }
             }
-            GTXResult gr3 = GTXMethod.GetUserReportData(id, "101011025");
+
+            //提取附表四数据
+            GTXResult gr3 = GTXMethod.GetUserReportData(id, SBBZL_DM.sb_zzs_ybnsr_fb4);
             if (gr3.IsSuccess)
             {
                 JArray jarr = new JArray();
@@ -792,6 +799,27 @@ namespace JlueTaxSystemGuangXiBS.Controllers
             return re_json;
         }
 
+        [Route("sb_zzs_ybnsr_hzfpb_2015.html")]
+        [HttpGet]
+        public ResponseMessageResult sb_zzs_ybnsr_hzfpb_2015()
+        {
+            return FunctionNotOpen();
+        }
+
+        [Route("sb_zzs_dxqy.html")]
+        [HttpGet]
+        public ResponseMessageResult sb_zzs_dxqy()
+        {
+            return FunctionNotOpen();
+        }
+
+        [Route("~/hlwsb/zzs/ybnsr/ybnsr2016/sb_zzs_yzqy.html")]
+        [HttpGet]
+        public ResponseMessageResult sb_zzs_yzqy()
+        {
+            return FunctionNotOpen();
+        }
+
         public JObject saveSB_ZZS_YBNSR_Public(JObject DATA, string SBBZL_DM)
         {
             JObject return_j = new JObject();
@@ -911,6 +939,12 @@ namespace JlueTaxSystemGuangXiBS.Controllers
             re_json["data"]["HEAD"]["SSSQ_Z"] = new JValue(rqZ);
 
             GTXResult gr = GTXMethod.DeleteUserReportData(id, SBBZL_DM);
+        }
+
+        ResponseMessageResult FunctionNotOpen()
+        {
+            string str = System.IO.File.ReadAllText(AppDomain.CurrentDomain.BaseDirectory + "/FunctionNotOpen.html");
+            return ResponseMessage(new HttpResponseMessage() { Content = new StringContent(str, Encoding.UTF8, "text/html"), });
         }
 
     }

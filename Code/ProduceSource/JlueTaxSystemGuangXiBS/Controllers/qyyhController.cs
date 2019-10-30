@@ -60,20 +60,27 @@ namespace JlueTaxSystemGuangXiBS.Controllers
             for (int i = 0; i < list_ja.Count; i++)
             {
                 JObject jo = (JObject)list_ja[i];
-                if (jo["SJ_MKXKMC"].ToString() != "增值税(一般纳税人适用)" && jo["SJ_MKXKMC"].ToString() != "增值税（小规模纳税人适用）查账征收" && jo["SJ_MKXKMC"].ToString() != "居民企业（查账征收）企业所得税月（季）度申报" && jo["SJ_MKXKMC"].ToString() != "财务报告报送与信息采集2013（小企业会计准则-月季）" && jo["MKXK_MC"].ToString() != "附加税(费)申报（增值税）" && jo["MKXK_MC"].ToString() != "印花税申报" && jo["MKXK_MC"].ToString() != "财务报告报送与信息采集")
+                JToken SJ_MKXKMC = jo["SJ_MKXKMC"];
+                JToken MKXK_MC = jo["MKXK_MC"];
+                JValue MKXK_URL_PT = jo["MKXK_URL_PT"] as JValue;
+
+                if (JToken.DeepEquals(SJ_MKXKMC, "增值税(一般纳税人适用)") || JToken.DeepEquals(SJ_MKXKMC, "增值税（小规模纳税人适用）查账征收") || JToken.DeepEquals(SJ_MKXKMC, "居民企业（查账征收）企业所得税月（季）度申报") || JToken.DeepEquals(SJ_MKXKMC, "财务报告报送与信息采集2013（小企业会计准则-月季）") || JToken.DeepEquals(MKXK_MC, "附加税(费)申报（增值税）") || JToken.DeepEquals(MKXK_MC, "印花税申报") || JToken.DeepEquals(MKXK_MC, "财务报告报送与信息采集"))
                 {
-                    jo["MKXK_URL_PT"] = "/FunctionNotOpen.html";
+                    if (MKXK_URL_PT.ToString() != "")
+                    {
+                        Uri uri = new Uri(MKXK_URL_PT.ToString());
+                        jo["MKXK_URL_PT"] = JValue.CreateString("http://" + Request.RequestUri.Authority + uri.PathAndQuery);
+                    }
                 }
                 else
                 {
-                    if (jo["MKXK_URL_PT"].ToString() != "")
+                    if (!MKXK_URL_PT.Equals(JValue.CreateNull()))
                     {
-                        Uri uri = new Uri(jo["MKXK_URL_PT"].ToString());
-                        jo["MKXK_URL_PT"] = "http://" + Request.RequestUri.Authority + uri.PathAndQuery;
+                        jo["MKXK_URL_PT"] = JValue.CreateString("/FunctionNotOpen.html");
                     }
                 }
 
-                if (jo["XMFL_DM"].ToString() == "dzswj.ckts")
+                if (JToken.DeepEquals(jo["XMFL_DM"], "dzswj.ckts"))
                 {
                     jo["XMFL_DM"] = "";
                 }

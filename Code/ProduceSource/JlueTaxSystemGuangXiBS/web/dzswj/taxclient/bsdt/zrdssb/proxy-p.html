@@ -4,6 +4,7 @@
 <head>
     <title></title>
     <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+    <script src="../../../commons/jcpt_properties.js?version=20190427" type="text/javascript"></script>
     <script src="../../../commons/include_ui_jcpt.js?dm=50" type="text/javascript"></script>
     <script src="../../../tools/jcptTools.js"></script>
 </head>
@@ -27,18 +28,29 @@
             }
         }
         document.body.appendChild(temp);
+
         temp.submit();
     }
-
-    var url=jcptTools.cnf.zrdssbUrl+"/sword?ctrl=DZBSXTKJ022YhmMmDlCtrl_guXLocalTaxWinOpen";
+    var ctrl="DZBSXTKJ022YhmMmDlCtrl_guXLocalTaxWinOpen";
+    var url=window.zrdssbUrl+"/sword?ctrl="+ctrl;
+    url= jcptTools.replaceProtocolPortPort(url);
     var mkxkmc = window.opener.document.getElementById('kf-hdipt-dssb-mkmc').value;
     var mkurl = window.opener.document.getElementById('kf-hdipt-dssb-mkurl').value;
+    var sid = window.opener.document.getElementById('kf-hdipt-dssb-sid').value;
+    var dq_yhsf = jcptTools.getUserDataByKey("DQ_YHSF");
+    var id = window.opener.document.getElementById('kf-hdipt-dssb-id').value;
     var p = {
-        ctrl: 'DZBSXTKJ022YhmMmDlCtrl_guXLocalTaxWinOpen',
+        ctrl: ctrl,
         functionName: mkxkmc,
         functionUrl: mkurl,
-        functionType: '01'
+        functionType: '02',
+        wsbsfwtsessionid:sid
     };
+    if(dq_yhsf == "ZRR"){
+        if(id =="82208"||id =="82210"||id =="82212"||id =="82214"||id =="82215"||id =="82223"){
+            p.user_type='02';
+        }
+    }
     post(url, p);
 </script>
 </body>
