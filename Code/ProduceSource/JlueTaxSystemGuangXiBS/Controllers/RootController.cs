@@ -13,6 +13,8 @@ namespace JlueTaxSystemGuangXiBS.Controllers
 {
     public class RootController : ApiController
     {
+        string BaseDirectory = AppDomain.CurrentDomain.BaseDirectory;
+
         [Route("sword")]
         public HttpResponseMessage GETsword(string ctrl)
         {
@@ -21,21 +23,21 @@ namespace JlueTaxSystemGuangXiBS.Controllers
             string functionName = System.Web.HttpContext.Current.Request["functionName"] ?? string.Empty;
             if (ctrl == "SB025YhssbCtrl_initView")
             {
-               System.Web.HttpContext.Current. Response.Redirect("sword." + ctrl + ".aspx");
+                System.Web.HttpContext.Current.Response.Redirect("sword." + ctrl + ".aspx");
 
             }
             else if (functionName == "财务报告报送与信息采集")
             {
-                str = System.IO.File.ReadAllText(System.Web.HttpContext.Current.Server.MapPath( ctrl + ".html"));
+                str = System.IO.File.ReadAllText(System.Web.HttpContext.Current.Server.MapPath(ctrl + ".html"));
             }
             else if (ctrl == "SB104xqykjzzcwbsCtrl_toSbfb")
             {
                 string id = System.Web.HttpContext.Current.Request["id"] ?? string.Empty;
-                str = System.IO.File.ReadAllText(System.Web.HttpContext.Current.Server.MapPath("sword." + ctrl + id + ".html"));
+                str = System.IO.File.ReadAllText(BaseDirectory + "/sword/sword." + ctrl + id + ".html");
             }
             else
             {
-                str = System.IO.File.ReadAllText(System.Web.HttpContext.Current.Server.MapPath("sword." + ctrl + ".html"));
+                str = System.IO.File.ReadAllText(BaseDirectory + "/sword/sword." + ctrl + ".html");
             }
             return_str = str;
             return new HttpResponseMessage()
@@ -45,7 +47,7 @@ namespace JlueTaxSystemGuangXiBS.Controllers
         }
 
         [Route("ajax.sword")]
-        [AcceptVerbs("Post","Get")]
+        [AcceptVerbs("Post", "Get")]
         public HttpResponseMessage ajax()
         {
             string ctrl = System.Web.HttpContext.Current.Request["ctrl"];
@@ -71,13 +73,13 @@ namespace JlueTaxSystemGuangXiBS.Controllers
             }
             if (ctrl != null)
             {
-                str = System.IO.File.ReadAllText(System.Web.HttpContext.Current.Server.MapPath("ajax.sword." + ctrl + ".json"));
+                str = System.IO.File.ReadAllText(BaseDirectory + "/ajax.sword/ajax.sword." + ctrl + ".json");
             }
             else if (postData_ctrl != "")
             {
                 if (zspmDm != "")
                 {
-                    str = System.IO.File.ReadAllText(System.Web.HttpContext.Current.Server.MapPath("ajax.sword." + zspmDm + ".json"));
+                    str = System.IO.File.ReadAllText(BaseDirectory + "/ajax.sword/ajax.sword." + zspmDm + ".json");
                 }
                 else
                 {
@@ -118,7 +120,7 @@ namespace JlueTaxSystemGuangXiBS.Controllers
                     }
                     else
                     {
-                        str = System.IO.File.ReadAllText(System.Web.HttpContext.Current.Server.MapPath("ajax.sword." + postData_ctrl + ".json"));
+                        str = System.IO.File.ReadAllText(BaseDirectory + "/ajax.sword/ajax.sword." + postData_ctrl + ".json");
                     }
                 }
             }
@@ -146,15 +148,15 @@ namespace JlueTaxSystemGuangXiBS.Controllers
             }
             if (ctrl != null)
             {
-                str = System.IO.File.ReadAllText(System.Web.HttpContext.Current.Server.MapPath("form.sword." + ctrl + ".json"));
+                str = System.IO.File.ReadAllText(BaseDirectory + "/form.sword/form.sword." + ctrl + ".json");
             }
             else if (postData_ctrl != null)
             {
                 if (postData_ctrl == "SB151zlbsslCtrl_initBd")
-               // str = System.IO.File.ReadAllText(System.Web.HttpContext.Current.Server.MapPath("form.sword." + postData_ctrl + ".aspx"));
+                    // str = System.IO.File.ReadAllText(System.Web.HttpContext.Current.Server.MapPath("form.sword." + postData_ctrl + ".aspx"));
                     System.Web.HttpContext.Current.Response.Redirect("form.sword." + postData_ctrl + ".aspx");
                 else
-                str = System.IO.File.ReadAllText(System.Web.HttpContext.Current.Server.MapPath("form.sword." + postData_ctrl + ".html"));
+                    str = System.IO.File.ReadAllText(BaseDirectory + "/form.sword/form.sword." + postData_ctrl + ".html");
             }
             return_str = str;
             return new HttpResponseMessage()
@@ -271,7 +273,7 @@ namespace JlueTaxSystemGuangXiBS.Controllers
                 }
             }
             JObject re_json = new JObject();
-            string str = System.IO.File.ReadAllText(System.Web.HttpContext.Current.Server.MapPath("ajax.sword.SB151zlbsslCtrl_queryKjzdzzDmByDjxh.json"));
+            string str = System.IO.File.ReadAllText(BaseDirectory + "/ajax.sword/ajax.sword.SB151zlbsslCtrl_queryKjzdzzDmByDjxh.json");
             re_json = JsonConvert.DeserializeObject<JObject>(str);
             re_json["data"][12]["value"]=skssqq;
             re_json["data"][13]["value"] = skssqz;
@@ -281,7 +283,7 @@ namespace JlueTaxSystemGuangXiBS.Controllers
         public JObject queryNsrxxByNsrsbh()
         {
             JObject re_json = new JObject();
-            string str = System.IO.File.ReadAllText(System.Web.HttpContext.Current.Server.MapPath("ajax.sword.GY002CommonCtrl_queryNsrxxByNsrsbh.json"));
+            string str = System.IO.File.ReadAllText(BaseDirectory + "/ajax.sword/ajax.sword.GY002CommonCtrl_queryNsrxxByNsrsbh.json");
             re_json = JsonConvert.DeserializeObject<JObject>(str);
 
             JObject in_jo =(JObject) re_json["data"][1]["trs"][0]["tds"];
@@ -315,7 +317,7 @@ namespace JlueTaxSystemGuangXiBS.Controllers
         public JObject reloadNsrzfhy()
         {
             JObject re_json = new JObject();
-            string str = System.IO.File.ReadAllText(System.Web.HttpContext.Current.Server.MapPath("ajax.sword.SB025YhssbCtrl_reloadNsrzfhy.json"));
+            string str = System.IO.File.ReadAllText(BaseDirectory + "/ajax.sword/ajax.sword.SB025YhssbCtrl_reloadNsrzfhy.json");
             re_json = JsonConvert.DeserializeObject<JObject>(str);
 
             JObject in_jo = (JObject)re_json["data"][2];
