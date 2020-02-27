@@ -18,7 +18,7 @@
 var hostUrl = window.location.host.match('\\w+.([\\w.-]+)[:\\w]*');
 var DOMAIN = hostUrl[1];
 try{
-   document.domain="localhost";
+   //document.domain="localhost";
 }catch(e){}
 var _curPage = window.document.location.href;
 var _curPagePath = window.document.location.pathname;

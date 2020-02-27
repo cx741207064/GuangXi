@@ -10,7 +10,7 @@ var hostUrl = window.location.host.match('\\w+.([\\w.-]+)[:\\w]*');
 var DOMAIN = document.domain;
 var COOKIE_DOMAIN = '.' + DOMAIN;
 try {
-    document.domain = DOMAIN;
+    //document.domain = DOMAIN;
 } catch (err) {
 }
 
